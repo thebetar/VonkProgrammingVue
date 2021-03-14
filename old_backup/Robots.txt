@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /index.html
+Allow: /
+Disallow: /portfolio
+Disallow: /contact
+Disallow: /about
+
+User-agent: Googlebot
+Allow: /index.html
+Allow: /
+Disallow: /portfolio
+Disallow: /contact
+Disallow: /about
