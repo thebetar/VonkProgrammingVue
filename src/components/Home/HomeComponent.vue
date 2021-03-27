@@ -19,12 +19,12 @@
                 </h2>
                 <p class="body-1 mt-4">
                     VonkProgramming is een Web development bedrijf dat zich bezighoudt met maatwerk software solutions.
-                    Voor iedere klant maken wij op maat gemaakte software, afgestemd op zijn/haar behoeften.
+                    Voor iedere klant maak ik op maat gemaakte software, afgestemd op uw behoeften.
                 </p>
             </v-col>
         </v-row>
         <v-row justify="center" class="my-6 pb-12">
-            <v-col cols="12" sm="12" md="3" align="center">
+            <v-col cols="12" sm="12" md="4" align="center">
                 <v-hover v-slot="{ hover }">
                     <v-card :elevation="hover ? 12 : 2" class="pa-4" :class="{ 'card-hover': hover }">
                         <v-card-title class="title">Procesbeschrijving</v-card-title>
@@ -34,7 +34,7 @@
                                     <b>1.</b>
                                 </v-list-item-icon>
                                 <v-list-item-content>
-                                    Voorafgaand vindt er een kennsmakingsgesprek plaats waarin de context van het probleem wordt besproken.
+                                    Voorafgaand vindt er een kennsmakingsgesprek plaats waarin de context van uw wens wordt besproken.
                                 </v-list-item-content>
                             </v-list-item>
                             <v-list-item>
@@ -57,14 +57,15 @@
                     </v-card>
                 </v-hover>
             </v-col>
-            <v-col cols="12" sm="12" md="3" align="center">
+            <v-col cols="12" sm="12" md="4" align="center">
                 <v-hover v-slot="{ hover }">
                     <v-card :elevation="hover ? 12 : 2" class="pa-4 text-center" :class="{ 'card-hover': hover }">
                         <v-card-title class="title">
                             Webapplicatie Development
                         </v-card-title>
                         <v-card-text class="body-2">
-                            Om garantie te geven dat jij daadwerkelijk profiteert van je nieuwe website, wordt ervoor gezorgd dat tijdens het ontwikkelen van de website er rekening gehouden wordt met SEO. Niet alleen zorgen wij ervoor dat de website direct goed vindbaar is, maar gebruiken wij ook de nieuwste development technieken waardoor schaalbaarheid en snelheid vanzelfsprekend is.
+                            Om garantie te geven dat jij daadwerkelijk profiteert van uw nieuwe website, wordt ervoor gezorgd dat tijdens het ontwikkelen van de website er rekening gehouden wordt met interactiviteit. 
+                            Niet alleen zorg ik ervoor dat de website direct goed vindbaar is, maar gebruik ik ook de nieuwste development technieken waardoor schaalbaarheid en snelheid vanzelfsprekend is.
                         </v-card-text>
                     </v-card>
                 </v-hover>
@@ -90,7 +91,7 @@
             <v-col cols="12" sm="12" md="4" align="center">
                 <h6 class="title">Frameworks</h6>
                 <p class="body-2">
-                    VonkProgramming maakt gebruik van de nieuwste JavaScript frameworks. Dit houdt in dat uw applicatie super snel en schaalbaar is met behulp van de nieuwste web development technieken.
+                    VonkProgramming maakt gebruik van de nieuwste JavaScript frameworks. Dit houdt in dat uw applicatie snel en schaalbaar is met behulp van de nieuwste web development technieken.
                     Dit betekend dat als u later uw website wilt uitbreiden dit minder tijd kost doordat hier rekening mee wordt gehouden binnen de frameworks. (Angular, Vue en React).
                 </p>
             </v-col>
@@ -105,7 +106,7 @@
         <v-row class="home-page-media-3" justify="center" align="center">
             <v-col cols="12" sm="12" md="6" align="center">
                 <h4 class="display-2 text-sm-center">Flitsende snelheid</h4>
-                <p class="body-2">Wij maken gebruik van de nieuwste technieken om uw website zo snel als mogelijk te maken!</p>
+                <p class="body-2">Ik maak gebruik van de nieuwste technieken om uw website zo snel als mogelijk te maken!</p>
             </v-col>
         </v-row>
     </div>
@@ -154,5 +155,11 @@
         background-image: url('../../assets/backgrounds/bg-website-3-min.jpg');
         background-size: cover;
         background-attachment: fixed;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .home-page-media-1 {
+            height: 100vh;
+        }
     }
 </style>

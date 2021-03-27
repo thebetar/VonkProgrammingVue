@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .highlight {
     color: red;
     font-style: italic;
@@ -27,5 +31,6 @@
 
     body {
       overflow-x: hidden;
+      overflow-y: auto;
     }
 }

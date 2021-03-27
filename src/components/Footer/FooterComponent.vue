@@ -58,6 +58,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            show: true,
             name: '',
             email: '',
             description: ''

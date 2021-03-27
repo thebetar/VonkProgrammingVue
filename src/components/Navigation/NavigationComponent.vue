@@ -1,23 +1,22 @@
 <template>
-    <v-card class="ma-0 ma-md-2" flat :class="{ scrolled: isScroll }">
-        <v-app-bar class="d-flex justify-start justify-md-center">
+    <v-card class="rounded-0" flat :class="{ scrolled: isScroll }">
+        <v-app-bar dark class="d-flex justify-start justify-md-center" fixed flat :class="{ scrolled: isScroll }">
             <v-app-bar-nav-icon @click="emitDrawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
             <v-toolbar-title>
                 <router-link to="/home">
                     <v-img src="../../assets/logo.png" max-height="36" contain></v-img>
                 </router-link>
             </v-toolbar-title>
-            <v-tabs dark class="d-none d-sm-flex">
-                <v-tab v-for="item in items" :to="item.link" :key="item.link" :class="{ 'scrolled-text': isScroll }">
+            <v-toolbar-items dark class="d-none d-sm-flex">
+                <v-btn text v-for="item in items" :to="item.link" :key="item.link" :class="{ 'scrolled-text': isScroll }">
                     <v-icon>{{ item.icon }}</v-icon>
                     {{ item.text }}
-                </v-tab>
-            </v-tabs> 
+                </v-btn>
+            </v-toolbar-items> 
         </v-app-bar>
         <v-navigation-drawer
             v-model="drawer"
-            absolute
-            temporary
+            fixed
             >
             <v-list
                 nav
@@ -31,7 +30,7 @@
 
                 </v-list-item-group>
             </v-list>
-            </v-navigation-drawer>
+        </v-navigation-drawer>
     </v-card>
 </template>
 
@@ -47,13 +46,16 @@ export default {
         items: Array
     },
     created() {
-        window.addEventListener('scroll', () => {
-            this.isScroll = this.handleScroll();
-        })
+        // Check if not mobile
+        if(window.screen.width >= 600) {
+            window.addEventListener('scroll', () => {
+                this.isScroll = this.handleScroll();
+            })
+        }
     },
     methods: {
         handleScroll() {
-            return window.scrollY > 100;
+            return window.scrollY > 50;
         },
         emitDrawer() {
             this.$emit('drawerClick');
@@ -63,17 +65,19 @@ export default {
 </script>
 
 <style scoped>
-    .v-card {
-        position: fixed;
-        width: calc(100% - 16px);
-        z-index: 1;
+    header {
         background-color: transparent !important;
         transition: all 0.3s ease-in-out;
     }
 
-    .v-toolbar {
+    .v-card {
+        z-index: 5;
         background-color: transparent !important;
-        box-shadow: none !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button {
+        border: none;
     }
 
     .scrolled {
@@ -90,8 +94,17 @@ export default {
     }
 
     @media only screen and (max-width: 600px) {
+        header {
+            background-color: white !important;
+        }
+
+        .theme--dark {
+            color: #333 !important;
+        }
+
         .v-card {
-            width: 100vw;
+            background-color: white !important;
+            border-radius: 0px !important;
         }
     }
 </style>

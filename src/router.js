@@ -30,6 +30,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     const title = to.path.split('/')[1];
     document.title = title.charAt(0).toUpperCase() + title.slice(1, title.length);
+    window.scrollTo(0, 0);
     next();
 })
 

@@ -1,30 +1,31 @@
 <template>
     <v-navigation-drawer
       v-model="drawer"
-      absolute
+      fixed
+      app    
     >
-    <v-list-item>
-        <v-list-item-content>
-            <v-list-item-title class="title">
-                VonkProgramming
-            </v-list-item-title>
-        </v-list-item-content>
-    </v-list-item>
+        <v-list-item>
+            <v-list-item-content>
+                <v-list-item-title class="title">
+                    VonkProgramming
+                </v-list-item-title>
+            </v-list-item-content>
+        </v-list-item>
 
-    <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-list nav dense>
-          <v-list-item v-for="item in items" :key="item.link" :to="item.link">
-              <v-list-item-icon>
-                  <v-icon>{{ item.icon }}</v-icon>
-                  <v-list-item-content>
-                      <v-list-item-title>
-                          {{ item.text }}
-                      </v-list-item-title>
-                  </v-list-item-content>
-              </v-list-item-icon>
-          </v-list-item>
-      </v-list>
+        <v-list nav dense>
+            <v-list-item v-for="item in items" :key="item.link" :to="item.link">
+                <v-list-item-icon>
+                    <v-icon>{{ item.icon }}</v-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            {{ item.text }}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item-icon>
+            </v-list-item>
+        </v-list>
     </v-navigation-drawer>
 </template>
 
@@ -53,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-    .navigation-drawer {
+    .v-navigation-drawer {
         z-index: 200;
     }
 </style>

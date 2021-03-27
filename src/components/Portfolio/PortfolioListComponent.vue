@@ -2,11 +2,11 @@
     <div>
         <v-row justify="center" align="center" class="background">
             <v-col cols="1" class="d-none d-sm-flex d-md-flex">
-                <v-btn class="ma-4" fab @click="previous">
+                <v-btn class="ma-4" fab @click="previous" :disabled="stepChapter === 1">
                     <v-icon>mdi-arrow-left-bold</v-icon>
                 </v-btn>
             </v-col>
-            <v-col cols="12" sm="4" md="4" align="center" v-touch="{
+            <v-col cols="12" sm="6" md="4" lg="6" align="center" v-touch="{
                 left: () => swipe('Left'),
                 right: () => swipe('Right'),
                 up: () => swipe('Up'),
@@ -21,10 +21,34 @@
                 </v-stepper>
             </v-col>
             <v-col cols="1" class="d-none d-sm-flex d-md-flex">
-                <v-btn class="ma-4" fab @click="next">
+                <v-btn class="ma-4" fab @click="next" :disabled="stepChapter === items.length">
                     <v-icon>mdi-arrow-right-bold</v-icon>
                 </v-btn>
             </v-col>
+            <v-dialog v-model="mobile">
+                <v-card>
+                    <v-card-title class="headline grey lighten-2">
+                        Informatie
+                    </v-card-title>
+
+                    <v-card-text>
+                        Op de portfolio pagina kunt u als u een smartphone gebruikt. Navigeren door te swipen over de gepresenteerde kaart.
+                    </v-card-text>
+
+                    <v-divider></v-divider>
+
+                    <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                        color="primary"
+                        text
+                        @click="mobile = false"
+                    >
+                        Doorgaan
+                    </v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
         </v-row>
     </div>
 </template>
@@ -36,6 +60,7 @@ export default {
     data() {
         return {
             stepChapter: 1,
+            mobile: false,
             items: [
                 {
                     id: 1,
@@ -76,6 +101,9 @@ export default {
             ]
         }
     },
+    mounted() {
+        this.mobile = window.screen.width < 600;
+    },
     components: {
         PortfolioListItem
     },
@@ -111,7 +139,7 @@ export default {
 
     @media only screen and (max-width: 600px) {
         .background {
-            height: 120vh;
+            height: 110vh;
         }
     }
 </style>

@@ -33,7 +33,7 @@ export default {
             if(!this.interval) {
                 this.interval = setInterval(() => {
                     if(this.value < this.progressValue) {
-                        this.value += Math.round(Math.random() * 10);
+                        this.value += Math.round(Math.random() * 15);
                         if(this.value > this.progressValue) {
                             this.value = this.progressValue;
                         }

@@ -2,7 +2,7 @@
     <div>
         <v-row class="background" justify="center" align="center">
             <v-col cols="4" align-self="end" style="padding: 0px;" class="d-none d-sm-flex">
-                <img class="portrait" :src="require('@/assets/about/lars_profielfoto.png')" />
+                <img class="portrait" :src="require('@/assets/about/lars_profielfoto_v2-min.png')" />
             </v-col>
             <v-col cols="12" sm="4" md="4" class="white--text">
                 <h5 class="display-2">Wie ben ik?</h5>
@@ -123,7 +123,6 @@ export default {
         background-image: url('../../assets/backgrounds/bg-about-min.jpg');
         background-attachment: fixed;
         background-size: cover;
-        background-position-y: -200px;
         height: 102vh !important;
     }
 
@@ -139,7 +138,6 @@ export default {
         .background {
             height: 800px !important;
             z-index: 1;
-            background-position-y: 0px;
         }
     }
 </style>
