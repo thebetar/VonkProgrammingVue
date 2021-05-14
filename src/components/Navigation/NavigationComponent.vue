@@ -1,6 +1,6 @@
 <template>
-    <v-card class="rounded-0" flat :class="{ scrolled: isScroll }">
-        <v-app-bar dark class="d-flex justify-start justify-md-center" fixed flat :class="{ scrolled: isScroll }">
+    <div>
+        <v-app-bar class="d-flex justify-start justify-md-center" fixed flat dark :class="{ scrolled: isScroll }">
             <v-app-bar-nav-icon @click="emitDrawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
             <v-toolbar-title>
                 <router-link to="/home">
@@ -31,7 +31,7 @@
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
-    </v-card>
+    </div>
 </template>
 
 <script>

@@ -133,7 +133,7 @@ export default {
     .background {
         height: 105vh;
         width: 100vw;
-        background-image: url('../../assets/backgrounds/bg-portfolio.jpg');
+        background-image: url('../../assets/backgrounds/bg-portfolio-min.jpg');
         background-size: cover;
     }
 

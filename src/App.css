@@ -29,8 +29,16 @@ html {
         width: 0px;
     }
 
+    /* Do not use overflow, this will result in weird behaviour */
+    header {
+        width: 100vw !important;
+    }
+
+    footer {
+        width: 100vw !important;
+    }
+
     body {
-      overflow-x: hidden;
-      overflow-y: auto;
+        width: 100vw !important;
     }
 }
