@@ -112,12 +112,30 @@
     </v-row>
     <v-row class="home-page-media-2" justify="center" align="center">
       <v-col cols="12" sm="12" md="6" align="center">
+        <lottie-player
+          src="https://assets1.lottiefiles.com/packages/lf20_wjtudqmw.json"
+          mode="bounce"
+          background="transparent"
+          speed="1"
+          style="width: 400px; height: 400px;"
+          loop
+          autoplay
+        ></lottie-player>
         <h4 class="display-2">Responsief ontwerp</h4>
         <p class="body-2">Bereik uw publiek op elk apparaat</p>
       </v-col>
     </v-row>
     <v-row justify="center" class="pt-12">
       <v-col cols="12" sm="12" md="6" align="center">
+        <lottie-player
+          src="https://assets9.lottiefiles.com/packages/lf20_jt4mhmk1.json"
+          mode="bounce"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px;"
+          loop
+          autoplay
+        ></lottie-player>
         <h5 class="display-1">Van idee naar website!</h5>
         <p class="body-1 mt-4">
           VonkProgramming heeft contact met verschillende ontwerpers om uw idee
@@ -152,6 +170,15 @@
     </v-row>
     <v-row class="home-page-media-3" justify="center" align="center">
       <v-col cols="12" sm="12" md="6" align="center">
+        <lottie-player
+          src="https://assets7.lottiefiles.com/packages/lf20_Dlpepx.json"
+          mode="bounce"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px;"
+          loop
+          autoplay
+        ></lottie-player>
         <h4 class="display-2 text-sm-center">Flitsende snelheid</h4>
         <p class="body-2">
           Ik maak gebruik van de nieuwste technieken om uw website zo snel als

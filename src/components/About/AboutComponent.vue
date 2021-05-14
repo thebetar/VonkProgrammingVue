@@ -21,7 +21,7 @@
           style="width: 300px; height: 300px; margin: 16px;"
           loop
           autoplay
-          class="align-self-center"
+          class="align-self-center desktoponly"
         ></lottie-player>
         <h5 class="display-2">Wie ben ik?</h5>
         <p class="body-1">
