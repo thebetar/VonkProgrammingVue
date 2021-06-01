@@ -29,7 +29,7 @@
         <v-hover v-slot="{ hover }">
           <v-card
             :elevation="hover ? 12 : 2"
-            class="pa-4 d-flex flex-column align-center"
+            class="pa-4 d-flex flex-column align-center card-size"
             :class="{ 'card-hover': hover }"
           >
             <lottie-player
@@ -83,7 +83,7 @@
         <v-hover v-slot="{ hover }">
           <v-card
             :elevation="hover ? 12 : 2"
-            class="pa-4 d-flex flex-column align-center"
+            class="pa-4 d-flex flex-column align-center card-size"
             :class="{ 'card-hover': hover }"
           >
             <lottie-player
@@ -234,9 +234,18 @@
   background-attachment: fixed;
 }
 
+.card-size {
+  height: 760px;
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 600px) {
   .home-page-media-1 {
     height: 100vh;
+  }
+  .card-size {
+    height: auto;
   }
 }
 </style>
