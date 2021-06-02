@@ -117,6 +117,7 @@
           mode="bounce"
           background="transparent"
           speed="1"
+          class="sizeable-lottie"
           style="width: 400px; height: 400px;"
           loop
           autoplay
@@ -246,6 +247,10 @@
   }
   .card-size {
     height: auto;
+  }
+  .sizeable-lottie {
+    height: 300px;
+    width: 300px;
   }
 }
 </style>
