@@ -1,43 +1,91 @@
 <template>
-    <v-card height="500">
-        <div class="card-center">
-            <v-img
-                max-width="300"
-                contain
-                :src="require('@/'+item.imageUrl)"
-            ></v-img>
-            <v-card-title class="justify-center d-none d-sm-block d-md-block">
-                {{ item.title }}
-            </v-card-title>
-            <v-card-text>
-                <p class="px-0 px-md-1">
-                    {{ item.description }}
-                </p>
-            </v-card-text>
-        </div>
-    </v-card>
+	<v-card
+		:color="item.color"
+		class="alert-card"
+		:class="{ 'pa-4': !isMobile }"
+	>
+		<v-card-text>
+			<v-row :class="{ 'flex-column': isMobile }">
+				<v-col
+					v-if="!isRight"
+					cols="12"
+					md="4"
+					class="d-flex align-center justify-center"
+				>
+					<img
+						v-if="item.imageUrl"
+						:src="require('@/assets/portfolio/' + item.imageUrl)"
+						class="portfolio-pic"
+					/>
+				</v-col>
+				<v-col cols="12" md="8" :class="{ 'text-left': isMobile }">
+					<p
+						:class="{
+							'text-center': isMobile
+						}"
+					>
+						<b
+							:class="{
+								title: !isMobile
+							}"
+						>
+							{{ item.title }}
+						</b>
+					</p>
+					<p>
+						{{ item.description }}
+					</p>
+				</v-col>
+				<v-col
+					v-if="isRight"
+					cols="4"
+					class="d-flex align-center justify-center"
+				>
+					<img
+						v-if="item.imageUrl"
+						:src="require('@/assets/portfolio/' + item.imageUrl)"
+						class="portfolio-pic"
+					/>
+				</v-col>
+			</v-row>
+		</v-card-text>
+	</v-card>
 </template>
 
 <script>
 export default {
-    props: {
-        item: Object
-    }
-}
+	mounted() {
+		console.log(this.isMobile);
+	},
+	props: {
+		item: Object,
+		index: Number,
+		isMobile: Boolean
+	},
+	computed: {
+		isRight() {
+			return this.index % 2 === 0 && !this.isMobile;
+		}
+	}
+};
 </script>
 
 <style scoped>
-    .card-center {
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
+.portfolio-pic {
+	max-width: 140px;
+	border-radius: 8px;
+	border: 2px solid black;
+	padding: 8px;
+	background: white;
+}
 
-    @media only screen and (max-width: 600px) {
-        .card {
-            height: 120% !important;
-        }
-    }
+@media only screen and (max-width: 600px) {
+	.portfolio-pic {
+		max-width: 100px;
+		padding: 4px;
+	}
+	.alert-card {
+		font-size: 12px;
+	}
+}
 </style>

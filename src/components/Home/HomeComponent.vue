@@ -123,7 +123,9 @@
           autoplay
         ></lottie-player>
         <h4 class="display-2">Responsief ontwerp</h4>
-        <p class="body-2">Bereik uw publiek op elk apparaat</p>
+        <p class="body-2">
+          Bereik uw publiek op elk apparaat
+        </p>
       </v-col>
     </v-row>
     <v-row justify="center" class="pt-12">
@@ -249,8 +251,8 @@
     height: auto;
   }
   .sizeable-lottie {
-    height: 300px;
-    width: 300px;
+    height: 300px !important;
+    width: 300px !important;
   }
 }
 </style>
