@@ -7,7 +7,7 @@
 						<v-col cols="12" md="4" class="text-center">
 							<lottie-player
 								src="https://assets1.lottiefiles.com/packages/lf20_bp5lntrf.json"
-								style="width: 300px; height: 300px;"
+								style="width: 300px; height: 300px; margin: auto;"
 								speed="1"
 								autoplay
 							>
@@ -36,7 +36,7 @@
 			<v-col cols="12" md="8" class="mt-6">
 				<v-timeline :dense="isMobile">
 					<v-timeline-item
-						v-for="(item, index) in items"
+						v-for="(item, index) in jobs"
 						:class="{ 'text-right': index % 2 === 0 }"
 						:key="item.id"
 						:color="item.color"
@@ -47,6 +47,54 @@
 							:index="index"
 							:is-mobile="isMobile"
 						></portfolio-list-item>
+					</v-timeline-item>
+				</v-timeline>
+			</v-col>
+		</v-row>
+		<v-row justify="center" align="center" class="background">
+			<v-col cols="12" md="6" class="mt-16">
+				<v-card color="red" class="pa-md-8 pa-4">
+					<v-row justify="center">
+						<v-col cols="12" class="text-center">
+							<lottie-player
+								src="https://assets2.lottiefiles.com/packages/lf20_wepuwkno.json"
+								style="width: 300px; height: 300px; margin: auto;"
+								speed="1"
+								autoplay
+							>
+							</lottie-player>
+						</v-col>
+					</v-row>
+					<v-card-title>
+						Certificaten en diploma's
+					</v-card-title>
+					<v-card-text>
+						Hieronder staan alle certificaten en diploma's die ik
+						behaald heb.
+					</v-card-text>
+				</v-card>
+			</v-col>
+			<v-col cols="12" md="8" class="mt-6">
+				<v-timeline :dense="isMobile">
+					<v-timeline-item
+						v-for="(item, index) in achievements"
+						:key="item.id"
+						fill-dot
+						:color="item.color"
+					>
+						<template v-slot:opposite>
+							<span class="headline font-weight-bold">
+								{{ item.year }}
+							</span>
+						</template>
+						<v-alert
+							dense
+							class="py-6 title"
+							:class="{ 'text-right': index % 2 !== 0 }"
+							:color="item.color"
+						>
+							{{ item.certificate }} - {{ item.where }}
+						</v-alert>
 					</v-timeline-item>
 				</v-timeline>
 			</v-col>
@@ -62,7 +110,7 @@ export default {
 		return {
 			stepChapter: 1,
 			mobile: false,
-			items: [
+			jobs: [
 				{
 					id: 1,
 					title: 'Student Aan Huis',
@@ -70,6 +118,14 @@ export default {
 						'Aan het einde van het eerste jaar van mijn opleiding HBO-ICT ben ik begonnen bij StudentAanHuis. Hier hielp ik mensen met hun computer problemen. Dit ging van printers opnieuw instellen tot hele Windows systemen herstellen.',
 					imageUrl: 'sah-logo-min.jpg',
 					color: 'indigo'
+				},
+				{
+					id: 11,
+					title: 'Kookstudio Amsterdam',
+					description:
+						'Ik heb tijdens mijn tweede jaar van mijn opleiding een website gebouwd voor kookstudio Amsterdam met een eigen admin paneel gemaakt in PHP',
+					imageUrl: 'kookstudio-min.png',
+					color: 'purple'
 				},
 				{
 					id: 2,
@@ -91,7 +147,7 @@ export default {
 					id: 4,
 					title: 'BijIngrid',
 					description:
-						'Ik heb voor Ingrid met mijn beginnende web development ervaring een website gemaakt om workshops op te geven. Deze website heeft een zelf gemaakt admin paneel',
+						'Ik heb voor Ingrid met mijn beginnende web development ervaring een website gemaakt om workshops op te geven. Deze website heeft een zelf gemaakt admin paneel gemaakt in PHP.',
 					imageUrl: 'bijingrid-min.png',
 					color: 'purple'
 				},
@@ -115,7 +171,7 @@ export default {
 					id: 7,
 					title: 'Hoveniersbedrijf Wouters',
 					description:
-						'Ik heb voor HoveniersBedrijf Wouters na mijn opleiding een website gemaakt met een professionele uitstraling en een snelle interface.',
+						'Ik heb voor HoveniersBedrijf Wouters na mijn opleiding een website gemaakt met een professionele uitstraling en een snelle interface. Deze website is volledig gebouwd met VueJS',
 					imageUrl: 'hoveniersbedrijf-wouters-min.jpg',
 					color: 'purple'
 				},
@@ -136,12 +192,125 @@ export default {
 					color: 'purple'
 				},
 				{
+					id: 12,
+					title: 'SVB',
+					description:
+						'Mijn eerste opdracht vanuit Quintor is bij de SVB, hier programmeer ik voornamelijk in Javascript in het framework Angular',
+					imageUrl: 'SVB-min.jpg',
+					color: 'indigo'
+				},
+				{
 					id: 10,
 					title: 'J-Tax Automotive',
 					description:
 						'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten.',
 					imageUrl: 'j-tax-min.png',
 					color: 'purple'
+				}
+			],
+			achievements: [
+				{
+					id: 1,
+					certificate: `Bachelor's degree, HBO-ICT`,
+					where: 'Windesheim Flevoland',
+					year: 2020,
+					color: 'cyan'
+				},
+				{
+					id: 6,
+					certificate: 'AWS Certified Practitioner',
+					where: 'Amazon Web Services',
+					year: 'Februari 2021',
+					color: 'indigo'
+				},
+				{
+					id: 14,
+					certificate: 'Young Professional Programma',
+					where: 'Quintor',
+					year: 'November 2021',
+					color: 'cyan'
+				},
+				{
+					id: 2,
+					certificate:
+						'Learn DevOps: CI/CD with Jenkins using Pipelines and Docker',
+					where: 'Udemy',
+					year: 'Mei 2021',
+					color: 'indigo'
+				},
+				{
+					id: 3,
+					certificate:
+						'2021 Complete Python Bootcamp from Zero to Hero in Python',
+					where: 'Udemy',
+					year: 'Maart 2021',
+					color: 'cyan'
+				},
+				{
+					id: 4,
+					certificate: 'Docker & Kubernetes: The Practical Guide',
+					where: 'Udemy',
+					year: 'Maart 2021',
+					color: 'indigo'
+				},
+				{
+					id: 5,
+					certificate: 'Nuxt.js - Vue.js on Steroids',
+					where: 'Udemy',
+					year: 'Maart 2021',
+					color: 'cyan'
+				},
+				{
+					id: 12,
+					certificate:
+						'React - The Complete Guid (incl Hooks, ReactRouter, Redux)',
+					where: 'Udemy',
+					year: 'Februari 2021',
+					color: 'indigo'
+				},
+				{
+					id: 7,
+					certificate: 'Angular - The Complete Guide (2021 Edition)',
+					where: 'Udemy',
+					year: 'Januari 2021',
+					color: 'cyan'
+				},
+				{
+					id: 8,
+					certificate: 'Understanding TypeScript - 2021 Edition',
+					where: 'Udemy',
+					year: 'Januari 2021',
+					color: 'indigo'
+				},
+				{
+					id: 9,
+					certificate: 'Sales Training: Practical Sales Techniques',
+					where: 'Udemy',
+					year: 'December 2020',
+					color: 'cyan'
+				},
+				{
+					id: 10,
+					certificate:
+						'Vue - The Complete Guide (w/ Router, Vuex, Composition API)',
+					where: 'Udemy',
+					year: 'December 2020',
+					color: 'indigo'
+				},
+				{
+					id: 11,
+					certificate:
+						'Java Programming Masterclass for Software Developers',
+					where: 'Udemy',
+					year: 'September 2020',
+					color: 'cyan'
+				},
+				{
+					id: 13,
+					certificate: 'Learn and Understand NodeJS',
+					where: 'Udemy',
+					year: 'Juli 2021',
+					color: 'indigo'
 				}
 			]
 		};
@@ -181,7 +350,8 @@ export default {
 	width: 100vw;
 	padding-bottom: 80px;
 	background-image: url('../../assets/backgrounds/bg-portfolio-min.jpg');
-	background-size: cover;
+	background-size: 100vw 100vh;
+	background-attachment: fixed;
 	overflow-y: hidden;
 }
 </style>
