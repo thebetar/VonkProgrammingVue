@@ -9,6 +9,7 @@
 								src="https://assets1.lottiefiles.com/packages/lf20_bp5lntrf.json"
 								style="width: 300px; height: 300px; margin: auto;"
 								speed="1"
+								loop
 								autoplay
 							>
 							</lottie-player>
@@ -60,6 +61,7 @@
 								src="https://assets2.lottiefiles.com/packages/lf20_wepuwkno.json"
 								style="width: 300px; height: 300px; margin: auto;"
 								speed="1"
+								loop
 								autoplay
 							>
 							</lottie-player>
@@ -80,18 +82,28 @@
 						v-for="(item, index) in achievements"
 						:key="item.id"
 						fill-dot
-						:color="item.color"
+						:color="index % 2 === 0 ? 'indigo' : 'cyan'"
 					>
 						<template v-slot:opposite>
-							<span class="headline font-weight-bold">
+							<span
+								class="headline font-weight-bold"
+								:class="
+									index % 2 === 0
+										? 'indigo--text'
+										: 'cyan--text'
+								"
+							>
 								{{ item.year }}
 							</span>
 						</template>
 						<v-alert
+							text
 							dense
-							class="py-6 title"
-							:class="{ 'text-right': index % 2 !== 0 }"
-							:color="item.color"
+							class="py-6 subtitle"
+							:class="{
+								'text-right': index % 2 !== 0 && !isMobile
+							}"
+							:color="index % 2 === 0 ? 'indigo' : 'cyan'"
 						>
 							{{ item.certificate }} - {{ item.where }}
 						</v-alert>
@@ -112,7 +124,6 @@ export default {
 			mobile: false,
 			jobs: [
 				{
-					id: 1,
 					title: 'Student Aan Huis',
 					description:
 						'Aan het einde van het eerste jaar van mijn opleiding HBO-ICT ben ik begonnen bij StudentAanHuis. Hier hielp ik mensen met hun computer problemen. Dit ging van printers opnieuw instellen tot hele Windows systemen herstellen.',
@@ -120,7 +131,6 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 11,
 					title: 'Kookstudio Amsterdam',
 					description:
 						'Ik heb tijdens mijn tweede jaar van mijn opleiding een website gebouwd voor kookstudio Amsterdam met een eigen admin paneel gemaakt in PHP',
@@ -128,7 +138,6 @@ export default {
 					color: 'purple'
 				},
 				{
-					id: 2,
 					title: 'Sanoma',
 					description:
 						'In het tweede jaar van mijn opleiding HBO-ICT heb ik het volledige jaar bij Sanoma Media stage gelopen. Sanoma Media was destijds nog onderdeel van Sanoma. Hier heb ik mij bezig gehouden met software voor advertising. Dit was in de talen PHP, CSS, MySQL en HTML.',
@@ -136,7 +145,6 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 3,
 					title: 'Innovative Cycling',
 					description:
 						'Aan het einde van het tweede jaar van mijn opleiding HBO-ICT ben ik begonnen bij het studenten programmeur uitzendbureau Kojac. Hier kreeg ik de opdracht bij Innovative cycling de websites te onderhouden en te updaten. Hier heb ik gebruik gemaakt van Javascript, PHP, CSS, MySQL en HTML.',
@@ -144,7 +152,6 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 4,
 					title: 'BijIngrid',
 					description:
 						'Ik heb voor Ingrid met mijn beginnende web development ervaring een website gemaakt om workshops op te geven. Deze website heeft een zelf gemaakt admin paneel gemaakt in PHP.',
@@ -152,7 +159,6 @@ export default {
 					color: 'purple'
 				},
 				{
-					id: 5,
 					title: 'Floriade',
 					description:
 						'In het derde jaar van mijn opleiding HBO-ICT heb ik stage gelopen voor het Floriade project. Dit was eerst voor de gemeente Almere en werd later verplaatst naar het Floriade gebouw. Hier heb ik mij met een team bezig gehouden met een van de onderdelen van de Floriade. Hier heb ik gebruik gemaakt van PHP, CSS, MySQL en HTML.',
@@ -160,7 +166,6 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 6,
 					title: 'MedWeb',
 					description:
 						'In het laatste jaar van mijn opleiding HBO-ICT heb ik stage gelopen bij het bedrijf Medweb B.V.. Dit is een software bedrijf die zich bezig houdt met een rooster applicatie specifiek gericht op medisch specialisten en artsen. Ik heb mij hier bezig gehouden met het vernieuwen van een van de onderdelen van hun applicatie "Medspace". Hier heb ik gebruik gemaakt van VueJS/Javascript, IBM Notes, IBM Domino designer, CSS en HTML.',
@@ -168,7 +173,6 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 7,
 					title: 'Hoveniersbedrijf Wouters',
 					description:
 						'Ik heb voor HoveniersBedrijf Wouters na mijn opleiding een website gemaakt met een professionele uitstraling en een snelle interface. Deze website is volledig gebouwd met VueJS',
@@ -176,7 +180,6 @@ export default {
 					color: 'purple'
 				},
 				{
-					id: 8,
 					title: 'Quintor',
 					description:
 						'Momenteel werk ik bij IT consultancy bedrijf Quintor. Dit bedrijf houdt zich bezig met het adviseren over en bouwen van software. Dit bij grote klanten als de ING, de overheid, etc. Bij dit bedrijf houdt ik mij bezig met mijn programmeervaardigheden verbeteren zodat deze aan de hoogst mogelijke standaard kunnen voldoen.',
@@ -184,7 +187,6 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 9,
 					title: 'Chary Solutions',
 					description:
 						'Ik heb voor Chary Solutions software gemaakt om hun advertising data uit hun Facebook business manager te halen en dit vervolgens te exporteren naar google sheets',
@@ -192,7 +194,6 @@ export default {
 					color: 'purple'
 				},
 				{
-					id: 12,
 					title: 'SVB',
 					description:
 						'Mijn eerste opdracht vanuit Quintor is bij de SVB, hier programmeer ik voornamelijk in Javascript in het framework Angular',
@@ -200,119 +201,96 @@ export default {
 					color: 'indigo'
 				},
 				{
-					id: 10,
 					title: 'J-Tax Automotive',
 					description:
 						'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten.',
 					imageUrl: 'j-tax-min.png',
 					color: 'purple'
 				}
-			],
+			].map(item => ({ id: Math.random(), ...item })),
 			achievements: [
 				{
-					id: 1,
 					certificate: `Bachelor's degree, HBO-ICT`,
 					where: 'Windesheim Flevoland',
-					year: 2020,
-					color: 'cyan'
+					year: 2020
 				},
 				{
-					id: 6,
 					certificate: 'AWS Certified Practitioner',
 					where: 'Amazon Web Services',
-					year: 'Februari 2021',
-					color: 'indigo'
+					year: 'Februari 2021'
 				},
 				{
-					id: 14,
 					certificate: 'Young Professional Programma',
 					where: 'Quintor',
-					year: 'November 2021',
-					color: 'cyan'
+					year: 'November 2021'
 				},
 				{
-					id: 2,
+					certificate:
+						'Electron From Scratch: Build Desktop Apps With JavaScript',
+					where: 'Udemy',
+					year: 'Juli 2021'
+				},
+				{
 					certificate:
 						'Learn DevOps: CI/CD with Jenkins using Pipelines and Docker',
 					where: 'Udemy',
-					year: 'Mei 2021',
-					color: 'indigo'
+					year: 'Mei 2021'
 				},
 				{
-					id: 3,
 					certificate:
 						'2021 Complete Python Bootcamp from Zero to Hero in Python',
 					where: 'Udemy',
-					year: 'Maart 2021',
-					color: 'cyan'
+					year: 'Maart 2021'
 				},
 				{
-					id: 4,
 					certificate: 'Docker & Kubernetes: The Practical Guide',
 					where: 'Udemy',
-					year: 'Maart 2021',
-					color: 'indigo'
+					year: 'Maart 2021'
 				},
 				{
-					id: 5,
 					certificate: 'Nuxt.js - Vue.js on Steroids',
 					where: 'Udemy',
-					year: 'Maart 2021',
-					color: 'cyan'
+					year: 'Maart 2021'
 				},
 				{
-					id: 12,
 					certificate:
 						'React - The Complete Guid (incl Hooks, ReactRouter, Redux)',
 					where: 'Udemy',
-					year: 'Februari 2021',
-					color: 'indigo'
+					year: 'Februari 2021'
 				},
 				{
-					id: 7,
 					certificate: 'Angular - The Complete Guide (2021 Edition)',
 					where: 'Udemy',
-					year: 'Januari 2021',
-					color: 'cyan'
+					year: 'Januari 2021'
 				},
 				{
-					id: 8,
 					certificate: 'Understanding TypeScript - 2021 Edition',
 					where: 'Udemy',
-					year: 'Januari 2021',
-					color: 'indigo'
+					year: 'Januari 2021'
 				},
 				{
-					id: 9,
 					certificate: 'Sales Training: Practical Sales Techniques',
 					where: 'Udemy',
-					year: 'December 2020',
-					color: 'cyan'
+					year: 'December 2020'
 				},
 				{
-					id: 10,
 					certificate:
 						'Vue - The Complete Guide (w/ Router, Vuex, Composition API)',
 					where: 'Udemy',
-					year: 'December 2020',
-					color: 'indigo'
+					year: 'December 2020'
 				},
 				{
-					id: 11,
 					certificate:
 						'Java Programming Masterclass for Software Developers',
 					where: 'Udemy',
-					year: 'September 2020',
-					color: 'cyan'
+					year: 'September 2020'
 				},
 				{
-					id: 13,
 					certificate: 'Learn and Understand NodeJS',
 					where: 'Udemy',
-					year: 'Juli 2021',
-					color: 'indigo'
+					year: 'Juli 2021'
 				}
-			]
+			].map(item => ({ id: Math.random(), ...item }))
 		};
 	},
 	methods: {

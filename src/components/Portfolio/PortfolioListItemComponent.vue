@@ -54,9 +54,6 @@
 
 <script>
 export default {
-	mounted() {
-		console.log(this.isMobile);
-	},
 	props: {
 		item: Object,
 		index: Number,
