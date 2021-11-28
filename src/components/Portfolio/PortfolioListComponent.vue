@@ -97,7 +97,6 @@
 							</span>
 						</template>
 						<v-alert
-							text
 							dense
 							class="py-6 subtitle"
 							:class="{

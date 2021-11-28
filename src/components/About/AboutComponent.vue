@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-row class="background" justify="center" align="center">
+		<v-row class="background-sizeable" justify="center" align="center">
 			<v-col
 				cols="4"
 				align-self="end"
@@ -8,6 +8,7 @@
 				class="d-none d-sm-flex"
 			>
 				<img
+					id="portrait"
 					class="portrait"
 					:src="require('@/assets/about/lars_profielfoto_v2-min.png')"
 				/>
@@ -96,7 +97,7 @@
 				</v-timeline>
 			</v-col>
 		</v-row>
-		<v-row class="background" justify="center" align="center">
+		<v-row class="background-sizeable" justify="center" align="center">
 			<v-col
 				cols="12"
 				sm="4"
@@ -144,13 +145,13 @@ export default {
 					language: 'NodeJS',
 					color: 'green',
 					years: 2,
-					progress: 70
+					progress: 80
 				},
 				{
-					language: 'Ionic',
+					language: 'Typescript',
 					color: 'blue',
-					years: 1,
-					progress: 50
+					years: 2,
+					progress: 80
 				},
 				{
 					language: 'PHP',
@@ -179,6 +180,14 @@ export default {
 			]
 		};
 	},
+	mounted() {
+		window.onscroll = function() {
+			const yPos = window.pageYOffset;
+			const opacity = (yPos / 300) * -1 + 1;
+			document.querySelector('#portrait').style.opacity =
+				opacity > 0 ? opacity : 0;
+		};
+	},
 	components: {
 		AboutProgressComponent
 	}
@@ -186,7 +195,8 @@ export default {
 </script>
 
 <style scoped>
-.background {
+.background,
+.background-sizeable {
 	background-image: url('../../assets/backgrounds/bg-about-min.jpg');
 	background-attachment: fixed;
 	background-size: cover;
@@ -195,6 +205,8 @@ export default {
 
 .portrait {
 	height: 600px;
+	position: fixed;
+	bottom: 0px;
 }
 
 .icon {
@@ -202,8 +214,14 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
+	.background-sizeable {
+		height: 110vh !important;
+		padding: 0px 20px;
+		z-index: 1;
+	}
 	.background {
 		height: 800px !important;
+		padding: 0px 20px;
 		z-index: 1;
 	}
 }
