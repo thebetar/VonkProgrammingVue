@@ -287,7 +287,7 @@ export default {
 				{
 					certificate: 'Learn and Understand NodeJS',
 					where: 'Udemy',
-					year: 'Juli 2021'
+					year: 'Juli 2020'
 				}
 			].map(item => ({ id: Math.random(), ...item }))
 		};

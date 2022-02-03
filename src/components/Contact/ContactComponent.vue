@@ -78,12 +78,18 @@
 											type="submit"
 											class="float-right pa-5"
 											color="primary"
+											:disabled="!isValid"
 											>Stuur</v-btn
 										>
 									</v-form>
-									<div class="display-1 mt-4" v-else>
-										Verstuurd
-									</div>
+									<lottie-player
+										v-else
+										src="https://assets4.lottiefiles.com/packages/lf20_iu3iarbe.json"
+										background="transparent"
+										speed="1"
+										style="width: 300px; height: 300px; margin: auto;"
+										autoplay
+									></lottie-player>
 								</transition>
 							</v-col>
 						</v-row>
@@ -106,6 +112,16 @@ export default {
 			description: ''
 		};
 	},
+	computed: {
+		isValid() {
+			const form = {
+				name: this.name,
+				email: this.email,
+				text: this.description
+			};
+			return this.validate(form);
+		}
+	},
 	methods: {
 		async onSubmit() {
 			const form = {
@@ -113,12 +129,24 @@ export default {
 				email: this.email,
 				text: this.description
 			};
-			try {
-				await axios.post('/server/mail.php', form);
-				this.show = false;
-			} catch (e) {
-				console.error(e);
+			if (this.validate(form)) {
+				try {
+					await axios.post('/server/mail.php', form);
+					this.show = false;
+				} catch (e) {
+					console.error(e);
+				}
+			} else {
+				this.isValid = false;
 			}
+		},
+		validate(form) {
+			const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+			return (
+				form.name.length > 0 &&
+				EMAIL_REGEX.test(form.email) &&
+				form.text.length > 0
+			);
 		}
 	}
 };

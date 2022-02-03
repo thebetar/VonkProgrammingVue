@@ -115,11 +115,11 @@
 					>
 				</p>
 				<lottie-player
-					src="https://assets2.lottiefiles.com/packages/lf20_h59xofz0.json"
+					src="https://assets1.lottiefiles.com/packages/lf20_0tue65cn.json"
 					mode="bounce"
 					background="transparent"
 					speed="1"
-					style="width: 300px; height: 300px; margin: 16px;"
+					style="width: 600px; height: 300px; margin: 16px;"
 					loop
 					autoplay
 				></lottie-player>
