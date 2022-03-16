@@ -56,7 +56,7 @@
 				</div>
 			</v-col>
 		</v-row>
-		<v-row justify="center" class="my-6 pb-12">
+		<v-row justify="center" class="mt-6">
 			<v-col cols="12" sm="12" md="4" align="center">
 				<v-hover v-slot="{ hover }">
 					<v-card
@@ -161,6 +161,9 @@
 				</v-hover>
 			</v-col>
 		</v-row>
+		<v-row class="wave-div">
+			<wavey-divider-bottom></wavey-divider-bottom>
+		</v-row>
 		<v-row class="home-page-media-2" justify="center" align="center">
 			<v-col cols="12" sm="12" md="5">
 				<vue-lottie
@@ -179,7 +182,10 @@
 				</p>
 			</v-col>
 		</v-row>
-		<v-row justify="center" class="pt-12">
+		<v-row class="wave-div">
+			<wavey-divider-top></wavey-divider-top>
+		</v-row>
+		<v-row justify="center">
 			<v-col cols="12" sm="12" md="6" align="center">
 				<vue-lottie
 					class="desktoponly"
@@ -200,7 +206,7 @@
 				</p>
 			</v-col>
 		</v-row>
-		<v-row justify="center" class="pb-12">
+		<v-row justify="center">
 			<v-col cols="12" sm="12" md="3" align="center">
 				<h6 class="title">Frameworks</h6>
 				<p class="body-2">
@@ -223,6 +229,9 @@
 				</p>
 			</v-col>
 		</v-row>
+		<v-row class="wave-div">
+			<wavey-divider-bottom></wavey-divider-bottom>
+		</v-row>
 		<v-row class="home-page-media-3" justify="center" align="center">
 			<v-col cols="12" sm="12" md="6" align="center">
 				<vue-lottie
@@ -237,11 +246,18 @@
 				</p>
 			</v-col>
 		</v-row>
+		<v-row class="wave-div">
+			<wavey-divider-top></wavey-divider-top>
+		</v-row>
 	</div>
 </template>
 
 <script>
 import VueLottie from 'vue-lottie';
+
+import WaveyDividerTop from '../shared/WaveyDividerTop.vue';
+import WaveyDividerBottom from '../shared/WaveyDividerBottom.vue';
+
 import introAnimationData from '../../assets/lotties/home-intro.json';
 import matrixAnimationData from '../../assets/lotties/home-matrix.json';
 import processAnimationData from '../../assets/lotties/home-process.json';
@@ -268,7 +284,9 @@ export default {
 		}
 	},
 	components: {
-		VueLottie
+		VueLottie,
+		WaveyDividerTop,
+		WaveyDividerBottom
 	}
 };
 </script>
@@ -291,6 +309,10 @@ body {
 	margin-top: -140px !important;
 	padding: 32px 80px;
 	background-color: #fff;
+}
+
+.row {
+	position: relative;
 }
 
 .home-page-media-1 {
@@ -344,6 +366,20 @@ body {
 	.sizeable-lottie {
 		height: 300px !important;
 		width: 300px !important;
+	}
+}
+</style>
+
+<style>
+.wave-div {
+	width: 100vw;
+	height: 60vh;
+	margin-bottom: -140px !important;
+	margin-top: -100px !important;
+}
+@media only screen and (max-width: 600px) {
+	.wave-div {
+		display: none;
 	}
 }
 </style>

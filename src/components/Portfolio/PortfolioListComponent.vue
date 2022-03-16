@@ -301,7 +301,7 @@ export default {
 				{
 					certificate: 'Learn and Understand NodeJS',
 					where: 'Udemy',
-					year: 'Juli 2021'
+					year: 'Juli 2020'
 				}
 			].map(this.addRandomId),
 			jobsAnimationData,
