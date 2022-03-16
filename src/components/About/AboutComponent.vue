@@ -185,7 +185,7 @@ export default {
 		window.onscroll = function() {
 			const yPos = window.pageYOffset;
 			const opacity = (yPos / 300) * -1 + 1;
-			const portrait = this.$refs.portait;
+			const portrait = document.querySelector('#portrait');
 			if (portrait) {
 				portrait.style.opacity = opacity > 0 ? opacity : 0;
 			}
@@ -201,9 +201,14 @@ export default {
 <style scoped>
 .background,
 .background-sizeable {
-	background-image: url('../../assets/backgrounds/bg-about-min.jpg');
+	background: rgb(61, 73, 89);
+	background: linear-gradient(
+		170deg,
+		rgba(61, 73, 89, 1) 0%,
+		rgba(118, 113, 106, 1) 58%,
+		rgba(223, 188, 138, 1) 100%
+	);
 	background-attachment: fixed;
-	background-size: cover;
 	height: 102vh !important;
 }
 

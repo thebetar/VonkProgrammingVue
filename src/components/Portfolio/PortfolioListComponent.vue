@@ -346,7 +346,7 @@ export default {
 .background {
 	width: 100vw;
 	padding-bottom: 80px;
-	background-image: url('../../assets/backgrounds/bg-portfolio-min.jpg');
+	background-color: #9b870c;
 	background-size: 100vw 100vh;
 	background-attachment: fixed;
 	overflow-y: hidden;

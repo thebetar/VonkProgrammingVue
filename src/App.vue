@@ -1,14 +1,20 @@
 <template>
 	<v-app>
 		<navigation-component :items="items" @drawerClick="showSidedrawer" />
-		<sidedrawer-component :items="items" :drawerProp="drawer" @close="hideSidedrawer" />
+		<sidedrawer-component
+			:items="items"
+			:drawerProp="drawer"
+			@close="hideSidedrawer"
+		/>
 
 		<v-main id="main">
 			<v-container fluid id="container">
-				<router-view />
+				<transition name="fade">
+					<router-view />
+				</transition>
 			</v-container>
 		</v-main>
-		
+
 		<footer-component />
 	</v-app>
 </template>
@@ -29,28 +35,28 @@ export default {
 		return {
 			drawer: false,
 			items: [
-        {
-            link: '/home',
-            icon: 'mdi-home',
-            text: 'Home'
-        },
-        {
-            link: '/portfolio',
-            icon: 'mdi-folder-account',
-            text: 'Portfolio'
-        },
-        {
-            link: '/contact',
-            icon: 'mdi-cellphone',
-            text: 'Contact'
-        },
-        {
-            link: '/about',
-            icon: 'mdi-emoticon-cool',
-            text: 'Over mij'
-        }
-      ]
-		}
+				{
+					link: '/home',
+					icon: 'mdi-home',
+					text: 'Home'
+				},
+				{
+					link: '/portfolio',
+					icon: 'mdi-folder-account',
+					text: 'Portfolio'
+				},
+				{
+					link: '/contact',
+					icon: 'mdi-cellphone',
+					text: 'Contact'
+				},
+				{
+					link: '/about',
+					icon: 'mdi-emoticon-cool',
+					text: 'Over mij'
+				}
+			]
+		};
 	},
 	methods: {
 		showSidedrawer() {

@@ -158,7 +158,7 @@ export default {
 
 <style scoped>
 .background {
-	background-image: url('../../assets/backgrounds/bg-contact-min.jpg');
+	background-color: #222;
 	background-attachment: fixed;
 	background-size: cover;
 	height: 102vh !important;

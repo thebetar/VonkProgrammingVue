@@ -4,7 +4,7 @@
 			<v-col
 				cols="12"
 				md="4"
-				:style="isDesktop ? {} : { marginTop: '60px' }"
+				:style="isDesktop ? { margin: '20px '} : { marginTop: '60px' }"
 			>
 				<vue-lottie
 					:options="{
