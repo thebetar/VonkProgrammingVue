@@ -9,6 +9,7 @@
 			>
 				<img
 					id="portrait"
+					ref="portait"
 					class="portrait"
 					:src="require('@/assets/about/lars_profielfoto_v2-min.png')"
 				/>
@@ -19,16 +20,15 @@
 				md="4"
 				class="white--text d-flex flex-column"
 			>
-				<lottie-player
-					src="https://assets7.lottiefiles.com/packages/lf20_vEfHlN.json"
-					mode="bounce"
-					background="transparent"
-					speed="1"
-					style="width: 300px; height: 300px; margin: 16px;"
-					loop
-					autoplay
+				<vue-lottie
+					:options="{
+						animationData: workingAnimationData,
+						loop: true
+					}"
+					:height="350"
+					:width="420"
 					class="align-self-center desktoponly"
-				></lottie-player>
+				></vue-lottie>
 				<h5 class="display-2">Wie ben ik?</h5>
 				<p class="body-1">
 					Hallo, ik ben Lars. Ik ben een gemotiveerd IT-consultant en
@@ -114,15 +114,11 @@
 						>Portfolio</router-link
 					>
 				</p>
-				<lottie-player
-					src="https://assets2.lottiefiles.com/packages/lf20_h59xofz0.json"
-					mode="bounce"
-					background="transparent"
-					speed="1"
-					style="width: 300px; height: 300px; margin: 16px;"
-					loop
-					autoplay
-				></lottie-player>
+				<vue-lottie
+					:options="{ animationData: projectsAnimationData }"
+					:height="400"
+					:width="400"
+				></vue-lottie>
 			</v-col>
 		</v-row>
 	</div>
@@ -130,6 +126,9 @@
 
 <script>
 import AboutProgressComponent from './AboutProgressComponent.vue';
+import VueLottie from 'vue-lottie';
+import projectsAnimationData from '../../assets/lotties/about-projects.json';
+import workingAnimationData from '../../assets/lotties/about-working.json';
 
 export default {
 	data() {
@@ -177,19 +176,24 @@ export default {
 					years: 5,
 					progress: 85
 				}
-			]
+			],
+			projectsAnimationData,
+			workingAnimationData
 		};
 	},
 	mounted() {
 		window.onscroll = function() {
 			const yPos = window.pageYOffset;
 			const opacity = (yPos / 300) * -1 + 1;
-			document.querySelector('#portrait').style.opacity =
-				opacity > 0 ? opacity : 0;
+			const portrait = this.$refs.portait;
+			if (portrait) {
+				portrait.style.opacity = opacity > 0 ? opacity : 0;
+			}
 		};
 	},
 	components: {
-		AboutProgressComponent
+		AboutProgressComponent,
+		VueLottie
 	}
 };
 </script>

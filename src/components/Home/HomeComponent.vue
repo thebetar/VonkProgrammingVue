@@ -1,28 +1,29 @@
 <template>
 	<div>
 		<v-row class="home-page-media-1" justify="center" align="center">
-			<v-col cols="0" md="3">
-				<lottie-player
-					src="https://assets2.lottiefiles.com/packages/lf20_jamhkybo.json"
-					mode="bounce"
-					background="transparent"
-					speed="1"
-					style="width: 500px; height: 500px; margin: 16px;"
-					loop
-					autoplay
-					class="align-self-center desktoponly"
-				></lottie-player>
+			<v-col
+				cols="12"
+				md="4"
+				:style="isDesktop ? {} : { marginTop: '60px' }"
+			>
+				<vue-lottie
+					:options="{
+						animationData: introAnimationData
+					}"
+					:width="isDesktop ? 500 : '100%'"
+				></vue-lottie>
 			</v-col>
-			<v-col offset="0" cols="12" md="3" class="d-flex flex-column">
+			<v-col offset="0" cols="12" md="4" class="d-flex flex-column">
 				<p class="text-h4 white--text">
-					Wij houden van uitdaging
+					Wij houden van uitdaging 💪
 				</p>
 				<div class="text-body-1 white--text">
 					<p>
-						Speelt er een
-						<span class="red--text">technische uitdaging</span>
-						binnen uw bedrijf of heeft u behoefte aan specifieke
-						<span class="red--text">maatwerksoftware</span>?
+						Heeft u een goed idee waar
+						<span class="red--text">maatwerk software</span>
+						voor nodig is, of heeft u behoefte aan een
+						gespecialiseerde
+						<span class="red--text">website</span>?
 					</p>
 					<p>
 						Wij kunnen het voor u maken.
@@ -35,7 +36,7 @@
 						color="primary"
 						@click="$router.push('/contact')"
 					>
-						Neem contact op
+						📞 Neem contact op
 					</v-btn>
 				</div>
 			</v-col>
@@ -44,13 +45,13 @@
 			<v-col cols="12" sm="12" md="6" align="center">
 				<div class=" home-page-header">
 					<h2 class="display-1">
-						Hoe gaan wij te werk?
+						🧑‍💼 Hoe gaan wij te werk?
 					</h2>
 					<p class="body-1 mt-4">
 						VonkProgramming is een Web development bedrijf dat zich
 						bezighoudt met maatwerk software solutions. Voor iedere
-						klant maken wij op maat gemaakte software, afgestemd op
-						uw behoeften.
+						klant maken wij op maat gemaakte software of websites,
+						afgestemd op uw behoeften.
 					</p>
 				</div>
 			</v-col>
@@ -63,15 +64,11 @@
 						class="pa-4 d-flex flex-column align-center card-size"
 						:class="{ 'card-hover': hover }"
 					>
-						<lottie-player
-							src="https://assets2.lottiefiles.com/packages/lf20_myryne1p/lottie_step1/data.json"
-							mode="bounce"
-							background="transparent"
-							speed="1"
-							style="width: 300px; height: 300px;"
-							loop
-							autoplay
-						></lottie-player>
+						<vue-lottie
+							:options="{ animationData: processAnimationData }"
+							:width="isDesktop ? 360 : 180"
+							:height="isDesktop ? 300 : 160"
+						/>
 						<v-card-title class="title text-center"
 							>Procesbeschrijving</v-card-title
 						>
@@ -120,47 +117,61 @@
 						class="pa-4 d-flex flex-column align-center card-size"
 						:class="{ 'card-hover': hover }"
 					>
-						<lottie-player
-							src="https://assets2.lottiefiles.com/packages/lf20_xsnsvpbs.json"
-							mode="bounce"
-							background="transparent"
-							speed="1"
-							style="width: 300px; height: 300px;"
-							loop
-							autoplay
-						></lottie-player>
+						<vue-lottie
+							:options="{
+								animationData: developmentAnimationData
+							}"
+							:width="isDesktop ? 400 : 300"
+							:height="isDesktop ? 400 : 300"
+						></vue-lottie>
 						<v-card-title class="title">
 							Webapplicatie Development
 						</v-card-title>
 						<v-card-text class="body-2">
-							Om garantie te geven dat jij daadwerkelijk
-							profiteert van uw nieuwe website, wordt ervoor
-							gezorgd dat tijdens het ontwikkelen van de website
-							er rekening gehouden wordt met interactiviteit. Niet
-							alleen zorg ik ervoor dat de website direct goed
-							vindbaar is, maar gebruik ik ook de nieuwste
-							development technieken waardoor schaalbaarheid en
-							snelheid vanzelfsprekend is.
+							<p>
+								VonkProgramming maakt gebruik van de nieuwste
+								technieken in het maken van software en website
+								binnen het web. Onze vaardigheden liggen bij
+								<span class="red--text">VueJS</span>,
+								<span class="red--text">React</span> en
+								<span class="red--text">Angular</span>.
+							</p>
+							<p>
+								Ook zijn wij gedreven in het maken van backends
+								in
+								<span class="red--text">Express</span> en
+								<span class="red--text">NestJS</span>.
+							</p>
+							<p>
+								Verder hebben is er ook ervaring in het gebruik
+								van <span class="red--text">Jenkins</span>,
+								<span class="red--text">unit testing</span>,
+								<span class="red--text">E2E testing</span> en
+								<span class="red--text">AWS</span>.
+							</p>
+							<p>
+								<b>Samenvattend</b> voor de
+								<b>niet technische mensen</b> is dit een
+								verzameling aan tools die gebruikt kan worden om
+								een enorme hoeveelheid aan software oplossingen
+								te maken. Wellicht ook voor uw probleem. 😉
+							</p>
 						</v-card-text>
 					</v-card>
 				</v-hover>
 			</v-col>
 		</v-row>
 		<v-row class="home-page-media-2" justify="center" align="center">
-			<v-col cols="12" sm="12" md="4">
-				<lottie-player
-					src="https://assets1.lottiefiles.com/packages/lf20_wjtudqmw.json"
-					mode="bounce"
-					background="transparent"
-					speed="1"
-					class="sizeable-lottie"
-					style="width: 600px; height: 600px;"
-					loop
-					autoplay
-				></lottie-player>
+			<v-col cols="12" sm="12" md="5">
+				<vue-lottie
+					class="desktoponly"
+					:options="{ animationData: responsiveAnimationData }"
+					:width="400"
+					:height="400"
+				/>
 			</v-col>
-			<v-col cols="0" md="4">
-				<h4 class="display-2">Responsief ontwerp</h4>
+			<v-col cols="0" md="5">
+				<h4 class="display-2">Responsief ontwerp 🤯</h4>
 				<p class="text-body-1">
 					Het is voor uw website belangrijk dat u op elk apparaat goed
 					te bereiken bent, daarom houden wij hier bij het ontwikkelen
@@ -170,15 +181,12 @@
 		</v-row>
 		<v-row justify="center" class="pt-12">
 			<v-col cols="12" sm="12" md="6" align="center">
-				<lottie-player
-					src="https://assets9.lottiefiles.com/packages/lf20_jt4mhmk1.json"
-					mode="bounce"
-					background="transparent"
-					speed="1"
-					style="width: 300px; height: 300px;"
-					loop
-					autoplay
-				></lottie-player>
+				<vue-lottie
+					class="desktoponly"
+					:options="{ animationData: ideaAnimationData }"
+					:width="400"
+					:height="400"
+				/>
 				<h5 class="display-1">Van idee naar website!</h5>
 				<p class="body-1 mt-4">
 					VonkProgramming heeft contact met verschillende ontwerpers
@@ -217,15 +225,11 @@
 		</v-row>
 		<v-row class="home-page-media-3" justify="center" align="center">
 			<v-col cols="12" sm="12" md="6" align="center">
-				<lottie-player
-					src="https://assets7.lottiefiles.com/packages/lf20_Dlpepx.json"
-					mode="bounce"
-					background="transparent"
-					speed="1"
-					style="width: 300px; height: 300px;"
-					loop
-					autoplay
-				></lottie-player>
+				<vue-lottie
+					:options="{ animationData: lightningAnimationData }"
+					:width="300"
+					:height="300"
+				/>
 				<h4 class="display-2 text-sm-center">Flitsende snelheid</h4>
 				<p class="body-2">
 					Ik maak gebruik van de nieuwste technieken om uw website zo
@@ -235,6 +239,39 @@
 		</v-row>
 	</div>
 </template>
+
+<script>
+import VueLottie from 'vue-lottie';
+import introAnimationData from '../../assets/lotties/home-intro.json';
+import matrixAnimationData from '../../assets/lotties/home-matrix.json';
+import processAnimationData from '../../assets/lotties/home-process.json';
+import developmentAnimationData from '../../assets/lotties/home-development.json';
+import responsiveAnimationData from '../../assets/lotties/home-responsive.json';
+import ideaAnimationData from '../../assets/lotties/home-idea.json';
+import lightningAnimationData from '../../assets/lotties/home-lightning.json';
+
+export default {
+	data() {
+		return {
+			introAnimationData,
+			processAnimationData,
+			developmentAnimationData,
+			responsiveAnimationData,
+			ideaAnimationData,
+			lightningAnimationData,
+			matrixAnimationData
+		};
+	},
+	computed: {
+		isDesktop() {
+			return window.outerWidth > 600;
+		}
+	},
+	components: {
+		VueLottie
+	}
+};
+</script>
 
 <style scoped>
 body {

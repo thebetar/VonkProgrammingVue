@@ -5,14 +5,14 @@
 				<v-card color="red" class="pa-8">
 					<v-row justify="center">
 						<v-col cols="12" md="4" class="text-center">
-							<lottie-player
-								src="https://assets1.lottiefiles.com/packages/lf20_bp5lntrf.json"
-								style="width: 300px; height: 300px; margin: auto;"
-								speed="1"
-								loop
-								autoplay
-							>
-							</lottie-player>
+							<vue-lottie
+								:options="{
+									animationData: jobsAnimationData,
+									mode: 'bounce'
+								}"
+								:width="300"
+								:height="300"
+							></vue-lottie>
 						</v-col>
 					</v-row>
 					<v-card-title>
@@ -21,16 +21,20 @@
 					<v-card-text>
 						Op deze pagina kunt u al mijn ervaringen bij andere
 						bedrijven zien. Alle
-						<span style="color: blue; font-weight: bold;"
-							>blauwe</span
-						>
+						<span style="color: blue; font-weight: bold;">
+							blauwe
+						</span>
 						kaarten zijn bedrijven waar ik gewerkt heb in vaste
 						dienst, alle
-						<span style="color: purple; font-weight: bold;"
-							>paarse</span
-						>
+						<span style="color: purple; font-weight: bold;">
+							paarse
+						</span>
 						bedrijven zijn bedrijven waar ik als zelfstandige voor
-						gewerkt heb.
+						gewerkt heb. Verderr zijn alle
+						<span style="color: red; font-weight: bold;">
+							rode
+						</span>
+						kaarten projecten die ik gemaakt heb.
 					</v-card-text>
 				</v-card>
 			</v-col>
@@ -57,14 +61,14 @@
 				<v-card color="red" class="pa-md-8 pa-4">
 					<v-row justify="center">
 						<v-col cols="12" class="text-center">
-							<lottie-player
-								src="https://assets2.lottiefiles.com/packages/lf20_wepuwkno.json"
-								style="width: 300px; height: 300px; margin: auto;"
-								speed="1"
-								loop
-								autoplay
+							<vue-lottie
+								:options="{
+									animationData: certificatesAnimationData
+								}"
+								:width="300"
+								:height="300"
 							>
-							</lottie-player>
+							</vue-lottie>
 						</v-col>
 					</v-row>
 					<v-card-title>
@@ -115,6 +119,9 @@
 
 <script>
 import PortfolioListItem from './PortfolioListItemComponent.vue';
+import VueLottie from 'vue-lottie';
+import jobsAnimationData from '../../assets/lotties/portfolio-jobs.json';
+import certificatesAnimationData from '../../assets/lotties/portfolio-certificates.json';
 
 export default {
 	data() {
@@ -205,8 +212,15 @@ export default {
 						'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten.',
 					imageUrl: 'j-tax-min.png',
 					color: 'purple'
+				},
+				{
+					title: 'Klets',
+					description:
+						'Klets is een social media app die ik gemaakt heb met behulp van Ionic. Deze app is gemaakt om op basis van een onderwerp en een aangegeven afstand mensen te zoeken en kleine groepschat (max 5) te vormen.',
+					imageUrl: 'klets.png',
+					color: 'red'
 				}
-			].map(item => ({ id: Math.random(), ...item })),
+			].map(this.addRandomId),
 			achievements: [
 				{
 					certificate: `Bachelor's degree, HBO-ICT`,
@@ -289,7 +303,9 @@ export default {
 					where: 'Udemy',
 					year: 'Juli 2021'
 				}
-			].map(item => ({ id: Math.random(), ...item }))
+			].map(this.addRandomId),
+			jobsAnimationData,
+			certificatesAnimationData
 		};
 	},
 	methods: {
@@ -309,6 +325,9 @@ export default {
 			} else if (direction === 'Right') {
 				this.previous();
 			}
+		},
+		addRandomId(obj) {
+			return { ...obj, id: Math.random() };
 		}
 	},
 	computed: {
@@ -317,7 +336,8 @@ export default {
 		}
 	},
 	components: {
-		PortfolioListItem
+		PortfolioListItem,
+		VueLottie
 	}
 };
 </script>

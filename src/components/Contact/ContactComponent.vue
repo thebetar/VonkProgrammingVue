@@ -2,7 +2,7 @@
 	<div>
 		<v-row class="background" justify="center" align="center">
 			<v-col cols="12" sm="6" md="6">
-				<v-card class="pa-2 pa-md-5 rounded-xl media-card" height="520">
+				<v-card class="pa-2 pa-md-5 rounded-xl media-card" height="540">
 					<v-card-title>
 						<h1 class="display-3">
 							Contact
@@ -40,15 +40,13 @@
 										>info@VonkProgramming.nl</a
 									>
 								</p>
-								<lottie-player
-									src="https://assets5.lottiefiles.com/packages/lf20_t8x0cxa7.json"
-									mode="bounce"
-									background="transparent"
-									speed="1"
-									style="width: 200px; height: 200px;"
-									loop
-									autoplay
-								></lottie-player>
+								<vue-lottie
+									:options="{
+										animationData: callingAnimationData
+									}"
+									:height="200"
+									:width="200"
+								></vue-lottie>
 							</v-col>
 							<v-col cols="12" sm="7" md="7">
 								<transition name="fade" mode="out-in">
@@ -96,6 +94,8 @@
 
 <script>
 import axios from 'axios';
+import VueLottie from 'vue-lottie';
+import callingAnimationData from '../../assets/lotties/contact-calling.json';
 
 export default {
 	data() {
@@ -103,7 +103,8 @@ export default {
 			show: true,
 			email: '',
 			name: '',
-			description: ''
+			description: '',
+			callingAnimationData
 		};
 	},
 	methods: {
@@ -120,6 +121,9 @@ export default {
 				console.error(e);
 			}
 		}
+	},
+	components: {
+		VueLottie
 	}
 };
 </script>
