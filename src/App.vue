@@ -42,17 +42,17 @@ export default {
 				},
 				{
 					link: '/portfolio',
-					icon: 'mdi-folder-account',
+					icon: 'mdi-folder',
 					text: 'Portfolio'
 				},
 				{
 					link: '/contact',
-					icon: 'mdi-cellphone',
+					icon: 'mdi-phone',
 					text: 'Contact'
 				},
 				{
 					link: '/about',
-					icon: 'mdi-emoticon-cool',
+					icon: 'mdi-account',
 					text: 'Over mij'
 				}
 			]

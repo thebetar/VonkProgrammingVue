@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<v-row class="home-page-media-1" justify="center" align="center">
+		<v-row class="home-page-divider-90" justify="center" align="center">
 			<v-col
 				cols="12"
 				md="4"
-				:style="isDesktop ? { margin: '20px '} : { marginTop: '60px' }"
+				:style="
+					isDesktop ? { margin: '20px ' } : { paddingBottom: '0px' }
+				"
 			>
 				<vue-lottie
 					:options="{
@@ -13,7 +15,13 @@
 					:width="isDesktop ? 500 : '100%'"
 				></vue-lottie>
 			</v-col>
-			<v-col offset="0" cols="12" md="4" class="d-flex flex-column">
+			<v-col
+				offset="0"
+				cols="12"
+				md="4"
+				class="d-flex flex-column"
+				:style="isDesktop ? {} : { paddingTop: '0px' }"
+			>
 				<p class="text-h4 white--text">
 					Wij houden van uitdaging 💪
 				</p>
@@ -25,11 +33,6 @@
 						gespecialiseerde
 						<span class="red--text">website</span>?
 					</p>
-					<p>
-						Wij kunnen het voor u maken.
-					</p>
-				</div>
-				<div class="mt-4">
 					<v-btn
 						class="ml-1"
 						large
@@ -164,7 +167,7 @@
 		<v-row class="wave-div">
 			<wavey-divider-bottom></wavey-divider-bottom>
 		</v-row>
-		<v-row class="home-page-media-2" justify="center" align="center">
+		<v-row class="home-page-divider-80" justify="center" align="center">
 			<v-col cols="12" sm="12" md="5">
 				<vue-lottie
 					class="desktoponly"
@@ -232,7 +235,7 @@
 		<v-row class="wave-div">
 			<wavey-divider-bottom></wavey-divider-bottom>
 		</v-row>
-		<v-row class="home-page-media-3" justify="center" align="center">
+		<v-row class="home-page-divider-80" justify="center" align="center">
 			<v-col cols="12" sm="12" md="6" align="center">
 				<vue-lottie
 					:options="{ animationData: lightningAnimationData }"
@@ -315,20 +318,13 @@ body {
 	position: relative;
 }
 
-.home-page-media-1 {
+.home-page-divider-90 {
 	top: 0px;
 	height: 90vh;
 	background-color: #333;
 }
 
-.home-page-media-2 {
-	height: 80vh;
-	color: white;
-	text-shadow: #333 0 0 8px;
-	background-color: #333;
-}
-
-.home-page-media-3 {
+.home-page-divider-80 {
 	height: 80vh;
 	color: white;
 	text-shadow: #333 0 0 8px;
@@ -342,7 +338,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-	.home-page-media-1 {
+	.home-page-divider-90 {
 		height: 100vh;
 	}
 
@@ -352,7 +348,7 @@ body {
 		background-color: #fff;
 	}
 
-	.home-page-media-2 {
+	.home-page-divider-80 {
 		height: 600px;
 		color: white;
 		padding: 0px 20px;
