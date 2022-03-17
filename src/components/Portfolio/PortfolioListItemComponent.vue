@@ -1,9 +1,5 @@
 <template>
-	<v-card
-		:color="item.color"
-		class="alert-card"
-		:class="{ 'pa-4': !isMobile }"
-	>
+	<v-card :color="color" class="alert-card" :class="{ 'pa-4': !isMobile }">
 		<v-card-text>
 			<v-row :class="{ 'flex-column': isMobile }">
 				<v-col
@@ -57,7 +53,8 @@ export default {
 	props: {
 		item: Object,
 		index: Number,
-		isMobile: Boolean
+		isMobile: Boolean,
+		color: String
 	},
 	computed: {
 		isRight() {
@@ -74,6 +71,9 @@ export default {
 	border: 2px solid black;
 	padding: 8px;
 	background: white;
+}
+.v-card__text {
+	font-size: 18px;
 }
 
 @media only screen and (max-width: 600px) {
