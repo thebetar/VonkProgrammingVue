@@ -80,14 +80,16 @@
 											>Stuur</v-btn
 										>
 									</v-form>
-									<lottie-player
+									<vue-lottie
 										v-else
-										src="https://assets4.lottiefiles.com/packages/lf20_iu3iarbe.json"
-										background="transparent"
-										speed="1"
-										style="width: 300px; height: 300px; margin: auto;"
-										autoplay
-									></lottie-player>
+										:options="{
+											animationData: sendingAnimationData,
+											loop: false
+										}"
+										:height="300"
+										:width="300"
+									>
+									</vue-lottie>
 								</transition>
 							</v-col>
 						</v-row>
@@ -102,6 +104,7 @@
 import axios from 'axios';
 import VueLottie from 'vue-lottie';
 import callingAnimationData from '../../assets/lotties/contact-calling.json';
+import sendingAnimationData from '../../assets/lotties/contact-sending.json';
 
 export default {
 	data() {
@@ -110,7 +113,8 @@ export default {
 			email: '',
 			name: '',
 			description: '',
-			callingAnimationData
+			callingAnimationData,
+			sendingAnimationData
 		};
 	},
 	computed: {

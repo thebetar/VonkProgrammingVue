@@ -52,7 +52,7 @@
 			<v-col cols="12" md="8" class="mt-6">
 				<v-timeline :dense="isMobile">
 					<v-timeline-item
-						v-for="(item, index) in jobs"
+						v-for="(item, index) in jobs.reverse()"
 						:class="{ 'text-right': index % 2 === 0 }"
 						:key="item.id"
 						:color="colors[item.color]"
@@ -129,15 +129,15 @@
 </template>
 
 <script>
-import PortfolioListItem from './PortfolioListItemComponent.vue';
 import VueLottie from 'vue-lottie';
-import jobsAnimationData from '../../assets/lotties/portfolio-jobs.json';
 import certificatesAnimationData from '../../assets/lotties/portfolio-certificates.json';
+import jobsAnimationData from '../../assets/lotties/portfolio-jobs.json';
+import PortfolioListItem from './PortfolioListItemComponent.vue';
 
 export default {
 	data() {
 		return {
-			colors: ['#A3023A', '#006643', '#A8325C', '#2A796F'],
+			colors: ['#f32c65', '#193a7f', '#5C9ead', '#d7b9d5'],
 			stepChapter: 1,
 			mobile: false,
 			jobs: [
@@ -221,16 +221,30 @@ export default {
 				{
 					title: 'J-Tax Automotive',
 					description:
-						'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten.',
+						'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten. De software van J-tax is gemaakt met behulp van Vue.js en ExpressJS',
 					imageUrl: 'j-tax-min.png',
 					color: 2
 				},
 				{
 					title: 'Klets',
 					description:
-						'Klets is een social media app die ik gemaakt heb met behulp van Ionic. Deze app is gemaakt om op basis van een onderwerp en een aangegeven afstand mensen te zoeken en kleine groepschat (max 5) te vormen.',
+						'Klets is een social media app die ik gemaakt heb met behulp van Ionic. Deze app is gemaakt om op basis van een onderwerp en een aangegeven afstand mensen te zoeken en kleine groepschat (max 5) te vormen. Klets is gemaakt met behulp van Ioinic',
 					imageUrl: 'klets.png',
 					color: 3
+				},
+				{
+					title: 'ING',
+					description:
+						'Bij de ING werk ik momenteel als full stack developer aan verschillende interfaces die gebruikt worden door de ING. Dit met het framework Lit element',
+					imageUrl: 'ing.png',
+					color: 1
+				},
+				{
+					title: 'P.51 Design en MarkantIT',
+					description:
+						'Samen met P.51 design en MarkantIT werk ik aan een website voor OOMT m.b.t. de Arbo catalogus. Dit project wordt gebouwd met React',
+					imageUrl: 'p51design.png',
+					color: 2
 				}
 			].map(this.addRandomId),
 			achievements: [
@@ -358,7 +372,7 @@ export default {
 .background {
 	width: 100vw;
 	padding-bottom: 80px;
-	background-color: #0dbd7f;
+	background-color: #333;
 	background-size: 100vw 100vh;
 	background-attachment: fixed;
 	overflow-y: hidden;

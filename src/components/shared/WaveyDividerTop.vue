@@ -28,13 +28,14 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 .wave {
 	width: 100vw;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
+
 .path-0 {
 	animation: pathAnim-0 16s;
 	animation-timing-function: linear;

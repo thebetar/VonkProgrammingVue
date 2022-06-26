@@ -18,7 +18,7 @@ const routes = [
 		component: () => import('./pages/AboutPage.vue')
 	},
 	{
-		path: '',
+		path: '*',
 		redirect: '/home'
 	}
 ];

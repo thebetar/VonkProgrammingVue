@@ -80,10 +80,10 @@
 					Hieronder staan al mijn voorgaande ervaringen beschreven
 				</p>
 				<v-timeline dense>
-					<v-timeline-item v-for="item in items" :key="item.language">
+					<v-timeline-item v-for="item in items" :key="item.skill">
 						<v-row align="center">
 							<v-col cols="6" sm="3" md="3">
-								{{ item.language }}
+								{{ item.skill }}
 							</v-col>
 							<v-col>
 								<about-progress-component
@@ -110,9 +110,10 @@
 					heb of momenteel mee bezig ben zie
 					<router-link
 						to="/portfolio"
-						style="font-weight: bold; color: white;"
-						>Portfolio</router-link
+						class="font-weight-bold white--text"
 					>
+						Portfolio
+					</router-link>
 				</p>
 				<vue-lottie
 					:options="{ animationData: projectsAnimationData }"
@@ -125,56 +126,57 @@
 </template>
 
 <script>
-import AboutProgressComponent from './AboutProgressComponent.vue';
 import VueLottie from 'vue-lottie';
 import projectsAnimationData from '../../assets/lotties/about-projects.json';
 import workingAnimationData from '../../assets/lotties/about-working.json';
+import AboutProgressComponent from './AboutProgressComponent.vue';
 
 export default {
 	data() {
 		return {
 			items: [
 				{
-					language: 'Javascript',
-					color: 'yellow',
+					skill: 'VueJs',
+					color: '#42b883',
 					years: 5,
+					progress: 90
+				},
+				{
+					skill: 'React',
+					color: '#61dbfb',
+					years: 4,
 					progress: 85
 				},
 				{
-					language: 'NodeJS',
+					skill: 'Express',
+					color: '#333',
+					years: 6,
+					progress: 80
+				},
+				{
+					skill: 'Angular',
+					color: '#dd1b16',
+					years: 3,
+					progress: 75
+				},
+				{
+					skill: 'Ionic',
+					color: '#498aff',
+					years: 2,
+					progress: 60
+				},
+
+				{
+					skill: 'NodeJS',
 					color: 'green',
 					years: 2,
 					progress: 80
 				},
 				{
-					language: 'Typescript',
+					skill: 'Typescript',
 					color: 'blue',
 					years: 2,
 					progress: 80
-				},
-				{
-					language: 'PHP',
-					color: 'purple',
-					years: 5,
-					progress: 75
-				},
-				{
-					language: 'Python',
-					color: 'yellow',
-					years: 2,
-					progress: 60
-				},
-				{
-					language: 'CSS',
-					color: 'teal',
-					years: 5,
-					progress: 85
-				},
-				{
-					language: 'HTML',
-					color: 'orange',
-					years: 5,
-					progress: 85
 				}
 			],
 			projectsAnimationData,
