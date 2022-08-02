@@ -14,15 +14,14 @@
 				</transition>
 			</v-container>
 		</v-main>
-
 		<footer-component />
 	</v-app>
 </template>
 
 <script>
+import FooterComponent from './components/Footer/FooterComponent.vue';
 import NavigationComponent from './components/Navigation/NavigationComponent.vue';
 import SidedrawerComponent from './components/Navigation/SidedrawerComponent.vue';
-import FooterComponent from './components/Footer/FooterComponent.vue';
 
 export default {
 	name: 'App',

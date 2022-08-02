@@ -12,7 +12,7 @@
 						md="6"
 						:style="
 							isDesktop
-								? { margin: '20px ' }
+								? { margin: '20px 0' }
 								: { paddingBottom: '0px' }
 						"
 					>
@@ -26,7 +26,7 @@
 					<v-col
 						offset="0"
 						cols="12"
-						md=""
+						md="6"
 						class="d-flex flex-column"
 						:style="isDesktop ? {} : { paddingTop: '0px' }"
 					>
@@ -57,7 +57,7 @@
 		<v-row justify="center" align="center" class="pt-12">
 			<v-col cols="12" sm="12" md="6" align="center">
 				<div class=" home-page-header">
-					<h2 class="display-1">
+					<h2 class="display-2">
 						🧑‍💼 Hoe gaan wij te werk?
 					</h2>
 					<p class="body-1 mt-4">
@@ -72,16 +72,18 @@
 		<v-container>
 			<v-row justify="center" class="mt-6">
 				<v-col cols="12" md="12" align="center" class="mt-4">
-					<h3>Portfolio</h3>
-					<p class="body-1">
-						Naast een mooi verhaal over hoe alles te werk gaat heb
-						ik ondertussen ook al een portfolio opgebouwd met een
-						aantal bekenden en wat minder bekende bedrijven. Klik
-						<router-link to="/portfolio" class="font-weight-bold">
-							hier
-						</router-link>
-						om deze te zien!
-					</p>
+					<v-container>
+						<h3 class="display-1">Portfolio</h3>
+						<p class="body-1">
+							Naast een mooi verhaal over hoe alles te werk gaat
+							heb ik ondertussen ook al een portfolio opgebouwd
+							met een aantal bekenden en wat minder bekende
+							bedrijven.
+						</p>
+						<v-btn to="/portfolio" color="primary" large>
+							Klik hier om deze te zien
+						</v-btn>
+					</v-container>
 				</v-col>
 				<v-col cols="12" sm="12" md="6" align="center">
 					<v-hover v-slot="{ hover }">
@@ -106,6 +108,7 @@
 										<b>1.</b>
 									</v-list-item-icon>
 									<v-list-item-content>
+										<b>Kennismaking: </b>
 										Voorafgaand vindt er een
 										kennsmakingsgesprek plaats waarin de
 										context van uw wens wordt besproken.
@@ -116,6 +119,7 @@
 										<b>2.</b>
 									</v-list-item-icon>
 									<v-list-item-content>
+										<b>Ontwerp: </b>
 										Op basis van de besproken details wordt
 										er een product ontwerp gemaakt.
 										Gedurende dit proces is het belangrijk
@@ -129,6 +133,19 @@
 										<b>3.</b>
 									</v-list-item-icon>
 									<v-list-item-content>
+										<b>Realisatie: </b>
+										Het eindproduct wordt gerealiseerd met
+										meerdere feedback rondes waarbij wordt
+										gekeken of het product de juiste kant op
+										gaat.
+									</v-list-item-content>
+								</v-list-item>
+								<v-list-item>
+									<v-list-item-icon>
+										<b>4.</b>
+									</v-list-item-icon>
+									<v-list-item-content>
+										<b>Afronding: </b>
 										Zodra het eindproduct klaar is zorgt
 										VonkProgramming ervoor dat enige bugs
 										eruit gefilterd worden tot dat de klant
@@ -163,18 +180,18 @@
 									software en website binnen het web. Onze
 									vaardigheden liggen bij
 									<span class="red--text">VueJS</span>,
-									<span class="red--text">React</span> en
-									<span class="red--text">Angular</span>.
+									<span class="red--text">React</span>,
+									<span class="red--text">Angular</span> en
+									<span class="red--text">Ionic</span>.
 								</p>
 								<p>
 									Ook zijn wij gedreven in het maken van
-									backends in
+									backend software in
 									<span class="red--text">Express</span> en
 									<span class="red--text">NestJS</span>.
 								</p>
 								<p>
-									Verder hebben is er ook ervaring in het
-									gebruik van
+									Verder is er ook ervaring in het gebruik van
 									<span class="red--text">Jenkins</span>,
 									<span class="red--text">unit testing</span>,
 									<span class="red--text">E2E testing</span>
@@ -197,7 +214,7 @@
 		<v-row class="wave-div-reverse">
 			<wavey-divider-bottom></wavey-divider-bottom>
 		</v-row>
-		<v-row class="home-page-background">
+		<v-row class="home-page-background home-page-background-gradient">
 			<v-containter>
 				<v-row
 					class="home-page-divider-80"
@@ -278,7 +295,7 @@
 		<v-row class="wave-div-reverse">
 			<wavey-divider-bottom></wavey-divider-bottom>
 		</v-row>
-		<v-row class="home-page-background">
+		<v-row class="home-page-background home-page-background-gradient">
 			<v-container>
 				<v-row
 					class="home-page-divider-80"
@@ -375,6 +392,10 @@ body {
 	background-color: #333;
 	color: white;
 	text-shadow: #333 0 0 8px;
+}
+
+.home-page-background-gradient {
+	background: linear-gradient(0deg, #333, #444, #333);
 }
 
 .home-page-divider-90 {
