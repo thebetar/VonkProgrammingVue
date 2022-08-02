@@ -1,0 +1,26 @@
+name: arbocatalogus-pipeline
+on:
+    push:
+        branches:
+            - main
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: 💻 Install Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '14'
+            - name: 💻 Install npm dependencies
+              run: yarn --frozen-lockfile
+            - name: 🔨 Build
+              run: npm run build --prod
+            - name: 📁 Publish
+              uses: Creepios/sftp-action@v1.0.3
+              with:
+                  host: 'ssh.strato.com'
+                  username: ${{ secrets.FTP_USERNAME }}
+                  password: ${{ secrets.FTP_PASSWORD }}
+                  localPath: './dist'
+                  remotePath: './'
