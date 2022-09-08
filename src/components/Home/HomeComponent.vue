@@ -215,7 +215,7 @@
 			<wavey-divider-bottom></wavey-divider-bottom>
 		</v-row>
 		<v-row class="home-page-background home-page-background-gradient">
-			<v-containter>
+			<v-container>
 				<v-row
 					class="home-page-divider-80"
 					justify="center"
@@ -241,7 +241,7 @@
 						</p>
 					</v-col>
 				</v-row>
-			</v-containter>
+			</v-container>
 		</v-row>
 		<v-row class="wave-div">
 			<wavey-divider-top></wavey-divider-top>

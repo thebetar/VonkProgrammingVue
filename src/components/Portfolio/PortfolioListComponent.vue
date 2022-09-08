@@ -52,7 +52,7 @@
 			<v-col cols="12" md="8" class="mt-6">
 				<v-timeline :dense="isMobile">
 					<v-timeline-item
-						v-for="(item, index) in jobs.reverse()"
+						v-for="(item, index) in jobs"
 						:class="{ 'text-right': index % 2 === 0 }"
 						:key="item.id"
 						:color="colors[item.color]"
@@ -245,8 +245,24 @@ export default {
 						'Samen met P.51 design en MarkantIT werk ik aan een website voor OOMT m.b.t. de Arbo catalogus. Dit project wordt gebouwd met React',
 					imageUrl: 'p51design.png',
 					color: 2
+				},
+				{
+					title: 'Automotive RS',
+					description:
+						"Voor Automotive RS maak ik een dashboard waarin zij hun gekochte auto's kunnen invoeren en alles overzichtelijk kunnen bijhouden. Ook zal dit dashboard met API gekoppeld zijn om gegevens automatisch op te halen zover dit kan.",
+					imageUrl: 'automotive-rs.png',
+					color: 2
+				},
+				{
+					title: 'Deet',
+					description:
+						'Ik heb met de "Deet" app het idee gehad om voor mijzelf een app te maken die het makkelijker maakt om doelen in te plannen. Dit kunnen doelen zijn als meer lezen, bepaalde oefeningen in de sportschool of een cursus volgen. Deze app maakt het makkelijker om dit bij te houden.',
+					imageUrl: 'deet.png',
+					color: 3
 				}
-			].map(this.addRandomId),
+			]
+				.map(this.addRandomId)
+				.reverse(),
 			achievements: [
 				{
 					certificate: `Bachelor's degree, HBO-ICT`,
