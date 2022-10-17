@@ -1,137 +1,105 @@
 <template>
-	<div>
-		<v-row justify="center" align="center" class="background">
-			<v-col cols="12" md="6" class="mt-16">
-				<v-card :color="colors[0]" class="pa-8">
-					<v-row justify="center">
-						<v-col cols="12" md="4" class="text-center">
-							<vue-lottie
-								:options="{
-									animationData: jobsAnimationData,
-									mode: 'bounce'
-								}"
-								:width="300"
-								:height="300"
-							></vue-lottie>
-						</v-col>
-					</v-row>
-					<v-card-title style="font-size: 32px;">
-						Portfolio
-					</v-card-title>
-					<v-card-text>
-						Op deze pagina kunt u al mijn ervaringen bij andere
-						bedrijven zien.<br />
-						Bedrijven waar ik in vaste dienst heb gewerkt worden
-						weergeven met
-						<span
-							:style="{ color: colors[1] }"
-							style="font-weight: bold;"
-						>
-							deze kleur </span
-						>.<br />
-						Bedrijven waar ik tijdelijke projecten voor gemaakt heb,
-						denk hierbij aan websites en<br />
-						maatwerk software worden weergeven met
-						<span
-							:style="{ color: colors[2] }"
-							style="font-weight: bold;"
-						>
-							deze kleur </span
-						>.<br />
-						Verder zijn alle projecten die ik voor mezelf heb
-						gestart met
-						<span
-							:style="{ color: colors[3] }"
-							style="font-weight: bold;"
-						>
-							deze kleur </span
-						>weergeven.
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" md="8" class="mt-6">
-				<v-timeline :dense="isMobile">
-					<v-timeline-item
-						v-for="(item, index) in jobs"
-						:class="{ 'text-right': index % 2 === 0 }"
-						:key="item.id"
-						:color="colors[item.color]"
-						fill-dot
+	<v-row justify="center" align="center">
+		<v-col cols="12" md="6" class="mt-16">
+			<v-card :color="colors[0]" class="pa-8">
+				<v-card-title class="display-1">
+					Portfolio
+				</v-card-title>
+				<v-card-text>
+					Op deze pagina kunt u al mijn ervaringen bij andere
+					bedrijven zien.<br />
+					Bedrijven waar ik in vaste dienst heb gewerkt worden
+					weergeven met
+					<span
+						:style="{ color: colors[1] }"
+						style="font-weight: bold;"
 					>
-						<portfolio-list-item
-							:item="item"
-							:color="colors[item.color]"
-							:index="index"
-							:is-mobile="isMobile"
-						></portfolio-list-item>
-					</v-timeline-item>
-				</v-timeline>
-			</v-col>
-		</v-row>
-		<v-row justify="center" align="center" class="background">
-			<v-col cols="12" md="6" class="mt-16">
-				<v-card :color="colors[0]" class="pa-md-8 pa-4">
-					<v-row justify="center">
-						<v-col cols="12" class="text-center">
-							<vue-lottie
-								:options="{
-									animationData: certificatesAnimationData
-								}"
-								:width="300"
-								:height="300"
-							>
-							</vue-lottie>
-						</v-col>
-					</v-row>
-					<v-card-title>
-						Certificaten en diploma's
-					</v-card-title>
-					<v-card-text>
-						Hieronder staan alle certificaten en diploma's die ik
-						behaald heb.
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" md="8" class="mt-6">
-				<v-timeline :dense="isMobile">
-					<v-timeline-item
-						v-for="(item, index) in achievements"
-						:key="item.id"
-						fill-dot
+						deze kleur </span
+					>.<br />
+					Bedrijven waar ik tijdelijke projecten voor gemaakt heb,
+					denk hierbij aan websites en<br />
+					maatwerk software worden weergeven met
+					<span
+						:style="{ color: colors[2] }"
+						style="font-weight: bold;"
+					>
+						deze kleur </span
+					>.<br />
+					Verder zijn alle projecten die ik voor mezelf heb gestart
+					met
+					<span
+						:style="{ color: colors[3] }"
+						style="font-weight: bold;"
+					>
+						deze kleur </span
+					>weergeven.
+				</v-card-text>
+			</v-card>
+		</v-col>
+		<v-col cols="12" md="8" class="mt-6">
+			<v-timeline :dense="isMobile">
+				<v-timeline-item
+					v-for="(item, index) in jobs"
+					:class="{ 'text-right': index % 2 === 0 }"
+					:key="item.id"
+					:color="colors[item.color]"
+					fill-dot
+				>
+					<portfolio-list-item
+						:item="item"
+						:color="colors[item.color]"
+						:index="index"
+						:is-mobile="isMobile"
+					></portfolio-list-item>
+				</v-timeline-item>
+			</v-timeline>
+		</v-col>
+		<v-col cols="12" md="6" class="mt-16">
+			<v-card :color="colors[0]" class="pa-md-8 pa-4">
+				<v-card-title class="display-1">
+					Certificaten en diploma's
+				</v-card-title>
+				<v-card-text>
+					Hieronder staan alle certificaten en diploma's die ik
+					behaald heb.
+				</v-card-text>
+			</v-card>
+		</v-col>
+		<v-col cols="12" md="8" class="mt-6">
+			<v-timeline :dense="isMobile">
+				<v-timeline-item
+					v-for="(item, index) in achievements"
+					:key="item.id"
+					fill-dot
+					:color="index % 2 === 0 ? colors[1] : colors[2]"
+				>
+					<template v-slot:opposite>
+						<span
+							class="headline font-weight-bold"
+							:style="{
+								color: index % 2 === 0 ? colors[1] : colors[2]
+							}"
+						>
+							{{ item.year }}
+						</span>
+					</template>
+					<v-alert
+						dense
+						class="py-6 subtitle"
+						:class="{
+							'text-right': index % 2 !== 0 && !isMobile
+						}"
 						:color="index % 2 === 0 ? colors[1] : colors[2]"
 					>
-						<template v-slot:opposite>
-							<span
-								class="headline font-weight-bold"
-								:style="{
-									color:
-										index % 2 === 0 ? colors[1] : colors[2]
-								}"
-							>
-								{{ item.year }}
-							</span>
-						</template>
-						<v-alert
-							dense
-							class="py-6 subtitle"
-							:class="{
-								'text-right': index % 2 !== 0 && !isMobile
-							}"
-							:color="index % 2 === 0 ? colors[1] : colors[2]"
-						>
-							{{ item.certificate }} - {{ item.where }}
-						</v-alert>
-					</v-timeline-item>
-				</v-timeline>
-			</v-col>
-		</v-row>
-	</div>
+						{{ item.certificate }} - {{ item.where }}
+					</v-alert>
+				</v-timeline-item>
+			</v-timeline>
+		</v-col>
+	</v-row>
 </template>
 
 <script>
-import VueLottie from 'vue-lottie';
-import certificatesAnimationData from '../../assets/lotties/portfolio-certificates.json';
-import jobsAnimationData from '../../assets/lotties/portfolio-jobs.json';
 import PortfolioListItem from './PortfolioListItemComponent.vue';
 
 export default {
@@ -345,9 +313,7 @@ export default {
 					where: 'Udemy',
 					year: 'Juli 2020'
 				}
-			].map(this.addRandomId),
-			jobsAnimationData,
-			certificatesAnimationData
+			].map(this.addRandomId)
 		};
 	},
 	methods: {
@@ -378,22 +344,12 @@ export default {
 		}
 	},
 	components: {
-		PortfolioListItem,
-		VueLottie
+		PortfolioListItem
 	}
 };
 </script>
 
 <style scoped>
-.background {
-	width: 100vw;
-	padding-bottom: 80px;
-	background-color: #333;
-	background: linear-gradient(90deg, #222, #555, #222);
-	background-size: 100vw 100vh;
-	background-attachment: fixed;
-	overflow-y: hidden;
-}
 .v-card__text {
 	font-size: 18px !important;
 }

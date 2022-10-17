@@ -1,5 +1,7 @@
 <template>
-	<home-component></home-component>
+	<v-container fluid>
+		<home-component></home-component>
+	</v-container>
 </template>
 
 <script>

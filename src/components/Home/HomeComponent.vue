@@ -20,7 +20,8 @@
 							:options="{
 								animationData: introAnimationData
 							}"
-							:width="isDesktop ? 500 : '100%'"
+							:width="isDesktop ? 400 : '100%'"
+							style="transform: rotateY(180deg)"
 						></vue-lottie>
 					</v-col>
 					<v-col
@@ -335,7 +336,6 @@ import developmentAnimationData from '../../assets/lotties/home-development.json
 import ideaAnimationData from '../../assets/lotties/home-idea.json';
 import introAnimationData from '../../assets/lotties/home-intro.json';
 import lightningAnimationData from '../../assets/lotties/home-lightning.json';
-import matrixAnimationData from '../../assets/lotties/home-matrix.json';
 import processAnimationData from '../../assets/lotties/home-process.json';
 import responsiveAnimationData from '../../assets/lotties/home-responsive.json';
 
@@ -347,8 +347,7 @@ export default {
 			developmentAnimationData,
 			responsiveAnimationData,
 			ideaAnimationData,
-			lightningAnimationData,
-			matrixAnimationData
+			lightningAnimationData
 		};
 	},
 	computed: {

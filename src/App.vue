@@ -8,11 +8,9 @@
 		/>
 
 		<v-main id="main">
-			<v-container fluid id="container">
-				<transition name="fade">
-					<router-view />
-				</transition>
-			</v-container>
+			<transition name="fade">
+				<router-view />
+			</transition>
 		</v-main>
 		<footer-component />
 	</v-app>
@@ -67,3 +65,9 @@ export default {
 	}
 };
 </script>
+
+<style>
+.h-full {
+	height: 100vh;
+}
+</style>
