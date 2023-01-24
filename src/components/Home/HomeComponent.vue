@@ -308,14 +308,12 @@ import WaveyDividerTop from '../shared/WaveyDividerTop.vue';
 
 import developmentAnimationData from '../../assets/lotties/home-development.json';
 import introAnimationData from '../../assets/lotties/home-intro.json';
-import responsiveAnimationData from '../../assets/lotties/home-responsive.json';
 
 export default {
 	data() {
 		return {
 			introAnimationData,
-			developmentAnimationData,
-			responsiveAnimationData
+			developmentAnimationData
 		};
 	},
 	computed: {

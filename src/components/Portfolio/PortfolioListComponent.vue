@@ -1,38 +1,56 @@
 <template>
 	<v-row justify="center" align="center">
 		<v-col cols="12" md="6" class="mt-16">
-			<v-card :color="colors[0]" class="pa-8">
-				<v-card-title class="display-1">
+			<v-card :color="colors[0]" class="pa-8 text-center">
+				<img :src="require('@/assets/svg/portfolio.svg')" />
+				<v-card-title class="display-1 justify-center">
 					Portfolio
 				</v-card-title>
 				<v-card-text>
-					Op deze pagina kunt u al mijn ervaringen bij andere
-					bedrijven zien.<br />
-					Bedrijven waar ik in vaste dienst heb gewerkt worden
-					weergeven met
-					<span
-						:style="{ color: colors[1] }"
-						style="font-weight: bold;"
-					>
-						deze kleur </span
-					>.<br />
-					Bedrijven waar ik tijdelijke projecten voor gemaakt heb,
-					denk hierbij aan websites en<br />
-					maatwerk software worden weergeven met
-					<span
-						:style="{ color: colors[2] }"
-						style="font-weight: bold;"
-					>
-						deze kleur </span
-					>.<br />
-					Verder zijn alle projecten die ik voor mezelf heb gestart
-					met
-					<span
-						:style="{ color: colors[3] }"
-						style="font-weight: bold;"
-					>
-						deze kleur </span
-					>weergeven.
+					<p>
+						Op deze pagina kunt u al mijn ervaringen bij andere
+						bedrijven zien.
+					</p>
+					<p>
+						Bedrijven waar ik in vaste dienst heb gewerkt worden
+						weergeven met
+						<span
+							:style="{ color: colors[1] }"
+							style="font-weight: bold;"
+						>
+							deze kleur </span
+						>.
+					</p>
+					<p>
+						Bedrijven waar ik tijdelijke projecten voor gemaakt heb,
+						denk hierbij aan websites en<br />
+						maatwerk software worden weergeven met
+						<span
+							:style="{ color: colors[2] }"
+							style="font-weight: bold;"
+						>
+							deze kleur </span
+						>.
+					</p>
+					<p>
+						Verder zijn alle projecten die ik voor mezelf heb
+						gestart met
+						<span
+							:style="{ color: colors[3] }"
+							style="font-weight: bold;"
+						>
+							deze kleur </span
+						>weergeven.
+					</p>
+					<p>
+						Ook kunt u een kijkje nemen op mijn GitHub account
+						<br />
+						<img
+							:src="require('@/assets/svg/github.svg')"
+							@click="goToGithub"
+							style="cursor: pointer;"
+						/>
+					</p>
 				</v-card-text>
 			</v-card>
 		</v-col>
@@ -55,8 +73,9 @@
 			</v-timeline>
 		</v-col>
 		<v-col cols="12" md="6" class="mt-16">
-			<v-card :color="colors[0]" class="pa-md-8 pa-4">
-				<v-card-title class="display-1">
+			<v-card :color="colors[0]" class="pa-md-8 pa-4 text-center">
+				<img :src="require('@/assets/svg/certificate.svg')" />
+				<v-card-title class="display-1 justify-center">
 					Certificaten en diploma's
 				</v-card-title>
 				<v-card-text>
@@ -317,25 +336,11 @@ export default {
 		};
 	},
 	methods: {
-		previous() {
-			if (this.stepChapter > 1) {
-				this.stepChapter--;
-			}
-		},
-		next() {
-			if (this.stepChapter < this.items.length) {
-				this.stepChapter++;
-			}
-		},
-		swipe(direction) {
-			if (direction === 'Left') {
-				this.next();
-			} else if (direction === 'Right') {
-				this.previous();
-			}
-		},
 		addRandomId(obj) {
 			return { ...obj, id: Math.random() };
+		},
+		goToGithub() {
+			window.open('https://github.com/thebetar');
 		}
 	},
 	computed: {
