@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueRouterPrefetch from 'vue-router-prefetch';
 import App from './App.vue';
@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 Vue.use(VueRouterPrefetch);
 
 new Vue({
-  router,
-  vuetify,
-  render: h => h(App)
+    router,
+    vuetify,
+    render: h => h(App)
 }).$mount('#app');

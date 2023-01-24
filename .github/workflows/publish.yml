@@ -1,4 +1,4 @@
-name: arbocatalogus-pipeline
+name: vonkprogramming-pipeline
 on:
     push:
         branches:
