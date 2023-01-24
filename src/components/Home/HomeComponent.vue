@@ -39,7 +39,9 @@
                         <div class="text-body-1 white--text">
                             <p>
                                 Heeft u een goed idee waar
-                                <span class="font-weight-bold">maatwerk software</span>
+                                <span class="font-weight-bold"
+                                    >maatwerk software</span
+                                >
                                 voor nodig is, of heeft u behoefte aan een
                                 gespecialiseerde
                                 <span class="font-weight-bold">website</span>?
@@ -168,21 +170,34 @@
                                     vaardigheden liggen bij
                                     <span class="font-weight-bold">VueJS</span>,
                                     <span class="font-weight-bold">React</span>,
-                                    <span class="font-weight-bold">Angular</span> en
+                                    <span class="font-weight-bold"
+                                        >Angular</span
+                                    >
+                                    en
                                     <span class="font-weight-bold">Ionic</span>.
                                 </p>
                                 <p>
                                     Ook zijn wij gedreven in het maken van
                                     backend software in
-                                    <span class="font-weight-bold">Express</span> en
-                                    <span class="font-weight-bold">NestJS</span>.
+                                    <span class="font-weight-bold"
+                                        >Express</span
+                                    >
+                                    en
+                                    <span class="font-weight-bold">NestJS</span
+                                    >.
                                 </p>
                                 <p>
                                     Verder is er ook ervaring in het gebruik van
-                                    <span class="font-weight-bold">Jenkins</span>,
-                                    <span class="font-weight-bold">unit testing</span>,
-                                    <span class="font-weight-bold">E2E testing</span>
-                                    en <span class="font-weight-bold">AWS</span>.
+                                    <span class="font-weight-bold">Jenkins</span
+                                    >,
+                                    <span class="font-weight-bold"
+                                        >unit testing</span
+                                    >,
+                                    <span class="font-weight-bold"
+                                        >E2E testing</span
+                                    >
+                                    en
+                                    <span class="font-weight-bold">AWS</span>.
                                 </p>
                                 <p>
                                     <b>Samenvattend</b> voor
@@ -306,7 +321,7 @@
                 <v-col
                     cols="12"
                     md="6"
-                    class="d-flex flex-column justify-center text-center"
+                    class="d-flex flex-column justify-center items-center text-center"
                 >
                     <img
                         :src="require('@/assets/svg/portfolio.svg')"
