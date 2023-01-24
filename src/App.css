@@ -1,68 +1,69 @@
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    font-display: swap !important;
 }
 
 .highlight {
-	color: red;
-	font-style: italic;
+    color: red;
+    font-style: italic;
 }
 
 ::-webkit-scrollbar {
-	width: 18px;
+    width: 18px;
 }
 
 ::-webkit-scrollbar-track {
-	opacity: 1;
-	overflow: hidden;
+    opacity: 1;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: lightgrey;
+    background-color: lightgrey;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: #bbb;
+    background-color: #bbb;
 }
 
-/* body {
-	overflow-x: hidden;
-} */
+body {
+    font-display: swap !important;
+}
 
 @media only screen and (max-width: 600px) {
-	::-webkit-scrollbar {
-		width: 0px;
-	}
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
 
-	/* Do not use overflow, this will result in weird behaviour */
-	header {
-		width: 100vw !important;
-	}
+    /* Do not use overflow, this will result in weird behaviour */
+    header {
+        width: 100vw !important;
+    }
 
-	footer {
-		width: 100vw !important;
-	}
+    footer {
+        width: 100vw !important;
+    }
 
-	body {
-		width: 100vw !important;
-	}
+    body {
+        width: 100vw !important;
+    }
 
-	.desktoponly {
-		display: none;
-	}
+    .desktoponly {
+        display: none;
+    }
 }
 
 /* Fade effect transition */
 .fade-enter-active,
 .fade-leave-active {
-	transition-property: opacity;
-	transition-duration: 0.2s;
+    transition-property: opacity;
+    transition-duration: 0.2s;
 }
 
 .fade-enter-active {
-	transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .fade-enter,
 .fade-leave-active {
-	opacity: 0;
+    opacity: 0;
 }

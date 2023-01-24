@@ -39,10 +39,10 @@
                         <div class="text-body-1 white--text">
                             <p>
                                 Heeft u een goed idee waar
-                                <span class="red--text">maatwerk software</span>
+                                <span class="font-weight-bold">maatwerk software</span>
                                 voor nodig is, of heeft u behoefte aan een
                                 gespecialiseerde
-                                <span class="red--text">website</span>?
+                                <span class="font-weight-bold">website</span>?
                             </p>
                             <v-btn
                                 class="ml-1"
@@ -85,6 +85,8 @@
                             <img
                                 :src="require('@/assets/svg/process.svg')"
                                 class="p-4"
+                                width="120"
+                                height="120"
                             />
                             <v-card-title class="title text-center"
                                 >Procesbeschrijving</v-card-title
@@ -164,23 +166,23 @@
                                     nieuwste technieken in het maken van
                                     software en websites binnen het web. Onze
                                     vaardigheden liggen bij
-                                    <span class="red--text">VueJS</span>,
-                                    <span class="red--text">React</span>,
-                                    <span class="red--text">Angular</span> en
-                                    <span class="red--text">Ionic</span>.
+                                    <span class="font-weight-bold">VueJS</span>,
+                                    <span class="font-weight-bold">React</span>,
+                                    <span class="font-weight-bold">Angular</span> en
+                                    <span class="font-weight-bold">Ionic</span>.
                                 </p>
                                 <p>
                                     Ook zijn wij gedreven in het maken van
                                     backend software in
-                                    <span class="red--text">Express</span> en
-                                    <span class="red--text">NestJS</span>.
+                                    <span class="font-weight-bold">Express</span> en
+                                    <span class="font-weight-bold">NestJS</span>.
                                 </p>
                                 <p>
                                     Verder is er ook ervaring in het gebruik van
-                                    <span class="red--text">Jenkins</span>,
-                                    <span class="red--text">unit testing</span>,
-                                    <span class="red--text">E2E testing</span>
-                                    en <span class="red--text">AWS</span>.
+                                    <span class="font-weight-bold">Jenkins</span>,
+                                    <span class="font-weight-bold">unit testing</span>,
+                                    <span class="font-weight-bold">E2E testing</span>
+                                    en <span class="font-weight-bold">AWS</span>.
                                 </p>
                                 <p>
                                     <b>Samenvattend</b> voor
@@ -202,7 +204,11 @@
             <v-container>
                 <v-row justify="center">
                     <v-col cols="12" sm="12" md="12" align="center">
-                        <img :src="require('@/assets/svg/idea.svg')" />
+                        <img
+                            :src="require('@/assets/svg/idea.svg')"
+                            width="80"
+                            height="80"
+                        />
                         <h5 class="display-1 mt-4">Van idee naar website!</h5>
                         <p class="body-1 mt-4">
                             VonkProgramming heeft contact met verschillende
@@ -239,14 +245,20 @@
                             <img
                                 :src="require('@/assets/svg/ionic.svg')"
                                 class="mx-2"
+                                width="80"
+                                height="80"
                             />
                             <img
                                 :src="require('@/assets/svg/vue.svg')"
                                 class="mx-2"
+                                width="80"
+                                height="80"
                             />
                             <img
                                 :src="require('@/assets/svg/react.svg')"
                                 class="mx-2"
+                                width="80"
+                                height="80"
                             />
                         </div>
                     </v-col>
@@ -266,14 +278,20 @@
                             <img
                                 :src="require('@/assets/svg/nodejs.svg')"
                                 class="mx-2"
+                                width="80"
+                                height="80"
                             />
                             <img
                                 :src="require('@/assets/svg/mongodb.svg')"
                                 class="mx-2"
+                                width="80"
+                                height="80"
                             />
                             <img
                                 :src="require('@/assets/svg/docker.svg')"
                                 class="mx-2"
+                                width="80"
+                                height="80"
                             />
                         </div>
                     </v-col>
@@ -292,6 +310,7 @@
                 >
                     <img
                         :src="require('@/assets/svg/portfolio.svg')"
+                        width="80"
                         height="80"
                     />
                     <h3 class="display-1">Portfolio</h3>
@@ -307,6 +326,7 @@
                         <img
                             :src="require('@/assets/svg/github.svg')"
                             height="16"
+                            width="16"
                             class="mr-2"
                         />
                         Mijn Github pagina
