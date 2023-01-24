@@ -40,13 +40,9 @@
 										>info@VonkProgramming.nl</a
 									>
 								</p>
-								<vue-lottie
-									:options="{
-										animationData: callingAnimationData
-									}"
-									:height="200"
-									:width="200"
-								></vue-lottie>
+								<img
+									:src="require('@/assets/svg/contact.svg')"
+								/>
 							</v-col>
 							<v-col cols="12" sm="7" md="7">
 								<transition name="fade" mode="out-in">
@@ -80,16 +76,18 @@
 											>Stuur</v-btn
 										>
 									</v-form>
-									<vue-lottie
+									<div
 										v-else
-										:options="{
-											animationData: sendingAnimationData,
-											loop: false
-										}"
-										:height="300"
-										:width="300"
+										class="d-flex justify-center items-center"
 									>
-									</vue-lottie>
+										<img
+											:src="
+												require('@/assets/svg/mailsent.svg')
+											"
+											height="200"
+											width="200"
+										/>
+									</div>
 								</transition>
 							</v-col>
 						</v-row>
@@ -102,9 +100,6 @@
 
 <script>
 import axios from 'axios';
-import VueLottie from 'vue-lottie';
-import callingAnimationData from '../../assets/lotties/contact-calling.json';
-import sendingAnimationData from '../../assets/lotties/contact-sending.json';
 
 export default {
 	data() {
@@ -112,9 +107,7 @@ export default {
 			show: true,
 			email: '',
 			name: '',
-			description: '',
-			callingAnimationData,
-			sendingAnimationData
+			description: ''
 		};
 	},
 	computed: {
@@ -153,9 +146,6 @@ export default {
 				form.text.length > 0
 			);
 		}
-	},
-	components: {
-		VueLottie
 	}
 };
 </script>

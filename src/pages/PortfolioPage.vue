@@ -20,4 +20,10 @@ export default {
 	overflow-y: hidden;
 	padding: 12rem 0;
 }
+
+@media only screen and (max-width: 600px) {
+	.background {
+		padding: 0.5rem 0;
+	}
+}
 </style>

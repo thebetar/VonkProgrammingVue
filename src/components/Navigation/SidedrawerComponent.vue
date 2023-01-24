@@ -25,26 +25,14 @@
 				</v-list-item-content>
 			</v-list-item>
 		</v-list>
-
-		<div class="side-drawer-lottie-container">
-			<vue-lottie
-				:options="{ animationData: searchAnimationData }"
-				:width="260"
-				:height="160"
-			/>
-		</div>
 	</v-navigation-drawer>
 </template>
 
 <script>
-import VueLottie from 'vue-lottie';
-import searchAnimationData from '../../assets/lotties/sidedrawer-search.json';
-
 export default {
 	data() {
 		return {
 			drawer: this.drawerProp,
-			searchAnimationData
 		};
 	},
 	props: {
@@ -60,9 +48,6 @@ export default {
 				this.$emit('close', this.drawer);
 			}
 		}
-	},
-	components: {
-		VueLottie
 	}
 };
 </script>

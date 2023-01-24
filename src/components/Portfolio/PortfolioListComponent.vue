@@ -1,7 +1,7 @@
 <template>
 	<v-row justify="center" align="center">
 		<v-col cols="12" md="6" class="mt-16">
-			<v-card :color="colors[0]" class="pa-8 text-center">
+			<v-card :color="colors[0]" class="pa-8 text-center portfolio-card">
 				<img :src="require('@/assets/svg/portfolio.svg')" />
 				<v-card-title class="display-1 justify-center">
 					Portfolio
@@ -73,7 +73,10 @@
 			</v-timeline>
 		</v-col>
 		<v-col cols="12" md="6" class="mt-16">
-			<v-card :color="colors[0]" class="pa-md-8 pa-4 text-center">
+			<v-card
+				:color="colors[0]"
+				class="pa-md-8 pa-4 text-center portfolio-card"
+			>
 				<img :src="require('@/assets/svg/certificate.svg')" />
 				<v-card-title class="display-1 justify-center">
 					Certificaten en diploma's
@@ -357,5 +360,11 @@ export default {
 <style scoped>
 .v-card__text {
 	font-size: 18px !important;
+}
+
+@media only screen and (max-width: 600px) {
+	.portfolio-card {
+		margin: 0 0.5rem;
+	}
 }
 </style>
