@@ -105,7 +105,7 @@ import PortfolioListItem from './PortfolioListItemComponent.vue';
 export default {
 	data() {
 		return {
-			colors: ['#f32c65', '#193a7f', '#5C9ead', '#d7b9d5'],
+			colors: ['#ffffff', '#ff0050', '#ff6000', '#ff0000'],
 			stepChapter: 1,
 			mobile: false,
 			jobs: [

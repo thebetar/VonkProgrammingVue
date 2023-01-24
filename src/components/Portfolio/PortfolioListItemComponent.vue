@@ -1,5 +1,9 @@
 <template>
-	<v-card :color="color" class="alert-card" :class="{ 'pa-4': !isMobile }">
+	<v-card
+		class="alert-card"
+		:class="{ 'pa-4': !isMobile }"
+		:style="{ borderColor: color }"
+	>
 		<v-card-text>
 			<v-row :class="{ 'flex-column': isMobile }">
 				<v-col
@@ -21,6 +25,7 @@
 						}"
 					>
 						<b
+							:style="{ color }"
 							:class="{
 								title: !isMobile
 							}"
@@ -74,6 +79,10 @@ export default {
 }
 .v-card__text {
 	font-size: 18px;
+}
+
+.alert-card {
+	border: 2px solid;
 }
 
 @media only screen and (max-width: 600px) {

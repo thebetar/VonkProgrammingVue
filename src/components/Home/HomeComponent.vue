@@ -65,7 +65,8 @@
 						VonkProgramming is een Web development bedrijf dat zich
 						bezighoudt met maatwerk software solutions. Voor iedere
 						klant maken wij op maat gemaakte software of websites,
-						afgestemd op uw behoeften.
+						afgestemd op uw behoeften. Wij hebben de kennis in huis
+						om voor elk probleem een oplossing te bieden.
 					</p>
 				</div>
 			</v-col>
@@ -73,7 +74,7 @@
 		<v-container>
 			<v-row justify="center" class="mt-6">
 				<v-col cols="12" md="12" align="center" class="mt-4">
-					<v-container>
+					<v-container class="w-32">
 						<h3 class="display-1">Portfolio</h3>
 						<p class="body-1">
 							Naast een mooi verhaal over hoe alles te werk gaat
@@ -93,12 +94,9 @@
 							class="pa-4 d-flex flex-column align-center card-size"
 							:class="{ 'card-hover': hover }"
 						>
-							<vue-lottie
-								:options="{
-									animationData: processAnimationData
-								}"
-								:width="isDesktop ? 360 : 180"
-								:height="isDesktop ? 300 : 160"
+							<img
+								:src="require('@/assets/svg/process.svg')"
+								class="p-4"
 							/>
 							<v-card-title class="title text-center"
 								>Procesbeschrijving</v-card-title
@@ -122,11 +120,12 @@
 									<v-list-item-content>
 										<b>Ontwerp: </b>
 										Op basis van de besproken details wordt
-										er een product ontwerp gemaakt.
+										er een product ontwerp gemaakt. Door
+										middel van schetsen van schermontwerpen.
 										Gedurende dit proces is het belangrijk
 										dat de klant tevreden is met het ontwerp
-										en dat de software voldoet aan de
-										gestelde eisen.
+										en dat de voorgestelde uitwerking het
+										gestelde probleem zal oplossen.
 									</v-list-item-content>
 								</v-list-item>
 								<v-list-item>
@@ -149,8 +148,7 @@
 										<b>Afronding: </b>
 										Zodra het eindproduct klaar is zorgt
 										VonkProgramming ervoor dat enige bugs
-										eruit gefilterd worden tot dat de klant
-										tevreden is met het eindresultaat.
+										eruit gefilterd worden.
 									</v-list-item-content>
 								</v-list-item>
 							</v-list>
@@ -168,8 +166,8 @@
 								:options="{
 									animationData: developmentAnimationData
 								}"
-								:width="isDesktop ? 400 : 300"
-								:height="isDesktop ? 400 : 300"
+								width="300"
+								height="300"
 							></vue-lottie>
 							<v-card-title class="title">
 								Webapplicatie Development
@@ -178,7 +176,7 @@
 								<p>
 									VonkProgramming maakt gebruik van de
 									nieuwste technieken in het maken van
-									software en website binnen het web. Onze
+									software en websites binnen het web. Onze
 									vaardigheden liggen bij
 									<span class="red--text">VueJS</span>,
 									<span class="red--text">React</span>,
@@ -199,12 +197,11 @@
 									en <span class="red--text">AWS</span>.
 								</p>
 								<p>
-									<b>Samenvattend</b> voor de
-									<b>niet technische mensen</b> is dit een
-									verzameling aan tools die gebruikt kan
-									worden om een enorme hoeveelheid aan
-									software oplossingen te maken. Wellicht ook
-									voor uw probleem. 😉
+									<b>Samenvattend</b> voor
+									<b>niet nerds</b> is dit een verzameling aan
+									tools die gebruikt kan worden om een enorme
+									hoeveelheid aan software oplossingen te
+									maken. Wellicht ook voor uw probleem. 😉
 								</p>
 							</v-card-text>
 						</v-card>
@@ -217,105 +214,82 @@
 		</v-row>
 		<v-row class="home-page-background home-page-background-gradient">
 			<v-container>
-				<v-row
-					class="home-page-divider-80"
-					justify="center"
-					align="center"
-				>
-					<v-col cols="12" sm="12" md="6">
-						<vue-lottie
-							class="desktoponly"
-							:options="{
-								animationData: responsiveAnimationData
-							}"
-							:width="400"
-							:height="400"
-						/>
-					</v-col>
-					<v-col cols="0" md="6">
-						<h4 class="display-2">Responsief ontwerp 🤯</h4>
-						<p class="text-body-1">
-							Het is voor uw website belangrijk dat u op elk
-							apparaat goed te bereiken bent, daarom houden wij
-							hier bij het ontwikkelen van uw software hier
-							rekening mee.
+				<v-row justify="center">
+					<v-col cols="12" sm="12" md="12" align="center">
+						<img :src="require('@/assets/svg/idea.svg')" />
+						<h5 class="display-1 mt-4">Van idee naar website!</h5>
+						<p class="body-1 mt-4">
+							VonkProgramming heeft contact met verschillende
+							ontwerpers om uw idee perfect vorm te geven. Hierbij
+							wordt er rekening gehouden met
+							<span class="highlight">responsiviteit</span>,
+							<span class="highlight">schaalbaarheid</span> en
+							<span class="highlight">SEO</span>.<br />
+							VonkProgramming richt zich op een flexibele aanpak.
+							Van software solutions tot simpele portfolio
+							websites.
 						</p>
 					</v-col>
 				</v-row>
-			</v-container>
-		</v-row>
-		<v-row class="wave-div">
-			<wavey-divider-top></wavey-divider-top>
-		</v-row>
-		<v-container>
-			<v-row justify="center">
-				<v-col cols="12" sm="12" md="12" align="center">
-					<vue-lottie
-						class="desktoponly"
-						:options="{ animationData: ideaAnimationData }"
-						:width="400"
-						:height="400"
-					/>
-					<h5 class="display-1 mt-4">Van idee naar website!</h5>
-					<p class="body-1 mt-4">
-						VonkProgramming heeft contact met verschillende
-						ontwerpers om uw idee perfect vorm te geven. Hierbij
-						wordt er rekening gehouden met
-						<span class="highlight">responsiviteit</span>,
-						<span class="highlight">schaalbaarheid</span> en
-						<span class="highlight">SEO</span>.<br />
-						VonkProgramming richt zich op een flexibele aanpak. Van
-						software solutions tot simpele portfolio websites.
-					</p>
-				</v-col>
-			</v-row>
-			<v-row justify="center">
-				<v-col cols="12" sm="12" md="6" align="center">
-					<h6 class="title">Frameworks</h6>
-					<p class="body-2">
-						VonkProgramming maakt gebruik van de nieuwste JavaScript
-						frameworks. Dit houdt in dat uw applicatie snel en
-						schaalbaar is met behulp van de nieuwste web development
-						technieken. Dit betekend dat als u later uw website wilt
-						uitbreiden dit minder tijd kost doordat hier rekening
-						mee wordt gehouden binnen de frameworks. (Angular, Vue
-						en React).
-					</p>
-				</v-col>
-				<v-col cols="12" sm="12" md="6" align="center">
-					<h6 class="title">Backend oplossingen</h6>
-					<p class="body-2">
-						Naast websites en webapps biedt VonkProgramming ook
-						mogelijkheden binnen NodeJS en Ionic. Deze twee
-						solutions kunnen gebruikt worden voor het bouwen van
-						serversystemen en mobiele apps.
-					</p>
-				</v-col>
-			</v-row>
-		</v-container>
-		<v-row class="wave-div-reverse">
-			<wavey-divider-bottom></wavey-divider-bottom>
-		</v-row>
-		<v-row class="home-page-background home-page-background-gradient">
-			<v-container>
-				<v-row
-					class="home-page-divider-80"
-					justify="center"
-					align="center"
-				>
-					<v-col cols="12" sm="12" md="12" align="center">
-						<vue-lottie
-							:options="{ animationData: lightningAnimationData }"
-							:width="300"
-							:height="300"
-						/>
-						<h4 class="display-2 text-sm-center">
-							Flitsende snelheid
-						</h4>
+				<v-row justify="center">
+					<v-col
+						cols="12"
+						sm="12"
+						md="6"
+						class="d-flex flex-column justify-center align-center text-center"
+					>
+						<h6 class="title">Frameworks</h6>
 						<p class="body-2">
-							Ik maak gebruik van de nieuwste technieken om uw
-							website zo snel als mogelijk te maken!
+							VonkProgramming maakt gebruik van de nieuwste
+							JavaScript frameworks. Dit houdt in dat uw
+							applicatie snel en schaalbaar is met behulp van de
+							nieuwste web development technieken. Dit betekend
+							dat als u later uw website wilt uitbreiden dit
+							minder tijd kost doordat hier rekening mee wordt
+							gehouden binnen de frameworks. (Ionic, Vue en
+							React).
 						</p>
+						<div class="d-flex justify-between ">
+							<img
+								:src="require('@/assets/svg/ionic.svg')"
+								class="mx-2"
+							/>
+							<img
+								:src="require('@/assets/svg/vue.svg')"
+								class="mx-2"
+							/>
+							<img
+								:src="require('@/assets/svg/react.svg')"
+								class="mx-2"
+							/>
+						</div>
+					</v-col>
+					<v-col
+						cols="12"
+						sm="12"
+						md="6"
+						class="d-flex flex-column justify-center align-center text-center"
+					>
+						<h6 class="title">Andere oplossingen</h6>
+						<p class="body-2">
+							Naast websites en webapps biedt VonkProgramming ook
+							mogelijkheden binnen NodeJS. Hiermee kan ook server
+							software worden gemaakt.
+						</p>
+						<div class="d-flex justify-between ">
+							<img
+								:src="require('@/assets/svg/nodejs.svg')"
+								class="mx-2"
+							/>
+							<img
+								:src="require('@/assets/svg/mongodb.svg')"
+								class="mx-2"
+							/>
+							<img
+								:src="require('@/assets/svg/docker.svg')"
+								class="mx-2"
+							/>
+						</div>
 					</v-col>
 				</v-row>
 			</v-container>
@@ -333,21 +307,15 @@ import WaveyDividerBottom from '../shared/WaveyDividerBottom.vue';
 import WaveyDividerTop from '../shared/WaveyDividerTop.vue';
 
 import developmentAnimationData from '../../assets/lotties/home-development.json';
-import ideaAnimationData from '../../assets/lotties/home-idea.json';
 import introAnimationData from '../../assets/lotties/home-intro.json';
-import lightningAnimationData from '../../assets/lotties/home-lightning.json';
-import processAnimationData from '../../assets/lotties/home-process.json';
 import responsiveAnimationData from '../../assets/lotties/home-responsive.json';
 
 export default {
 	data() {
 		return {
 			introAnimationData,
-			processAnimationData,
 			developmentAnimationData,
-			responsiveAnimationData,
-			ideaAnimationData,
-			lightningAnimationData
+			responsiveAnimationData
 		};
 	},
 	computed: {
@@ -444,14 +412,10 @@ body {
 .wave-div {
 	width: 100vw;
 	height: 50vh;
-	margin-top: -20px !important;
-	margin-bottom: 10vh;
 }
 .wave-div-reverse {
 	width: 100vw;
 	height: 50vh;
-	margin-top: 10vh;
-	margin-bottom: -20px !important;
 }
 @media only screen and (max-width: 600px) {
 	.wave-div,
