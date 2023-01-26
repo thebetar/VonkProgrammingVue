@@ -1,5 +1,5 @@
 <filesMatch ".(jpg|jpeg|png|svg|js|css)$">
-    Header set Cache-Control "max-age=360000, public"
+    Header set Cache-Control "public, max-age=31536000, immutable"
 </filesMatch>
 
 <IfModule mod_headers.c>
