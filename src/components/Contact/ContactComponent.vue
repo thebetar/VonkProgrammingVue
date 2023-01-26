@@ -20,34 +20,46 @@
                                 </p>
                                 <p>
                                     <span class="grey--text subtitle">
+                                        <v-icon>mdi-whatsapp</v-icon>
+                                        Whatsapp:
+                                    </span>
+                                    <br />
+                                    <a
+                                        class="contact-link"
+                                        href="https://wa.me/0639119996"
+                                    >
+                                        Stuur een bericht
+                                    </a>
+                                </p>
+                                <p>
+                                    <span class="grey--text subtitle">
                                         <v-icon>mdi-cellphone</v-icon>
-                                        Phone: </span
-                                    ><br />
+                                        Bellen:
+                                    </span>
+                                    <br />
                                     <a
                                         class="contact-link"
                                         href="tel:0639119996"
-                                        >(+31) 06-39119996</a
                                     >
+                                        (+31) 06-39119996
+                                    </a>
                                 </p>
                                 <p>
                                     <span class="grey--text subtitle">
                                         <v-icon>mdi-email</v-icon>
-                                        Email: </span
-                                    ><br />
+                                        Email:
+                                    </span>
+                                    <br />
                                     <a
                                         href="mailto:info@vonkprogramming.nl"
                                         class="contact-link"
-                                        >info@VonkProgramming.nl</a
                                     >
+                                        info@VonkProgramming.nl
+                                    </a>
                                 </p>
-                                <img
-                                    :src="require('@/assets/svg/contact.svg')"
-                                    height="200"
-                                    width="200"
-                                />
                             </v-col>
                             <v-col cols="12" sm="7" md="7">
-                                <transition name="fade" mode="out-in">
+                                <transition name="fade-left" mode="out-in">
                                     <v-form
                                         @submit.prevent="onSubmit"
                                         v-if="show"
@@ -80,15 +92,29 @@
                                     </v-form>
                                     <div
                                         v-else
-                                        class="d-flex justify-center items-center"
+                                        class="d-flex justify-center align-center"
+                                        :style="{
+                                            height: '100%',
+                                            width: '100%'
+                                        }"
                                     >
-                                        <img
+                                        <v-img
                                             :src="
                                                 require('@/assets/svg/mailsent.svg')
                                             "
                                             height="200"
                                             width="200"
-                                        />
+                                        >
+                                            <template #placeholder>
+                                                <v-sheet>
+                                                    <v-skeleton-loader
+                                                        height="200"
+                                                        width="200"
+                                                        type="image"
+                                                    />
+                                                </v-sheet>
+                                            </template>
+                                        </v-img>
                                     </div>
                                 </transition>
                             </v-col>

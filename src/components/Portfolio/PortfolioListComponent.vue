@@ -2,11 +2,22 @@
     <v-row justify="center" align="center">
         <v-col cols="12" md="6" class="mt-16">
             <v-card :color="colors[0]" class="pa-8 text-center portfolio-card">
-                <img
+                <v-img
                     :src="require('@/assets/svg/portfolio.svg')"
                     width="100"
                     height="100"
-                />
+                    class="mx-auto"
+                >
+                    <template #placeholder>
+                        <v-sheet>
+                            <v-skeleton-loader
+                                height="100"
+                                width="100"
+                                type="image"
+                            />
+                        </v-sheet>
+                    </template>
+                </v-img>
                 <v-card-title class="display-1 justify-center">
                     Portfolio
                 </v-card-title>
@@ -49,13 +60,24 @@
                     <p>
                         Ook kunt u een kijkje nemen op mijn GitHub account
                         <br />
-                        <img
+                        <v-img
                             :src="require('@/assets/svg/github.svg')"
                             @click="goToGithub"
                             style="cursor: pointer;"
                             width="40"
                             height="40"
-                        />
+                            class="mx-auto"
+                        >
+                            <template #placeholder>
+                                <v-sheet>
+                                    <v-skeleton-loader
+                                        height="40"
+                                        width="40"
+                                        type="image"
+                                    />
+                                </v-sheet>
+                            </template>
+                        </v-img>
                     </p>
                 </v-card-text>
             </v-card>
@@ -83,11 +105,22 @@
                 :color="colors[0]"
                 class="pa-md-8 pa-4 text-center portfolio-card"
             >
-                <img
+                <v-img
                     :src="require('@/assets/svg/certificate.svg')"
                     width="100"
                     height="100"
-                />
+                    class="mx-auto"
+                >
+                    <template #placeholder>
+                        <v-sheet>
+                            <v-skeleton-loader
+                                height="100"
+                                width="100"
+                                type="image"
+                            />
+                        </v-sheet>
+                    </template>
+                </v-img>
                 <v-card-title class="display-1 justify-center">
                     Certificaten en diploma's
                 </v-card-title>

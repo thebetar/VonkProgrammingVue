@@ -1,9 +1,5 @@
 <template>
-    <v-card
-        class="alert-card"
-        :class="{ 'pa-4': !isMobile }"
-        :style="{ borderColor: color }"
-    >
+    <v-card class="alert-card" :class="{ 'pa-4': !isMobile }">
         <v-card-text>
             <v-row :class="{ 'flex-column': isMobile }">
                 <v-col
@@ -12,11 +8,21 @@
                     md="4"
                     class="d-flex align-center justify-center"
                 >
-                    <img
+                    <v-img
                         v-if="item.imageUrl"
                         :src="require('@/assets/portfolio/' + item.imageUrl)"
                         class="portfolio-pic"
-                    />
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    height="200"
+                                    width="140"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
                 </v-col>
                 <v-col cols="12" md="8" :class="{ 'text-left': isMobile }">
                     <p
@@ -42,11 +48,21 @@
                     cols="4"
                     class="d-flex align-center justify-center"
                 >
-                    <img
+                    <v-img
                         v-if="item.imageUrl"
                         :src="require('@/assets/portfolio/' + item.imageUrl)"
                         class="portfolio-pic"
-                    />
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    height="200"
+                                    width="140"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
                 </v-col>
             </v-row>
         </v-card-text>
@@ -83,7 +99,7 @@ export default {
 }
 
 .alert-card {
-    border: 2px solid;
+    border-radius: 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {

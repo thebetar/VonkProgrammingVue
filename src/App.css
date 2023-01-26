@@ -29,6 +29,20 @@ body {
     font-display: swap !important;
 }
 
+.title,
+.v-card__title {
+    word-break: normal !important;
+    word-wrap: break-word;
+}
+
+.v-image__image {
+    background-size: contain;
+}
+
+.v-card__text {
+    color: rgba(0, 0, 0, 0.87);
+}
+
 @media only screen and (max-width: 600px) {
     ::-webkit-scrollbar {
         width: 0px;
@@ -66,4 +80,21 @@ body {
 .fade-enter,
 .fade-leave-active {
     opacity: 0;
+}
+
+/* Fade effect transition */
+.fade-left-enter-active,
+.fade-left-leave-active {
+    transition-property: all;
+    transition-duration: 0.25s;
+}
+
+.fade-left-enter-active {
+    transition-delay: 0.2s;
+}
+
+.fade-left-enter,
+.fade-left-leave-active {
+    opacity: 0;
+    transform: translateX(-20px);
 }

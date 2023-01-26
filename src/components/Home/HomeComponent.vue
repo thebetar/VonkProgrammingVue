@@ -20,11 +20,22 @@
                                   }
                         "
                     >
-                        <img
+                        <v-img
                             :src="require('@/assets/svg/programming.svg')"
                             :height="isMobile ? 200 : 400"
                             :width="isMobile ? 200 : 400"
-                        />
+                            aspect-ratio="1"
+                        >
+                            <template #placeholder>
+                                <v-sheet>
+                                    <v-skeleton-loader
+                                        :height="isMobile ? 200 : 400"
+                                        :width="isMobile ? 200 : 400"
+                                        type="image"
+                                    />
+                                </v-sheet>
+                            </template>
+                        </v-img>
                     </v-col>
                     <v-col
                         offset="0"
@@ -81,15 +92,26 @@
                     <v-hover v-slot="{ hover }">
                         <v-card
                             :elevation="hover ? 12 : 2"
-                            class="pa-4 d-flex flex-column align-center card-size"
+                            class="pa-4 d-flex flex-column align-center card-size border-2"
                             :class="{ 'card-hover': hover }"
+                            outlined
                         >
-                            <img
+                            <v-img
                                 :src="require('@/assets/svg/process.svg')"
                                 class="p-4"
                                 width="120"
                                 height="120"
-                            />
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="120"
+                                            height="120"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
                             <v-card-title class="title text-center"
                                 >Procesbeschrijving</v-card-title
                             >
@@ -153,12 +175,22 @@
                             :elevation="hover ? 12 : 2"
                             class="pa-4 d-flex flex-column align-center card-size"
                             :class="{ 'card-hover': hover }"
+                            outlined
                         >
-                            <img
+                            <v-img
                                 :src="require('@/assets/svg/webpage.svg')"
                                 width="150"
                                 height="150"
-                            />
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="150"
+                                            height="150"
+                                            type="image"
+                                        />
+                                    </v-sheet> </template
+                            ></v-img>
                             <v-card-title class="title">
                                 Webapplicatie Development
                             </v-card-title>
@@ -219,11 +251,21 @@
             <v-container>
                 <v-row justify="center">
                     <v-col cols="12" sm="12" md="12" align="center">
-                        <img
+                        <v-img
                             :src="require('@/assets/svg/idea.svg')"
                             width="80"
                             height="80"
-                        />
+                        >
+                            <template #placeholder>
+                                <v-sheet>
+                                    <v-skeleton-loader
+                                        width="80"
+                                        height="80"
+                                        type="image"
+                                    />
+                                </v-sheet>
+                            </template>
+                        </v-img>
                         <h5 class="display-1 mt-4">Van idee naar website!</h5>
                         <p class="body-1 mt-4">
                             VonkProgramming heeft contact met verschillende
@@ -257,24 +299,54 @@
                             React).
                         </p>
                         <div class="d-flex justify-between ">
-                            <img
+                            <v-img
                                 :src="require('@/assets/svg/ionic.svg')"
                                 class="mx-2"
                                 width="80"
                                 height="80"
-                            />
-                            <img
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
+                            <v-img
                                 :src="require('@/assets/svg/vue.svg')"
                                 class="mx-2"
                                 width="80"
                                 height="80"
-                            />
-                            <img
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
+                            <v-img
                                 :src="require('@/assets/svg/react.svg')"
                                 class="mx-2"
                                 width="80"
                                 height="80"
-                            />
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
                         </div>
                     </v-col>
                     <v-col
@@ -290,24 +362,54 @@
                             software worden gemaakt.
                         </p>
                         <div class="d-flex justify-between ">
-                            <img
+                            <v-img
                                 :src="require('@/assets/svg/nodejs.svg')"
                                 class="mx-2"
                                 width="80"
                                 height="80"
-                            />
-                            <img
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
+                            <v-img
                                 :src="require('@/assets/svg/mongodb.svg')"
                                 class="mx-2"
                                 width="80"
                                 height="80"
-                            />
-                            <img
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
+                            <v-img
                                 :src="require('@/assets/svg/docker.svg')"
                                 class="mx-2"
                                 width="80"
                                 height="80"
-                            />
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
                         </div>
                     </v-col>
                 </v-row>
@@ -323,11 +425,22 @@
                     md="6"
                     class="d-flex flex-column justify-center items-center text-center"
                 >
-                    <img
+                    <v-img
                         :src="require('@/assets/svg/portfolio.svg')"
                         width="80"
                         height="80"
-                    />
+                        class="mx-auto"
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    width="80"
+                                    height="80"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
                     <h3 class="display-1">Portfolio</h3>
                     <p class="body-1">
                         Naast een mooi verhaal over hoe alles te werk gaat heb
@@ -337,13 +450,28 @@
                     <v-btn to="/portfolio" color="primary" class="my-2" large>
                         Ga naar portfolio pagina
                     </v-btn>
-                    <v-btn to="/portfolio" color="secondary" class="my-2" large>
-                        <img
+                    <v-btn
+                        href="https://github.com/thebetar"
+                        color="secondary"
+                        class="my-2"
+                        large
+                    >
+                        <v-img
                             :src="require('@/assets/svg/github.svg')"
                             height="16"
                             width="16"
                             class="mr-2"
-                        />
+                        >
+                            <template #placeholder>
+                                <v-sheet>
+                                    <v-skeleton-loader
+                                        width="16"
+                                        height="16"
+                                        type="image"
+                                    />
+                                </v-sheet>
+                            </template>
+                        </v-img>
                         Mijn Github pagina
                     </v-btn>
                 </v-col>
