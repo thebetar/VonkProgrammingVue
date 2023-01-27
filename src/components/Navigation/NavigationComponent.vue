@@ -1,27 +1,26 @@
 <template>
     <div>
         <v-app-bar
-            class="d-flex justify-start justify-md-center"
+            class="d-flex justify-space-between justify-md-center w-full"
             fixed
             flat
             dark
             :class="{ scrolled: isScroll }"
         >
-            <v-app-bar-nav-icon
-                @click="emitDrawer"
-                class="d-flex d-sm-none"
-                color="primary"
-            ></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon @click="emitDrawer" class="d-flex d-sm-none">
+                <v-icon large>{{ mdiMenu }}</v-icon>
+            </v-app-bar-nav-icon>
             <v-toolbar-title>
                 <router-link to="/home" aria-label="Home">
                     <v-img
                         src="../../assets/logo.png"
                         max-height="36"
+                        max-width="90"
                         contain
                     ></v-img>
                 </router-link>
             </v-toolbar-title>
-            <v-toolbar-items dark>
+            <v-toolbar-items dark class="d-none d-sm-block">
                 <v-btn
                     text
                     v-for="item in items.filter(item => !item.href)"
@@ -50,10 +49,13 @@
 </template>
 
 <script>
+import { mdiMenu } from '@mdi/js';
+
 export default {
     data() {
         return {
-            isScroll: this.handleScroll()
+            isScroll: this.handleScroll(),
+            mdiMenu
         };
     },
     props: {

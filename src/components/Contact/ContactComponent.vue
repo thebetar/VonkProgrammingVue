@@ -1,12 +1,8 @@
 <template>
     <div>
-        <v-row justify="center" align="center" class="media-card-container">
+        <v-row justify="center" align="center" class="v-card-container">
             <v-col cols="12" sm="6" md="6">
-                <v-card
-                    class="pa-2 pa-md-5 rounded-xl media-card"
-                    outlined
-                    elevation="12"
-                >
+                <v-card class="pa-2 pa-md-5 rounded-xl" outlined elevation="12">
                     <v-card-title>
                         <h1 class="display-3">
                             Contact
@@ -26,15 +22,14 @@
                                     <span
                                         class="blue-grey--text text--darken-1"
                                     >
-                                        <v-icon>{{ mdiWhatsapp }}</v-icon>
                                         Whatsapp:
                                     </span>
                                     <br />
                                     <a
-                                        class="contact-link"
                                         href="https://wa.me/0639119996"
                                         target="_blank"
                                     >
+                                        <v-icon>{{ mdiWhatsapp }}</v-icon>
                                         Stuur een bericht
                                     </a>
                                 </p>
@@ -42,14 +37,11 @@
                                     <span
                                         class="blue-grey--text text--darken-1"
                                     >
-                                        <v-icon>{{ mdiPhone }}</v-icon>
                                         Bellen:
                                     </span>
                                     <br />
-                                    <a
-                                        class="contact-link"
-                                        href="tel:0639119996"
-                                    >
+                                    <a href="tel:0639119996">
+                                        <v-icon>{{ mdiPhone }}</v-icon>
                                         (+31) 06-39119996
                                     </a>
                                 </p>
@@ -57,14 +49,11 @@
                                     <span
                                         class="blue-grey--text text--darken-1"
                                     >
-                                        <v-icon>{{ mdiEmail }}</v-icon>
                                         Email:
                                     </span>
                                     <br />
-                                    <a
-                                        href="mailto:info@vonkprogramming.nl"
-                                        class="contact-link"
-                                    >
+                                    <a href="mailto:info@vonkprogramming.nl">
+                                        <v-icon>{{ mdiEmail }}</v-icon>
                                         info@VonkProgramming.nl
                                     </a>
                                 </p>
@@ -204,35 +193,22 @@ export default {
 </script>
 
 <style scoped>
-a.contact-link {
-    display: block;
-    color: #333333;
-    text-decoration: none;
-    margin-top: 8px;
-    transition: all 0.3s ease-in-out;
-}
-
-a.contact-link:hover,
-a.contact-link:hover .v-icon {
-    color: #f22 !important;
-}
-
-.media-card {
+.v-card {
     border: 2px #aaa solid;
     border-radius: 0.5rem;
 }
 
-.media-card-container {
+.v-card-container {
     min-height: 100vh !important;
 }
 
 @media only screen and (max-width: 600px) {
-    .media-card {
+    .v-card {
         padding: 1rem 0.5rem !important;
         height: fit-content;
     }
 
-    .media-card-container {
+    .v-card-container {
         height: calc(100vh + 4rem) !important;
     }
 }

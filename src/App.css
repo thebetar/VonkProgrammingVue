@@ -3,11 +3,6 @@ html {
     font-display: swap !important;
 }
 
-.highlight {
-    color: red;
-    font-style: italic;
-}
-
 ::-webkit-scrollbar {
     width: 18px;
 }
@@ -30,10 +25,19 @@ body {
     overflow-x: hidden !important;
 }
 
+.v-card {
+    border: 2px #aaa solid;
+    border-radius: 0.5rem;
+}
+
 .title,
 .v-card__title {
     word-break: normal !important;
     word-wrap: break-word;
+}
+
+.v-toolbar__title {
+    margin-right: 2rem;
 }
 
 .v-image__image {
@@ -42,6 +46,19 @@ body {
 
 .v-card__text {
     color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.v-card > .v-card__text a {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.v-card > .v-card__text a:hover,
+.v-card > .v-card__text a:hover .v-icon {
+    color: #f22 !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -62,18 +79,19 @@ body {
         width: 100vw !important;
     }
 
-    .desktoponly {
-        display: none;
-    }
-
-    .row {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-
     .v-footer .row {
         padding-top: 2rem;
         padding-bottom: 2rem;
+    }
+
+    .v-toolbar > .v-toolbar__content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .v-toolbar__title {
+        margin-right: 0;
     }
 }
 

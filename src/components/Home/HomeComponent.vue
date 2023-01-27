@@ -3,7 +3,7 @@
         <v-row class="home-page-background">
             <v-container>
                 <v-row
-                    class="home-page-divider-90"
+                    class="home-page-divider-90 align-content-center"
                     justify="center"
                     align="center"
                 >
@@ -11,7 +11,7 @@
                         cols="12"
                         md="5"
                         :style="
-                            !isMobile
+                            !$vuetify.breakpoint.xs
                                 ? { margin: '20px 0' }
                                 : {
                                       paddingBottom: '0px',
@@ -23,15 +23,19 @@
                     >
                         <v-img
                             :src="require('@/assets/svg/programming.svg')"
-                            :height="isMobile ? 200 : 350"
-                            :width="isMobile ? 200 : 350"
+                            :height="$vuetify.breakpoint.xs ? 200 : 350"
+                            :width="$vuetify.breakpoint.xs ? 200 : 350"
                             aspect-ratio="1"
                         >
                             <template #placeholder>
                                 <v-sheet>
                                     <v-skeleton-loader
-                                        :height="isMobile ? 200 : 300"
-                                        :width="isMobile ? 200 : 300"
+                                        :height="
+                                            $vuetify.breakpoint.xs ? 200 : 300
+                                        "
+                                        :width="
+                                            $vuetify.breakpoint.xs ? 200 : 300
+                                        "
                                         type="image"
                                     />
                                 </v-sheet>
@@ -43,7 +47,9 @@
                         cols="12"
                         md="7"
                         class="d-flex flex-column"
-                        :style="!isMobile ? {} : { paddingTop: '0px' }"
+                        :style="
+                            !$vuetify.breakpoint.xs ? {} : { paddingTop: '0px' }
+                        "
                     >
                         <p class="text-h4 white--text">
                             Voor elk probleem een oplossing 💪
@@ -64,6 +70,7 @@
                                 color="primary"
                                 to="/contact"
                                 aria-label="Neem contact op"
+                                :block="$vuetify.breakpoint.xs"
                             >
                                 <v-icon class="mr-2">{{ mdiPhone }}</v-icon>
                                 Neem contact op
@@ -90,152 +97,155 @@
                 </div>
             </v-col>
         </v-row>
-        <v-container>
+        <v-container
+            class="pb-16"
+            :class="$vuetify.breakpoint.xs ? '' : 'pt-8'"
+        >
             <v-row justify="center">
                 <v-col cols="12" sm="12" md="6" align="center">
-                    <v-hover v-slot="{ hover }">
-                        <v-card
-                            :elevation="hover ? 12 : 2"
-                            class="pa-4 d-flex flex-column align-center card-size border-2"
-                            :class="{ 'card-hover': hover }"
-                            outlined
+                    <v-card
+                        class="pa-4 d-flex flex-column align-center my-auto text-center"
+                        elevation="6"
+                        outlined
+                    >
+                        <v-img
+                            :src="require('@/assets/svg/process.svg')"
+                            class="p-4"
+                            width="120"
+                            height="120"
                         >
-                            <v-img
-                                :src="require('@/assets/svg/process.svg')"
-                                class="p-4"
-                                width="120"
-                                height="120"
-                            >
-                                <template #placeholder>
-                                    <v-sheet>
-                                        <v-skeleton-loader
-                                            width="120"
-                                            height="120"
-                                            type="image"
-                                        />
-                                    </v-sheet>
-                                </template>
-                            </v-img>
-                            <v-card-title class="title text-center"
-                                >Procesbeschrijving</v-card-title
-                            >
-                            <v-list>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <b>Kennismaking: </b>
-                                        Voorafgaand vindt er een
-                                        kennsmakingsgesprek plaats waarin de
-                                        context van uw wens wordt besproken.
-                                    </v-list-item-content>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <b>Ontwerp: </b>
-                                        Op basis van de besproken details wordt
-                                        er een product ontwerp gemaakt. Door
-                                        middel van schetsen van schermontwerpen.
-                                        Gedurende dit proces is het belangrijk
-                                        dat de klant tevreden is met het ontwerp
-                                        en dat de voorgestelde uitwerking het
-                                        gestelde probleem zal oplossen.
-                                    </v-list-item-content>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <b>Realisatie: </b>
-                                        Het eindproduct wordt gerealiseerd met
-                                        meerdere feedback rondes waarbij wordt
-                                        gekeken of het product de juiste kant op
-                                        gaat.
-                                    </v-list-item-content>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <b>Afronding: </b>
-                                        Zodra het eindproduct klaar is zorgt
-                                        VonkProgramming ervoor dat enige bugs
-                                        eruit gefilterd worden.
-                                    </v-list-item-content>
-                                </v-list-item>
-                            </v-list>
-                        </v-card>
-                    </v-hover>
+                            <template #placeholder>
+                                <v-sheet>
+                                    <v-skeleton-loader
+                                        width="120"
+                                        height="120"
+                                        type="image"
+                                    />
+                                </v-sheet>
+                            </template>
+                        </v-img>
+                        <v-card-title class="title">
+                            Procesbeschrijving
+                        </v-card-title>
+                        <v-list>
+                            <v-list-item>
+                                <v-list-item-content>
+                                    <b>Kennismaking: </b>
+                                    Voorafgaand vindt er een kennsmakingsgesprek
+                                    plaats waarin de context van uw wens wordt
+                                    besproken.
+                                </v-list-item-content>
+                            </v-list-item>
+                            <v-list-item>
+                                <v-list-item-content>
+                                    <b>Ontwerp: </b>
+                                    Op basis van de besproken details wordt er
+                                    een product ontwerp gemaakt. Door middel van
+                                    schetsen van schermontwerpen. Gedurende dit
+                                    proces is het belangrijk dat de klant
+                                    tevreden is met het ontwerp en dat de
+                                    voorgestelde uitwerking het gestelde
+                                    probleem zal oplossen.
+                                </v-list-item-content>
+                            </v-list-item>
+                            <v-list-item>
+                                <v-list-item-content>
+                                    <b>Realisatie: </b>
+                                    Het eindproduct wordt gerealiseerd met
+                                    meerdere feedback rondes waarbij wordt
+                                    gekeken of het product de juiste kant op
+                                    gaat.
+                                </v-list-item-content>
+                            </v-list-item>
+                            <v-list-item>
+                                <v-list-item-content>
+                                    <b>Afronding: </b>
+                                    Zodra het eindproduct klaar is zorgt
+                                    VonkProgramming ervoor dat enige bugs eruit
+                                    gefilterd worden.
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-list>
+                    </v-card>
                 </v-col>
-                <v-col cols="12" sm="12" md="6" align="center">
-                    <v-hover v-slot="{ hover }">
-                        <v-card
-                            :elevation="hover ? 12 : 2"
-                            class="pa-4 d-flex flex-column align-center card-size"
-                            :class="{ 'card-hover': hover }"
-                            outlined
+                <v-col
+                    cols="12"
+                    sm="12"
+                    md="6"
+                    class="d-flex justify-content-center"
+                >
+                    <v-card
+                        class="pa-4 d-flex flex-column align-center my-auto text-center"
+                        elevation="6"
+                        outlined
+                    >
+                        <v-img
+                            :src="require('@/assets/svg/webpage.svg')"
+                            width="150"
+                            height="150"
                         >
-                            <v-img
-                                :src="require('@/assets/svg/webpage.svg')"
-                                width="150"
-                                height="150"
-                            >
-                                <template #placeholder>
-                                    <v-sheet>
-                                        <v-skeleton-loader
-                                            width="150"
-                                            height="150"
-                                            type="image"
-                                        />
-                                    </v-sheet> </template
-                            ></v-img>
-                            <v-card-title class="title">
-                                Webapplicatie Development
-                            </v-card-title>
-                            <v-card-text class="body-2">
-                                <p>
-                                    Ik maak gebruik van de nieuwste technieken
-                                    in het maken van software en websites binnen
-                                    het web. Mijn vaardigheden liggen bij
-                                    <span class="font-weight-bold">VueJS</span>,
-                                    <span class="font-weight-bold">React</span>,
-                                    en
-                                    <span class="font-weight-bold">Ionic</span>.
-                                </p>
-                                <p>
-                                    Ik heb ook kennis van backend software in
-                                    <span class="font-weight-bold">
-                                        Express
-                                    </span>
-                                    en
-                                    <span class="font-weight-bold">NestJS</span
-                                    >.
-                                </p>
-                                <p>
-                                    Verder is er ook ervaring in het gebruik van
-                                    <span class="font-weight-bold">
-                                        Pipelines (Jenkins) </span
-                                    >,
-                                    <span class="font-weight-bold">
-                                        unit testing </span
-                                    >,
-                                    <span class="font-weight-bold">
-                                        E2E testing
-                                    </span>
-                                    en
-                                    <span class="font-weight-bold">AWS</span>.
-                                </p>
-                                <p>
-                                    <b>Samenvattend</b> voor
-                                    <b>niet nerds</b> is dit een verzameling aan
-                                    tools die gebruikt kan worden om een enorme
-                                    hoeveelheid aan software oplossingen te
-                                    maken. Wellicht ook voor uw probleem. 😉
-                                </p>
-                            </v-card-text>
-                        </v-card>
-                    </v-hover>
+                            <template #placeholder>
+                                <v-sheet>
+                                    <v-skeleton-loader
+                                        width="150"
+                                        height="150"
+                                        type="image"
+                                    />
+                                </v-sheet> </template
+                        ></v-img>
+                        <v-card-title class="title">
+                            Webapplicatie Development
+                        </v-card-title>
+                        <v-card-text class="body-2">
+                            <p>
+                                Ik maak gebruik van de nieuwste technieken in
+                                het maken van software en websites binnen het
+                                web. Mijn vaardigheden liggen bij
+                                <span class="font-weight-bold">VueJS</span>,
+                                <span class="font-weight-bold">React</span>, en
+                                <span class="font-weight-bold">Ionic</span>.
+                            </p>
+                            <p>
+                                Ik heb ook kennis van backend software in
+                                <span class="font-weight-bold">
+                                    Express
+                                </span>
+                                en
+                                <span class="font-weight-bold">NestJS</span>.
+                            </p>
+                            <p>
+                                Verder is er ook ervaring in het gebruik van
+                                <span class="font-weight-bold">
+                                    Pipelines (Jenkins) </span
+                                >,
+                                <span class="font-weight-bold">
+                                    unit testing </span
+                                >,
+                                <span class="font-weight-bold">
+                                    E2E testing
+                                </span>
+                                en
+                                <span class="font-weight-bold">AWS</span>.
+                            </p>
+                            <p>
+                                <b>Samenvattend</b> voor <b>niet nerds</b> is
+                                dit een verzameling aan tools die gebruikt kan
+                                worden om een enorme hoeveelheid aan software
+                                oplossingen te maken. Wellicht ook voor uw
+                                probleem. 😉
+                            </p>
+                        </v-card-text>
+                    </v-card>
                 </v-col>
             </v-row>
         </v-container>
         <v-row class="wave-div">
             <wavey-divider-bottom></wavey-divider-bottom>
         </v-row>
-        <v-row class="home-page-background home-page-background-gradient">
+        <v-row
+            class="home-page-background home-page-background-gradient"
+            :class="$vuetify.breakpoint.xs ? 'py-16' : 'py-2'"
+        >
             <v-container>
                 <v-row justify="center">
                     <v-col cols="12" sm="12" md="6" align="center">
@@ -259,9 +269,15 @@
                             VonkProgramming heeft contact met verschillende
                             ontwerpers om uw idee perfect vorm te geven. Hierbij
                             wordt er rekening gehouden met
-                            <span class="highlight">responsiviteit</span>,
-                            <span class="highlight">schaalbaarheid</span> en
-                            <span class="highlight">SEO</span>.<br />
+                            <span class="font-weight-bold font-italic">
+                                responsiviteit</span
+                            >,
+                            <span class="font-weight-bold font-italic">
+                                schaalbaarheid</span
+                            >
+                            en
+                            <span class="font-weight-bold font-italic">SEO</span
+                            >.<br />
                             VonkProgramming richt zich op een flexibele aanpak.
                             Van software solutions tot simpele portfolio
                             websites.
@@ -423,8 +439,47 @@
         <v-row class="wave-div">
             <wavey-divider-top></wavey-divider-top>
         </v-row>
-        <v-container class="mb-16">
+        <v-container
+            class="mb-16"
+            :class="$vuetify.breakpoint.xs ? 'pt-16' : ''"
+        >
             <v-row justify="center">
+                <v-col cols="12" sm="12" md="6" class="d-none d-sm-block">
+                    <v-img
+                        :src="require('@/assets/svg/portfolio.svg')"
+                        width="80"
+                        height="80"
+                        class="mx-auto"
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    width="80"
+                                    height="80"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
+                </v-col>
+                <v-col cols="0" sm="0" md="6" class="d-none d-sm-block">
+                    <v-img
+                        :src="require('@/assets/svg/network.svg')"
+                        width="80"
+                        height="80"
+                        class="mx-auto"
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    width="80"
+                                    height="80"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
+                </v-col>
                 <v-col
                     cols="12"
                     sm="12"
@@ -435,7 +490,7 @@
                         :src="require('@/assets/svg/portfolio.svg')"
                         width="80"
                         height="80"
-                        class="mx-auto"
+                        class="mx-auto mb-8 d-block d-sm-none"
                     >
                         <template #placeholder>
                             <v-sheet>
@@ -453,29 +508,39 @@
                         ik ondertussen ook al een portfolio opgebouwd met een
                         aantal bekenden en wat minder bekende bedrijven.
                     </p>
-                    <v-btn
-                        to="/portfolio"
-                        color="primary"
-                        class="my-2"
-                        large
-                        arial-label="Portfolio"
-                    >
-                        <v-icon class="mr-2">{{ mdiFolder }}</v-icon>
-                        Ga naar portfolio pagina
-                    </v-btn>
-                    <v-btn
-                        href="https://github.com/thebetar"
-                        target="_blank"
-                        color="secondary"
-                        class="my-2"
-                        large
-                        aria-label="Github"
-                    >
-                        <v-icon>
-                            {{ mdiGithub }}
-                        </v-icon>
-                        Mijn Github pagina
-                    </v-btn>
+                    <v-row>
+                        <v-col cols="6">
+                            <v-btn
+                                to="/portfolio"
+                                color="medium"
+                                class="my-2"
+                                large
+                                arial-label="Portfolio"
+                                outlined
+                                block
+                            >
+                                <v-icon class="mr-2">{{ mdiFolder }}</v-icon>
+                                Portfolio
+                            </v-btn>
+                        </v-col>
+                        <v-col cols="6">
+                            <v-btn
+                                href="https://github.com/thebetar"
+                                target="_blank"
+                                color="secondary"
+                                class="my-2"
+                                large
+                                aria-label="Github"
+                                outlined
+                                block
+                            >
+                                <v-icon>
+                                    {{ mdiGithub }}
+                                </v-icon>
+                                Github
+                            </v-btn>
+                        </v-col>
+                    </v-row>
                 </v-col>
                 <v-col
                     class="d-flex flex-column justify-center items-center text-center"
@@ -484,7 +549,7 @@
                         :src="require('@/assets/svg/network.svg')"
                         width="80"
                         height="80"
-                        class="mx-auto"
+                        class="mx-auto mb-8 d-block d-sm-none"
                     >
                         <template #placeholder>
                             <v-sheet>
@@ -546,11 +611,6 @@ export default {
             mdiGithub
         };
     },
-    computed: {
-        isMobile() {
-            return window.innerWidth <= 800 || window.innerHeight <= 600;
-        }
-    },
     methods: {
         goTo(url) {
             window.open(url, '_blank');
@@ -564,19 +624,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-    background-color: #333;
-}
-
-.v-card {
-    transition: all 0.3s ease-in-out;
-    opacity: 0.8;
-}
-
-.card-hover {
-    opacity: 1;
-}
-
 .home-page-header {
     margin-top: -140px !important;
     padding: 32px 80px;
@@ -606,10 +653,9 @@ body {
     height: 80vh;
 }
 
-.card-size {
-    height: fit-content;
-    display: flex;
-    justify-content: center;
+.v-card {
+    border: 2px #aaa solid;
+    border-radius: 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -630,14 +676,6 @@ body {
         text-shadow: #333 0 0 8px;
         background-color: #333;
     }
-
-    .card-size {
-        height: auto;
-    }
-    .sizeable-lottie {
-        height: 300px !important;
-        width: 300px !important;
-    }
 }
 </style>
 
@@ -647,6 +685,7 @@ body {
     height: calc(100vw / 3.5);
     margin-top: 0;
 }
+
 @media only screen and (max-width: 600px) {
     .wave-div {
         display: none;

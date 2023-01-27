@@ -3,19 +3,15 @@
         <v-container fluid class="background">
             <contact-component></contact-component>
         </v-container>
-
-        <footer-component />
     </main>
 </template>
 
 <script>
 import ContactComponent from '../components/Contact/ContactComponent.vue';
-import FooterComponent from '../components/Footer/FooterComponent.vue';
 
 export default {
     components: {
-        ContactComponent,
-        FooterComponent
+        ContactComponent
     }
 };
 </script>

@@ -112,15 +112,15 @@
             >
                 <v-img
                     :src="require('@/assets/svg/certificate.svg')"
-                    width="100"
-                    height="100"
+                    width="120"
+                    height="120"
                     class="mx-auto"
                 >
                     <template #placeholder>
                         <v-sheet>
                             <v-skeleton-loader
-                                height="100"
-                                width="100"
+                                height="120"
+                                width="120"
                                 type="image"
                             />
                         </v-sheet>
