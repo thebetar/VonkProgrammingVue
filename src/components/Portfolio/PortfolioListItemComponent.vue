@@ -1,5 +1,10 @@
 <template>
-    <v-card class="alert-card" :class="{ 'pa-4': !isMobile }">
+    <v-card
+        class="alert-card"
+        :class="{ 'pa-4': !isMobile }"
+        outlined
+        elevation="10"
+    >
         <v-card-text>
             <v-row :class="{ 'flex-column': isMobile }">
                 <v-col

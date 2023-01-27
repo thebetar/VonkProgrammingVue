@@ -1,55 +1,64 @@
 <template>
     <v-footer color="white">
         <v-container>
-            <v-row justify="space-between">
-                <v-col cols="12" sm="4" md="4">
-                    <h5 class="display-1 mb-3">
+            <v-row>
+                <v-col cols="12" sm="6" md="6">
+                    <span class="display-1 mb-3">
                         Contact
-                    </h5>
+                    </span>
                     <a
                         href="https://wa.me/0639119996"
                         target="_blank"
                         class="contact-link"
+                        aria-label="Whatsapp"
                     >
-                        <v-icon>mdi-whatsapp</v-icon> Stuur mij een bericht
+                        <v-icon>{{ mdiWhatsapp }}</v-icon> Stuur mij een bericht
                     </a>
-                    <a href="tel:0639119996" class="contact-link">
-                        <v-icon>mdi-cellphone</v-icon> 06-39119996
+                    <a
+                        href="tel:0639119996"
+                        class="contact-link"
+                        aria-label="Bellen"
+                    >
+                        <v-icon>{{ mdiPhone }}</v-icon> 06-39119996
                     </a>
                     <a
                         href="mailto:info@vonkprogramming.nl"
                         class="contact-link"
+                        aria-label="Email"
                     >
-                        <v-icon>mdi-email</v-icon> info@VonkProgramming.nl
+                        <v-icon>{{ mdiEmail }}</v-icon> info@VonkProgramming.nl
                     </a>
                     <a
                         href="https://www.linkedin.com/in/lars-v-82455612a/"
                         target="_blank"
                         class="contact-link"
+                        aria-label="LinkedIn"
                     >
-                        <v-icon>mdi-linkedin</v-icon> LinkedIn
+                        <v-icon>{{ mdiLinkedin }}</v-icon> LinkedIn
                     </a>
                     <a
                         href="https://github.com/thebetar"
                         target="_blank"
                         class="contact-link"
+                        aria-label="Github"
                     >
-                        <v-icon>mdi-github</v-icon> Github
+                        <v-icon>{{ mdiGithub }}</v-icon> Github
                     </a>
                 </v-col>
-                <v-col cols="12" sm="4" md="4">
-                    <h6 class="display-1 mb-3">
+                <v-col cols="12" offset-sm="2" sm="6" offset-md="2" md="4">
+                    <span class="display-1 mb-3">
                         Pagina's
-                    </h6>
+                    </span>
                     <v-list>
                         <v-list-item class="title" to="/home">
-                            <v-icon>mdi-home</v-icon> Home
+                            <v-icon class="mr-2">{{ mdiHome }}</v-icon> Home
                         </v-list-item>
                         <v-list-item class="title" to="/portfolio">
-                            <v-icon>mdi-folder-account</v-icon> Portfolio
+                            <v-icon class="mr-2">{{ mdiFolder }}</v-icon>
+                            Portfolio
                         </v-list-item>
                         <v-list-item class="title" to="/contact">
-                            <v-icon>mdi-cellphone</v-icon> Contact
+                            <v-icon class="mr-2">{{ mdiPhone }}</v-icon> Contact
                         </v-list-item>
                     </v-list>
                 </v-col>
@@ -59,7 +68,15 @@
 </template>
 
 <script>
-import axios from 'axios';
+import {
+    mdiWhatsapp,
+    mdiPhone,
+    mdiEmail,
+    mdiLinkedin,
+    mdiGithub,
+    mdiHome,
+    mdiFolder
+} from '@mdi/js';
 
 export default {
     data() {
@@ -67,24 +84,15 @@ export default {
             show: true,
             name: '',
             email: '',
-            description: ''
+            description: '',
+            mdiWhatsapp,
+            mdiPhone,
+            mdiEmail,
+            mdiLinkedin,
+            mdiGithub,
+            mdiHome,
+            mdiFolder
         };
-    },
-    methods: {
-        async onSubmit() {
-            const form = {
-                show: true,
-                name: this.name,
-                email: this.email,
-                text: this.description
-            };
-            try {
-                await axios.post('/server/mail.php', form);
-                this.show = false;
-            } catch (e) {
-                console.error(e);
-            }
-        }
     }
 };
 </script>
@@ -101,14 +109,5 @@ a.contact-link {
 a.contact-link:hover,
 a.contact-link:hover .v-icon {
     color: #f22 !important;
-}
-
-/* Fade animation */
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
 }
 </style>

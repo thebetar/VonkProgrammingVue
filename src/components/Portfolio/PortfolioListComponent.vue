@@ -1,7 +1,11 @@
 <template>
     <v-row justify="center" align="center">
-        <v-col cols="12" md="6" class="mt-16">
-            <v-card :color="colors[0]" class="pa-8 text-center portfolio-card">
+        <v-col cols="12" md="6">
+            <v-card
+                class="pa-8 text-center portfolio-card"
+                outlined
+                elevation="12"
+            >
                 <v-img
                     :src="require('@/assets/svg/portfolio.svg')"
                     width="100"
@@ -30,7 +34,7 @@
                         Bedrijven waar ik in vaste dienst heb gewerkt worden
                         weergeven met
                         <span
-                            :style="{ color: colors[1] }"
+                            :style="{ color: colors[0] }"
                             style="font-weight: bold;"
                         >
                             deze kleur </span
@@ -41,7 +45,7 @@
                         denk hierbij aan websites en<br />
                         maatwerk software worden weergeven met
                         <span
-                            :style="{ color: colors[2] }"
+                            :style="{ color: colors[1] }"
                             style="font-weight: bold;"
                         >
                             deze kleur </span
@@ -51,7 +55,7 @@
                         Verder zijn alle projecten die ik voor mezelf heb
                         gestart met
                         <span
-                            :style="{ color: colors[3] }"
+                            :style="{ color: colors[2] }"
                             style="font-weight: bold;"
                         >
                             deze kleur </span
@@ -102,8 +106,9 @@
         </v-col>
         <v-col cols="12" md="6" class="mt-16">
             <v-card
-                :color="colors[0]"
                 class="pa-md-8 pa-4 text-center portfolio-card"
+                outlined
+                elevation="12"
             >
                 <v-img
                     :src="require('@/assets/svg/certificate.svg')"
@@ -168,7 +173,7 @@ import PortfolioListItem from './PortfolioListItemComponent.vue';
 export default {
     data() {
         return {
-            colors: ['#ffffff', '#ff0050', '#ff6000', '#ff0000'],
+            colors: ['#BF0000', '#006F00', '#00006F'],
             stepChapter: 1,
             mobile: false,
             jobs: [
@@ -177,119 +182,119 @@ export default {
                     description:
                         'Aan het einde van het eerste jaar van mijn opleiding HBO-ICT ben ik begonnen bij StudentAanHuis. Hier hielp ik mensen met hun computer problemen. Dit ging van printers opnieuw instellen tot hele Windows systemen herstellen.',
                     imageUrl: 'sah-logo-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'Kookstudio Amsterdam',
                     description:
                         'Ik heb tijdens mijn tweede jaar van mijn opleiding een website gebouwd voor kookstudio Amsterdam met een eigen admin paneel gemaakt in PHP',
                     imageUrl: 'kookstudio-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'Sanoma',
                     description:
                         'In het tweede jaar van mijn opleiding HBO-ICT heb ik het volledige jaar bij Sanoma Media stage gelopen. Sanoma Media was destijds nog onderdeel van Sanoma. Hier heb ik mij bezig gehouden met software voor advertising. Dit was in de talen PHP, CSS, MySQL en HTML.',
                     imageUrl: 'sanoma-logo-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'Innovative Cycling',
                     description:
                         'Aan het einde van het tweede jaar van mijn opleiding HBO-ICT ben ik begonnen bij het studenten programmeur uitzendbureau Kojac. Hier kreeg ik de opdracht bij Innovative cycling de websites te onderhouden en te updaten. Hier heb ik gebruik gemaakt van Javascript, PHP, CSS, MySQL en HTML.',
                     imageUrl: 'kojac-logo-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'BijIngrid',
                     description:
                         'Ik heb voor Ingrid met mijn beginnende web development ervaring een website gemaakt om workshops op te geven. Deze website heeft een zelf gemaakt admin paneel gemaakt in PHP.',
                     imageUrl: 'bijingrid-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'Floriade',
                     description:
                         'In het derde jaar van mijn opleiding HBO-ICT heb ik stage gelopen voor het Floriade project. Dit was eerst voor de gemeente Almere en werd later verplaatst naar het Floriade gebouw. Hier heb ik mij met een team bezig gehouden met een van de onderdelen van de Floriade. Hier heb ik gebruik gemaakt van PHP, CSS, MySQL en HTML.',
                     imageUrl: 'floriade-logo-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'MedWeb',
                     description:
                         'In het laatste jaar van mijn opleiding HBO-ICT heb ik stage gelopen bij het bedrijf Medweb B.V.. Dit is een software bedrijf die zich bezig houdt met een rooster applicatie specifiek gericht op medisch specialisten en artsen. Ik heb mij hier bezig gehouden met het vernieuwen van een van de onderdelen van hun applicatie "Medspace". Hier heb ik gebruik gemaakt van VueJS/Javascript, IBM Notes, IBM Domino designer, CSS en HTML.',
                     imageUrl: 'medweb-logo-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'Hoveniersbedrijf Wouters',
                     description:
                         'Ik heb voor HoveniersBedrijf Wouters na mijn opleiding een website gemaakt met een professionele uitstraling en een snelle interface. Deze website is volledig gebouwd met VueJS',
                     imageUrl: 'hoveniersbedrijf-wouters-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'Quintor',
                     description:
                         'Momenteel werk ik bij IT consultancy bedrijf Quintor. Dit bedrijf houdt zich bezig met het adviseren over en bouwen van software. Dit bij grote klanten als de ING, de overheid, etc. Bij dit bedrijf houdt ik mij bezig met mijn programmeervaardigheden verbeteren zodat deze aan de hoogst mogelijke standaard kunnen voldoen.',
                     imageUrl: 'quintor-logo.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'Chary Solutions',
                     description:
                         'Ik heb voor Chary Solutions software gemaakt om hun advertising data uit hun Facebook business manager te halen en dit vervolgens te exporteren naar google sheets',
                     imageUrl: 'chary-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'SVB',
                     description:
                         'Mijn eerste opdracht vanuit Quintor is bij de SVB, hier programmeer ik voornamelijk in Javascript in het framework Angular',
                     imageUrl: 'SVB-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'J-Tax Automotive',
                     description:
                         'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten. De software van J-tax is gemaakt met behulp van Vue.js en ExpressJS',
                     imageUrl: 'j-tax-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'Klets',
                     description:
                         'Klets is een social media app die ik gemaakt heb met behulp van Ionic. Deze app is gemaakt om op basis van een onderwerp en een aangegeven afstand mensen te zoeken en kleine groepschat (max 5) te vormen. Klets is gemaakt met behulp van Ioinic',
                     imageUrl: 'klets-min.jpg',
-                    color: 3
+                    color: 2
                 },
                 {
                     title: 'ING',
                     description:
                         'Bij de ING werk ik momenteel als full stack developer aan verschillende interfaces die gebruikt worden door de ING. Dit met het framework Lit element',
                     imageUrl: 'ing-min.jpg',
-                    color: 1
+                    color: 0
                 },
                 {
                     title: 'P.51 Design en MarkantIT',
                     description:
                         'Samen met P.51 design en MarkantIT werk ik aan een website voor OOMT m.b.t. de Arbo catalogus. Dit project wordt gebouwd met React',
                     imageUrl: 'p51design-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'Automotive RS',
                     description:
                         "Voor Automotive RS maak ik een dashboard waarin zij hun gekochte auto's kunnen invoeren en alles overzichtelijk kunnen bijhouden. Ook zal dit dashboard met API gekoppeld zijn om gegevens automatisch op te halen zover dit kan.",
                     imageUrl: 'automotive-rs-min.jpg',
-                    color: 2
+                    color: 1
                 },
                 {
                     title: 'Deet',
                     description:
                         'Ik heb met de "Deet" app het idee gehad om voor mijzelf een app te maken die het makkelijker maakt om doelen in te plannen. Dit kunnen doelen zijn als meer lezen, bepaalde oefeningen in de sportschool of een cursus volgen. Deze app maakt het makkelijker om dit bij te houden.',
                     imageUrl: 'deet-min.jpg',
-                    color: 3
+                    color: 2
                 }
             ]
                 .map(this.addRandomId)
@@ -435,6 +440,14 @@ export default {
 };
 </script>
 
+<style>
+@media only screen and (max-width: 600px) {
+    .v-timeline-item__body {
+        margin-right: 0.5rem;
+    }
+}
+</style>
+
 <style scoped>
 .v-card__text {
     font-size: 18px !important;
@@ -442,6 +455,11 @@ export default {
 
 .v-timeline::before {
     background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.portfolio-card {
+    border: 2px #aaa solid;
+    border-radius: 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {

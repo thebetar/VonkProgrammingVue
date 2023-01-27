@@ -7,24 +7,28 @@
             @close="hideSidedrawer"
         />
 
-        <v-main id="main">
-            <transition name="fade">
-                <router-view />
-            </transition>
-        </v-main>
-        <footer-component />
+        <transition name="fade">
+            <router-view />
+        </transition>
     </v-app>
 </template>
 
 <script>
-import FooterComponent from './components/Footer/FooterComponent.vue';
 import NavigationComponent from './components/Navigation/NavigationComponent.vue';
 import SidedrawerComponent from './components/Navigation/SidedrawerComponent.vue';
+
+import {
+    mdiHome,
+    mdiFolder,
+    mdiPhone,
+    mdiLinkedin,
+    mdiWhatsapp,
+    mdiGithub
+} from '@mdi/js';
 
 export default {
     name: 'App',
     components: {
-        FooterComponent,
         NavigationComponent,
         SidedrawerComponent
     },
@@ -35,37 +39,37 @@ export default {
                 {
                     href: false,
                     link: '/home',
-                    icon: 'mdi-home',
+                    icon: mdiHome,
                     text: 'Home'
                 },
                 {
                     href: false,
                     link: '/portfolio',
-                    icon: 'mdi-folder',
+                    icon: mdiFolder,
                     text: 'Portfolio'
                 },
                 {
                     href: false,
                     link: '/contact',
-                    icon: 'mdi-phone',
+                    icon: mdiPhone,
                     text: 'Contact'
                 },
                 {
                     href: true,
                     link: 'https://www.linkedin.com/in/lars-v-82455612a/',
-                    icon: 'mdi-linkedin',
+                    icon: mdiLinkedin,
                     text: 'LinkedIn'
                 },
                 {
                     href: true,
                     link: 'https://wa.me/0639119996',
-                    icon: 'mdi-whatsapp',
-                    text: 'Facebook'
+                    icon: mdiWhatsapp,
+                    text: 'WhatsApp'
                 },
                 {
                     href: true,
                     link: 'https://github.com/thebetar',
-                    icon: 'mdi-github',
+                    icon: mdiGithub,
                     text: 'GitHub'
                 }
             ]
@@ -81,9 +85,3 @@ export default {
     }
 };
 </script>
-
-<style>
-.h-full {
-    height: 100vh;
-}
-</style>

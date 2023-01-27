@@ -1,8 +1,12 @@
 <template>
     <div>
-        <v-row class="background" justify="center" align="center">
+        <v-row justify="center" align="center" class="media-card-container">
             <v-col cols="12" sm="6" md="6">
-                <v-card class="pa-2 pa-md-5 rounded-xl media-card" height="540">
+                <v-card
+                    class="pa-2 pa-md-5 rounded-xl media-card"
+                    outlined
+                    elevation="12"
+                >
                     <v-card-title>
                         <h1 class="display-3">
                             Contact
@@ -11,16 +15,18 @@
                     <v-card-text>
                         <v-row>
                             <v-col cols="12" sm="5" md="5">
-                                <h5 class="title">
+                                <h2 class="title">
                                     Heeft u vragen?
-                                </h5>
+                                </h2>
                                 <p class="body-2">
                                     Vul dit formulier in en kom direct in
                                     contact met mij.
                                 </p>
                                 <p>
-                                    <span class="grey--text subtitle">
-                                        <v-icon>mdi-whatsapp</v-icon>
+                                    <span
+                                        class="blue-grey--text text--darken-1"
+                                    >
+                                        <v-icon>{{ mdiWhatsapp }}</v-icon>
                                         Whatsapp:
                                     </span>
                                     <br />
@@ -33,8 +39,10 @@
                                     </a>
                                 </p>
                                 <p>
-                                    <span class="grey--text subtitle">
-                                        <v-icon>mdi-cellphone</v-icon>
+                                    <span
+                                        class="blue-grey--text text--darken-1"
+                                    >
+                                        <v-icon>{{ mdiPhone }}</v-icon>
                                         Bellen:
                                     </span>
                                     <br />
@@ -46,8 +54,10 @@
                                     </a>
                                 </p>
                                 <p>
-                                    <span class="grey--text subtitle">
-                                        <v-icon>mdi-email</v-icon>
+                                    <span
+                                        class="blue-grey--text text--darken-1"
+                                    >
+                                        <v-icon>{{ mdiEmail }}</v-icon>
                                         Email:
                                     </span>
                                     <br />
@@ -82,14 +92,20 @@
                                             label="Beschrijving"
                                             v-model="description"
                                             required
+                                            :rows="isMobile ? 2 : 5"
                                         ></v-textarea>
                                         <v-btn
                                             type="submit"
                                             class="float-right pa-5"
                                             color="primary"
                                             :disabled="!isValid"
-                                            >Stuur</v-btn
+                                            block
                                         >
+                                            <v-icon class="mr-2" small>
+                                                {{ mdiPhone }}
+                                            </v-icon>
+                                            Stuur
+                                        </v-btn>
                                     </v-form>
                                     <div
                                         v-else
@@ -129,6 +145,7 @@
 
 <script>
 import axios from 'axios';
+import { mdiWhatsapp, mdiPhone, mdiEmail, mdiSend } from '@mdi/js';
 
 export default {
     data() {
@@ -136,7 +153,11 @@ export default {
             show: true,
             email: '',
             name: '',
-            description: ''
+            description: '',
+            mdiWhatsapp,
+            mdiPhone,
+            mdiEmail,
+            mdiSend
         };
     },
     computed: {
@@ -147,6 +168,9 @@ export default {
                 text: this.description
             };
             return this.validate(form);
+        },
+        isMobile() {
+            return window.innerWidth <= 800 || window.innerHeight <= 600;
         }
     },
     methods: {
@@ -180,16 +204,9 @@ export default {
 </script>
 
 <style scoped>
-.background {
-    background-color: #222;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 102vh !important;
-}
-
 a.contact-link {
     display: block;
-    color: #333;
+    color: #333333;
     text-decoration: none;
     margin-top: 8px;
     transition: all 0.3s ease-in-out;
@@ -200,14 +217,23 @@ a.contact-link:hover .v-icon {
     color: #f22 !important;
 }
 
+.media-card {
+    border: 2px #aaa solid;
+    border-radius: 0.5rem;
+}
+
+.media-card-container {
+    min-height: 100vh !important;
+}
+
 @media only screen and (max-width: 600px) {
     .media-card {
-        margin-top: 20px;
-        height: 1000px !important;
+        padding: 1rem 0.5rem !important;
+        height: fit-content;
     }
 
-    .background {
-        height: 1120px !important;
+    .media-card-container {
+        height: calc(100vh + 4rem) !important;
     }
 }
 

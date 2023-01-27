@@ -10,7 +10,7 @@
     RewriteRule "\.js\.gz$"  "-" [T=text/javascript,E=no-gzip:1]
 
 
-    <FilesMatch "(\.js\.gz|\.css\.gz)$">
+    <FilesMatch "\.(js|css|html|svg|jpg|png|tff|woff|woff2)\.gz$">
       # Serve correct encoding type.
       Header append Content-Encoding gzip
 

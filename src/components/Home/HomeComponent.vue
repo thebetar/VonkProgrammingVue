@@ -16,21 +16,22 @@
                                 : {
                                       paddingBottom: '0px',
                                       display: 'flex',
-                                      justifyContent: 'center'
+                                      justifyContent: 'center',
+                                      flex: 'auto'
                                   }
                         "
                     >
                         <v-img
                             :src="require('@/assets/svg/programming.svg')"
-                            :height="isMobile ? 200 : 400"
-                            :width="isMobile ? 200 : 400"
+                            :height="isMobile ? 200 : 350"
+                            :width="isMobile ? 200 : 350"
                             aspect-ratio="1"
                         >
                             <template #placeholder>
                                 <v-sheet>
                                     <v-skeleton-loader
-                                        :height="isMobile ? 200 : 400"
-                                        :width="isMobile ? 200 : 400"
+                                        :height="isMobile ? 200 : 300"
+                                        :width="isMobile ? 200 : 300"
                                         type="image"
                                     />
                                 </v-sheet>
@@ -62,9 +63,10 @@
                                 large
                                 color="primary"
                                 to="/contact"
+                                aria-label="Neem contact op"
                             >
-                                <v-icon class="mr-2">mdi-phone</v-icon> Neem
-                                contact op
+                                <v-icon class="mr-2">{{ mdiPhone }}</v-icon>
+                                Neem contact op
                             </v-btn>
                         </div>
                     </v-col>
@@ -75,7 +77,7 @@
             <v-col cols="12" sm="12" md="6" align="center">
                 <div class=" home-page-header">
                     <h2 class="display-2">
-                        🧑‍💼 Hoe ga ik te werk?
+                        Hoe ga ik te werk?
                     </h2>
                     <p class="body-1 mt-4">
                         VonkProgramming is een Web development bedrijf dat zich
@@ -252,7 +254,7 @@
                                 </v-sheet>
                             </template>
                         </v-img>
-                        <h5 class="display-1 mt-4">Van idee naar website!</h5>
+                        <h3 class="display-1 mt-4">Van idee naar website!</h3>
                         <p class="body-1 mt-4">
                             VonkProgramming heeft contact met verschillende
                             ontwerpers om uw idee perfect vorm te geven. Hierbij
@@ -273,7 +275,7 @@
                         md="6"
                         class="d-flex flex-column justify-center align-center text-center"
                     >
-                        <h6 class="title">Frameworks</h6>
+                        <h4 class="title">Frameworks</h4>
                         <p class="body-2">
                             VonkProgramming maakt gebruik van de nieuwste
                             JavaScript frameworks. Dit houdt in dat uw
@@ -341,7 +343,7 @@
                         md="6"
                         class="d-flex flex-column justify-center align-center text-center"
                     >
-                        <h6 class="title">Andere oplossingen</h6>
+                        <h5 class="title">Andere oplossingen</h5>
                         <p class="body-2">
                             Naast websites en webapps biedt VonkProgramming ook
                             mogelijkheden binnen NodeJS. Hiermee kan
@@ -433,7 +435,7 @@
                         :src="require('@/assets/svg/portfolio.svg')"
                         width="80"
                         height="80"
-                        class="mx-auto mb-8"
+                        class="mx-auto"
                     >
                         <template #placeholder>
                             <v-sheet>
@@ -445,13 +447,20 @@
                             </v-sheet>
                         </template>
                     </v-img>
-                    <h3 class="display-1">Portfolio</h3>
+                    <h6 class="display-1">Portfolio</h6>
                     <p class="body-1">
                         Naast een mooi verhaal over hoe alles te werk gaat heb
                         ik ondertussen ook al een portfolio opgebouwd met een
                         aantal bekenden en wat minder bekende bedrijven.
                     </p>
-                    <v-btn to="/portfolio" color="primary" class="my-2" large>
+                    <v-btn
+                        to="/portfolio"
+                        color="primary"
+                        class="my-2"
+                        large
+                        arial-label="Portfolio"
+                    >
+                        <v-icon class="mr-2">{{ mdiFolder }}</v-icon>
                         Ga naar portfolio pagina
                     </v-btn>
                     <v-btn
@@ -460,26 +469,11 @@
                         color="secondary"
                         class="my-2"
                         large
+                        aria-label="Github"
                     >
-                        <v-img
-                            :src="require('@/assets/svg/github.svg')"
-                            height="20"
-                            width="20"
-                            class="mr-2"
-                            :style="{
-                                flex: 'unset'
-                            }"
-                        >
-                            <template #placeholder>
-                                <v-sheet>
-                                    <v-skeleton-loader
-                                        width="16"
-                                        height="16"
-                                        type="image"
-                                    />
-                                </v-sheet>
-                            </template>
-                        </v-img>
+                        <v-icon>
+                            {{ mdiGithub }}
+                        </v-icon>
                         Mijn Github pagina
                     </v-btn>
                 </v-col>
@@ -490,7 +484,7 @@
                         :src="require('@/assets/svg/network.svg')"
                         width="80"
                         height="80"
-                        class="mx-auto mb-8"
+                        class="mx-auto"
                     >
                         <template #placeholder>
                             <v-sheet>
@@ -502,9 +496,9 @@
                             </v-sheet>
                         </template>
                     </v-img>
-                    <h4 class="display-1">
+                    <h6 class="display-1">
                         Netwerk
-                    </h4>
+                    </h6>
                     <p class="body-1">
                         Binnen mijn netwerk heb ik meerdere connecties met
                         mensen binnen design, marketing en development. Hierdoor
@@ -542,7 +536,16 @@
 import WaveyDividerBottom from '../shared/WaveyDividerBottom.vue';
 import WaveyDividerTop from '../shared/WaveyDividerTop.vue';
 
+import { mdiFolder, mdiPhone, mdiGithub } from '@mdi/js';
+
 export default {
+    data() {
+        return {
+            mdiFolder,
+            mdiPhone,
+            mdiGithub
+        };
+    },
     computed: {
         isMobile() {
             return window.innerWidth <= 800 || window.innerHeight <= 600;
@@ -647,10 +650,6 @@ body {
 @media only screen and (max-width: 600px) {
     .wave-div {
         display: none;
-    }
-
-    .row {
-        padding: 2rem 0;
     }
 }
 </style>

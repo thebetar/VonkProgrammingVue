@@ -13,7 +13,7 @@
                 color="primary"
             ></v-app-bar-nav-icon>
             <v-toolbar-title>
-                <router-link to="/home">
+                <router-link to="/home" aria-label="Home">
                     <v-img
                         src="../../assets/logo.png"
                         max-height="36"
@@ -21,13 +21,14 @@
                     ></v-img>
                 </router-link>
             </v-toolbar-title>
-            <v-toolbar-items dark class="d-none d-sm-flex">
+            <v-toolbar-items dark>
                 <v-btn
                     text
                     v-for="item in items.filter(item => !item.href)"
                     :to="item.link"
                     :key="item.link"
                     :class="{ 'scrolled-text': isScroll }"
+                    :aria-label="item.text"
                 >
                     <v-icon style="margin-right: 4px;">{{ item.icon }}</v-icon>
                     {{ item.text }}
@@ -39,31 +40,12 @@
                     :key="item.link"
                     :class="{ 'scrolled-text': isScroll }"
                     target="_blank"
+                    :aria-label="item.text"
                 >
                     <v-icon>{{ item.icon }}</v-icon>
                 </v-btn>
             </v-toolbar-items>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" fixed>
-            <v-list nav dense>
-                <v-list-item-group>
-                    <v-list-item
-                        v-for="item in items.filter(item => !item.href)"
-                        :key="item.link"
-                    >
-                        <v-list-item-title>{{ item }}</v-list-item-title>
-                    </v-list-item>
-                    <v-list-item
-                        v-for="item in items.filter(item => item.href)"
-                        :key="item.link"
-                        :href="item.link"
-                        target="_blank"
-                    >
-                        <v-list-item-title>{{ item }}</v-list-item-title>
-                    </v-list-item>
-                </v-list-item-group>
-            </v-list>
-        </v-navigation-drawer>
     </div>
 </template>
 
@@ -71,7 +53,6 @@
 export default {
     data() {
         return {
-            drawer: false,
             isScroll: this.handleScroll()
         };
     },

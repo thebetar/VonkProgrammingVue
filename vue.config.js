@@ -9,7 +9,8 @@ module.exports = {
     configureWebpack: {
         plugins: [
             new CompressionPlugin({
-                algorithm: 'gzip'
+                algorithm: 'gzip',
+                test: /\.(js|css|html|svg|jpg|png|tff|woff|woff2)$/
             }),
             new VuetifyLoaderPlugin()
         ],
