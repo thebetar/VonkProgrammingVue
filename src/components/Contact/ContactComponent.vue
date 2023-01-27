@@ -1,6 +1,10 @@
 <template>
     <div>
-        <v-row justify="center" align="center" class="v-card-container">
+        <v-row
+            justify="center"
+            class="align-items-end align-items-sm-center v-card-container"
+            :class="$vuetify.breakpoint.xs ? 'align-end' : 'align-center'"
+        >
             <v-col cols="12" sm="6" md="6">
                 <v-card class="pa-2 pa-md-5 rounded-xl" outlined elevation="12">
                     <v-card-title>
@@ -199,7 +203,7 @@ export default {
 }
 
 .v-card-container {
-    min-height: 100vh !important;
+    min-height: 100vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -209,7 +213,8 @@ export default {
     }
 
     .v-card-container {
-        height: calc(100vh + 4rem) !important;
+        padding-top: 3.5rem;
+        min-height: calc(100vh - 3.5rem);
     }
 }
 

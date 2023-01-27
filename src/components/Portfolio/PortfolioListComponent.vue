@@ -1,5 +1,9 @@
 <template>
-    <v-row justify="center" align="center">
+    <v-row
+        justify="center"
+        align="center"
+        :class="$vuetify.breakpoint.xs ? 'pt-16' : ''"
+    >
         <v-col cols="12" md="6">
             <v-card
                 class="pa-8 text-center portfolio-card"
@@ -285,7 +289,7 @@ export default {
                 {
                     title: 'Automotive RS',
                     description:
-                        "Voor Automotive RS maak ik een dashboard waarin zij hun gekochte auto's kunnen invoeren en alles overzichtelijk kunnen bijhouden. Ook zal dit dashboard met API gekoppeld zijn om gegevens automatisch op te halen zover dit kan.",
+                        "Voor Automotive RS heb ik een dashboard gemaakt waarin zij hun gekochte auto's kunnen invoeren en alles overzichtelijk kunnen bijhouden. Ook heeft dit dashboard een API om gegevens automatisch op te halen zover dit kan.",
                     imageUrl: 'automotive-rs-min.jpg',
                     color: 1
                 },
@@ -294,6 +298,13 @@ export default {
                     description:
                         'Ik heb met de "Deet" app het idee gehad om voor mijzelf een app te maken die het makkelijker maakt om doelen in te plannen. Dit kunnen doelen zijn als meer lezen, bepaalde oefeningen in de sportschool of een cursus volgen. Deze app maakt het makkelijker om dit bij te houden.',
                     imageUrl: 'deet-min.jpg',
+                    color: 2
+                },
+                {
+                    title: 'Fyndyr',
+                    description:
+                        'Ik ervaarde het probleem dat ik mijn vrienden wel eens kwijt raakte terwijl ik op een dance festival mij vermaakte. Daarom heb ik een app gemaakt die het makkelijker maakt om elkaar te vinden op een festival.',
+                    imageUrl: 'fyndyr-min.jpg',
                     color: 2
                 }
             ]

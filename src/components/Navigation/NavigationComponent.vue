@@ -7,7 +7,11 @@
             dark
             :class="{ scrolled: isScroll }"
         >
-            <v-app-bar-nav-icon @click="emitDrawer" class="d-flex d-sm-none">
+            <v-app-bar-nav-icon
+                @click="emitDrawer"
+                class="d-flex d-sm-none"
+                aria-label="Open menu"
+            >
                 <v-icon large>{{ mdiMenu }}</v-icon>
             </v-app-bar-nav-icon>
             <v-toolbar-title>
