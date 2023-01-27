@@ -38,6 +38,7 @@
                     :href="item.link"
                     :key="item.link"
                     :class="{ 'scrolled-text': isScroll }"
+                    target="_blank"
                 >
                     <v-icon>{{ item.icon }}</v-icon>
                 </v-btn>
@@ -46,7 +47,18 @@
         <v-navigation-drawer v-model="drawer" fixed>
             <v-list nav dense>
                 <v-list-item-group>
-                    <v-list-item v-for="item in items" :key="item.link">
+                    <v-list-item
+                        v-for="item in items.filter(item => !item.href)"
+                        :key="item.link"
+                    >
+                        <v-list-item-title>{{ item }}</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                        v-for="item in items.filter(item => item.href)"
+                        :key="item.link"
+                        :href="item.link"
+                        target="_blank"
+                    >
                         <v-list-item-title>{{ item }}</v-list-item-title>
                     </v-list-item>
                 </v-list-item-group>

@@ -83,7 +83,7 @@
             </v-card>
         </v-col>
         <v-col cols="12" md="8" class="mt-6">
-            <v-timeline :dense="isMobile">
+            <v-timeline :dense="isMobile" light>
                 <v-timeline-item
                     v-for="(item, index) in jobs"
                     :class="{ 'text-right': index % 2 === 0 }"
@@ -136,13 +136,12 @@
                     v-for="(item, index) in achievements"
                     :key="item.id"
                     fill-dot
-                    :color="index % 2 === 0 ? colors[1] : colors[2]"
                 >
                     <template v-slot:opposite>
                         <span
-                            class="headline font-weight-bold"
+                            class="headline font-weight-medium"
                             :style="{
-                                color: index % 2 === 0 ? colors[1] : colors[2]
+                                color: 'white'
                             }"
                         >
                             {{ item.year }}
@@ -154,7 +153,6 @@
                         :class="{
                             'text-right': index % 2 !== 0 && !isMobile
                         }"
-                        :color="index % 2 === 0 ? colors[1] : colors[2]"
                     >
                         {{ item.certificate }} - {{ item.where }}
                     </v-alert>
@@ -185,7 +183,7 @@ export default {
                     title: 'Kookstudio Amsterdam',
                     description:
                         'Ik heb tijdens mijn tweede jaar van mijn opleiding een website gebouwd voor kookstudio Amsterdam met een eigen admin paneel gemaakt in PHP',
-                    imageUrl: 'kookstudio-min.png',
+                    imageUrl: 'kookstudio-min.jpg',
                     color: 2
                 },
                 {
@@ -206,7 +204,7 @@ export default {
                     title: 'BijIngrid',
                     description:
                         'Ik heb voor Ingrid met mijn beginnende web development ervaring een website gemaakt om workshops op te geven. Deze website heeft een zelf gemaakt admin paneel gemaakt in PHP.',
-                    imageUrl: 'bijingrid-min.png',
+                    imageUrl: 'bijingrid-min.jpg',
                     color: 2
                 },
                 {
@@ -241,7 +239,7 @@ export default {
                     title: 'Chary Solutions',
                     description:
                         'Ik heb voor Chary Solutions software gemaakt om hun advertising data uit hun Facebook business manager te halen en dit vervolgens te exporteren naar google sheets',
-                    imageUrl: 'chary-min.png',
+                    imageUrl: 'chary-min.jpg',
                     color: 2
                 },
                 {
@@ -255,42 +253,42 @@ export default {
                     title: 'J-Tax Automotive',
                     description:
                         'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten. De software van J-tax is gemaakt met behulp van Vue.js en ExpressJS',
-                    imageUrl: 'j-tax-min.png',
+                    imageUrl: 'j-tax-min.jpg',
                     color: 2
                 },
                 {
                     title: 'Klets',
                     description:
                         'Klets is een social media app die ik gemaakt heb met behulp van Ionic. Deze app is gemaakt om op basis van een onderwerp en een aangegeven afstand mensen te zoeken en kleine groepschat (max 5) te vormen. Klets is gemaakt met behulp van Ioinic',
-                    imageUrl: 'klets.png',
+                    imageUrl: 'klets-min.jpg',
                     color: 3
                 },
                 {
                     title: 'ING',
                     description:
                         'Bij de ING werk ik momenteel als full stack developer aan verschillende interfaces die gebruikt worden door de ING. Dit met het framework Lit element',
-                    imageUrl: 'ing.png',
+                    imageUrl: 'ing-min.jpg',
                     color: 1
                 },
                 {
                     title: 'P.51 Design en MarkantIT',
                     description:
                         'Samen met P.51 design en MarkantIT werk ik aan een website voor OOMT m.b.t. de Arbo catalogus. Dit project wordt gebouwd met React',
-                    imageUrl: 'p51design.png',
+                    imageUrl: 'p51design-min.jpg',
                     color: 2
                 },
                 {
                     title: 'Automotive RS',
                     description:
                         "Voor Automotive RS maak ik een dashboard waarin zij hun gekochte auto's kunnen invoeren en alles overzichtelijk kunnen bijhouden. Ook zal dit dashboard met API gekoppeld zijn om gegevens automatisch op te halen zover dit kan.",
-                    imageUrl: 'automotive-rs.png',
+                    imageUrl: 'automotive-rs-min.jpg',
                     color: 2
                 },
                 {
                     title: 'Deet',
                     description:
                         'Ik heb met de "Deet" app het idee gehad om voor mijzelf een app te maken die het makkelijker maakt om doelen in te plannen. Dit kunnen doelen zijn als meer lezen, bepaalde oefeningen in de sportschool of een cursus volgen. Deze app maakt het makkelijker om dit bij te houden.',
-                    imageUrl: 'deet.png',
+                    imageUrl: 'deet-min.jpg',
                     color: 3
                 }
             ]
@@ -298,14 +296,25 @@ export default {
                 .reverse(),
             achievements: [
                 {
-                    certificate: `Bachelor's degree, HBO-ICT`,
-                    where: 'Windesheim Flevoland',
-                    year: 2020
+                    certificate: 'Certified Scrum Master (CSM)',
+                    where: 'Scrum.org',
+                    year: 'December 2022'
                 },
                 {
-                    certificate: 'AWS Certified Practitioner',
-                    where: 'Amazon Web Services',
-                    year: 'Februari 2021'
+                    certificate:
+                        'NestJS Zero to Hero - Modern Typescript Back-end Development',
+                    where: 'Udemy',
+                    year: 'Juli 2022'
+                },
+                {
+                    certificate: 'Graph Developer - Associate',
+                    where: 'Apollo GraphQl',
+                    year: 'April 2022'
+                },
+                {
+                    certificate: 'The complete React Native + Hooks course',
+                    where: 'Udemy',
+                    year: 'April 2022'
                 },
                 {
                     certificate: 'Young Professional Programma',
@@ -325,6 +334,11 @@ export default {
                     year: 'Mei 2021'
                 },
                 {
+                    certificate: 'Javascript: Understanding the weirds parts',
+                    where: 'Udemy',
+                    year: 'Maart 2021'
+                },
+                {
                     certificate:
                         '2021 Complete Python Bootcamp from Zero to Hero in Python',
                     where: 'Udemy',
@@ -336,9 +350,19 @@ export default {
                     year: 'Maart 2021'
                 },
                 {
+                    certificate: 'MongoDB - The Complete Developer Guide 2021',
+                    where: 'Udemy',
+                    year: 'Maart 2021'
+                },
+                {
                     certificate: 'Nuxt.js - Vue.js on Steroids',
                     where: 'Udemy',
                     year: 'Maart 2021'
+                },
+                {
+                    certificate: 'AWS Certified Practitioner',
+                    where: 'Amazon Web Services',
+                    year: 'Februari 2021'
                 },
                 {
                     certificate:
@@ -377,6 +401,17 @@ export default {
                     certificate: 'Learn and Understand NodeJS',
                     where: 'Udemy',
                     year: 'Juli 2020'
+                },
+                {
+                    certificate: `Bachelor's degree, HBO-ICT`,
+                    where: 'Windesheim Flevoland',
+                    year: 2020
+                },
+                {
+                    certificate:
+                        'Cambridge English level 2 Certificate ESOL International',
+                    where: 'Cambridge University',
+                    year: 2016
                 }
             ].map(this.addRandomId)
         };
@@ -386,7 +421,7 @@ export default {
             return { ...obj, id: Math.random() };
         },
         goToGithub() {
-            window.open('https://github.com/thebetar');
+            window.open('https://github.com/thebetar', '_blank');
         }
     },
     computed: {
@@ -403,6 +438,10 @@ export default {
 <style scoped>
 .v-card__text {
     font-size: 18px !important;
+}
+
+.v-timeline::before {
+    background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 @media only screen and (max-width: 600px) {

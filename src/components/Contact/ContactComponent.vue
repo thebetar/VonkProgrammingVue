@@ -27,6 +27,7 @@
                                     <a
                                         class="contact-link"
                                         href="https://wa.me/0639119996"
+                                        target="_blank"
                                     >
                                         Stuur een bericht
                                     </a>
@@ -69,13 +70,13 @@
                                             label="Naam"
                                             v-model="name"
                                             required
-                                        ></v-text-field>
+                                        />
                                         <v-text-field
                                             outlined
                                             label="Email"
                                             v-model="email"
                                             required
-                                        ></v-text-field>
+                                        />
                                         <v-textarea
                                             outlined
                                             label="Beschrijving"

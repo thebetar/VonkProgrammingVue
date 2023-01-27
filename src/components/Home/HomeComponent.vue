@@ -9,7 +9,7 @@
                 >
                     <v-col
                         cols="12"
-                        md="6"
+                        md="5"
                         :style="
                             !isMobile
                                 ? { margin: '20px 0' }
@@ -40,19 +40,19 @@
                     <v-col
                         offset="0"
                         cols="12"
-                        md="6"
+                        md="7"
                         class="d-flex flex-column"
                         :style="!isMobile ? {} : { paddingTop: '0px' }"
                     >
                         <p class="text-h4 white--text">
-                            Wij houden van uitdaging 💪
+                            Voor elk probleem een oplossing 💪
                         </p>
                         <div class="text-body-1 white--text">
                             <p>
-                                Heeft u een goed idee waar
-                                <span class="font-weight-bold"
-                                    >maatwerk software</span
-                                >
+                                Heeft u een probleem waar
+                                <span class="font-weight-bold">
+                                    maatwerk software
+                                </span>
                                 voor nodig is, of heeft u behoefte aan een
                                 gespecialiseerde
                                 <span class="font-weight-bold">website</span>?
@@ -61,9 +61,10 @@
                                 class="ml-1"
                                 large
                                 color="primary"
-                                @click="$router.push('/contact')"
+                                to="/contact"
                             >
-                                📞 Neem contact op
+                                <v-icon class="mr-2">mdi-phone</v-icon> Neem
+                                contact op
                             </v-btn>
                         </div>
                     </v-col>
@@ -74,14 +75,15 @@
             <v-col cols="12" sm="12" md="6" align="center">
                 <div class=" home-page-header">
                     <h2 class="display-2">
-                        🧑‍💼 Hoe gaan wij te werk?
+                        🧑‍💼 Hoe ga ik te werk?
                     </h2>
                     <p class="body-1 mt-4">
                         VonkProgramming is een Web development bedrijf dat zich
                         bezighoudt met maatwerk software solutions. Voor iedere
-                        klant maken wij op maat gemaakte software of websites,
-                        afgestemd op uw behoeften. Wij hebben de kennis in huis
-                        om voor elk probleem een oplossing te bieden.
+                        klant maak ik op maat gemaakte software of websites,
+                        afgestemd op uw behoeften. Ik heb de kennis in huis of
+                        in mijn netwerk om voor elk probleem een oplossing te
+                        bieden.
                     </p>
                 </div>
             </v-col>
@@ -117,9 +119,6 @@
                             >
                             <v-list>
                                 <v-list-item>
-                                    <v-list-item-icon>
-                                        <b>1.</b>
-                                    </v-list-item-icon>
                                     <v-list-item-content>
                                         <b>Kennismaking: </b>
                                         Voorafgaand vindt er een
@@ -128,9 +127,6 @@
                                     </v-list-item-content>
                                 </v-list-item>
                                 <v-list-item>
-                                    <v-list-item-icon>
-                                        <b>2.</b>
-                                    </v-list-item-icon>
                                     <v-list-item-content>
                                         <b>Ontwerp: </b>
                                         Op basis van de besproken details wordt
@@ -143,9 +139,6 @@
                                     </v-list-item-content>
                                 </v-list-item>
                                 <v-list-item>
-                                    <v-list-item-icon>
-                                        <b>3.</b>
-                                    </v-list-item-icon>
                                     <v-list-item-content>
                                         <b>Realisatie: </b>
                                         Het eindproduct wordt gerealiseerd met
@@ -155,9 +148,6 @@
                                     </v-list-item-content>
                                 </v-list-item>
                                 <v-list-item>
-                                    <v-list-item-icon>
-                                        <b>4.</b>
-                                    </v-list-item-icon>
                                     <v-list-item-content>
                                         <b>Afronding: </b>
                                         Zodra het eindproduct klaar is zorgt
@@ -196,38 +186,34 @@
                             </v-card-title>
                             <v-card-text class="body-2">
                                 <p>
-                                    VonkProgramming maakt gebruik van de
-                                    nieuwste technieken in het maken van
-                                    software en websites binnen het web. Onze
-                                    vaardigheden liggen bij
+                                    Ik maak gebruik van de nieuwste technieken
+                                    in het maken van software en websites binnen
+                                    het web. Mijn vaardigheden liggen bij
                                     <span class="font-weight-bold">VueJS</span>,
                                     <span class="font-weight-bold">React</span>,
-                                    <span class="font-weight-bold"
-                                        >Angular</span
-                                    >
                                     en
                                     <span class="font-weight-bold">Ionic</span>.
                                 </p>
                                 <p>
-                                    Ook zijn wij gedreven in het maken van
-                                    backend software in
-                                    <span class="font-weight-bold"
-                                        >Express</span
-                                    >
+                                    Ik heb ook kennis van backend software in
+                                    <span class="font-weight-bold">
+                                        Express
+                                    </span>
                                     en
                                     <span class="font-weight-bold">NestJS</span
                                     >.
                                 </p>
                                 <p>
                                     Verder is er ook ervaring in het gebruik van
-                                    <span class="font-weight-bold">Jenkins</span
+                                    <span class="font-weight-bold">
+                                        Pipelines (Jenkins) </span
                                     >,
-                                    <span class="font-weight-bold"
-                                        >unit testing</span
+                                    <span class="font-weight-bold">
+                                        unit testing </span
                                     >,
-                                    <span class="font-weight-bold"
-                                        >E2E testing</span
-                                    >
+                                    <span class="font-weight-bold">
+                                        E2E testing
+                                    </span>
                                     en
                                     <span class="font-weight-bold">AWS</span>.
                                 </p>
@@ -244,13 +230,13 @@
                 </v-col>
             </v-row>
         </v-container>
-        <v-row class="wave-div-reverse">
+        <v-row class="wave-div">
             <wavey-divider-bottom></wavey-divider-bottom>
         </v-row>
         <v-row class="home-page-background home-page-background-gradient">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="12" sm="12" md="12" align="center">
+                    <v-col cols="12" sm="12" md="6" align="center">
                         <v-img
                             :src="require('@/assets/svg/idea.svg')"
                             width="80"
@@ -358,7 +344,8 @@
                         <h6 class="title">Andere oplossingen</h6>
                         <p class="body-2">
                             Naast websites en webapps biedt VonkProgramming ook
-                            mogelijkheden binnen NodeJS. Hiermee kan ook server
+                            mogelijkheden binnen NodeJS. Hiermee kan
+                            bijvoorbeeld server software of web automation
                             software worden gemaakt.
                         </p>
                         <div class="d-flex justify-between ">
@@ -410,6 +397,22 @@
                                     </v-sheet>
                                 </template>
                             </v-img>
+                            <v-img
+                                :src="require('@/assets/svg/puppeteer.svg')"
+                                class="mx-2"
+                                width="80"
+                                height="80"
+                            >
+                                <template #placeholder>
+                                    <v-sheet>
+                                        <v-skeleton-loader
+                                            width="80"
+                                            height="80"
+                                            type="image"
+                                        />
+                                    </v-sheet>
+                                </template>
+                            </v-img>
                         </div>
                     </v-col>
                 </v-row>
@@ -418,10 +421,11 @@
         <v-row class="wave-div">
             <wavey-divider-top></wavey-divider-top>
         </v-row>
-        <v-container class="mb-8">
+        <v-container class="mb-16">
             <v-row justify="center">
                 <v-col
                     cols="12"
+                    sm="12"
                     md="6"
                     class="d-flex flex-column justify-center items-center text-center"
                 >
@@ -429,7 +433,7 @@
                         :src="require('@/assets/svg/portfolio.svg')"
                         width="80"
                         height="80"
-                        class="mx-auto"
+                        class="mx-auto mb-8"
                     >
                         <template #placeholder>
                             <v-sheet>
@@ -452,15 +456,19 @@
                     </v-btn>
                     <v-btn
                         href="https://github.com/thebetar"
+                        target="_blank"
                         color="secondary"
                         class="my-2"
                         large
                     >
                         <v-img
                             :src="require('@/assets/svg/github.svg')"
-                            height="16"
-                            width="16"
+                            height="20"
+                            width="20"
                             class="mr-2"
+                            :style="{
+                                flex: 'unset'
+                            }"
                         >
                             <template #placeholder>
                                 <v-sheet>
@@ -475,6 +483,56 @@
                         Mijn Github pagina
                     </v-btn>
                 </v-col>
+                <v-col
+                    class="d-flex flex-column justify-center items-center text-center"
+                >
+                    <v-img
+                        :src="require('@/assets/svg/network.svg')"
+                        width="80"
+                        height="80"
+                        class="mx-auto mb-8"
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    width="80"
+                                    height="80"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
+                    <h4 class="display-1">
+                        Netwerk
+                    </h4>
+                    <p class="body-1">
+                        Binnen mijn netwerk heb ik meerdere connecties met
+                        mensen binnen design, marketing en development. Hierdoor
+                        kan ik een compleet pakket aanbieden voor een bedrijf.
+                        De huidige vaste partner waarmee ik samenwerk is:
+                    </p>
+                    <v-img
+                        :src="
+                            require('@/assets/partners/lightspeed-it-min.jpg')
+                        "
+                        width="240"
+                        class="mx-auto mb-8 rounded-lg"
+                        @click="goTo('https://lightspeed-it.nl/')"
+                        :style="{
+                            cursor: 'pointer'
+                        }"
+                    >
+                        <template #placeholder>
+                            <v-sheet>
+                                <v-skeleton-loader
+                                    width="80"
+                                    height="80"
+                                    type="image"
+                                />
+                            </v-sheet>
+                        </template>
+                    </v-img>
+                </v-col>
             </v-row>
         </v-container>
     </div>
@@ -488,6 +546,11 @@ export default {
     computed: {
         isMobile() {
             return window.innerWidth <= 800 || window.innerHeight <= 600;
+        }
+    },
+    methods: {
+        goTo(url) {
+            window.open(url, '_blank');
         }
     },
     components: {
@@ -529,6 +592,7 @@ body {
 
 .home-page-background-gradient {
     background: linear-gradient(0deg, #333, #444, #333);
+    margin-top: 0;
 }
 
 .home-page-divider-90 {
@@ -577,15 +641,11 @@ body {
 <style scoped>
 .wave-div {
     width: 100vw;
-    height: 50vh;
-}
-.wave-div-reverse {
-    width: 100vw;
-    height: 50vh;
+    height: calc(100vw / 3.5);
+    margin-top: 0;
 }
 @media only screen and (max-width: 600px) {
-    .wave-div,
-    .wave-div-reverse {
+    .wave-div {
         display: none;
     }
 
