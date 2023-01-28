@@ -206,7 +206,7 @@ export default {
                     title: 'Innovative Cycling',
                     description:
                         'Aan het einde van het tweede jaar van mijn opleiding HBO-ICT ben ik begonnen bij het studenten programmeur uitzendbureau Kojac. Hier kreeg ik de opdracht bij Innovative cycling de websites te onderhouden en te updaten. Hier heb ik gebruik gemaakt van Javascript, PHP, CSS, MySQL en HTML.',
-                    imageUrl: 'kojac-logo-min.jpg',
+                    imageUrl: 'kojac-logo-min.webp',
                     color: 0
                 },
                 {
@@ -241,7 +241,7 @@ export default {
                     title: 'Quintor',
                     description:
                         'Momenteel werk ik bij IT consultancy bedrijf Quintor. Dit bedrijf houdt zich bezig met het adviseren over en bouwen van software. Dit bij grote klanten als de ING, de overheid, etc. Bij dit bedrijf houdt ik mij bezig met mijn programmeervaardigheden verbeteren zodat deze aan de hoogst mogelijke standaard kunnen voldoen.',
-                    imageUrl: 'quintor-logo.jpg',
+                    imageUrl: 'quintor-logo.webp',
                     color: 0
                 },
                 {
@@ -262,7 +262,7 @@ export default {
                     title: 'J-Tax Automotive',
                     description:
                         'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten. De software van J-tax is gemaakt met behulp van Vue.js en ExpressJS',
-                    imageUrl: 'j-tax-min.jpg',
+                    imageUrl: 'j-tax-min.webp',
                     color: 1
                 },
                 {
@@ -276,7 +276,7 @@ export default {
                     title: 'ING',
                     description:
                         'Bij de ING werk ik momenteel als full stack developer aan verschillende interfaces die gebruikt worden door de ING. Dit met het framework Lit element',
-                    imageUrl: 'ing-min.jpg',
+                    imageUrl: 'ing-min.webp',
                     color: 0
                 },
                 {
@@ -297,14 +297,14 @@ export default {
                     title: 'Deet',
                     description:
                         'Ik heb met de "Deet" app het idee gehad om voor mijzelf een app te maken die het makkelijker maakt om doelen in te plannen. Dit kunnen doelen zijn als meer lezen, bepaalde oefeningen in de sportschool of een cursus volgen. Deze app maakt het makkelijker om dit bij te houden.',
-                    imageUrl: 'deet-min.jpg',
+                    imageUrl: 'deet-min.webp',
                     color: 2
                 },
                 {
                     title: 'Fyndyr',
                     description:
                         'Ik ervaarde het probleem dat ik mijn vrienden wel eens kwijt raakte terwijl ik op een dance festival mij vermaakte. Daarom heb ik een app gemaakt die het makkelijker maakt om elkaar te vinden op een festival.',
-                    imageUrl: 'fyndyr-min.jpg',
+                    imageUrl: 'fyndyr-min.webp',
                     color: 2
                 }
             ]

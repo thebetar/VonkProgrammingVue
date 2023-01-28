@@ -17,7 +17,7 @@
             <v-toolbar-title>
                 <router-link to="/home" aria-label="Home">
                     <v-img
-                        src="../../assets/logo.png"
+                        src="@/assets/logo-min.webp"
                         max-height="36"
                         max-width="90"
                         contain

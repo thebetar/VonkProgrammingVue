@@ -572,7 +572,7 @@
                     </p>
                     <v-img
                         :src="
-                            require('@/assets/partners/lightspeed-it-min.jpg')
+                            require('@/assets/partners/lightspeed-it-min.webp')
                         "
                         width="240"
                         class="mx-auto mb-8 rounded-lg"

@@ -25,6 +25,7 @@
                 v-for="item in items.filter(item => !item.href)"
                 :key="item.link"
                 :to="item.link"
+                @click="$emit('close')"
                 class="pa-4"
             >
                 <v-list-item-icon>
@@ -40,6 +41,7 @@
                 v-for="item in items.filter(item => item.href)"
                 :key="item.link"
                 :href="item.link"
+                @click="$emit('close')"
                 target="_blank"
                 class="pa-4"
             >
@@ -76,7 +78,7 @@ export default {
         },
         drawer() {
             if (!this.drawer) {
-                this.$emit('close', this.drawer);
+                this.$emit('close');
             }
         }
     }
