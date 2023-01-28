@@ -10,7 +10,7 @@ module.exports = {
         plugins: [
             new CompressionPlugin({
                 algorithm: 'gzip',
-                test: /\.(js|css|html|svg|jpg|png|tff|woff|woff2)$/
+                test: /\.(js|css|html|svg|jpg|png|webp)$/
             }),
             new VuetifyLoaderPlugin()
         ],
