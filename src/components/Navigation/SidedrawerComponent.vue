@@ -3,7 +3,6 @@
         v-model="drawer"
         fixed
         app
-        dark
         class="d-sm-none"
         width="100%"
     >
@@ -22,7 +21,7 @@
 
         <v-list nav dense>
             <v-list-item
-                v-for="item in items.filter(item => !item.href)"
+                v-for="item in pageLinks"
                 :key="item.link"
                 :to="item.link"
                 @click="$emit('close')"
@@ -38,7 +37,7 @@
                 </v-list-item-content>
             </v-list-item>
             <v-list-item
-                v-for="item in items.filter(item => item.href)"
+                v-for="item in socialLinks"
                 :key="item.link"
                 :href="item.link"
                 @click="$emit('close')"
@@ -59,13 +58,55 @@
 </template>
 
 <script>
-import { mdiBackspace } from '@mdi/js';
+import {
+    mdiBackspace,
+    mdiHome,
+    mdiFolder,
+    mdiPhone,
+    mdiLinkedin,
+    mdiWhatsapp,
+    mdiGithub
+} from '@mdi/js';
 
 export default {
     data() {
         return {
             drawer: this.drawerProp,
-            mdiBackspace
+            mdiBackspace,
+            pageLinks: [
+                {
+                    link: '/',
+                    icon: mdiHome,
+                    text: 'Home'
+                },
+                {
+                    link: '/portfolio',
+                    icon: mdiFolder,
+                    text: 'Portfolio'
+                },
+                {
+                    link: '/contact',
+                    icon: mdiPhone,
+                    text: 'Contact'
+                }
+            ],
+            socialLinks: [
+                {
+                    text: 'Linkedin',
+                    link: 'https://www.linkedin.com/in/lars-v-82455612a/',
+                    icon: mdiLinkedin
+                },
+                {
+                    text: 'WhatsApp',
+                    link: 'https://wa.me/0639119996',
+                    icon: mdiWhatsapp
+                },
+                {
+                    text: 'GitHub',
+                    link: 'https://github.com/thebetar',
+                    icon: mdiGithub
+                }
+            ]
         };
     },
     props: {

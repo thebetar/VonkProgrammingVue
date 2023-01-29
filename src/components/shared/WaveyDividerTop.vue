@@ -5,14 +5,14 @@
         id="svg"
         viewBox="0 0 1440 400"
         xmlns="http://www.w3.org/2000/svg"
-        class="transition duration-300 ease-in-out delay-150 wave"
+        class="wave"
     >
         <path
             d="M 0,400 C 0,400 0,133 0,133 C 122.14285714285714,137.60714285714286 244.28571428571428,142.21428571428572 355,145 C 465.7142857142857,147.78571428571428 564.9999999999999,148.75000000000003 700,141 C 835.0000000000001,133.24999999999997 1005.7142857142858,116.78571428571428 1135,114 C 1264.2857142857142,111.21428571428572 1352.142857142857,122.10714285714286 1440,133 C 1440,133 1440,400 1440,400 Z"
             stroke="none"
             stroke-width="0"
             fill="#33333388"
-            class="transition-all duration-300 ease-in-out delay-150 path-0"
+            class="path-0"
             transform="rotate(-180 720 200)"
         ></path>
         <path
@@ -20,7 +20,7 @@
             stroke="none"
             stroke-width="0"
             fill="#333333ff"
-            class="transition-all duration-300 ease-in-out delay-150 path-1"
+            class="path-1"
             transform="rotate(-180 720 200)"
         ></path>
     </svg>

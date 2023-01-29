@@ -2,7 +2,9 @@
     <v-row
         justify="center"
         align="center"
-        :class="$vuetify.breakpoint.xs ? 'pt-16' : ''"
+        :class="{
+            'pt-16': $vuetify.breakpoint.xs
+        }"
     >
         <v-col cols="12" md="6">
             <v-card
@@ -147,12 +149,7 @@
                     fill-dot
                 >
                     <template v-slot:opposite>
-                        <span
-                            class="headline font-weight-medium"
-                            :style="{
-                                color: 'white'
-                            }"
-                        >
+                        <span class="headline font-weight-medium white--text">
                             {{ item.year }}
                         </span>
                     </template>

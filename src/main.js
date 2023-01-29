@@ -11,7 +11,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(VueRouterPrefetch);
 
-new Vue({
+export default new Vue({
     router,
     vuetify,
     render: h => h(App)

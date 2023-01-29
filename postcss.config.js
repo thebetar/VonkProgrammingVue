@@ -8,15 +8,16 @@ module.exports = {
                     `./public/**/*.html`,
                     `./src/**/*.vue`,
                     `./src/**/*.js`,
-                    `./src/**/*.css`,
-                    `./node_modules/vuetify/**/*.js`,
-                    `./node_modules/vuetify/**/*.css`
+                    `./node_modules/vuetify/**/*.vue`,
+                    `./node_modules/vuetify/**/*.js`
                 ],
+                css: [`./src/**/*.css`, `./node_modules/vuetify/**/*.css`],
                 defaultExtractor(content) {
                     const contentWithoutStyleBlocks = content.replace(
                         /<style[^]+?<\/style>/gi,
                         ''
                     );
+
                     return (
                         contentWithoutStyleBlocks.match(
                             /[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g
@@ -27,7 +28,8 @@ module.exports = {
                     /-(leave|enter|appear)(|-(to|from|active))$/,
                     /^(?!(|.*?:)cursor-move).+-move$/,
                     /^router-link(|-exact)-active$/,
-                    /data-v-.*/
+                    /data-v-.*/,
+                    /^col/
                 ]
             })
     ]

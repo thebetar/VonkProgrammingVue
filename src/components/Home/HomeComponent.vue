@@ -10,21 +10,17 @@
                     <v-col
                         cols="12"
                         md="5"
-                        :style="
-                            !$vuetify.breakpoint.xs
-                                ? { margin: '20px 0' }
-                                : {
-                                      paddingBottom: '0px',
-                                      display: 'flex',
-                                      justifyContent: 'center',
-                                      flex: 'auto'
-                                  }
-                        "
+                        class="d-flex"
+                        :class="{
+                            'justify-center': $vuetify.breakpoint.xs,
+                            'flex-auto': $vuetify.breakpoint.xs,
+                            'pb-0': $vuetify.breakpoint.xs
+                        }"
                     >
                         <v-img
                             :src="require('@/assets/svg/programming.svg')"
-                            :height="$vuetify.breakpoint.xs ? 200 : 350"
-                            :width="$vuetify.breakpoint.xs ? 200 : 350"
+                            :height="$vuetify.breakpoint.xs ? 200 : 320"
+                            :width="$vuetify.breakpoint.xs ? 200 : 320"
                             aspect-ratio="1"
                         >
                             <template #placeholder>
@@ -47,14 +43,24 @@
                         cols="12"
                         md="7"
                         class="d-flex flex-column"
-                        :style="
-                            !$vuetify.breakpoint.xs ? {} : { paddingTop: '0px' }
-                        "
+                        :class="{
+                            'pt-0': !$vuetify.breakpoint.xs
+                        }"
                     >
-                        <p class="text-h4 white--text">
+                        <p
+                            class="text-h4 white--text"
+                            :class="{
+                                'text-center': $vuetify.breakpoint.xs
+                            }"
+                        >
                             Voor elk probleem een oplossing 💪
                         </p>
-                        <div class="text-body-1 white--text">
+                        <div
+                            class="text-body-1 white--text"
+                            :class="{
+                                'text-center': $vuetify.breakpoint.xs
+                            }"
+                        >
                             <p>
                                 Heeft u een probleem waar
                                 <span class="font-weight-bold">
@@ -97,10 +103,7 @@
                 </div>
             </v-col>
         </v-row>
-        <v-container
-            class="pb-16"
-            :class="$vuetify.breakpoint.xs ? '' : 'pt-8'"
-        >
+        <v-container class="pb-16" :class="{ 'pt-8': !$vuetify.breakpoint.xs }">
             <v-row justify="center">
                 <v-col cols="12" sm="12" md="6" align="center">
                     <v-card
@@ -168,12 +171,7 @@
                         </v-list>
                     </v-card>
                 </v-col>
-                <v-col
-                    cols="12"
-                    sm="12"
-                    md="6"
-                    class="d-flex justify-content-center"
-                >
+                <v-col cols="12" sm="12" md="6" class="d-flex justify-center">
                     <v-card
                         class="pa-4 d-flex flex-column align-center my-auto text-center"
                         elevation="6"
@@ -440,8 +438,8 @@
             <wavey-divider-top></wavey-divider-top>
         </v-row>
         <v-container
-            class="mb-16"
-            :class="$vuetify.breakpoint.xs ? 'pt-16' : ''"
+            class="pb-16"
+            :class="$vuetify.breakpoint.xs ? 'pt-16' : 'mb-8'"
         >
             <v-row justify="center">
                 <v-col cols="12" sm="12" md="6" class="d-none d-sm-block">

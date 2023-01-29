@@ -50,7 +50,7 @@
                         Pagina's
                     </span>
                     <v-list>
-                        <v-list-item class="title" to="/home">
+                        <v-list-item class="title" to="/">
                             <v-icon class="mr-2">{{ mdiHome }}</v-icon> Home
                         </v-list-item>
                         <v-list-item class="title" to="/portfolio">

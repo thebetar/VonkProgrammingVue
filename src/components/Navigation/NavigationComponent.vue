@@ -4,7 +4,6 @@
             class="d-flex justify-space-between justify-md-center w-full"
             fixed
             flat
-            dark
             :class="{ scrolled: isScroll }"
         >
             <v-app-bar-nav-icon
@@ -17,7 +16,7 @@
             <v-toolbar-title>
                 <router-link to="/home" aria-label="Home">
                     <v-img
-                        src="@/assets/logo-min.webp"
+                        :src="require('@/assets/logo-min.webp')"
                         max-height="36"
                         max-width="90"
                         contain
@@ -27,10 +26,13 @@
             <v-toolbar-items dark class="d-none d-sm-block">
                 <v-btn
                     text
-                    v-for="item in items.filter(item => !item.href)"
+                    v-for="item in pageLinks"
                     :to="item.link"
                     :key="item.link"
-                    :class="{ 'scrolled-text': isScroll }"
+                    :class="{
+                        'scrolled-text': isScroll,
+                        'noscroll-text': !isScroll
+                    }"
                     :aria-label="item.text"
                 >
                     <v-icon style="margin-right: 4px;">{{ item.icon }}</v-icon>
@@ -38,10 +40,13 @@
                 </v-btn>
                 <v-btn
                     text
-                    v-for="item in items.filter(item => item.href)"
+                    v-for="item in socialLinks"
                     :href="item.link"
                     :key="item.link"
-                    :class="{ 'scrolled-text': isScroll }"
+                    :class="{
+                        'scrolled-text': isScroll,
+                        'noscroll-text': !isScroll
+                    }"
                     target="_blank"
                     :aria-label="item.text"
                 >
@@ -53,17 +58,48 @@
 </template>
 
 <script>
-import { mdiMenu } from '@mdi/js';
+import {mdiMenu, mdiHome, mdiFolder, mdiPhone ,mdiLinkedin, mdiWhatsapp, mdiGithub } from '@mdi/js';
 
 export default {
     data() {
         return {
             isScroll: this.handleScroll(),
-            mdiMenu
+            mdiMenu,
+            pageLinks: [
+            {
+                    link: '/',
+                    icon: mdiHome,
+                    text: 'Home'
+                },
+                {
+                    link: '/portfolio',
+                    icon: mdiFolder,
+                    text: 'Portfolio'
+                },
+                {
+                    link: '/contact',
+                    icon: mdiPhone,
+                    text: 'Contact'
+                },
+            ],
+            socialLinks: [
+                {
+                    text: 'Linkedin',
+                    link: 'https://www.linkedin.com/in/lars-v-82455612a/',
+                    icon: mdiLinkedin
+                },
+                {
+                    text: 'WhatsApp',
+                    link: 'https://wa.me/0639119996',
+                    icon: mdiWhatsapp,
+                },
+                {
+                    text: 'GitHub',
+                    link: 'https://github.com/thebetar',
+                    icon: mdiGithub,
+                }
+            ]
         };
-    },
-    props: {
-        items: Array
     },
     created() {
         // Check if not mobile
@@ -113,13 +149,17 @@ button {
     color: black !important;
 }
 
+.noscroll-text {
+    color: white !important;
+}
+
+.noscroll-text .v-icon {
+    color: white !important;
+}
+
 @media only screen and (max-width: 600px) {
     header {
         background-color: white !important;
-    }
-
-    .theme--dark {
-        color: #333 !important;
     }
 
     .v-card {

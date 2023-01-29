@@ -2,7 +2,7 @@ import VueRouter from 'vue-router';
 
 const routes = [
     {
-        path: '/home',
+        path: '/',
         component: () => import('./pages/HomePage.vue')
     },
     {
@@ -15,7 +15,7 @@ const routes = [
     },
     {
         path: '*',
-        redirect: '/home'
+        redirect: '/'
     }
 ];
 

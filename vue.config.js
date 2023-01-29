@@ -7,6 +7,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     configureWebpack: {
+        mode: 'production',
         plugins: [
             new CompressionPlugin({
                 algorithm: 'gzip',
@@ -16,7 +17,19 @@ module.exports = {
         ],
         optimization: {
             minimize: true,
-            minimizer: [new TerserLoaderPlugin()],
+            minimizer: [
+                new TerserLoaderPlugin({
+                    extractComments: true,
+                    terserOptions: {
+                        compress: true,
+                        ecma: 6,
+                        ie8: false,
+                        mangle: true,
+                        safari10: false,
+                        sourceMap: false
+                    }
+                })
+            ],
             usedExports: true,
             nodeEnv: 'production',
             splitChunks: {
