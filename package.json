@@ -56,6 +56,6 @@
         "rules": {}
     },
     "browserslist": [
-        ">0.3% and last 5 versions and not dead"
+        "defaults and supports es6-module"
     ]
 }
