@@ -22,6 +22,6 @@ jobs:
                   host: 'ssh.strato.com'
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
+                  delete_remote_files: true
                   localPath: './dist'
                   remotePath: './'
-                  delete_remote_files: true
