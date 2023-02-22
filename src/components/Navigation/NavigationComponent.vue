@@ -9,7 +9,7 @@
       <v-app-bar-nav-icon
         aria-label="Open menu"
         class="d-flex d-sm-none"
-        :icon="mdiMenu"
+        :icon="drawerProp ? mdiArrowLeft : mdiMenu"
         @click="emitDrawer"
       />
       <v-app-bar-title>
@@ -67,6 +67,7 @@
 import { RouterLink } from 'vue-router';
 import {
   mdiMenu,
+  mdiArrowLeft,
   mdiHome,
   mdiFolder,
   mdiPhone,
@@ -80,10 +81,17 @@ export default {
   components: {
     RouterLink
   },
+  props: {
+    drawerProp: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       isScroll: this.handleScroll(),
       mdiMenu,
+      mdiArrowLeft,
       pageLinks: [
         {
           link: '/',

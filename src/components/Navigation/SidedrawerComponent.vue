@@ -1,7 +1,6 @@
 <template>
   <v-navigation-drawer
     v-model="drawer"
-    absolute
     touchless
     class="d-sm-none"
     :width="500"
