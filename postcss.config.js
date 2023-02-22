@@ -8,14 +8,16 @@ module.exports = {
           `./public/**/*.html`,
           `./src/**/*.vue`,
           `./src/**/*.js`,
+          `./src/**/*.ts`,
           `./node_modules/vuetify/**/*.vue`,
-          `./node_modules/vuetify/**/*.js`
+          `./node_modules/vuetify/**/*.js`,
+          `./node_modules/vuetify/**/*.ts`
         ],
         css: [
           `./src/**/*.css`,
-          `./src/**/*.scss`,
-          `./node_modules/vuetify/**/*.css`,
-          `./node_modules/vuetify/**/*.scss`
+          // `./src/**/*.scss`,
+          `./node_modules/vuetify/**/*.css`
+          // `./node_modules/vuetify/**/*.scss`
         ],
         defaultExtractor(content) {
           const contentWithoutStyleBlocks = content.replace(
@@ -34,7 +36,19 @@ module.exports = {
           /^(?!(|.*?:)cursor-move).+-move$/,
           /^router-link(|-exact)-active$/,
           /data-v-.*/,
-          /^col/
+          /^v-col/,
+          /^offset-sm/,
+          /^offset-md/,
+          /^v-btn/,
+          /^v-card/,
+          /^v-list/,
+          /^v-alert/,
+          /^v-timeline/,
+          /^v-icon/,
+          /^v-field/,
+          /^v-label/,
+          /^v-input/,
+          /^v-form/
         ]
       })
   ]

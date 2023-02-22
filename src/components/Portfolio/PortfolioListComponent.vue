@@ -133,9 +133,10 @@
           v-for="item in achievements"
           :key="item.id"
           fill-dot
+          dot-color="#ddd"
         >
           <template #opposite>
-            <span class="headline font-weight-medium white--text">
+            <span class="headline font-weight-medium text-grey-lighten-2">
               {{ item.year }}
             </span>
           </template>

@@ -47,9 +47,10 @@
             :class="{
               'pt-0': !$vuetify.display.mobile
             }"
+            role="main"
           >
             <p
-              class="text-h4 white--text"
+              class="text-h4 text-white"
               :class="{
                 'text-center': $vuetify.display.mobile
               }"
@@ -57,7 +58,7 @@
               Voor elk probleem een oplossing 💪
             </p>
             <div
-              class="text-body-1 white--text"
+              class="text-body-1 text-white"
               :class="{
                 'text-center': $vuetify.display.mobile
               }"
@@ -122,6 +123,7 @@
             class="pa-4 d-flex flex-column align-center my-auto text-center"
             elevation="6"
             outlined
+            title="Procesbeschrijving"
           >
             <v-img
               :src="require('@/assets/svg/process.svg')"
@@ -129,16 +131,15 @@
               width="120"
               height="120"
             />
-            <v-card-title class="title"> Procesbeschrijving </v-card-title>
-            <v-list>
-              <v-list-item>
+            <v-list role="list">
+              <v-list-item role="listitem">
                 <v-list-item-title>Kennismaking: </v-list-item-title>
                 <v-list-item-subtitle>
                   Voorafgaand vindt er een kennsmakingsgesprek plaats waarin de
                   context van uw wens wordt besproken.
                 </v-list-item-subtitle>
               </v-list-item>
-              <v-list-item>
+              <v-list-item role="listitem">
                 <v-list-item-title>Ontwerp: </v-list-item-title>
                 <v-list-item-subtitle>
                   Op basis van de besproken details wordt er een product ontwerp
@@ -148,7 +149,7 @@
                   gestelde probleem zal oplossen.
                 </v-list-item-subtitle>
               </v-list-item>
-              <v-list-item>
+              <v-list-item role="listitem">
                 <v-list-item-title>Realisatie: </v-list-item-title>
                 <v-list-item-subtitle>
                   Het eindproduct wordt gerealiseerd met meerdere feedback
@@ -156,7 +157,7 @@
                   gaat.
                 </v-list-item-subtitle>
               </v-list-item>
-              <v-list-item>
+              <v-list-item role="listitem">
                 <v-list-item-title>Afronding: </v-list-item-title>
                 <v-list-item-subtitle>
                   Zodra het eindproduct klaar is zorgt VonkProgramming ervoor
@@ -176,16 +177,14 @@
             class="pa-4 d-flex flex-column align-center my-auto text-center"
             elevation="6"
             outlined
+            title="Webapplicatie Development"
           >
             <v-img
               :src="require('@/assets/svg/webpage.svg')"
               width="150"
               height="150"
             />
-            <v-card-title class="title">
-              Webapplicatie Development
-            </v-card-title>
-            <v-card-text class="text-body-1">
+            <v-card-text class="text-body-2">
               <p>
                 Ik maak gebruik van de nieuwste technieken in het maken van
                 software en websites binnen het web. Mijn vaardigheden liggen
@@ -378,7 +377,7 @@
             class="mx-auto mb-8 d-block d-sm-none"
           />
           <h6 class="text-h4">Portfolio</h6>
-          <p class="text-body-1">
+          <p class="text-body-2">
             Naast een mooi verhaal over hoe alles te werk gaat heb ik
             ondertussen ook al een portfolio opgebouwd met een aantal bekenden
             en wat minder bekende bedrijven.
@@ -425,7 +424,7 @@
             class="mx-auto mb-8 d-block d-sm-none"
           />
           <h6 class="text-h4">Netwerk</h6>
-          <p class="text-body-1">
+          <p class="text-body-2">
             Binnen mijn netwerk heb ik meerdere connecties met mensen binnen
             design, marketing en development. Hierdoor kan ik een compleet
             pakket aanbieden voor een bedrijf. De huidige vaste partner waarmee
@@ -532,7 +531,7 @@ export default {
 .wave-div {
   width: 100vw;
   height: calc(100vw / 3.5);
-  margin-top: 0;
+  margin: -0.2rem 0;
 }
 
 @media only screen and (max-width: 600px) {

@@ -55,16 +55,18 @@
           md="3"
         >
           <span class="text-h3 mb-6"> Pagina's </span>
-          <v-list>
+          <v-list role="list">
             <v-list-item
               class="title"
               to="/"
+              role="listitem"
             >
               <v-icon class="mr-2">{{ mdiHome }}</v-icon> Home
             </v-list-item>
             <v-list-item
               class="title"
               to="/portfolio"
+              role="listitem"
             >
               <v-icon class="mr-2">{{ mdiFolder }}</v-icon>
               Portfolio
@@ -72,6 +74,7 @@
             <v-list-item
               class="title"
               to="/contact"
+              role="listitem"
             >
               <v-icon class="mr-2">{{ mdiPhone }}</v-icon> Contact
             </v-list-item>

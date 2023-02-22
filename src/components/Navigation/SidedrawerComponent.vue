@@ -16,12 +16,14 @@
     <v-list
       nav
       dense
+      role="list"
     >
       <v-list-item
         v-for="item in pageLinks"
         :key="item.link"
         class="pa-4"
         :to="item.link"
+        role="listitem"
         @click="$emit('close')"
       >
         <template #prepend>
@@ -37,6 +39,7 @@
         :href="item.link"
         target="_blank"
         class="pa-4"
+        role="listitem"
         @click="$emit('close')"
       >
         <template #prepend>

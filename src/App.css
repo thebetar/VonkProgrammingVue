@@ -25,6 +25,10 @@ body {
   overflow-x: hidden !important;
 }
 
+.v-container {
+  overflow-y: hidden !important;
+}
+
 .v-card {
   border: 2px #aaa solid;
   border-radius: 0.5rem;
@@ -63,6 +67,12 @@ body {
 .v-card > .v-card-text a:hover,
 .v-card > .v-card-text a:hover .v-icon {
   color: #f22 !important;
+}
+
+.v-list-item-subtitle {
+  color: #333;
+  font-size: 0.9rem;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 600px) {

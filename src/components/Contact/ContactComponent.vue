@@ -26,11 +26,11 @@
                 md="5"
               >
                 <h2 class="text-subtitle-1">Heeft u vragen?</h2>
-                <p class="text-body-2">
+                <p class="text-body-2 mb-6">
                   Vul dit formulier in en kom direct in contact met mij.
                 </p>
                 <p>
-                  <span class="blue-grey--text text--darken-1 text-subtitle-1">
+                  <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Whatsapp:
                   </span>
                   <br />
@@ -43,7 +43,7 @@
                   </a>
                 </p>
                 <p>
-                  <span class="blue-grey--text text--darken-1 text-subtitle-1">
+                  <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Bellen:
                   </span>
                   <br />
@@ -53,7 +53,7 @@
                   </a>
                 </p>
                 <p>
-                  <span class="blue-grey--text text--darken-1 text-subtitle-1">
+                  <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Email:
                   </span>
                   <br />
@@ -101,7 +101,7 @@
                       color="primary"
                       :disabled="!isValid"
                       size="large"
-                      :prepend-icon="mdiSend"
+                      :append-icon="mdiSend"
                     >
                       Stuur
                     </v-btn>
