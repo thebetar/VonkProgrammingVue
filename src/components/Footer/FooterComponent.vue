@@ -1,7 +1,7 @@
 <template>
   <v-footer color="white">
     <v-container>
-      <v-row>
+      <v-row justify="space-between">
         <v-col
           cols="12"
           sm="3"
@@ -49,9 +49,7 @@
         </v-col>
         <v-col
           cols="12"
-          offset-sm="6"
           sm="3"
-          offset-md="6"
           md="3"
         >
           <span class="text-h3 mb-6"> Pagina's </span>

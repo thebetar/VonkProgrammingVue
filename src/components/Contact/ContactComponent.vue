@@ -2,8 +2,7 @@
   <div>
     <v-row
       justify="center"
-      class="align-items-end align-items-sm-center v-card-container"
-      :class="$vuetify.display.mobile ? 'align-end' : 'align-center'"
+      class="align-items-center align-center v-card-container"
     >
       <v-col
         cols="12"
@@ -26,9 +25,19 @@
                 md="5"
               >
                 <h2 class="text-subtitle-1">Heeft u vragen?</h2>
-                <p class="text-body-2 mb-6">
+                <p
+                  v-if="!$vuetify.display.mobile"
+                  class="text-body-2 mb-6"
+                >
                   Vul dit formulier in en kom direct in contact met mij.
                 </p>
+                <p
+                  v-else
+                  class="text-body-2 mb-6"
+                >
+                  U kunt mij bereiken op de volgende manieren:
+                </p>
+
                 <p>
                   <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Whatsapp:
@@ -64,6 +73,7 @@
                 </p>
               </v-col>
               <v-col
+                v-if="!$vuetify.display.mobile"
                 cols="12"
                 sm="7"
                 md="7"

@@ -40,7 +40,6 @@
             </v-img>
           </v-col>
           <v-col
-            offset="0"
             cols="12"
             md="7"
             class="d-flex flex-column"
@@ -150,7 +149,7 @@
 
 <script>
 import { defineAsyncComponent } from 'vue';
-import { mdiFolder, mdiPhone, mdiGithub } from '@mdi/js';
+import { mdiPhone } from '@mdi/js';
 
 export default {
   components: {
@@ -170,9 +169,7 @@ export default {
   data() {
     return {
       rendered: false,
-      mdiFolder,
-      mdiPhone,
-      mdiGithub
+      mdiPhone
     };
   },
   mounted() {

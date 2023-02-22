@@ -91,6 +91,7 @@
           fill-dot
         >
           <portfolio-list-item
+            v-if="rendered"
             :item="item"
             :color="colors[item.color]"
             :index="index"
@@ -140,7 +141,14 @@
               {{ item.year }}
             </span>
           </template>
-          <v-alert> {{ item.certificate }} - {{ item.where }} </v-alert>
+          <v-alert
+            :class="{
+              'text-caption': $vuetify.display.mobile
+            }"
+          >
+            {{ item.certificate }}
+            <span v-if="!$vuetify.display.mobile"> - {{ item.where }} </span>
+          </v-alert>
         </v-timeline-item>
       </v-timeline>
     </v-col>
@@ -409,13 +417,17 @@ export default {
           where: 'Cambridge University',
           year: 2016
         }
-      ].map(this.addRandomId)
+      ].map(this.addRandomId),
+      rendered: false
     };
   },
   computed: {
     isMobile() {
       return window.innerWidth <= 800 || window.innerHeight <= 600;
     }
+  },
+  mounted() {
+    this.rendered = true;
   },
   methods: {
     addRandomId(obj) {

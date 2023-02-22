@@ -56,7 +56,7 @@
               class="my-2"
               arial-label="Portfolio"
               variant="outlined"
-              size="large"
+              :size="$vuetify.display.mobile ? 'default' : 'large'"
               block
               :prepend-icon="mdiFolder"
             >
@@ -71,7 +71,7 @@
               class="my-2"
               aria-label="Github"
               variant="outlined"
-              size="large"
+              :size="$vuetify.display.mobile ? 'default' : 'large'"
               block
               :prepend-icon="mdiGithub"
             >
@@ -110,8 +110,15 @@
 
 <script>
 import { defineComponent } from 'vue';
+import { mdiFolder, mdiGithub } from '@mdi/js';
 
 export default defineComponent({
+  data() {
+    return {
+      mdiGithub,
+      mdiFolder
+    };
+  },
   methods: {
     goTo(url) {
       window.open(url, '_blank');

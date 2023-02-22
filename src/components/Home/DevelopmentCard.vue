@@ -40,3 +40,16 @@
     </v-card-text>
   </v-card>
 </template>
+
+<style scoped>
+.v-card {
+  border: 2px #aaa solid;
+  border-radius: 0.5rem;
+}
+
+.card-subtitle {
+  color: #333;
+  font-size: 0.9rem;
+  opacity: 1;
+}
+</style>
