@@ -15,7 +15,7 @@
         >
           <v-img
             v-if="item.imageUrl"
-            :src="require('@/assets/portfolio/' + item.imageUrl)"
+            :src="require(`@/assets/portfolio/${item.imageUrl}`)"
             class="portfolio-pic"
           />
         </v-col>
@@ -49,7 +49,7 @@
         >
           <v-img
             v-if="item.imageUrl"
-            :src="require('@/assets/portfolio/' + item.imageUrl)"
+            :src="require(`@/assets/portfolio/${item.imageUrl}`)"
             class="portfolio-pic"
           />
         </v-col>
@@ -59,7 +59,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   props: {
     item: {
       type: Object,
@@ -82,12 +84,17 @@ export default {
       default: 'black'
     }
   },
+  data() {
+    return {
+      imageUrl: ''
+    };
+  },
   computed: {
     isRight() {
       return this.index % 2 === 0 && !this.isMobile;
     }
   }
-};
+});
 </script>
 
 <style scoped>

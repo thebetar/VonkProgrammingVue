@@ -148,11 +148,13 @@
 </template>
 
 <script>
-import PortfolioListItem from './PortfolioListItemComponent.vue';
+import { defineAsyncComponent } from 'vue';
 
 export default {
   components: {
-    PortfolioListItem
+    PortfolioListItem: defineAsyncComponent(() =>
+      import('./PortfolioListItemComponent.vue')
+    )
   },
   data() {
     return {

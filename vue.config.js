@@ -1,5 +1,5 @@
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-// 	.BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const { VuetifyPlugin } = require('webpack-plugin-vuetify');
 const TerserLoaderPlugin = require('terser-webpack-plugin');
@@ -28,6 +28,7 @@ module.exports = {
         algorithm: 'gzip',
         test: /\.(js|css|html|svg|jpg|png|webp)$/
       })
+      // new BundleAnalyzerPlugin()
     ],
     optimization: {
       minimize: true,

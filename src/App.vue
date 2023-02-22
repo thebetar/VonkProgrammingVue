@@ -13,17 +13,19 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
 import { RouterView } from 'vue-router';
 
 import NavigationComponent from './components/Navigation/NavigationComponent.vue';
-import SidedrawerComponent from './components/Navigation/SidedrawerComponent.vue';
 
 export default {
   name: 'App',
   components: {
     RouterView,
     NavigationComponent,
-    SidedrawerComponent
+    SidedrawerComponent: defineAsyncComponent(() =>
+      import('./components/Navigation/SidedrawerComponent.vue')
+    )
   },
   data() {
     return {

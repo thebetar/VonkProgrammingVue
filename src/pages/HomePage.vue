@@ -9,13 +9,14 @@
 </template>
 
 <script>
-import HomeComponent from '../components/Home/HomeComponent.vue';
-import FooterComponent from '../components/Footer/FooterComponent.vue';
+import { defineComponent, defineAsyncComponent } from 'vue';
 
-export default {
+import HomeComponent from '../components/Home/HomeComponent.vue';
+
+export default defineComponent({
   components: {
     HomeComponent,
-    FooterComponent
+    FooterComponent: defineAsyncComponent(() => import('../components/Footer/FooterComponent.vue'))
   }
-};
+})
 </script>
