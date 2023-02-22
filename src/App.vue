@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <navigation-component @drawerClick="showSidedrawer" />
+    <navigation-component
+      :drawer-prop="drawer"
+      @drawerClick="toggleSidedrawer"
+    />
     <sidedrawer-component
       :drawer-prop="drawer"
       @close="hideSidedrawer"
@@ -33,8 +36,8 @@ export default {
     };
   },
   methods: {
-    showSidedrawer() {
-      this.drawer = true;
+    toggleSidedrawer() {
+      this.drawer = !this.drawer;
     },
     hideSidedrawer() {
       this.drawer = false;
