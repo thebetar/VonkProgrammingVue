@@ -1,170 +1,189 @@
 <template>
-    <div>
-        <v-app-bar
-            class="d-flex justify-space-between justify-md-center w-full"
-            fixed
-            flat
-            :class="{ scrolled: isScroll }"
+  <div>
+    <v-app-bar
+      class="d-flex justify-space-between justify-md-center w-full"
+      fixed
+      flat
+      :class="{ scrolled: isScroll }"
+    >
+      <v-app-bar-nav-icon
+        aria-label="Open menu"
+        class="d-flex d-sm-none"
+        :icon="mdiMenu"
+        @click="emitDrawer"
+      />
+      <v-app-bar-title>
+        <router-link
+          to="/home"
+          aria-label="Home"
         >
-            <v-app-bar-nav-icon
-                @click="emitDrawer"
-                class="d-flex d-sm-none"
-                aria-label="Open menu"
-            >
-                <v-icon large>{{ mdiMenu }}</v-icon>
-            </v-app-bar-nav-icon>
-            <v-toolbar-title>
-                <router-link to="/home" aria-label="Home">
-                    <v-img
-                        :src="require('@/assets/logo-min.webp')"
-                        max-height="36"
-                        max-width="90"
-                        contain
-                    ></v-img>
-                </router-link>
-            </v-toolbar-title>
-            <v-toolbar-items dark class="d-none d-sm-block">
-                <v-btn
-                    text
-                    v-for="item in pageLinks"
-                    :to="item.link"
-                    :key="item.link"
-                    :class="{
-                        'scrolled-text': isScroll,
-                        'noscroll-text': !isScroll
-                    }"
-                    :aria-label="item.text"
-                >
-                    <v-icon style="margin-right: 4px;">{{ item.icon }}</v-icon>
-                    {{ item.text }}
-                </v-btn>
-                <v-btn
-                    text
-                    v-for="item in socialLinks"
-                    :href="item.link"
-                    :key="item.link"
-                    :class="{
-                        'scrolled-text': isScroll,
-                        'noscroll-text': !isScroll
-                    }"
-                    target="_blank"
-                    :aria-label="item.text"
-                >
-                    <v-icon>{{ item.icon }}</v-icon>
-                </v-btn>
-            </v-toolbar-items>
-        </v-app-bar>
-    </div>
+          <v-img
+            :src="require('@/assets/logo-min.webp')"
+            max-height="36"
+            max-width="90"
+            contain
+          />
+        </router-link>
+      </v-app-bar-title>
+      <v-toolbar-items
+        dark
+        class="d-none d-sm-block"
+      >
+        <v-btn
+          v-for="item in pageLinks"
+          :key="item.link"
+          variant="text"
+          :to="item.link"
+          :class="{
+            'scrolled-text': isScroll,
+            'noscroll-text': !isScroll
+          }"
+          :aria-label="item.text"
+          :prepend-icon="item.icon"
+        >
+          {{ item.text }}
+        </v-btn>
+        <v-btn
+          v-for="item in socialLinks"
+          :key="item.link"
+          variant="text"
+          :href="item.link"
+          :class="{
+            'scrolled-text': isScroll,
+            'noscroll-text': !isScroll
+          }"
+          target="_blank"
+          :aria-label="item.text"
+          icon
+        >
+          <v-icon :icon="item.icon" />
+        </v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
-import {mdiMenu, mdiHome, mdiFolder, mdiPhone ,mdiLinkedin, mdiWhatsapp, mdiGithub } from '@mdi/js';
+import { RouterLink } from 'vue-router';
+import {
+  mdiMenu,
+  mdiHome,
+  mdiFolder,
+  mdiPhone,
+  mdiLinkedin,
+  mdiWhatsapp,
+  mdiGithub
+} from '@mdi/js';
 
 export default {
-    data() {
-        return {
-            isScroll: this.handleScroll(),
-            mdiMenu,
-            pageLinks: [
-            {
-                    link: '/',
-                    icon: mdiHome,
-                    text: 'Home'
-                },
-                {
-                    link: '/portfolio',
-                    icon: mdiFolder,
-                    text: 'Portfolio'
-                },
-                {
-                    link: '/contact',
-                    icon: mdiPhone,
-                    text: 'Contact'
-                },
-            ],
-            socialLinks: [
-                {
-                    text: 'Linkedin',
-                    link: 'https://www.linkedin.com/in/lars-v-82455612a/',
-                    icon: mdiLinkedin
-                },
-                {
-                    text: 'WhatsApp',
-                    link: 'https://wa.me/0639119996',
-                    icon: mdiWhatsapp,
-                },
-                {
-                    text: 'GitHub',
-                    link: 'https://github.com/thebetar',
-                    icon: mdiGithub,
-                }
-            ]
-        };
-    },
-    created() {
-        // Check if not mobile
-        if (window.screen.width >= 600) {
-            window.addEventListener('scroll', () => {
-                this.isScroll = this.handleScroll();
-            });
-        }
-    },
-    methods: {
-        handleScroll() {
-            return window.scrollY > 50;
+  name: 'NavigationComponent',
+  components: {
+    RouterLink
+  },
+  data() {
+    return {
+      isScroll: this.handleScroll(),
+      mdiMenu,
+      pageLinks: [
+        {
+          link: '/',
+          icon: mdiHome,
+          text: 'Home'
         },
-        emitDrawer() {
-            this.$emit('drawerClick');
+        {
+          link: '/portfolio',
+          icon: mdiFolder,
+          text: 'Portfolio'
+        },
+        {
+          link: '/contact',
+          icon: mdiPhone,
+          text: 'Contact'
         }
+      ],
+      socialLinks: [
+        {
+          text: 'Linkedin',
+          link: 'https://www.linkedin.com/in/lars-v-82455612a/',
+          icon: mdiLinkedin
+        },
+        {
+          text: 'WhatsApp',
+          link: 'https://wa.me/0639119996',
+          icon: mdiWhatsapp
+        },
+        {
+          text: 'GitHub',
+          link: 'https://github.com/thebetar',
+          icon: mdiGithub
+        }
+      ]
+    };
+  },
+  created() {
+    // Check if not mobile
+    if (window.screen.width >= 600) {
+      window.addEventListener('scroll', () => {
+        this.isScroll = this.handleScroll();
+      });
     }
+  },
+  methods: {
+    handleScroll() {
+      return window.scrollY > 50;
+    },
+    emitDrawer() {
+      this.$emit('drawerClick');
+    }
+  }
 };
 </script>
 
 <style scoped>
 header {
-    background-color: transparent !important;
-    transition: all 0.3s ease-in-out;
+  background-color: transparent !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .v-card {
-    z-index: 5;
-    background-color: transparent !important;
-    transition: all 0.3s ease-in-out;
+  z-index: 5;
+  background-color: transparent !important;
+  transition: all 0.3s ease-in-out;
 }
 
 button {
-    border: none;
+  border: none;
 }
 
 .scrolled {
-    background-color: #fff !important;
-    box-shadow: 0px 0px 4px #aaa !important;
+  background-color: #fff !important;
+  box-shadow: 0px 0px 4px #aaa !important;
 }
 
 .scrolled-text {
-    color: black !important;
+  color: black !important;
 }
 
 .scrolled-text .v-icon {
-    color: black !important;
+  color: black !important;
 }
 
 .noscroll-text {
-    color: white !important;
+  color: white !important;
 }
 
 .noscroll-text .v-icon {
-    color: white !important;
+  color: white !important;
 }
 
 @media only screen and (max-width: 600px) {
-    header {
-        background-color: white !important;
-    }
+  header {
+    background-color: white !important;
+  }
 
-    .v-card {
-        background-color: white !important;
-        border-radius: 0px !important;
-    }
+  .v-card {
+    background-color: white !important;
+    border-radius: 0px !important;
+  }
 }
 </style>
