@@ -6,7 +6,7 @@
     title="Procesbeschrijving"
   >
     <v-img
-      src="@/assets/svg/process.svg"
+      src="/assets/svg/process.svg"
       class="p-4"
       width="120"
       height="120"
@@ -49,11 +49,6 @@
 </template>
 
 <style scoped>
-.v-card {
-  border: 2px #aaa solid;
-  border-radius: 0.5rem;
-}
-
 .card-subtitle {
   color: #333;
   font-size: 0.9rem;

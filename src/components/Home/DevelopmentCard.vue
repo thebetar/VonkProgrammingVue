@@ -6,7 +6,7 @@
     title="Webapplicatie Development"
   >
     <v-img
-      src="@/assets/svg/webpage.svg"
+      src="/assets/svg/webpage.svg"
       width="150"
       height="150"
     />
@@ -40,16 +40,3 @@
     </v-card-text>
   </v-card>
 </template>
-
-<style scoped>
-.v-card {
-  border: 2px #aaa solid;
-  border-radius: 0.5rem;
-}
-
-.card-subtitle {
-  color: #333;
-  font-size: 0.9rem;
-  opacity: 1;
-}
-</style>

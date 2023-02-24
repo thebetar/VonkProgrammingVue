@@ -12,7 +12,7 @@
           align="center"
         >
           <v-img
-            src="@/assets/svg/idea.svg"
+            src="/assets/svg/idea.svg"
             width="80"
             height="80"
           />
@@ -47,19 +47,19 @@
           </p>
           <div class="d-flex justify-between">
             <v-img
-              src="@/assets/svg/ionic.svg"
+              src="/assets/svg/ionic.svg"
               class="mx-2"
               width="80"
               height="80"
             />
             <v-img
-              src="@/assets/svg/vue.svg"
+              src="/assets/svg/vue.svg"
               class="mx-2"
               width="80"
               height="80"
             />
             <v-img
-              src="@/assets/svg/react.svg"
+              src="/assets/svg/react.svg"
               class="mx-2"
               width="80"
               height="80"
@@ -80,25 +80,25 @@
           </p>
           <div class="d-flex justify-between">
             <v-img
-              src="@/assets/svg/nodejs.svg"
+              src="/assets/svg/nodejs.svg"
               class="mx-2"
               width="80"
               height="80"
             />
             <v-img
-              src="@/assets/svg/mongodb.svg"
+              src="/assets/svg/mongodb.svg"
               class="mx-2"
               width="80"
               height="80"
             />
             <v-img
-              src="@/assets/svg/docker.svg"
+              src="/assets/svg/docker.svg"
               class="mx-2"
               width="80"
               height="80"
             />
             <v-img
-              src="@/assets/svg/puppeteer.svg"
+              src="/assets/svg/puppeteer.svg"
               class="mx-2"
               width="80"
               height="80"

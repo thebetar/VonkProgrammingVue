@@ -13,17 +13,17 @@
         @click="emitDrawer"
       />
       <v-app-bar-title>
-        <router-link
-          to="/home"
+        <a
+          href="/home"
           aria-label="Home"
         >
           <v-img
-            :src="require('@/assets/logo-min.webp')"
+            :src="'/assets/logo-min.webp'"
             max-height="36"
             max-width="90"
             contain
           />
-        </router-link>
+        </a>
       </v-app-bar-title>
       <v-toolbar-items
         dark
@@ -33,7 +33,7 @@
           v-for="item in pageLinks"
           :key="item.link"
           variant="text"
-          :to="item.link"
+          :href="item.link"
           :class="{
             'scrolled-text': isScroll,
             'noscroll-text': !isScroll
@@ -64,7 +64,6 @@
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
 import {
   mdiMenu,
   mdiArrowLeft,
@@ -78,9 +77,6 @@ import {
 
 export default {
   name: 'NavigationComponent',
-  components: {
-    RouterLink
-  },
   props: {
     drawerProp: {
       type: Boolean,
@@ -153,16 +149,6 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
-.v-card {
-  z-index: 5;
-  background-color: transparent !important;
-  transition: all 0.3s ease-in-out;
-}
-
-button {
-  border: none;
-}
-
 .scrolled {
   background-color: #fff !important;
   box-shadow: 0px 0px 4px #aaa !important;
@@ -187,11 +173,6 @@ button {
 @media only screen and (max-width: 600px) {
   header {
     background-color: white !important;
-  }
-
-  .v-card {
-    background-color: white !important;
-    border-radius: 0px !important;
   }
 }
 </style>
