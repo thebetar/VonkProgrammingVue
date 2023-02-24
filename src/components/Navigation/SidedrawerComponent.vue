@@ -21,7 +21,7 @@
         v-for="item in pageLinks"
         :key="item.link"
         class="pa-4"
-        :to="item.link"
+        :href="item.link"
         role="listitem"
         @click="$emit('close')"
       >
@@ -126,15 +126,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.v-navigation-drawer {
-  z-index: 200;
-}
-.side-drawer-lottie-container {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  margin: auto;
-}
-</style>

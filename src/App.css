@@ -30,18 +30,32 @@ body {
 }
 
 .v-card {
-  border: 2px #aaa solid;
-  border-radius: 0.5rem;
+  border: 2px #aaa solid !important;
+  border-radius: 0.5rem !important;
 }
 
-.v-row {
-  margin: -1rem !important;
+a {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #f22;
 }
 
 .title,
 .v-card-title {
   word-break: normal !important;
   word-wrap: break-word;
+}
+
+.v-card-text {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.v-row {
+  margin: -1rem !important;
 }
 
 .v-toolbar-title {
@@ -52,21 +66,15 @@ body {
   background-size: contain;
 }
 
-.v-card-text {
-  color: rgba(0, 0, 0, 0.87) !important;
+.home-page-background {
+  background-color: #333;
+  color: white;
+  text-shadow: #333 0 0 8px;
 }
 
-.v-card > .v-card-text a {
-  display: block;
-  color: #333333;
-  text-decoration: none;
-  margin-top: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-.v-card > .v-card-text a:hover,
-.v-card > .v-card-text a:hover .v-icon {
-  color: #f22 !important;
+.home-page-background-gradient {
+  background: linear-gradient(0deg, #333, #444, #333);
+  margin-top: 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -117,21 +125,4 @@ body {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-}
-
-/* Fade effect transition */
-.fade-left-enter-active,
-.fade-left-leave-active {
-  transition-property: all;
-  transition-duration: 0.25s;
-}
-
-.fade-left-enter-active {
-  transition-delay: 0.2s;
-}
-
-.fade-left-enter,
-.fade-left-leave-active {
-  opacity: 0;
-  transform: translateX(-20px);
 }

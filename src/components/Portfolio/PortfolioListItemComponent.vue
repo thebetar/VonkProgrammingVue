@@ -1,6 +1,5 @@
 <template>
   <v-card
-    class="alert-card"
     :class="{ 'pa-4': !isMobile }"
     outlined
     elevation="10"
@@ -15,7 +14,7 @@
         >
           <v-img
             v-if="item.imageUrl"
-            :src="require(`@/assets/portfolio/${item.imageUrl}`)"
+            :src="`/assets/portfolio/${item.imageUrl}`"
             class="portfolio-pic"
           />
         </v-col>
@@ -49,7 +48,7 @@
         >
           <v-img
             v-if="item.imageUrl"
-            :src="require(`@/assets/portfolio/${item.imageUrl}`)"
+            :src="`/assets/portfolio/${item.imageUrl}`"
             class="portfolio-pic"
           />
         </v-col>
@@ -106,21 +105,11 @@ export default defineComponent({
   padding: 8px;
   background: white;
 }
-.v-card__text {
-  font-size: 18px;
-}
-
-.alert-card {
-  border-radius: 0.5rem;
-}
 
 @media only screen and (max-width: 600px) {
   .portfolio-pic {
     max-width: 100px;
     padding: 4px;
-  }
-  .alert-card {
-    font-size: 12px;
   }
 }
 </style>

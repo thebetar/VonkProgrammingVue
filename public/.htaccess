@@ -1,5 +1,5 @@
 <IfModule mod_headers.c>
-    Header add Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
+    Header add Content-Security-Policy "default-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
 
     # Serve gzip compressed CSS and JS files if they exist
     # and the client accepts gzip.
@@ -20,15 +20,6 @@
       # non-gzipped css/js files separately.
       Header append Vary Accept-Encoding
       </FilesMatch>
-</IfModule>
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
 </IfModule>
       
 <FilesMatch "\.(jpg|jpeg|png|svg|webp|js|js\.gz|css|css\.gz|html|html\.gz)$">

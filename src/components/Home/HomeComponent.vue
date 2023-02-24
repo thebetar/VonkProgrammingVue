@@ -3,7 +3,7 @@
     <v-row class="home-page-background">
       <v-container>
         <v-row
-          class="home-page-divider-90 align-content-center"
+          class="custom-home-page-divider-90 align-content-center"
           justify="center"
           align="center"
         >
@@ -18,7 +18,7 @@
             }"
           >
             <v-img
-              src="@/assets/svg/programming.svg"
+              src="/assets/svg/programming.svg"
               :height="$vuetify.display.mobile ? 200 : 320"
               :width="$vuetify.display.mobile ? 200 : 320"
               aspect-ratio="1"
@@ -73,7 +73,7 @@
                 variant="flat"
                 size="large"
                 color="primary"
-                to="/contact"
+                href="/contact"
                 aria-label="Neem contact op"
                 :prepend-icon="mdiPhone"
               >
@@ -95,7 +95,7 @@
         md="6"
         align="center"
       >
-        <div class="home-page-header">
+        <div class="custom-home-page-header">
           <h2 class="text-h3">Hoe ga ik te werk?</h2>
           <p class="text-body-1 mt-4">
             VonkProgramming is een Web development bedrijf dat zich bezighoudt
@@ -132,14 +132,14 @@
     </v-container>
     <v-row
       v-if="rendered"
-      class="wave-div"
+      class="custom-wave-div"
     >
       <wavey-divider-bottom />
     </v-row>
     <idea-row v-if="rendered" />
     <v-row
       v-if="rendered"
-      class="wave-div"
+      class="custom-wave-div"
     >
       <wavey-divider-top />
     </v-row>
@@ -148,23 +148,23 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue';
 import { mdiPhone } from '@mdi/js';
+
+import WaveyDividerTop from '../shared/WaveyDividerTop.vue';
+import WaveyDividerBottom from '../shared/WaveyDividerBottom.vue';
+import ProcessCard from './ProcessCard.vue';
+import DevelopmentCard from './DevelopmentCard.vue';
+import IdeaRow from './IdeaRow.vue';
+import MiscRow from './MiscRow.vue';
 
 export default {
   components: {
-    WaveyDividerTop: defineAsyncComponent(() =>
-      import('../shared/WaveyDividerTop.vue')
-    ),
-    WaveyDividerBottom: defineAsyncComponent(() =>
-      import('../shared/WaveyDividerBottom.vue')
-    ),
-    ProcessCard: defineAsyncComponent(() => import('./ProcessCard.vue')),
-    DevelopmentCard: defineAsyncComponent(() =>
-      import('./DevelopmentCard.vue')
-    ),
-    IdeaRow: defineAsyncComponent(() => import('./IdeaRow.vue')),
-    MiscRow: defineAsyncComponent(() => import('./MiscRow.vue'))
+    WaveyDividerTop,
+    WaveyDividerBottom,
+    ProcessCard,
+    DevelopmentCard,
+    IdeaRow,
+    MiscRow
   },
   data() {
     return {
@@ -178,64 +178,35 @@ export default {
 };
 </script>
 
-<style>
-.home-page-background {
-  background-color: #333;
-  color: white;
-  text-shadow: #333 0 0 8px;
-}
-
-.home-page-background-gradient {
-  background: linear-gradient(0deg, #333, #444, #333);
-  margin-top: 0;
-}
-</style>
-
 <style scoped>
-.home-page-header {
+.custom-home-page-header {
   margin-top: -140px !important;
   padding: 32px 80px;
   background-color: #fff;
 }
 
-.row {
-  position: relative;
-}
-
-.home-page-divider-90 {
+.custom-home-page-divider-90 {
   height: 90vh;
 }
 
-.home-page-divider-80 {
-  height: 80vh;
-}
-
-.wave-div {
+.custom-wave-div {
   width: 100vw;
   height: calc(100vw / 3.5);
   margin: -0.2rem 0;
 }
 
 @media only screen and (max-width: 600px) {
-  .home-page-divider-90 {
+  .custom-home-page-divider-90 {
     height: 100vh;
   }
 
-  .home-page-header {
+  .custom-home-page-header {
     margin-top: 0px !important;
     padding: 32px 20px;
     background-color: #fff;
   }
 
-  .home-page-divider-80 {
-    height: 600px;
-    color: white;
-    padding: 0px 20px;
-    text-shadow: #333 0 0 8px;
-    background-color: #333;
-  }
-
-  .wave-div {
+  .custom-wave-div {
     display: none;
   }
 }

@@ -11,7 +11,7 @@
         class="d-none d-sm-block"
       >
         <v-img
-          src="@/assets/svg/portfolio.svg"
+          src="/assets/svg/portfolio.svg"
           width="80"
           height="80"
           class="mx-auto"
@@ -24,7 +24,7 @@
         class="d-none d-sm-block"
       >
         <v-img
-          src="@/assets/svg/network.svg"
+          src="/assets/svg/network.svg"
           width="80"
           height="80"
           class="mx-auto"
@@ -37,7 +37,7 @@
         class="d-flex flex-column justify-center items-center text-center"
       >
         <v-img
-          src="@/assets/svg/portfolio.svg"
+          src="/assets/svg/portfolio.svg"
           width="80"
           height="80"
           class="mx-auto mb-8 d-block d-sm-none"
@@ -51,7 +51,7 @@
         <v-row>
           <v-col cols="6">
             <v-btn
-              to="/portfolio"
+              href="/portfolio"
               color="medium"
               class="my-2"
               arial-label="Portfolio"
@@ -82,7 +82,7 @@
       </v-col>
       <v-col class="d-flex flex-column justify-center items-center text-center">
         <v-img
-          src="@/assets/svg/network.svg"
+          src="/assets/svg/network.svg"
           width="80"
           height="80"
           class="mx-auto mb-8 d-block d-sm-none"
@@ -95,7 +95,7 @@
           samenwerk is:
         </p>
         <v-img
-          src="@/assets/partners/lightspeed-it-min.webp"
+          src="/assets/partners/lightspeed-it-min.webp"
           width="240"
           class="mx-auto mb-8 rounded-lg"
           :style="{

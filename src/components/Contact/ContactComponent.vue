@@ -2,7 +2,7 @@
   <div>
     <v-row
       justify="center"
-      class="align-items-center align-center v-card-container"
+      class="align-items-center align-center custom-card-container"
     >
       <v-col
         cols="12"
@@ -42,34 +42,44 @@
                   <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Whatsapp:
                   </span>
-                  <br />
-                  <a
+                  <v-btn
                     href="https://wa.me/0639119996"
                     target="_blank"
+                    :prepend-icon="mdiWhatsapp"
+                    variant="outlined"
+                    aria-label="Whatsapp"
+                    block
                   >
-                    <v-icon :icon="mdiWhatsapp" />
                     Stuur een bericht
-                  </a>
+                  </v-btn>
                 </p>
                 <p>
                   <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Bellen:
                   </span>
-                  <br />
-                  <a href="tel:0639119996">
-                    <v-icon :icon="mdiPhone" />
+                  <v-btn
+                    href="tel:0639119996"
+                    :prepend-icon="mdiPhone"
+                    variant="outlined"
+                    aria-label="Bellen"
+                    block
+                  >
                     (+31) 06-39119996
-                  </a>
+                  </v-btn>
                 </p>
                 <p>
                   <span class="text-blue-grey-darken-1 text-subtitle-1">
                     Email:
                   </span>
-                  <br />
-                  <a href="mailto:info@vonkprogramming.nl">
-                    <v-icon :icon="mdiEmail" />
+                  <v-btn
+                    href="mailto:info@vonkprogramming.nl"
+                    :prepend-icon="mdiEmail"
+                    variant="outlined"
+                    aria-label="Email"
+                    block
+                  >
                     info@VonkProgramming.nl
-                  </a>
+                  </v-btn>
                 </p>
               </v-col>
               <v-col
@@ -125,7 +135,7 @@
                     }"
                   >
                     <v-img
-                      :src="require('@/assets/svg/mailsent.svg')"
+                      src="/assets/svg/mailsent.svg"
                       height="200"
                       width="200"
                     />
@@ -141,7 +151,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import { mdiWhatsapp, mdiPhone, mdiEmail, mdiSend } from '@mdi/js';
 
 export default {
@@ -179,7 +188,10 @@ export default {
       };
       if (this.validate(form)) {
         try {
-          await axios.post('/server/mail.php', form);
+          await fetch('/server/mail.php', {
+            method: 'POST',
+            body: JSON.stringify(form)
+          });
           this.show = false;
         } catch (e) {
           console.error(e);
@@ -201,12 +213,7 @@ export default {
 </script>
 
 <style scoped>
-.v-card {
-  border: 2px #aaa solid;
-  border-radius: 0.5rem;
-}
-
-.v-card-container {
+.custom-card-container {
   min-height: 100vh;
 }
 
@@ -215,18 +222,5 @@ export default {
     padding: 1rem 0.5rem !important;
     height: fit-content;
   }
-
-  .v-card-container {
-    min-height: 100vh;
-  }
-}
-
-/* Fade animation */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
 </style>

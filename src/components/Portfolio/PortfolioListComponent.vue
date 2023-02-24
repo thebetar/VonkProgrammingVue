@@ -16,7 +16,7 @@
         elevation="12"
       >
         <v-img
-          :src="require('@/assets/svg/portfolio.svg')"
+          src="/assets/svg/portfolio.svg"
           width="100"
           height="100"
           class="mx-auto"
@@ -63,7 +63,7 @@
             Ook kunt u een kijkje nemen op mijn GitHub account
             <br />
             <v-img
-              :src="require('@/assets/svg/github.svg')"
+              src="/assets/svg/github.svg"
               style="cursor: pointer"
               width="40"
               height="40"
@@ -111,7 +111,7 @@
         elevation="12"
       >
         <v-img
-          :src="require('@/assets/svg/certificate.svg')"
+          src="/assets/svg/certificate.svg"
           width="120"
           height="120"
           class="mx-auto"
@@ -156,13 +156,11 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue';
+import PortfolioListItem from './PortfolioListItemComponent.vue';
 
 export default {
   components: {
-    PortfolioListItem: defineAsyncComponent(() =>
-      import('./PortfolioListItemComponent.vue')
-    )
+    PortfolioListItem
   },
   data() {
     return {
@@ -443,25 +441,12 @@ export default {
 <style>
 @media only screen and (max-width: 600px) {
   .v-timeline-item__body {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
   }
 }
 </style>
 
 <style scoped>
-.v-card__text {
-  font-size: 18px !important;
-}
-
-.v-timeline::before {
-  background-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.portfolio-card {
-  border: 2px #aaa solid;
-  border-radius: 0.5rem;
-}
-
 @media only screen and (max-width: 600px) {
   .portfolio-card {
     margin: 0 0.5rem;
