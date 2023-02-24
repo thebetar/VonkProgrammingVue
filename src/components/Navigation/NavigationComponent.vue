@@ -83,12 +83,6 @@ export default {
       default: false
     }
   },
-  props: {
-    drawerProp: {
-      type: Boolean,
-      default: false
-    }
-  },
   data() {
     return {
       isScroll: this.handleScroll(),

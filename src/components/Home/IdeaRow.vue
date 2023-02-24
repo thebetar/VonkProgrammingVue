@@ -16,12 +16,12 @@
             width="80"
             height="80"
           />
-          <h3 class="text-h3 mt-4">Van idee naar website!</h3>
+          <h3 class="text-h3 mt-4">Van idee naar oplossing</h3>
           <p class="text-body-1 mt-4">
             VonkProgramming heeft contact met verschillende ontwerpers om uw
             idee perfect vorm te geven. Hierbij wordt er rekening gehouden met
-            <span class="font-weight-bold font-italic"> responsiviteit</span>,
-            <span class="font-weight-bold font-italic"> schaalbaarheid</span>
+            <span class="font-weight-bold font-italic">responsiviteit</span>,
+            <span class="font-weight-bold font-italic">performance</span>
             en
             <span class="font-weight-bold font-italic">SEO</span>.<br />
             VonkProgramming richt zich op een flexibele aanpak. Van software
@@ -39,11 +39,10 @@
           <h4 class="title">Frameworks</h4>
           <p class="text-body-1">
             VonkProgramming maakt gebruik van de nieuwste JavaScript frameworks.
-            Dit houdt in dat uw applicatie snel en schaalbaar is met behulp van
-            de nieuwste web development technieken. Dit betekend dat als u later
-            uw website wilt uitbreiden dit minder tijd kost doordat hier
-            rekening mee wordt gehouden binnen de frameworks. (Ionic, Vue en
-            React).
+            Dit betekent dat uw website voldoet aan de modernste standaarden en
+            dat als u later uw web applicatie wilt uitbreiden met nieuwe
+            functionaliteit dit minder tijd kost doordat hier rekening mee wordt
+            gehouden binnen de frameworks. (Ionic, Vue en React).
           </p>
           <div class="d-flex justify-between">
             <v-img
@@ -74,9 +73,9 @@
         >
           <h5 class="title">Andere oplossingen</h5>
           <p class="text-body-1">
-            Naast websites en webapps biedt VonkProgramming ook mogelijkheden
-            binnen NodeJS. Hiermee kan bijvoorbeeld server software of web
-            automation software worden gemaakt.
+            Naast web applicaties biedt VonkProgramming ook mogelijkheden binnen
+            NodeJS. Hiermee kan bijvoorbeeld server software of web automation
+            software worden gemaakt.
           </p>
           <div class="d-flex justify-between">
             <v-img

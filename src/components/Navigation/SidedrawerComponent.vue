@@ -21,30 +21,26 @@
         v-for="item in pageLinks"
         :key="item.link"
         class="pa-4"
-        :href="item.link"
         role="listitem"
+        :href="item.link"
+        :prepend-icon="item.icon"
         @click="$emit('close')"
       >
-        <template #prepend>
-          <v-icon :icon="item.icon" />
-        </template>
-        <v-list-item-title class="title">
+        <v-list-item-title class="title ml-2">
           {{ item.text }}
         </v-list-item-title>
       </v-list-item>
       <v-list-item
         v-for="item in socialLinks"
         :key="item.link"
-        :href="item.link"
         target="_blank"
         class="pa-4"
         role="listitem"
+        :href="item.link"
+        :prepend-icon="item.icon"
         @click="$emit('close')"
       >
-        <template #prepend>
-          <v-icon :icon="item.icon" />
-        </template>
-        <v-list-item-title class="title">
+        <v-list-item-title class="title ml-2">
           {{ item.text }}
         </v-list-item-title>
       </v-list-item>
