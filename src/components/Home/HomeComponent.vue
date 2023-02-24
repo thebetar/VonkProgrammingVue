@@ -65,8 +65,8 @@
               <p>
                 Heeft u een probleem waar
                 <span class="font-weight-bold"> maatwerk software </span>
-                voor nodig is, of heeft u behoefte aan een gespecialiseerde
-                <span class="font-weight-bold">website</span>?
+                voor nodig is of heeft u behoefte aan een gespecialiseerde
+                <span class="font-weight-bold">web applicatie</span>?
               </p>
               <v-btn
                 class="mt-4"
@@ -98,11 +98,11 @@
         <div class="custom-home-page-header">
           <h2 class="text-h3">Hoe ga ik te werk?</h2>
           <p class="text-body-1 mt-4">
-            VonkProgramming is een Web development bedrijf dat zich bezighoudt
-            met maatwerk software solutions. Voor iedere klant maak ik op maat
-            gemaakte software of websites, afgestemd op uw behoeften. Ik heb de
-            kennis in huis of in mijn netwerk om voor elk probleem een oplossing
-            te bieden.
+            VonkProgramming is een software ontwikkelings bedrijf dat zich
+            bezighoudt met maatwerk software solutions. Voor iedere klant maken
+            wij op maat gemaakte software of web applicaties, afgestemd op de
+            specifieke wens van de klant. Wij hebben kennis in huis of in ons
+            netwerk om voor elk probleem een oplossing te bieden.
           </p>
         </div>
       </v-col>

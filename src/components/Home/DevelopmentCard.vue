@@ -13,7 +13,7 @@
     <v-card-text class="text-body-2">
       <p>
         Ik maak gebruik van de nieuwste technieken in het maken van software en
-        websites binnen het web. Mijn vaardigheden liggen bij
+        web applicaties. Mijn vaardigheden liggen bij
         <span class="font-weight-bold">VueJS</span>,
         <span class="font-weight-bold">React</span>, en
         <span class="font-weight-bold">Ionic</span>.

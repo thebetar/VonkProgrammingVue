@@ -36,6 +36,11 @@ import HomePage from './HomePage.vue';
       href="https://vonkprogramming.nl/"
     />
     <title>Vonkprogramming | Home</title>
+    <script>
+      if (window.location.pathname !== '/') {
+        window.location.pathname = '/';
+      }
+    </script>
   </head>
   <body>
     <HomePage client:only="vue" />

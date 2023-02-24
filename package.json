@@ -15,8 +15,6 @@
   "dependencies": {
     "@astrojs/vue": "^2.0.1",
     "astro": "~2.0.13",
-    "astro-compress": "^1.1.33",
-    "astro-compressor": "^0.3.0",
     "vue": "^3.2.47",
     "vuetify": "^3.1.5"
   },
@@ -30,6 +28,8 @@
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.8",
     "@vue/eslint-config-typescript": "~9.1.0",
+    "astro-compress": "^1.1.33",
+    "astro-compressor": "^0.3.0",
     "css-loader": "^6.7.3",
     "eslint": "^8.34.0",
     "eslint-plugin-vue": "~8.0.1",
