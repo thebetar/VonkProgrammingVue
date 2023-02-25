@@ -26,38 +26,15 @@
         </v-card-title>
         <v-card-text>
           <p>
-            Op deze pagina kunt u al mijn ervaringen bij andere bedrijven zien.
-          </p>
-          <p>
-            Bedrijven waar ik in vaste dienst heb gewerkt worden weergeven met
-            <span
-              :style="{ color: colors[0] }"
-              style="font-weight: bold"
-            >
-              deze kleur
-            </span>
-            .
-          </p>
-          <p>
-            Bedrijven waar ik tijdelijke projecten voor gemaakt heb, denk
-            hierbij aan websites en maatwerk software worden weergeven met
-            <span
-              :style="{ color: colors[1] }"
-              style="font-weight: bold"
-            >
-              deze kleur
-            </span>
-            .
-          </p>
-          <p>
-            Verder zijn alle projecten die ik voor mezelf heb gestart met
-            <span
-              :style="{ color: colors[2] }"
-              style="font-weight: bold"
-            >
-              deze kleur
-            </span>
-            weergeven.
+            Op deze pagina kun je mijn recente projecten vinden die ik heb
+            uitgevoerd voor zowel bedrijven als privéklanten. Elk project is
+            uniek en op maat gemaakt om aan de specifieke behoeften van de klant
+            te voldoen. <br />
+            Ik ben een full-stack ontwikkelaar met uitgebreide ervaring in
+            verschillende technologieën en platforms. Hierdoor kan ik jouw
+            project van begin tot eind beheren en implementeren. <br />
+            Bekijk gerust mijn portfolio en neem contact met mij op als je
+            vragen hebt of geïnteresseerd bent in een samenwerking.
           </p>
           <p>
             Ook kunt u een kijkje nemen op mijn GitHub account
@@ -94,6 +71,7 @@
             v-if="rendered"
             :item="item"
             :color="colors[item.color]"
+            :label="labels[item.color]"
             :index="index"
             :is-mobile="isMobile"
           />
@@ -165,6 +143,7 @@ export default {
   data() {
     return {
       colors: ['#BF0000', '#006F00', '#00006F'],
+      labels: ['Baan', 'Klant', 'Project'],
       stepChapter: 1,
       mobile: false,
       jobs: [

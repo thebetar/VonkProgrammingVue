@@ -37,9 +37,14 @@
               {{ item.title }}
             </b>
           </p>
-          <p>
-            {{ item.description }}
-          </p>
+          <p>{{ item.description }}</p>
+          <v-chip
+            :color="color"
+            variant="elevated"
+            class="mt-2"
+          >
+            {{ label }}
+          </v-chip>
         </v-col>
         <v-col
           v-if="isRight"
@@ -81,6 +86,11 @@ export default defineComponent({
       type: String,
       required: false,
       default: 'black'
+    },
+    label: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data() {
