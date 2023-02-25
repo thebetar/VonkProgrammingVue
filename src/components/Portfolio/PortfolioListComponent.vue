@@ -30,9 +30,11 @@
             uitgevoerd voor zowel bedrijven als privéklanten. Elk project is
             uniek en op maat gemaakt om aan de specifieke behoeften van de klant
             te voldoen. <br />
-            Ik ben een full-stack ontwikkelaar met uitgebreide ervaring in
-            verschillende technologieën en platforms. Hierdoor kan ik jouw
-            project van begin tot eind beheren en implementeren. <br />
+            <span v-if="!isMobile">
+              Ik ben een full-stack ontwikkelaar met uitgebreide ervaring in
+              verschillende technologieën en platforms. Hierdoor kan ik jouw
+              project van begin tot eind beheren en implementeren. <br />
+            </span>
             Bekijk gerust mijn portfolio en neem contact met mij op als je
             vragen hebt of geïnteresseerd bent in een samenwerking.
           </p>
@@ -53,30 +55,30 @@
     </v-col>
     <v-col
       cols="12"
-      md="8"
-      class="mt-6"
+      :class="{ 'mt-6': !isMobile }"
     >
-      <v-timeline
-        :density="isMobile ? 'compact' : 'default'"
-        light
-      >
-        <v-timeline-item
-          v-for="(item, index) in jobs"
-          :key="item.id"
-          :class="{ 'text-right': index % 2 === 0 }"
-          :dot-color="colors[item.color]"
-          fill-dot
+      <v-container class="timeline-container">
+        <v-timeline
+          side="end"
+          light
         >
-          <portfolio-list-item
-            v-if="rendered"
-            :item="item"
-            :color="colors[item.color]"
-            :label="labels[item.color]"
-            :index="index"
-            :is-mobile="isMobile"
-          />
-        </v-timeline-item>
-      </v-timeline>
+          <v-timeline-item
+            v-for="(item, index) in jobs"
+            :key="item.id"
+            :dot-color="colors[item.color]"
+            fill-dot
+          >
+            <portfolio-list-item
+              v-if="rendered"
+              :item="item"
+              :color="colors[item.color]"
+              :label="labels[item.color]"
+              :index="index"
+              :is-mobile="isMobile"
+            />
+          </v-timeline-item>
+        </v-timeline>
+      </v-container>
     </v-col>
     <v-col
       cols="12"
@@ -105,7 +107,9 @@
     <v-col
       cols="12"
       md="8"
-      class="mt-6"
+      :class="{
+        'mt-6': !isMobile
+      }"
     >
       <v-timeline side="end">
         <v-timeline-item
@@ -426,9 +430,17 @@ export default {
 </style>
 
 <style scoped>
+.timeline-container {
+  max-width: 40vw;
+}
+
 @media only screen and (max-width: 600px) {
+  .timeline-container {
+    max-width: 100vw;
+  }
+
   .portfolio-card {
-    margin: 0 0.5rem;
+    margin: 0.2rem 0.7rem;
   }
 }
 </style>

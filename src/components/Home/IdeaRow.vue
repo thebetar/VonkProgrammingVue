@@ -29,7 +29,10 @@
           </p>
         </v-col>
       </v-row>
-      <v-row justify="center">
+      <v-row
+        justify="center"
+        class="mt-8"
+      >
         <v-col
           cols="12"
           sm="12"
@@ -38,13 +41,12 @@
         >
           <h4 class="title">Frameworks</h4>
           <p class="text-body-1">
-            VonkProgramming maakt gebruik van de nieuwste JavaScript frameworks.
-            Dit betekent dat uw website voldoet aan de modernste standaarden en
-            dat als u later uw web applicatie wilt uitbreiden met nieuwe
-            functionaliteit dit minder tijd kost doordat hier rekening mee wordt
-            gehouden binnen de frameworks. (Ionic, Vue en React).
+            Bij VonkProgramming gebruiken we web frameworks voor een efficiënte
+            en hoogwaardige ontwikkeling van web applicaties. Dit zorgt voor een
+            kortere ontwikkeltijd, minder risico's en een hogere kwaliteit voor
+            onze klanten. (Ionic, Vue en React).
           </p>
-          <div class="d-flex justify-between">
+          <div class="d-flex justify-between mt-4">
             <v-img
               src="/assets/svg/ionic.svg"
               class="mx-2"
@@ -77,7 +79,7 @@
             NodeJS. Hiermee kan bijvoorbeeld server software of web automation
             software worden gemaakt.
           </p>
-          <div class="d-flex justify-between">
+          <div class="d-flex justify-between mt-4">
             <v-img
               src="/assets/svg/nodejs.svg"
               class="mx-2"

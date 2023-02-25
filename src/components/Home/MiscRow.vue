@@ -68,7 +68,7 @@
               href="https://github.com/thebetar"
               target="_blank"
               color="primary"
-              class="my-2"
+              class="mt-2"
               aria-label="Github"
               variant="outlined"
               :size="$vuetify.display.mobile ? 'default' : 'large'"
@@ -97,7 +97,7 @@
         <v-img
           src="/assets/partners/lightspeed-it-min.webp"
           width="240"
-          class="mx-auto mb-8 rounded-lg"
+          class="mx-auto mt-2 rounded-lg"
           :style="{
             cursor: 'pointer'
           }"

@@ -7,9 +7,8 @@
     <v-card-text>
       <v-row :class="{ 'flex-column': isMobile }">
         <v-col
-          v-if="!isRight"
           cols="12"
-          md="4"
+          md="2"
           class="d-flex align-center justify-center"
         >
           <v-img
@@ -20,7 +19,7 @@
         </v-col>
         <v-col
           cols="12"
-          md="8"
+          md="10"
           :class="{ 'text-left': isMobile }"
         >
           <p
@@ -37,25 +36,16 @@
               {{ item.title }}
             </b>
           </p>
-          <p>{{ item.description }}</p>
+          <p>
+            {{ item.description }}
+          </p>
           <v-chip
-            :color="color"
             variant="elevated"
-            class="mt-2"
+            :class="{ 'mt-4': !isMobile, 'mt-2': isMobile }"
+            :color="color"
           >
             {{ label }}
           </v-chip>
-        </v-col>
-        <v-col
-          v-if="isRight"
-          cols="4"
-          class="d-flex align-center justify-center"
-        >
-          <v-img
-            v-if="item.imageUrl"
-            :src="`/assets/portfolio/${item.imageUrl}`"
-            class="portfolio-pic"
-          />
         </v-col>
       </v-row>
     </v-card-text>
@@ -97,11 +87,6 @@ export default defineComponent({
     return {
       imageUrl: ''
     };
-  },
-  computed: {
-    isRight() {
-      return this.index % 2 === 0 && !this.isMobile;
-    }
   }
 });
 </script>

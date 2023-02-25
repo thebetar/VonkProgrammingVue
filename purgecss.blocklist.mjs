@@ -1,5 +1,9 @@
 export default [
   /--disabled/,
+  /^expand/,
+  /^picker/,
+  /^scale/,
+  /^slide/,
   /^v-autocomplete/,
   /^v-alert--absolute/,
   /^v-alert--prominent/,
@@ -29,6 +33,7 @@ export default [
   /^v-field__prefix/,
   /^v-input__prepend/,
   /^v-input__append/,
+  /^v-list/,
   /^v-list-group/,
   /^v-list-item-action/,
   /^v-list-item-media/,

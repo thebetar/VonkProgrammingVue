@@ -98,11 +98,11 @@
         <div class="custom-home-page-header">
           <h2 class="text-h3">Hoe ga ik te werk?</h2>
           <p class="text-body-1 mt-4">
-            VonkProgramming is een software ontwikkelings bedrijf dat zich
-            bezighoudt met maatwerk software solutions. Voor iedere klant maken
-            wij op maat gemaakte software of web applicaties, afgestemd op de
-            specifieke wens van de klant. Wij hebben kennis in huis of in ons
-            netwerk om voor elk probleem een oplossing te bieden.
+            Welkom bij VonkProgramming, uw partner voor maatwerk software en web
+            applicaties. Wij ontwerpen en bouwen oplossingen die naadloos
+            aansluiten op uw bedrijfsdoelen en processen. Onze oplossingen zijn
+            schaalbaar en toekomstbestendig. Neem contact met ons op om te zien
+            hoe wij u kunnen helpen uw digitale ambities te realiseren.
           </p>
         </div>
       </v-col>

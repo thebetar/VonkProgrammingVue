@@ -4,53 +4,60 @@
       <v-row justify="space-between">
         <v-col
           cols="12"
-          sm="3"
-          md="3"
+          sm="4"
+          md="4"
         >
           <span class="text-h3 mb-6"> Contact </span>
-          <p class="my-2">
-            <a
+          <v-list role="list">
+            <v-list-item
               href="https://wa.me/0639119996"
               target="_blank"
               aria-label="Whatsapp"
+              density="compact"
+              role="listitem"
+              :prepend-icon="mdiWhatsapp"
             >
-              <v-icon :icon="mdiWhatsapp" /> Stuur mij een bericht
-            </a>
-          </p>
-          <p class="my-2">
-            <a
+              Stuur mij een bericht
+            </v-list-item>
+            <v-list-item
               href="tel:0639119996"
               aria-label="Bellen"
+              density="compact"
+              role="listitem"
+              :prepend-icon="mdiPhone"
             >
-              <v-icon :icon="mdiPhone" /> 06-39119996
-            </a>
-          </p>
-          <p class="my-2">
-            <a
+              (+31) 06-39119996
+            </v-list-item>
+            <v-list-item
               href="mailto:info@vonkprogramming.nl"
               aria-label="Email"
+              density="compact"
+              role="listitem"
+              :prepend-icon="mdiEmail"
             >
-              <v-icon :icon="mdiEmail" /> info@VonkProgramming.nl
-            </a>
-          </p>
-          <p class="my-2">
-            <a
+              info@Vonkprogramming.nl
+            </v-list-item>
+            <v-list-item
               href="https://www.linkedin.com/in/lars-v-82455612a/"
               target="_blank"
               aria-label="LinkedIn"
+              density="compact"
+              role="listitem"
+              :prepend-icon="mdiLinkedin"
             >
-              <v-icon :icon="mdiLinkedin" /> LinkedIn
-            </a>
-          </p>
-          <p class="my-2">
-            <a
+              LinkedIn
+            </v-list-item>
+            <v-list-item
               href="https://github.com/thebetar"
               target="_blank"
               aria-label="Github"
+              density="compact"
+              role="listitem"
+              :prepend-icon="mdiGithub"
             >
-              <v-icon :icon="mdiGithub" /> Github
-            </a>
-          </p>
+              Github
+            </v-list-item>
+          </v-list>
         </v-col>
         <v-col
           cols="12"
@@ -60,26 +67,28 @@
           <span class="text-h3 mb-6"> Pagina's </span>
           <v-list role="list">
             <v-list-item
-              class="title"
               href="/"
               role="listitem"
+              :prepend-icon="mdiHome"
+              density="compact"
             >
-              <v-icon class="mr-2">{{ mdiHome }}</v-icon> Home
+              Home
             </v-list-item>
             <v-list-item
-              class="title"
               href="/portfolio"
               role="listitem"
+              :prepend-icon="mdiFolder"
+              density="compact"
             >
-              <v-icon class="mr-2">{{ mdiFolder }}</v-icon>
               Portfolio
             </v-list-item>
             <v-list-item
-              class="title"
               href="/contact"
               role="listitem"
+              :prepend-icon="mdiPhone"
+              density="compact"
             >
-              <v-icon class="mr-2">{{ mdiPhone }}</v-icon> Contact
+              Contact
             </v-list-item>
           </v-list>
         </v-col>
