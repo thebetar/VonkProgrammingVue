@@ -130,20 +130,14 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-row
-      v-if="rendered"
-      class="custom-wave-div"
-    >
+    <v-row class="custom-wave-div">
       <wavey-divider-bottom />
     </v-row>
-    <idea-row v-if="rendered" />
-    <v-row
-      v-if="rendered"
-      class="custom-wave-div"
-    >
+    <idea-row />
+    <v-row class="custom-wave-div">
       <wavey-divider-top />
     </v-row>
-    <misc-row v-if="rendered" />
+    <misc-row />
   </div>
 </template>
 
@@ -168,12 +162,8 @@ export default {
   },
   data() {
     return {
-      rendered: false,
       mdiPhone
     };
-  },
-  mounted() {
-    this.rendered = true;
   }
 };
 </script>

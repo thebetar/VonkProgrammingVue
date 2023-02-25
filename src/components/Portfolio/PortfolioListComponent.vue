@@ -57,11 +57,11 @@
       cols="12"
       :class="{ 'mt-6': !isMobile }"
     >
-      <v-container class="timeline-container">
-        <v-timeline
-          side="end"
-          light
-        >
+      <v-container
+        class="timeline-container"
+        v-if="!isMobile"
+      >
+        <v-timeline side="end">
           <v-timeline-item
             v-for="(item, index) in jobs"
             :key="item.id"
@@ -69,7 +69,6 @@
             fill-dot
           >
             <portfolio-list-item
-              v-if="rendered"
               :item="item"
               :color="colors[item.color]"
               :label="labels[item.color]"
@@ -78,6 +77,18 @@
             />
           </v-timeline-item>
         </v-timeline>
+      </v-container>
+      <v-container v-else>
+        <portfolio-list-item
+          v-for="(item, index) in jobs"
+          class="mb-8 mx-4"
+          :key="item.id"
+          :item="item"
+          :color="colors[item.color]"
+          :label="labels[item.color]"
+          :index="index"
+          :is-mobile="isMobile"
+        />
       </v-container>
     </v-col>
     <v-col
@@ -111,7 +122,10 @@
         'mt-6': !isMobile
       }"
     >
-      <v-timeline side="end">
+      <v-timeline
+        side="end"
+        truncate-line="both"
+      >
         <v-timeline-item
           v-for="item in achievements"
           :key="item.id"
@@ -119,7 +133,12 @@
           dot-color="#ddd"
         >
           <template #opposite>
-            <span class="headline font-weight-medium text-grey-lighten-2">
+            <span
+              class="headline font-weight-medium text-grey-lighten-2"
+              :class="{
+                'text-caption': isMobile
+              }"
+            >
               {{ item.year }}
             </span>
           </template>
@@ -398,17 +417,13 @@ export default {
           where: 'Cambridge University',
           year: 2016
         }
-      ].map(this.addRandomId),
-      rendered: false
+      ].map(this.addRandomId)
     };
   },
   computed: {
     isMobile() {
       return window.innerWidth <= 800 || window.innerHeight <= 600;
     }
-  },
-  mounted() {
-    this.rendered = true;
   },
   methods: {
     addRandomId(obj) {
