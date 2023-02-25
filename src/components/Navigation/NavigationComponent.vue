@@ -27,7 +27,7 @@
       </v-app-bar-title>
       <v-toolbar-items
         dark
-        class="d-none d-sm-block"
+        class="d-none d-sm-block mr-3"
       >
         <v-btn
           v-for="item in pageLinks"
