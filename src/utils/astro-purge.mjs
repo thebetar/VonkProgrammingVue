@@ -19,11 +19,7 @@ function src_default(options = {}) {
         const outDir = handleWindowsPath(fileURLToPath(dir));
         const purged = await new PurgeCSS().purge({
           ...options,
-          content: [
-            `${outDir}/**/*.html`,
-            `${outDir}/**/*.astro`,
-            `${outDir}/**/*.js`
-          ],
+          content: [`${outDir}/**/*.html`, `${outDir}/**/*.js`],
           css: [`${outDir}/**/*.css`],
           defaultExtractor(content) {
             const contentWithoutStyleBlocks = content.replace(
