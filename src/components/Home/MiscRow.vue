@@ -34,7 +34,7 @@
         cols="12"
         sm="12"
         md="6"
-        class="d-flex flex-column justify-center items-center text-center"
+        class="d-flex flex-column justify-center items-center text-center px-8"
       >
         <v-img
           src="/assets/svg/portfolio.svg"
@@ -80,7 +80,9 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col class="d-flex flex-column justify-center items-center text-center">
+      <v-col
+        class="d-flex flex-column justify-center items-center text-center px-8"
+      >
         <v-img
           src="/assets/svg/network.svg"
           width="80"
