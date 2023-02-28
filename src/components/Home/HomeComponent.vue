@@ -99,10 +99,10 @@
           <h2 class="text-h3">Hoe ga ik te werk?</h2>
           <p class="text-body-1 mt-4">
             Welkom bij VonkProgramming, uw partner voor maatwerk software en web
-            applicaties. Wij ontwerpen en bouwen oplossingen die naadloos
-            aansluiten op uw bedrijfsdoelen en processen. Onze oplossingen zijn
-            schaalbaar en toekomstbestendig. Neem contact met ons op om te zien
-            hoe wij u kunnen helpen uw digitale ambities te realiseren.
+            applicaties. Ik ontwerp en bouw oplossingen die naadloos aansluiten
+            op uw bedrijfsdoelen en processen. Mijn oplossingen zijn schaalbaar
+            en toekomstbestendig. Neem contact met mij op om te zien hoe ik u
+            kunnen helpen uw digitale ambities te realiseren.
           </p>
         </div>
       </v-col>

@@ -18,14 +18,14 @@
           />
           <h3 class="text-h3 mt-4">Van idee naar oplossing</h3>
           <p class="text-body-1 mt-4">
-            VonkProgramming heeft contact met verschillende ontwerpers om uw
-            idee perfect vorm te geven. Hierbij wordt er rekening gehouden met
+            Ik heb contact met verschillende ontwerpers om uw idee perfect vorm
+            te geven. Hierbij wordt er rekening gehouden met
             <span class="font-weight-bold font-italic">responsiviteit</span>,
             <span class="font-weight-bold font-italic">performance</span>
             en
             <span class="font-weight-bold font-italic">SEO</span>.<br />
-            VonkProgramming richt zich op een flexibele aanpak. Van software
-            solutions tot simpele portfolio websites.
+            Ik richt mij op een flexibele aanpak. Van software solutions tot
+            simpele portfolio websites.
           </p>
         </v-col>
       </v-row>
@@ -41,10 +41,10 @@
         >
           <h4 class="title">Frameworks</h4>
           <p class="text-body-1">
-            Bij VonkProgramming gebruiken we web frameworks voor een efficiënte
-            en hoogwaardige ontwikkeling van web applicaties. Dit zorgt voor een
-            kortere ontwikkeltijd, minder risico's en een hogere kwaliteit voor
-            onze klanten. (Ionic, Vue en React).
+            Ik maak gebruik van frameworks voor een efficiënte en hoogwaardige
+            ontwikkeling van web applicaties. Dit zorgt voor een kortere
+            ontwikkeltijd, minder risico's en een hogere kwaliteit voor onze
+            klanten. (Ionic, Vue en React).
           </p>
           <div class="d-flex justify-between mt-4">
             <v-img
@@ -75,9 +75,9 @@
         >
           <h5 class="title">Andere oplossingen</h5>
           <p class="text-body-1">
-            Naast web applicaties biedt VonkProgramming ook mogelijkheden binnen
-            NodeJS. Hiermee kan bijvoorbeeld server software of web automation
-            software worden gemaakt.
+            Naast web applicaties biedt ik ook mogelijkheden binnen NodeJS.
+            Hiermee kan bijvoorbeeld server software of web automation software
+            worden gemaakt.
           </p>
           <div class="d-flex justify-between mt-4">
             <v-img
