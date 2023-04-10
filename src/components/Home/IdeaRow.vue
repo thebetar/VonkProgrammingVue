@@ -1,6 +1,6 @@
 <template>
   <v-row
-    class="home-page-background home-page-background-gradient"
+    class="vonk-programming-background vonk-programming-background-gradient"
     :class="$vuetify.display.mobile ? 'py-16' : 'py-2'"
   >
     <v-container>

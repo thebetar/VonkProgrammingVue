@@ -31,12 +31,12 @@ export default defineComponent({
 
 <style scoped>
 .background {
-  background-color: #222222;
+  background-color: #222;
   overflow-x: hidden;
   padding: 12rem 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .background {
     padding: 0.5rem 0;
   }

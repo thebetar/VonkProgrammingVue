@@ -1,11 +1,11 @@
 <template>
   <v-card
-    :class="{ 'pa-4': !isMobile }"
+    :class="{ 'pa-4': !$vuetify.display.mobile }"
     outlined
     elevation="10"
   >
     <v-card-text>
-      <v-row :class="{ 'flex-column': isMobile }">
+      <v-row :class="{ 'flex-column': $vuetify.display.mobile }">
         <v-col
           cols="12"
           md="2"
@@ -20,17 +20,17 @@
         <v-col
           cols="12"
           md="10"
-          :class="{ 'text-left': isMobile }"
+          :class="{ 'text-left': $vuetify.display.mobile }"
         >
           <p
             :class="{
-              'text-center': isMobile
+              'text-center': $vuetify.display.mobile
             }"
           >
             <b
               :style="{ color }"
               :class="{
-                title: !isMobile
+                title: !$vuetify.display.mobile
               }"
             >
               {{ item.title }}
@@ -41,7 +41,7 @@
           </p>
           <v-chip
             variant="elevated"
-            :class="{ 'mt-4': !isMobile, 'mt-2': isMobile }"
+            :class="{ 'mt-4': !$vuetify.display.mobile, 'mt-2': $vuetify.display.mobile }"
             :color="color"
           >
             {{ label }}
@@ -66,11 +66,6 @@ export default defineComponent({
       type: Number,
       required: true,
       default: 0
-    },
-    isMobile: {
-      type: Boolean,
-      required: false,
-      default: false
     },
     color: {
       type: String,
@@ -101,7 +96,7 @@ export default defineComponent({
   background: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .portfolio-pic {
     max-width: 100px;
     padding: 4px;

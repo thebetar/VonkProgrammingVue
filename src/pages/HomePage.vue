@@ -1,9 +1,9 @@
 <template>
   <App>
     <main id="home-page">
-      <v-container fluid>
+      <div class="home-page-container">
         <home-component />
-      </v-container>
+      </div>
 
       <footer-component />
     </main>

@@ -14,7 +14,7 @@
       />
       <v-app-bar-title>
         <a
-          href="/home"
+          href="/"
           aria-label="Home"
         >
           <v-img
@@ -152,7 +152,7 @@ header {
 
 .scrolled {
   background-color: #fff !important;
-  box-shadow: 0px 0px 4px #aaa !important;
+  box-shadow: 0 0 4px #aaa !important;
 }
 
 .scrolled-text {
@@ -171,7 +171,7 @@ header {
   color: white !important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   header {
     background-color: white !important;
   }

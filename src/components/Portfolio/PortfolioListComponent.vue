@@ -30,7 +30,7 @@
             uitgevoerd voor zowel bedrijven als privéklanten. Elk project is
             uniek en op maat gemaakt om aan de specifieke behoeften van de klant
             te voldoen. <br>
-            <span v-if="!isMobile">
+            <span v-if="!$vuetify.display.mobile">
               Ik ben een full-stack ontwikkelaar met uitgebreide ervaring in
               verschillende technologieën en platforms. Hierdoor kan ik jouw
               project van begin tot eind beheren en implementeren. <br>
@@ -55,13 +55,16 @@
     </v-col>
     <v-col
       cols="12"
-      :class="{ 'mt-6': !isMobile }"
+      :class="{ 'mt-6': !$vuetify.display.mobile }"
     >
       <v-container
-        v-if="!isMobile"
+        v-if="!$vuetify.display.mobile"
         class="timeline-container"
       >
-        <v-timeline side="end">
+        <v-timeline
+          side="end"
+          line-color="rgba(255,255,255,0.3)"
+        >
           <v-timeline-item
             v-for="(item, index) in jobs"
             :key="item.id"
@@ -73,7 +76,7 @@
               :color="colors[item.color]"
               :label="labels[item.color]"
               :index="index"
-              :is-mobile="isMobile"
+              :is-mobile="$vuetify.display.mobile"
             />
           </v-timeline-item>
         </v-timeline>
@@ -87,7 +90,7 @@
           :color="colors[item.color]"
           :label="labels[item.color]"
           :index="index"
-          :is-mobile="isMobile"
+          :is-mobile="$vuetify.display.mobile"
         />
       </v-container>
     </v-col>
@@ -119,7 +122,7 @@
       cols="12"
       md="8"
       :class="{
-        'mt-6': !isMobile
+        'mt-6': !$vuetify.display.mobile
       }"
     >
       <v-timeline
@@ -136,7 +139,7 @@
             <span
               class="headline font-weight-medium text-grey-lighten-2"
               :class="{
-                'text-caption': isMobile
+                'text-caption': $vuetify.display.mobile
               }"
             >
               {{ item.year }}
@@ -144,7 +147,7 @@
           </template>
           <v-alert
             :class="{
-              'text-caption': $vuetify.display.mobile
+              'text-caption mr-2': $vuetify.display.mobile
             }"
           >
             {{ item.certificate }}
@@ -420,11 +423,6 @@ export default {
       ].map(this.addRandomId)
     };
   },
-  computed: {
-    isMobile() {
-      return window.innerWidth <= 800 || window.innerHeight <= 600;
-    }
-  },
   methods: {
     addRandomId(obj) {
       return { ...obj, id: Math.random() };
@@ -436,26 +434,19 @@ export default {
 };
 </script>
 
-<style>
-@media only screen and (max-width: 600px) {
-  .v-timeline-item__body {
-    margin-right: 1rem;
-  }
-}
-</style>
-
-<style scoped>
+<style lang="scss" scoped>
 .timeline-container {
-  max-width: 40vw;
-}
+  max-width: 48rem;
 
-@media only screen and (max-width: 600px) {
-  .timeline-container {
+  @media only screen and (max-width <= 600px) {
     max-width: 100vw;
   }
+}
 
-  .portfolio-card {
+.portfolio-card {
+  @media only screen and (width <= 600px) {
     margin: 0.2rem 0.7rem;
+    margin-top: 4rem;
   }
 }
 </style>
