@@ -42,7 +42,9 @@
           height="80"
           class="mx-auto mb-8 d-block d-sm-none"
         />
-        <h6 class="text-h4">Portfolio</h6>
+        <h6 class="text-h4">
+          Portfolio
+        </h6>
         <p class="text-body-2">
           Naast een mooi verhaal over hoe alles te werk gaat heb ik ondertussen
           ook al een portfolio opgebouwd met een aantal bekenden en wat minder
@@ -89,7 +91,9 @@
           height="80"
           class="mx-auto mb-8 d-block d-sm-none"
         />
-        <h6 class="text-h4">Netwerk</h6>
+        <h6 class="text-h4">
+          Netwerk
+        </h6>
         <p class="text-body-2">
           Binnen mijn netwerk heb ik meerdere connecties met mensen binnen
           design, marketing en development. Hierdoor kan ik een compleet pakket

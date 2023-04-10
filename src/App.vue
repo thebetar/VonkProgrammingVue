@@ -2,7 +2,7 @@
   <v-app>
     <navigation-component
       :drawer-prop="drawer"
-      @drawerClick="toggleSidedrawer"
+      @drawer-click="toggleSidedrawer"
     />
     <sidedrawer-component
       :drawer-prop="drawer"

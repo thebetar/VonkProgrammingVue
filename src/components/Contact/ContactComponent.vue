@@ -15,7 +15,9 @@
           elevation="12"
         >
           <v-card-title>
-            <h1 class="text-h2 mb-4">Contact</h1>
+            <h1 class="text-h2 mb-4">
+              Contact
+            </h1>
           </v-card-title>
           <v-card-text>
             <v-row>
@@ -24,7 +26,9 @@
                 sm="5"
                 md="5"
               >
-                <h2 class="text-subtitle-1">Heeft u vragen?</h2>
+                <h2 class="text-subtitle-1">
+                  Heeft u vragen?
+                </h2>
                 <p
                   v-if="!$vuetify.display.mobile"
                   class="text-body-2 mb-6"

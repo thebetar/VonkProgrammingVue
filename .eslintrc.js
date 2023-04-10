@@ -6,19 +6,28 @@ module.exports = {
   },
 
   extends: [
-    'eslint:recommended',
-    'plugin:vue/recommended',
-    'plugin:vue/essential',
+    'eslint:recommended',   
+    'plugin:vue/vue3-recommended',
+    'plugin:vue-scoped-css/vue3-recommended',
+    "@vue/eslint-config-typescript",
     '@vue/typescript'
   ],
 
   rules: {
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/html-closest-bracket-newline': 'off',
-    'vue/html-self-closing': 'off'
+    'vue-scoped-css/enforce-style-type': 'off',
   },
 
+  ignorePatterns: [
+    'dist/*',
+    'node_modules/*',
+    'public/*',
+    'backup/*',
+  ],
+
+
+  parser: "vue-eslint-parser",
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: "latest",
   }
 };

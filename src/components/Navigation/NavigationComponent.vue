@@ -83,6 +83,7 @@ export default {
       default: false
     }
   },
+  emits: ['drawerClick'],
   data() {
     return {
       isScroll: this.handleScroll(),
