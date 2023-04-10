@@ -221,7 +221,7 @@ export default {
   min-height: 100vh;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .v-card {
     padding: 1rem 0.5rem !important;
     height: fit-content;

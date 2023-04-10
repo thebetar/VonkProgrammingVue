@@ -437,7 +437,7 @@ export default {
 </script>
 
 <style>
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .v-timeline-item__body {
     margin-right: 1rem;
   }
@@ -449,7 +449,7 @@ export default {
   max-width: 40vw;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .timeline-container {
     max-width: 100vw;
   }

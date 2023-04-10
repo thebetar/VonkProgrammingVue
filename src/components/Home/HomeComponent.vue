@@ -187,13 +187,13 @@ export default {
   margin: -0.2rem 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .custom-home-page-divider-90 {
     height: 100vh;
   }
 
   .custom-home-page-header {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
     padding: 32px 20px;
     background-color: #fff;
   }

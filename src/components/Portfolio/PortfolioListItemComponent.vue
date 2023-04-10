@@ -101,7 +101,7 @@ export default defineComponent({
   background: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   .portfolio-pic {
     max-width: 100px;
     padding: 4px;
