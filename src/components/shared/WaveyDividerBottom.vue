@@ -31,6 +31,9 @@
   width: 100vw;
   height: fit-content;
   transform: rotate(180deg);
+
+  position: absolute;
+  bottom: 0;
 }
 
 .path-1 {

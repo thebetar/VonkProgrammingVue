@@ -25,6 +25,16 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: #f22;
+  }
+}
+
 .v-container {
   overflow: hidden;
 }
@@ -37,14 +47,8 @@ body {
   }
 }
 
-a {
-  text-decoration: none;
-  color: #333;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #f22;
-  }
+.v-row + .v-row {
+  margin: 0;
 }
 
 .title,
@@ -53,15 +57,11 @@ a {
   word-wrap: break-word;
 }
 
-.v-row {
-  margin: -1rem !important;
-}
-
 .v-image-image {
   background-size: contain;
 }
 
-.home-page {
+.vonk-programming {
   &-background {
     background-color: #333;
     color: white;
@@ -79,10 +79,6 @@ a {
     width: 0;
   }
 
-  body {
-    width: 100vw !important;
-  }
-
   .v-footer .row {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -93,10 +89,6 @@ a {
       display: flex;
       justify-content: space-between;
       width: 100%;
-    }
-
-    &-title {
-      margin-right: 0;
     }
   }
 }

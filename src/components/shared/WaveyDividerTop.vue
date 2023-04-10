@@ -28,8 +28,11 @@
 
 <style scoped>
 .wave {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
+
+  position: absolute;
+  top: 0;
 }
 
 .path-0 {

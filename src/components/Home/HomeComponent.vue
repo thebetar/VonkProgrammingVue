@@ -1,9 +1,9 @@
 <template>
   <div>
-    <v-row class="home-page-background">
+    <v-row class="vonk-programming-background">
       <v-container>
         <v-row
-          class="custom-home-page-divider-90 align-content-center"
+          class="home-component-welcome-container align-content-center"
           justify="center"
           align="center"
         >
@@ -94,8 +94,9 @@
         sm="12"
         md="6"
         align="center"
+        class="home-component-header-container"
       >
-        <div class="custom-home-page-header">
+        <div class="home-component-header">
           <h2 class="text-h3">
             Hoe ga ik te werk?
           </h2>
@@ -132,11 +133,11 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-row class="custom-wave-div">
+    <v-row class="home-component-wave-row">
       <wavey-divider-bottom />
     </v-row>
     <idea-row />
-    <v-row class="custom-wave-div">
+    <v-row class="home-component-wave-row">
       <wavey-divider-top />
     </v-row>
     <misc-row />
@@ -170,36 +171,43 @@ export default {
 };
 </script>
 
-<style scoped>
-.custom-home-page-header {
-  margin-top: -140px !important;
-  padding: 32px 80px;
-  background-color: #fff;
-}
+<style lang="scss" scoped>
+// eslint-disable-next-line vue-scoped-css/no-unused-selector
+.home-component {
+  &-header {
+    position: absolute;
 
-.custom-home-page-divider-90 {
-  height: 90vh;
-}
-
-.custom-wave-div {
-  width: 100vw;
-  height: calc(100vw / 3.5);
-  margin: -0.2rem 0;
-}
-
-@media only screen and (width <= 600px) {
-  .custom-home-page-divider-90 {
-    height: 100vh;
-  }
-
-  .custom-home-page-header {
-    margin-top: 0 !important;
-    padding: 32px 20px;
+    top: -140px !important;
+    padding: 32px 80px;
     background-color: #fff;
+
+    @media only screen and (width <= 600px) {
+      padding: 32px 20px;
+    }
+
+    &-container {
+      position: relative;
+      height: 140px;
+    }
   }
 
-  .custom-wave-div {
-    display: none;
+  &-welcome-container {
+    min-height: 90vh;
+
+    @media only screen and (width <= 600px) {
+      min-height: 100vh;
+    }
+  }
+
+  &-wave-row {
+    position: relative;
+    width: 100vw;
+    height: calc(100vw / 3.5);
+    margin: 0;
+
+    @media only screen and (width <= 600px) {
+      display: none;
+    }
   }
 }
 </style>
