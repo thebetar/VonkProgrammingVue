@@ -176,18 +176,23 @@ export default {
 .home-component {
   &-header {
     position: absolute;
-
+    
     top: -140px !important;
     padding: 32px 80px;
     background-color: #fff;
-
+    
     @media only screen and (width <= 600px) {
+      left: 0;
       padding: 32px 20px;
     }
 
     &-container {
       position: relative;
       height: 140px;
+
+      @media only screen and (width <= 600px) {
+        height: 220px;
+      }
     }
   }
 
