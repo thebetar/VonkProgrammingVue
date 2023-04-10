@@ -29,18 +29,18 @@
             Op deze pagina kun je mijn recente projecten vinden die ik heb
             uitgevoerd voor zowel bedrijven als privéklanten. Elk project is
             uniek en op maat gemaakt om aan de specifieke behoeften van de klant
-            te voldoen. <br />
+            te voldoen. <br>
             <span v-if="!isMobile">
               Ik ben een full-stack ontwikkelaar met uitgebreide ervaring in
               verschillende technologieën en platforms. Hierdoor kan ik jouw
-              project van begin tot eind beheren en implementeren. <br />
+              project van begin tot eind beheren en implementeren. <br>
             </span>
             Bekijk gerust mijn portfolio en neem contact met mij op als je
             vragen hebt of geïnteresseerd bent in een samenwerking.
           </p>
           <p>
             Ook kunt u een kijkje nemen op mijn GitHub account
-            <br />
+            <br>
             <v-img
               src="/assets/svg/github.svg"
               style="cursor: pointer"
@@ -58,8 +58,8 @@
       :class="{ 'mt-6': !isMobile }"
     >
       <v-container
-        class="timeline-container"
         v-if="!isMobile"
+        class="timeline-container"
       >
         <v-timeline side="end">
           <v-timeline-item
@@ -81,8 +81,8 @@
       <v-container v-else>
         <portfolio-list-item
           v-for="(item, index) in jobs"
-          class="mb-8 mx-4"
           :key="item.id"
+          class="mb-8 mx-4"
           :item="item"
           :color="colors[item.color]"
           :label="labels[item.color]"

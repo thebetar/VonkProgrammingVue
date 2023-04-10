@@ -33,7 +33,7 @@
                     <v-progress-circular
                       indeterminate
                       color="grey-lighten-5"
-                    ></v-progress-circular>
+                    />
                   </v-row>
                 </v-sheet>
               </template>
@@ -96,7 +96,9 @@
         align="center"
       >
         <div class="custom-home-page-header">
-          <h2 class="text-h3">Hoe ga ik te werk?</h2>
+          <h2 class="text-h3">
+            Hoe ga ik te werk?
+          </h2>
           <p class="text-body-1 mt-4">
             Welkom bij VonkProgramming, uw partner voor maatwerk software en web
             applicaties. Ik ontwerp en bouw oplossingen die naadloos aansluiten

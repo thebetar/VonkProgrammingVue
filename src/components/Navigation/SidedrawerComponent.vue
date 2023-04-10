@@ -6,7 +6,9 @@
     :width="500"
   >
     <v-list-item>
-      <v-list-item-title class="title"> VonkProgramming </v-list-item-title>
+      <v-list-item-title class="title">
+        VonkProgramming
+      </v-list-item-title>
       <v-list-item-subtitle> Maatwerk software </v-list-item-subtitle>
     </v-list-item>
 
@@ -70,6 +72,7 @@ export default {
       default: false
     }
   },
+  emits: ['close'],
   data() {
     return {
       drawer: this.drawerProp,
