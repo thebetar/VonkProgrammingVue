@@ -176,7 +176,6 @@ export default {
 .home-component {
   &-header {
     position: absolute;
-    
     top: -140px !important;
     padding: 32px 80px;
     background-color: #fff;

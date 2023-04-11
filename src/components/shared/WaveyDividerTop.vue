@@ -30,7 +30,6 @@
 .wave {
   width: 100%;
   height: fit-content;
-
   position: absolute;
   top: 0;
 }

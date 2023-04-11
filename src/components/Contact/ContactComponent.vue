@@ -228,7 +228,6 @@ export default {
 <style lang="scss" scoped>
 .contact-component-card {
   border-radius: 1rem;
-  
   padding: 1.5rem 2rem;
   
   @media only screen and (width <= 600px) {
@@ -238,7 +237,6 @@ export default {
 
   &-container {
     min-height: 100vh;
-
     align-items: center;
   }
 

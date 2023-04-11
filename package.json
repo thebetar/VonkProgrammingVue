@@ -7,12 +7,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint .",
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
     "lint:fix": "eslint . --fix",
-    "lint:style": "stylelint \"**/*.{vue,scss}\"",
+    "lint:eslint": "eslint .",
+    "lint:stylelint": "stylelint \"**/*.{vue,scss}\"",
     "vue:serve": "vue-cli-service serve",
     "vue:build": "vue-cli-service build",
-    "vue:lint": "vue-cli-service lint"
+    "vue:lint": "vue-cli-service lint",
+    "audit": "npm audit && npx retire"
   },
   "dependencies": {
     "@astrojs/vue": "^2.0.1",
