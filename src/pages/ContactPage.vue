@@ -3,7 +3,7 @@
     <main id="contact-page">
       <v-container
         fluid
-        class="background"
+        class="vonk-programming-background"
       >
         <contact-component />
       </v-container>
@@ -25,10 +25,3 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.background {
-  background-color: #222;
-  background-attachment: fixed;
-  background-size: cover;
-}
-</style>

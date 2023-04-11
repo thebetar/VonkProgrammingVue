@@ -3,7 +3,7 @@
     <main id="portfolio-page">
       <v-container
         fluid
-        class="background"
+        class="portfolio-page-padding vonk-programming-background"
       >
         <portfolio-list />
       </v-container>
@@ -29,15 +29,11 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.background {
-  background-color: #222;
-  overflow-x: hidden;
+<style lang="scss" scoped>
+.portfolio-page-padding {
   padding: 12rem 0;
-}
-
-@media only screen and (width <= 600px) {
-  .background {
+  
+  @media only screen and (width <= 600px) {
     padding: 0.5rem 0;
   }
 }
