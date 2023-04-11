@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="navigation-component-wrapper">
     <v-app-bar
       class="d-flex justify-space-between justify-md-center w-full"
       fixed
       flat
-      :class="{ scrolled: isScroll }"
+      :class="{ 'navigation-component-navbar__scrolled': isScroll }"
     >
       <v-app-bar-nav-icon
         aria-label="Open menu"
@@ -35,8 +35,8 @@
           variant="text"
           :href="item.link"
           :class="{
-            'scrolled-text': isScroll,
-            'noscroll-text': !isScroll
+            'navigation-component-navbar__scrolled-text': isScroll,
+            'navigation-component-navbar__noscroll-text': !isScroll
           }"
           :aria-label="item.text"
           :prepend-icon="item.icon"
@@ -49,8 +49,8 @@
           variant="text"
           :href="item.link"
           :class="{
-            'scrolled-text': isScroll,
-            'noscroll-text': !isScroll
+            'navigation-component-navbar__scrolled-text': isScroll,
+            'navigation-component-navbar__noscroll-text': !isScroll
           }"
           target="_blank"
           :aria-label="item.text"
@@ -144,36 +144,40 @@ export default {
 };
 </script>
 
-<style scoped>
-header {
-  background-color: transparent !important;
-  transition: all 0.3s ease-in-out;
-}
+<style  lang="scss">
+.navigation-component {
+  &-wrapper {
+    & > header.v-toolbar {
+      background: transparent;
+      transition: 0.2s ease-in-out;
 
-.scrolled {
-  background-color: #fff !important;
-  box-shadow: 0 0 4px #aaa !important;
-}
+      @media only screen and (width <= 600px) {
+        background: #fff;
+      }
+    }
+  }
 
-.scrolled-text {
-  color: black !important;
-}
+  &-navbar {
+    &__scrolled {
+      background-color: #fff !important;
+      box-shadow: 0 0 4px #aaa !important;
 
-.scrolled-text .v-icon {
-  color: black !important;
-}
+      &-text {
+        color: black !important;
 
-.noscroll-text {
-  color: white !important;
-}
+        & > .v-icon {
+          color: black !important;
+        }
+      }
+    }
 
-.noscroll-text .v-icon {
-  color: white !important;
-}
+    &__noscroll-text {
+      color: white !important;
 
-@media only screen and (width <= 600px) {
-  header {
-    background-color: white !important;
+      & > .v-icon {
+        color: white !important;
+      }
+    }
   }
 }
 </style>

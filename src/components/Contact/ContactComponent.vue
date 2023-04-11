@@ -2,7 +2,7 @@
   <div>
     <v-row
       justify="center"
-      class="align-items-center align-center custom-card-container"
+      class="contact-component-card-container"
     >
       <v-col
         cols="12"
@@ -10,15 +10,9 @@
         md="6"
       >
         <v-card
-          class="pa-2 pa-md-5 rounded-xl"
-          outlined
           elevation="12"
+          class="contact-component-card"
         >
-          <v-card-title>
-            <h1 class="text-h2 mb-4">
-              Contact
-            </h1>
-          </v-card-title>
           <v-card-text>
             <v-row>
               <v-col
@@ -26,6 +20,9 @@
                 sm="5"
                 md="5"
               >
+                <h1 class="text-h2 mb-4">
+                  Contact
+                </h1>
                 <h2 class="text-subtitle-1">
                   Heeft u vragen?
                 </h2>
@@ -52,7 +49,7 @@
                     :prepend-icon="mdiWhatsapp"
                     variant="outlined"
                     aria-label="Whatsapp"
-                    block
+                    class="contact-component-card-social-button"
                   >
                     Stuur een bericht
                   </v-btn>
@@ -66,7 +63,7 @@
                     :prepend-icon="mdiPhone"
                     variant="outlined"
                     aria-label="Bellen"
-                    block
+                    class="contact-component-card-social-button"
                   >
                     (+31) 06-39119996
                   </v-btn>
@@ -80,7 +77,7 @@
                     :prepend-icon="mdiEmail"
                     variant="outlined"
                     aria-label="Email"
-                    block
+                    class="contact-component-card-social-button"
                   >
                     info@VonkProgramming.nl
                   </v-btn>
@@ -98,25 +95,34 @@
                 >
                   <v-form
                     v-if="show"
+                    class="mt-10"
                     @submit.prevent="onSubmit"
                   >
                     <v-text-field
                       v-model="name"
-                      outlined
                       label="Naam"
-                      required
+                      :prepend-inner-icon="mdiAccount"
+                      :rules="[
+                        rules.required
+                      ]"
                     />
                     <v-text-field
                       v-model="email"
-                      outlined
                       label="Email"
-                      required
+                      :prepend-inner-icon="mdiEmail"
+                      :rules="[
+                        rules.required,
+                        rules.email
+                      ]"
                     />
                     <v-textarea
                       v-model="description"
-                      outlined
                       label="Beschrijving"
-                      required
+                      :prepend-inner-icon="mdiPencil"
+                      :rules="[
+                        rules.required,
+                        rules.minLength
+                      ]"
                       :rows="isMobile ? 2 : 5"
                     />
                     <v-btn
@@ -155,7 +161,9 @@
 </template>
 
 <script>
-import { mdiWhatsapp, mdiPhone, mdiEmail, mdiSend } from '@mdi/js';
+import { mdiWhatsapp, mdiPhone, mdiEmail, mdiSend, mdiAccount, mdiPencil } from '@mdi/js';
+
+const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
 export default {
   data() {
@@ -164,20 +172,29 @@ export default {
       email: '',
       name: '',
       description: '',
+      rules: {
+        required: value => !!value || 'Dit veld is verplicht',
+        email: value => EMAIL_REGEX.test(value) || 'Dit is geen geldig email adres',
+        minLength: value => value.length >= 20 || 'Dit veld moet minimaal 20 karakters bevatten'
+      },
       mdiWhatsapp,
       mdiPhone,
       mdiEmail,
-      mdiSend
+      mdiSend,
+      mdiAccount,
+      mdiPencil
     };
   },
   computed: {
     isValid() {
-      const form = {
-        name: this.name,
-        email: this.email,
-        text: this.description
-      };
-      return this.validate(form);
+      return (
+        this.name &&
+        this.name.length > 0 &&
+        this.email &&
+        EMAIL_REGEX.test(this.email) &&
+        this.text &&
+        this.text.length > 0 && this.text.length >= 20
+      );
     },
     isMobile() {
       return window.innerWidth <= 800 || window.innerHeight <= 600;
@@ -190,7 +207,7 @@ export default {
         email: this.email,
         text: this.description
       };
-      if (this.validate(form)) {
+      if (this.isValid) {
         try {
           await fetch('/server/mail.php', {
             method: 'POST',
@@ -204,27 +221,31 @@ export default {
         this.isValid = false;
       }
     },
-    validate(form) {
-      const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-      return (
-        form.name.length > 0 &&
-        EMAIL_REGEX.test(form.email) &&
-        form.text.length > 0
-      );
-    }
   }
 };
 </script>
 
-<style scoped>
-.custom-card-container {
-  min-height: 100vh;
-}
+<style lang="scss" scoped>
+.contact-component-card {
+  border-radius: 1rem;
+  
+  padding: 1.5rem 2rem;
+  
+  @media only screen and (width <= 600px) {
+  /* eslint-disable-next-line vue-scoped-css/no-unused-selector */
+    padding: 2rem 1rem;
+  }
 
-@media only screen and (width <= 600px) {
-  .v-card {
-    padding: 1rem 0.5rem !important;
-    height: fit-content;
+  &-container {
+    min-height: 100vh;
+
+    align-items: center;
+  }
+
+  &-social-button {
+    display: flex;
+    width: fit-content;
+    max-width: 20rem;
   }
 }
 </style>

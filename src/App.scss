@@ -41,31 +41,17 @@ a {
 
 .v-card {
   border-radius: 0.75rem;
-
-  &-text {
-    color: rgb(0 0 0 / 87%) !important;
-  }
 }
 
 .v-row + .v-row {
   margin: 0;
 }
 
-.title,
-.v-card-title {
-  word-break: normal !important;
-  word-wrap: break-word;
-}
-
-.v-image-image {
-  background-size: contain;
-}
-
 .vonk-programming {
   &-background {
     background-color: #333;
     color: white;
-    text-shadow: #333 0 0 8px;
+    overflow-x: hidden;
 
     &-gradient {
       background: linear-gradient(0deg, #333, #444, #333);
