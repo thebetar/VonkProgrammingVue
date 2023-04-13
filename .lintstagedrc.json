@@ -1,0 +1,5 @@
+{
+  "*.ts": ["eslint"],
+  "*.vue": ["eslint", "stylelint"],
+  "*.scss": ["stylelint"]
+}
