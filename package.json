@@ -15,7 +15,7 @@
     "vue:build": "vue-cli-service build",
     "vue:lint": "vue-cli-service lint",
     "audit": "npm audit && npx retire",
-    "prepare": "husky install;"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@astrojs/vue": "^2.0.1",
