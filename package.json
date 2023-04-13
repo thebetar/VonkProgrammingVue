@@ -11,11 +11,11 @@
     "lint:fix": "eslint . --fix",
     "lint:eslint": "eslint .",
     "lint:stylelint": "stylelint \"**/*.{vue,scss}\"",
+    "audit": "npm audit && npx retire",
+    "prepare": "husky install",
     "vue:serve": "vue-cli-service serve",
     "vue:build": "vue-cli-service build",
-    "vue:lint": "vue-cli-service lint",
-    "audit": "npm audit && npx retire",
-    "prepare": "husky install"
+    "vue:lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@astrojs/vue": "^2.0.1",
