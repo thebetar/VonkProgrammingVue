@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
     "@mdi/js": "^7.1.96",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -43,6 +45,7 @@
     "eslint-plugin-vue-scoped-css": "^2.4.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
+    "npm": "^9.6.4",
     "purgecss": "^5.0.0",
     "sass": "^1.58.3",
     "sass-loader": "^10.4.1",
