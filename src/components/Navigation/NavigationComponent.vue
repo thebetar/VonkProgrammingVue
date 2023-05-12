@@ -64,6 +64,8 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 import {
   mdiMenu,
   mdiArrowLeft,
@@ -75,7 +77,7 @@ import {
   mdiGithub
 } from '@mdi/js';
 
-export default {
+export default defineComponent({
   name: 'NavigationComponent',
   props: {
     drawerProp: {
@@ -141,7 +143,7 @@ export default {
       this.$emit('drawerClick');
     }
   }
-};
+});
 </script>
 
 <style  lang="scss">

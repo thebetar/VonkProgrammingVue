@@ -14,10 +14,12 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 import NavigationComponent from './components/Navigation/NavigationComponent.vue';
 import SidedrawerComponent from './components/Navigation/SidedrawerComponent.vue';
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     NavigationComponent,
@@ -36,5 +38,5 @@ export default {
       this.drawer = false;
     }
   }
-};
+});
 </script>

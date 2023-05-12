@@ -101,6 +101,7 @@
                     <v-text-field
                       v-model="name"
                       label="Naam"
+                      name="name"
                       :prepend-inner-icon="mdiAccount"
                       :rules="[
                         rules.required
@@ -109,6 +110,7 @@
                     <v-text-field
                       v-model="email"
                       label="Email"
+                      name="email"
                       :prepend-inner-icon="mdiEmail"
                       :rules="[
                         rules.required,
@@ -118,6 +120,7 @@
                     <v-textarea
                       v-model="description"
                       label="Beschrijving"
+                      name="description"
                       :prepend-inner-icon="mdiPencil"
                       :rules="[
                         rules.required,
@@ -126,6 +129,7 @@
                       :rows="isMobile ? 2 : 5"
                     />
                     <v-btn
+                      name="submit"
                       type="submit"
                       class="float-right"
                       color="primary"
@@ -160,12 +164,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
+
 import { mdiWhatsapp, mdiPhone, mdiEmail, mdiSend, mdiAccount, mdiPencil } from '@mdi/js';
 
 const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
-export default {
+export default defineComponent({
   data() {
     return {
       show: true,
@@ -173,9 +179,9 @@ export default {
       name: '',
       description: '',
       rules: {
-        required: value => !!value || 'Dit veld is verplicht',
-        email: value => EMAIL_REGEX.test(value) || 'Dit is geen geldig email adres',
-        minLength: value => value.length >= 20 || 'Dit veld moet minimaal 20 karakters bevatten'
+        required: (value: string) => !!value || 'Dit veld is verplicht',
+        email: (value: string) => EMAIL_REGEX.test(value) || 'Dit is geen geldig email adres',
+        minLength: (value: string) => value.length >= 20 || 'Dit veld moet minimaal 20 karakters bevatten'
       },
       mdiWhatsapp,
       mdiPhone,
@@ -192,8 +198,8 @@ export default {
         this.name.length > 0 &&
         this.email &&
         EMAIL_REGEX.test(this.email) &&
-        this.text &&
-        this.text.length > 0 && this.text.length >= 20
+        this.description &&
+        this.description.length > 0 && this.description.length >= 20
       );
     },
     isMobile() {
@@ -208,21 +214,24 @@ export default {
         text: this.description
       };
       if (this.isValid) {
-        try {
-          await fetch('/server/mail.php', {
-            method: 'POST',
-            body: JSON.stringify(form)
-          });
+        await this.sendRequest(form);
           this.show = false;
-        } catch (e) {
-          console.error(e);
-        }
       } else {
         this.isValid = false;
       }
     },
+    async sendRequest(form: { name: string, email: string, text: string }) {
+      try {
+        await fetch('/server/mail.php', {
+          method: 'POST',
+          body: JSON.stringify(form)
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

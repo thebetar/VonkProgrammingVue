@@ -98,6 +98,8 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 import {
   mdiWhatsapp,
   mdiPhone,
@@ -108,7 +110,7 @@ import {
   mdiFolder
 } from '@mdi/js';
 
-export default {
+export default defineComponent({
   data() {
     return {
       show: true,
@@ -124,5 +126,5 @@ export default {
       mdiFolder
     };
   }
-};
+});
 </script>

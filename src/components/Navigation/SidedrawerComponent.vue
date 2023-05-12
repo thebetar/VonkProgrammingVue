@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 import {
   mdiBackspace,
   mdiHome,
@@ -61,7 +63,7 @@ import {
   mdiGithub
 } from '@mdi/js';
 
-export default {
+export default defineComponent({
   props: {
     items: {
       type: Array,
@@ -123,5 +125,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

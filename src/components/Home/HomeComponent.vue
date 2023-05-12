@@ -145,6 +145,8 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 import { mdiPhone } from '@mdi/js';
 
 import WaveyDividerTop from '../shared/WaveyDividerTop.vue';
@@ -154,7 +156,7 @@ import DevelopmentCard from './DevelopmentCard.vue';
 import IdeaRow from './IdeaRow.vue';
 import MiscRow from './MiscRow.vue';
 
-export default {
+export default defineComponent({
   components: {
     WaveyDividerTop,
     WaveyDividerBottom,
@@ -168,7 +170,7 @@ export default {
       mdiPhone
     };
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

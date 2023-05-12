@@ -67,7 +67,7 @@
         >
           <v-timeline-item
             v-for="(item, index) in jobs"
-            :key="item.id"
+            :key="item.title"
             :dot-color="colors[item.color]"
             fill-dot
           >
@@ -84,7 +84,7 @@
       <v-container v-else>
         <portfolio-list-item
           v-for="(item, index) in jobs"
-          :key="item.id"
+          :key="item.title"
           class="mb-8 mx-4"
           :item="item"
           :color="colors[item.color]"
@@ -113,7 +113,7 @@
         <v-card-title class="display-1 justify-center">
           Certificaten en diploma's
         </v-card-title>
-        <v-card-text>
+        <v-card-text> 
           Hieronder staan alle certificaten en diploma's die ik behaald heb.
         </v-card-text>
       </v-card>
@@ -131,7 +131,7 @@
       >
         <v-timeline-item
           v-for="item in achievements"
-          :key="item.id"
+          :key="item.certificate"
           fill-dot
           dot-color="#ddd"
         >
@@ -160,9 +160,11 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 import PortfolioListItem from './PortfolioListItemComponent.vue';
 
-export default {
+export default defineComponent({
   components: {
     PortfolioListItem
   },
@@ -300,7 +302,6 @@ export default {
           color: 2
         }
       ]
-        .map(this.addRandomId)
         .reverse(),
       achievements: [
         {
@@ -420,18 +421,15 @@ export default {
           where: 'Cambridge University',
           year: 2016
         }
-      ].map(this.addRandomId)
+      ]
     };
   },
   methods: {
-    addRandomId(obj) {
-      return { ...obj, id: Math.random() };
-    },
     goToGithub() {
       window.open('https://github.com/thebetar', '_blank');
     }
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>
