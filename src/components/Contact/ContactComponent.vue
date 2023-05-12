@@ -106,6 +106,7 @@
                       :rules="[
                         rules.required
                       ]"
+                      variant="outlined"
                     />
                     <v-text-field
                       v-model="email"
@@ -116,6 +117,7 @@
                         rules.required,
                         rules.email
                       ]"
+                      variant="outlined"
                     />
                     <v-textarea
                       v-model="description"
@@ -127,6 +129,8 @@
                         rules.minLength
                       ]"
                       :rows="isMobile ? 2 : 5"
+                      auto-grow
+                      variant="outlined"
                     />
                     <v-btn
                       name="submit"
@@ -169,7 +173,8 @@ import { defineComponent } from 'vue';
 
 import { mdiWhatsapp, mdiPhone, mdiEmail, mdiSend, mdiAccount, mdiPencil } from '@mdi/js';
 
-const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+import isEmail from 'validator/es/lib/isEmail';
+import isLength from 'validator/es/lib/isLength';
 
 export default defineComponent({
   data() {
@@ -180,8 +185,8 @@ export default defineComponent({
       description: '',
       rules: {
         required: (value: string) => !!value || 'Dit veld is verplicht',
-        email: (value: string) => EMAIL_REGEX.test(value) || 'Dit is geen geldig email adres',
-        minLength: (value: string) => value.length >= 20 || 'Dit veld moet minimaal 20 karakters bevatten'
+        email: (value: string) => isEmail(value) || 'Dit is geen geldig email adres',
+        minLength: (value: string) => isLength(value, { min: 20 }) || 'Dit veld moet minimaal 20 karakters bevatten'
       },
       mdiWhatsapp,
       mdiPhone,
@@ -197,7 +202,7 @@ export default defineComponent({
         this.name &&
         this.name.length > 0 &&
         this.email &&
-        EMAIL_REGEX.test(this.email) &&
+        isEmail(this.email) &&
         this.description &&
         this.description.length > 0 && this.description.length >= 20
       );

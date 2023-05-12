@@ -23,6 +23,7 @@
 	"dependencies": {
 		"@astrojs/vue": "^2.1.1",
 		"astro": "~2.4.5",
+		"validator": "^13.9.0",
 		"vue": "^3.3.1",
 		"vuetify": "^3.2.4"
 	},
@@ -32,6 +33,7 @@
 		"@commitlint/config-conventional": "^17.4.4",
 		"@fullhuman/postcss-purgecss": "^5.0.0",
 		"@mdi/js": "^7.1.96",
+		"@types/validator": "^13.7.17",
 		"@typescript-eslint/eslint-plugin": "^5.4.0",
 		"@typescript-eslint/parser": "^5.4.0",
 		"@vitejs/plugin-vue": "^4.2.3",

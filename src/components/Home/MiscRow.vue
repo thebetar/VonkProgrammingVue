@@ -54,7 +54,7 @@
           <v-col cols="6">
             <v-btn
               href="/portfolio"
-              color="medium"
+              color="secondary"
               class="my-2"
               arial-label="Portfolio"
               variant="outlined"

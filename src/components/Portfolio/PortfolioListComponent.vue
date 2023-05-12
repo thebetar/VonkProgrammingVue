@@ -133,11 +133,11 @@
           v-for="item in achievements"
           :key="item.certificate"
           fill-dot
-          dot-color="#ddd"
+          dot-color="#ff2d6a"
         >
           <template #opposite>
             <span
-              class="headline font-weight-medium text-grey-lighten-2"
+              class="headline font-weight-medium"
               :class="{
                 'text-caption': $vuetify.display.mobile
               }"
@@ -149,6 +149,7 @@
             :class="{
               'text-caption mr-2': $vuetify.display.mobile
             }"
+            rounded="lg"
           >
             {{ item.certificate }}
             <span v-if="!$vuetify.display.mobile"> - {{ item.where }} </span>
@@ -170,7 +171,7 @@ export default defineComponent({
   },
   data() {
     return {
-      colors: ['#BF0000', '#006F00', '#00006F'],
+      colors: ['#ff2d6a', '#183a7d', '#7d183a'],
       labels: ['Baan', 'Klant', 'Project'],
       stepChapter: 1,
       mobile: false,
