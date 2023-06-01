@@ -127,22 +127,19 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding-top: 20px;
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: 20px;
-
     min-height: 400px;
   }
 
   &-header {
     font-size: 50px;
     font-weight: 700;
-
     text-align: center;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width <= 600px) {
       font-size: 32px;
     }
   }
@@ -151,54 +148,45 @@ export default defineComponent({
     margin-top: 60px;
     max-width: 1000px;
     width: 100%;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap:  30px;
-
     text-align: center;
     font-size: 18px;
     line-height: 24px;
 
     &-svg {
-      margin-left: 30px;
-      margin-right: 30px;
-
-      border: 1px #333 solid;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-
       height: 142px;
       width: 100%;
       max-width: 116px;
-
+      padding: 8px;
+      margin-left: 30px;
+      margin-right: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;  
-
-      padding: 8px;
-
+      border: 1px #333 solid;
+      background: rgb(255 255 255 / 10%);
+      border-radius: 10px;
       cursor: pointer;
-
       transition: background 0.2s ease-in-out;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgb(255 255 255 / 20%)
       }
 
       &-text {
         margin-top: 10px;
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width <= 600px) {
         margin: 0;
       }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width <= 600px) {
       gap: 18px;
     }
   }

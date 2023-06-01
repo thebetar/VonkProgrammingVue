@@ -190,16 +190,13 @@ export default defineComponent({
 .home-component {
   &-start {
     &-container {
-      display: flex;
-      flex-direction: column;
-
-      justify-content: center;
-      align-items: center;
-
-      gap: 40px;
-
       min-height: calc(100vh + 10px);
       max-height: 1600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
 
     }
 
@@ -237,32 +234,25 @@ export default defineComponent({
 
     &-card {
       position: relative;
-      max-width: 720px;
-
-      @media screen and (max-width: 1200px) {
+      max-width: 720px;  
+      padding-top: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      border-radius: 20px 20px 0 0 ;
+      z-index: 10;
+      box-shadow: 10px -10px 20px 0 rgb(0 0 0 / 30%);
+      text-align: center;
+      background: white;
+      color: #333;
+      
+      @media screen and (max-width <= 1200px) {
         max-width: 600px;
         padding-bottom: 20px;
       }
 
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width <= 720px) {
         max-width: 100%;
       }
-
-      border-radius: 20px 20px 0 0 ;
-
-      padding-top: 20px;
-      padding-left: 40px;
-      padding-right: 40px;
-
-      z-index: 10;
-      
-      box-shadow: 10px -10px 20px 0px rgba(0,0,0,0.3);
-
-      text-align: center;
-
-      background: white;
-      color: #333;
-      
     }
   }
 
@@ -276,7 +266,7 @@ export default defineComponent({
       padding-right: 100px;
       padding-bottom: 20px;
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width <= 600px) {
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 20px;
@@ -285,23 +275,18 @@ export default defineComponent({
 
     &-card {
       width: fit-content;
-      
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-
-      box-shadow: 10px -5px 20px 0px rgba(0,0,0,0.1);
-
       padding-top: 32px;
       padding-left: 40px;
       padding-right: 27px;
       padding-bottom: 32px;
-
       border: 1px solid #333;
       border-radius: 20px;
-
-      background: rgba(0, 0, 0, 0.01);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      box-shadow: 10px -5px 20px 0 rgb(0 0 0 / 10%);
+      background: rgb(0 0 0 / 1%);
     }
 
     &-hint {
@@ -314,7 +299,7 @@ export default defineComponent({
     }
 
     &-image {
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width <= 1200px) {
         display: none;
       }
     }
@@ -322,16 +307,15 @@ export default defineComponent({
 
   &-connect {
     &-container {
+      padding-top: 80px;
+      padding-bottom: 60px;
       display: flex;
       justify-content: center;
       align-items: center;
-
-      padding-top: 80px;
     }
 
     &-header {
       margin-top: 10px;
-
       font-size: 24px;
       line-height: 30px;
     }
@@ -345,10 +329,6 @@ export default defineComponent({
   &-card-container {
     margin-top: 20px;
     gap: 4rem;
-
-    @media screen and (min-width: 1920px) {
-      gap: 4rem;
-    }
   }
 
   &-welcome-container {

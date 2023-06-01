@@ -411,10 +411,9 @@ export default defineComponent({
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
   width: 100%;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (width <= 600px) {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -427,7 +426,6 @@ export default defineComponent({
   &-wrapper {
     width: 100%;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -437,16 +435,11 @@ export default defineComponent({
 
   &-arrow {
     position: absolute;
-
     top: calc(100vh - 50px);
     left: calc(50% - 20px);
-
     background-image: url('/assets/svg/arrow-down.svg');
-
     animation: bobble 1.5s infinite;
-
     cursor: pointer;
-
     transition: opacity 0.2s ease-in-out;
 
     &:hover {
@@ -456,14 +449,8 @@ export default defineComponent({
 }
 
 @keyframes bobble {
-  10% {
-    transform: translateY(0px);
-  }
   50% {
     transform: translateY(-10px);
-  }
-  90% {
-    transform: translateY(0px);
   }
 }
 </style>

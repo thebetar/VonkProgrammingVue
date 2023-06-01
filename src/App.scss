@@ -37,15 +37,15 @@ a {
 .v-container {
 	overflow: hidden;
 
-	@media screen and (min-width: 1280px) {
+	@media screen and (width >= 1280px) {
 		max-width: 1100px;
 	}
 
-	@media screen and (min-width: 1920px) {
+	@media screen and (width >= 1920px) {
 		max-width: 1600px;
 	}
 
-	@media (min-width: 2560px) {
+	@media (width >= 2560px) {
 		max-width: 2000px;
 	}
 }
@@ -63,7 +63,7 @@ a {
 }
 
 .home-component-advantage-card {
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: 1px solid rgb(0 0 0 / 20%);
 	max-width: 500px;
 }
 

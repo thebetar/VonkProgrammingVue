@@ -106,16 +106,13 @@ export default defineComponent({
 .portfolio-list-item {
   max-width: 260px;
   height: fit-content;
-
-  opacity: 0.85;
-
-  transition: all 0.3s ease-in-out;
-  
   margin-top: 20px;
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 20px;
-
+  margin: 20px 50px;;
+  opacity: 0.85;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 
   &:hover {
@@ -124,14 +121,12 @@ export default defineComponent({
 
   &-pic {
     transition: all 0.3s ease-in-out;
-
     border-radius: 10px;
   }
 
   &-bottom {
     margin-top: 8px;
     width: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -145,7 +140,6 @@ export default defineComponent({
   &__large {
     max-width: 350px;
     opacity: 1;
-
     margin-left: 5px;
     margin-right: 5px;
 
@@ -159,7 +153,6 @@ export default defineComponent({
   &__mobile {
     margin-bottom: 60px;
     max-width: 90vw;
-
     cursor: default;
     opacity: 1;
   }

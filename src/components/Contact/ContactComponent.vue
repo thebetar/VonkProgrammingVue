@@ -218,7 +218,6 @@ export default defineComponent({
 .contact-component {
 	&-container {
 		min-height: 100vh;
-
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -248,7 +247,6 @@ export default defineComponent({
 
     &-content {
       width: 100%;
-
       display: flex;  
       align-items: center;
       justify-content: center;

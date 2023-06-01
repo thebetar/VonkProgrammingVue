@@ -1,12 +1,12 @@
 <template>
   <App>
     <main id="portfolio-page">
-      <v-container
+      <div
         fluid
         class="portfolio-page-padding vonk-programming-background"
       >
         <portfolio-list />
-      </v-container>
+      </div>
 
       <footer-component />
     </main>

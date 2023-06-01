@@ -106,22 +106,18 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     text-align: center;
-
     max-width: 400px;
 
     &-row {
       width: 100%;
       max-width: 1000px;
-
       display: flex;
       justify-content: space-between;
-
       gap: 40px;
     }
 
   &-actions {
     margin-top: 10px;
-
     display: flex;
     justify-content: center;
     gap: 10px;
