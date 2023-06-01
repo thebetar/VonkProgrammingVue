@@ -1,53 +1,53 @@
 <template>
   <v-card
-    :class="{ 'pa-4': !$vuetify.display.mobile }"
     outlined
     elevation="10"
+    class="portfolio-list-item"
+    :class="{
+      'portfolio-list-item__large': large,
+      'portfolio-list-item__mobile': $vuetify.display.mobile
+    }"
+    @click="$emit('click')"
   >
+    <v-img
+      v-if="item.imageUrl"
+      :src="`/assets/portfolio/${item.imageUrl}`"
+      class="portfolio-list-item-pic"
+    />
     <v-card-text>
-      <v-row :class="{ 'flex-column': $vuetify.display.mobile }">
-        <v-col
-          cols="12"
-          md="2"
-          class="d-flex align-center justify-center"
+      <p>
+        <b
+          :style="{ color }"
         >
-          <v-img
-            v-if="item.imageUrl"
-            :src="`/assets/portfolio/${item.imageUrl}`"
-            class="portfolio-pic"
-          />
-        </v-col>
-        <v-col
-          cols="12"
-          md="10"
-          :class="{ 'text-left': $vuetify.display.mobile }"
+          {{ item.title }}
+        </b>
+      </p>
+      <p>
+        {{ itemDescription }}
+      </p>
+      <div class="portfolio-list-item-bottom">
+        <v-chip
+          variant="elevated"
+          class="portfolio-list-item-bottom__chip"
+          :color="color"
         >
-          <p
-            :class="{
-              'text-center': $vuetify.display.mobile
-            }"
+          {{ label }}
+        </v-chip>
+        <transition
+          name="fade-delay"
+          mode="out-in"
+        >
+          <v-btn
+            v-if="large"
+            variant="outlined"
+            class="rounded-pill"
+            :size="$vuetify.display.mobile ? 'small' : 'default'"
+            @click.stop="goTo"
           >
-            <b
-              :style="{ color }"
-              :class="{
-                title: !$vuetify.display.mobile
-              }"
-            >
-              {{ item.title }}
-            </b>
-          </p>
-          <p>
-            {{ item.description }}
-          </p>
-          <v-chip
-            variant="elevated"
-            :class="{ 'mt-4': !$vuetify.display.mobile, 'mt-2': $vuetify.display.mobile }"
-            :color="color"
-          >
-            {{ label }}
-          </v-chip>
-        </v-col>
-      </v-row>
+            Ga naar website
+          </v-btn>
+        </transition>
+      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -62,11 +62,6 @@ export default defineComponent({
       required: true,
       default: () => ({})
     },
-    index: {
-      type: Number,
-      required: true,
-      default: 0
-    },
     color: {
       type: String,
       required: false,
@@ -76,30 +71,97 @@ export default defineComponent({
       type: String,
       required: false,
       default: ''
+    },
+    large: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
+  emits: ['click'],
   data() {
     return {
-      imageUrl: ''
+      imageUrl: '',
     };
+  },
+  computed: {
+    itemDescription() {
+      if(this.large) {
+        return this.item.description;
+      }
+      return this.item.description.length > 70
+        ? `${this.item.description.substring(0, 70)}...`
+        : this.item.description;
+    }
+  },
+  methods: {
+    goTo() {
+      window.open(this.item.link, '_blank')
+    },
   }
 });
 </script>
 
-<style scoped>
-.portfolio-pic {
-  max-width: 140px;
-  height: auto;
-  border-radius: 8px;
-  border: 2px solid black;
-  padding: 8px;
-  background: white;
-}
+<style lang="scss" scoped>
+.portfolio-list-item {
+  max-width: 260px;
+  height: fit-content;
 
-@media only screen and (width <= 600px) {
-  .portfolio-pic {
-    max-width: 100px;
-    padding: 4px;
+  opacity: 0.85;
+
+  transition: all 0.3s ease-in-out;
+  
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &-pic {
+    transition: all 0.3s ease-in-out;
+
+    border-radius: 10px;
+  }
+
+  &-bottom {
+    margin-top: 8px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__chip {
+      z-index: 100;
+    }
+  }
+
+  &__large {
+    max-width: 350px;
+    opacity: 1;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    & > .portfolio-list-item-pic {
+      max-width: 120px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  &__mobile {
+    margin-bottom: 60px;
+    max-width: 90vw;
+
+    cursor: default;
+    opacity: 1;
   }
 }
 </style>

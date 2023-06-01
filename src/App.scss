@@ -102,15 +102,29 @@ a {
 /* Fade effect transition */
 .fade-enter-active,
 .fade-leave-active {
-	transition-property: opacity;
-	transition-duration: 0.2s;
+	transition: opacity 0.3s ease;
 }
 
-.fade-enter-active {
-	transition-delay: 0.2s;
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
 }
 
-.fade-enter,
-.fade-leave-active {
+/* Fade effect transition */
+.fade-delay-enter-active,
+.fade-delay-leave-active {
+	transition: opacity 0.3s ease;
+}
+
+.fade-delay-enter-active {
+	transition-delay: 0.3s;
+}
+
+.fade-delay-leave-active {
+	transition-delay: 0s;
+}
+
+.fade-delay-enter-from,
+.fade-delay-leave-to {
 	opacity: 0;
 }

@@ -28,13 +28,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style lang="scss" scoped>
-.portfolio-page-padding {
-  padding: 12rem 0;
-  
-  @media only screen and (width <= 600px) {
-    padding: 0.5rem 0;
-  }
-}
-</style>

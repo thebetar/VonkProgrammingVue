@@ -1,17 +1,8 @@
 <template>
-  <v-row
-    justify="center"
-    align="center"
-    :class="{
-      'pt-16': $vuetify.display.mobile
-    }"
-  >
-    <v-col
-      cols="12"
-      md="6"
-    >
+  <div class="portfolio-list-container">
+    <div class="portfolio-list-card-wrapper">
       <v-card
-        class="pa-8 text-center portfolio-card"
+        class="pa-8 text-center portfolio-list-card"
         outlined
         elevation="12"
       >
@@ -52,112 +43,34 @@
           </p>
         </v-card-text>
       </v-card>
-    </v-col>
-    <v-col
-      cols="12"
-      :class="{ 'mt-6': !$vuetify.display.mobile }"
-    >
-      <v-container
-        v-if="!$vuetify.display.mobile"
-        class="timeline-container"
-      >
-        <v-timeline
-          side="end"
-          line-color="rgba(255,255,255,0.3)"
+      <transition name="fade">
+        <div
+          v-if="!isScrolled"
+          class="portfolio-list-card-arrow"
+          @click="scrollDown"
         >
-          <v-timeline-item
-            v-for="(item, index) in jobs"
-            :key="item.title"
-            :dot-color="colors[item.color]"
-            fill-dot
+          <img
+            height="40"
+            width="40"
+            src="/assets/svg/arrow-down.svg"
           >
-            <portfolio-list-item
-              :item="item"
-              :color="colors[item.color]"
-              :label="labels[item.color]"
-              :index="index"
-              :is-mobile="$vuetify.display.mobile"
-            />
-          </v-timeline-item>
-        </v-timeline>
-      </v-container>
-      <v-container v-else>
-        <portfolio-list-item
-          v-for="(item, index) in jobs"
-          :key="item.title"
-          class="mb-8 mx-4"
-          :item="item"
-          :color="colors[item.color]"
-          :label="labels[item.color]"
-          :index="index"
-          :is-mobile="$vuetify.display.mobile"
-        />
-      </v-container>
-    </v-col>
-    <v-col
-      cols="12"
-      md="6"
-      class="mt-16"
+        </div>
+      </transition>
+    </div>
+    <div
+      class="portfolio-list-item-wrapper"
     >
-      <v-card
-        class="pa-md-8 pa-4 text-center portfolio-card"
-        outlined
-        elevation="12"
-      >
-        <v-img
-          src="/assets/svg/certificate.svg"
-          width="120"
-          height="120"
-          class="mx-auto"
-        />
-        <v-card-title class="display-1 justify-center">
-          Certificaten en diploma's
-        </v-card-title>
-        <v-card-text> 
-          Hieronder staan alle certificaten en diploma's die ik behaald heb.
-        </v-card-text>
-      </v-card>
-    </v-col>
-    <v-col
-      cols="12"
-      md="8"
-      :class="{
-        'mt-6': !$vuetify.display.mobile
-      }"
-    >
-      <v-timeline
-        side="end"
-        truncate-line="both"
-      >
-        <v-timeline-item
-          v-for="item in achievements"
-          :key="item.certificate"
-          fill-dot
-          dot-color="#ff2d6a"
-        >
-          <template #opposite>
-            <span
-              class="headline font-weight-medium"
-              :class="{
-                'text-caption': $vuetify.display.mobile
-              }"
-            >
-              {{ item.year }}
-            </span>
-          </template>
-          <v-alert
-            :class="{
-              'text-caption mr-2': $vuetify.display.mobile
-            }"
-            rounded="lg"
-          >
-            {{ item.certificate }}
-            <span v-if="!$vuetify.display.mobile"> - {{ item.where }} </span>
-          </v-alert>
-        </v-timeline-item>
-      </v-timeline>
-    </v-col>
-  </v-row>
+      <portfolio-list-item
+        v-for="(item, index) in jobs"
+        :key="item.title"
+        :label="labels[item.color]"
+        :item="item"
+        :color="colors[item.color]"
+        :large="$vuetify.display.mobile || index === selectedJobIndex"
+        @click="onItemClick(index)"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -165,12 +78,15 @@ import { defineComponent } from 'vue';
 
 import PortfolioListItem from './PortfolioListItemComponent.vue';
 
+const SCROLL_OFFSET = 100;
+
 export default defineComponent({
   components: {
     PortfolioListItem
   },
   data() {
     return {
+      isScrolled: window.scrollY > SCROLL_OFFSET,
       colors: ['#ff2d6a', '#183a7d', '#7d183a'],
       labels: ['Baan', 'Klant', 'Project'],
       stepChapter: 1,
@@ -181,129 +97,148 @@ export default defineComponent({
           description:
             'Aan het einde van het eerste jaar van mijn opleiding HBO-ICT ben ik begonnen bij StudentAanHuis. Hier hielp ik mensen met hun computer problemen. Dit ging van printers opnieuw instellen tot hele Windows systemen herstellen.',
           imageUrl: 'sah-logo-min.jpg',
-          color: 0
+          color: 0,
+          link: 'https://www.studentaanhuis.nl/'
         },
         {
           title: 'Kookstudio Amsterdam',
           description:
             'Ik heb tijdens mijn tweede jaar van mijn opleiding een website gebouwd voor kookstudio Amsterdam met een eigen admin paneel gemaakt in PHP',
           imageUrl: 'kookstudio-min.jpg',
-          color: 1
+          color: 1,
+          link: 'https://www.kookstudioamsterdam.nl/'
         },
         {
           title: 'Sanoma',
           description:
             'In het tweede jaar van mijn opleiding HBO-ICT heb ik het volledige jaar bij Sanoma Media stage gelopen. Sanoma Media was destijds nog onderdeel van Sanoma. Hier heb ik mij bezig gehouden met software voor advertising. Dit was in de talen PHP, CSS, MySQL en HTML.',
           imageUrl: 'sanoma-logo-min.jpg',
-          color: 0
+          color: 0,
+          link: 'https://www.sanoma.com/'
         },
         {
           title: 'Innovative Cycling',
           description:
             'Aan het einde van het tweede jaar van mijn opleiding HBO-ICT ben ik begonnen bij het studenten programmeur uitzendbureau Kojac. Hier kreeg ik de opdracht bij Innovative cycling de websites te onderhouden en te updaten. Hier heb ik gebruik gemaakt van Javascript, PHP, CSS, MySQL en HTML.',
           imageUrl: 'kojac-logo-min.webp',
-          color: 0
+          color: 0,
+          link: 'https://www.innovativecycling.com/'
         },
         {
           title: 'BijIngrid',
           description:
             'Ik heb voor Ingrid met mijn beginnende web development ervaring een website gemaakt om workshops op te geven. Deze website heeft een zelf gemaakt admin paneel gemaakt in PHP.',
           imageUrl: 'bijingrid-min.jpg',
-          color: 1
+          color: 1,
+          link: 'https://www.bijingrid.nl/'
         },
         {
           title: 'Floriade',
           description:
             'In het derde jaar van mijn opleiding HBO-ICT heb ik stage gelopen voor het Floriade project. Dit was eerst voor de gemeente Almere en werd later verplaatst naar het Floriade gebouw. Hier heb ik mij met een team bezig gehouden met een van de onderdelen van de Floriade. Hier heb ik gebruik gemaakt van PHP, CSS, MySQL en HTML.',
           imageUrl: 'floriade-logo-min.jpg',
-          color: 0
+          color: 0,
+          link: 'https://www.almere.nl/'
         },
         {
           title: 'MedWeb',
           description:
             'In het laatste jaar van mijn opleiding HBO-ICT heb ik stage gelopen bij het bedrijf Medweb B.V.. Dit is een software bedrijf die zich bezig houdt met een rooster applicatie specifiek gericht op medisch specialisten en artsen. Ik heb mij hier bezig gehouden met het vernieuwen van een van de onderdelen van hun applicatie "Medspace". Hier heb ik gebruik gemaakt van VueJS/Javascript, IBM Notes, IBM Domino designer, CSS en HTML.',
           imageUrl: 'medweb-logo-min.jpg',
-          color: 0
+          color: 0,
+          link: 'https://www.medweb.nl/'
         },
         {
           title: 'Hoveniersbedrijf Wouters',
           description:
             'Ik heb voor HoveniersBedrijf Wouters na mijn opleiding een website gemaakt met een professionele uitstraling en een snelle interface. Deze website is volledig gebouwd met VueJS',
           imageUrl: 'hoveniersbedrijf-wouters-min.jpg',
-          color: 1
+          color: 1,
+          link: 'https://www.hoveniersbedrijfwouters.nl/'
         },
         {
           title: 'Quintor',
           description:
             'Momenteel werk ik bij IT consultancy bedrijf Quintor. Dit bedrijf houdt zich bezig met het adviseren over en bouwen van software. Dit bij grote klanten als de ING, de overheid, etc. Bij dit bedrijf houdt ik mij bezig met mijn programmeervaardigheden verbeteren zodat deze aan de hoogst mogelijke standaard kunnen voldoen.',
           imageUrl: 'quintor-logo.webp',
-          color: 0
+          color: 0,
+          link: 'https://www.quintor.nl/'
         },
         {
           title: 'Chary Solutions',
           description:
             'Ik heb voor Chary Solutions software gemaakt om hun advertising data uit hun Facebook business manager te halen en dit vervolgens te exporteren naar google sheets',
           imageUrl: 'chary-min.jpg',
-          color: 1
+          color: 1,
+          link: 'https://www.chary.nl/'
         },
         {
           title: 'SVB',
           description:
             'Mijn eerste opdracht vanuit Quintor is bij de SVB, hier programmeer ik voornamelijk in Javascript in het framework Angular',
           imageUrl: 'SVB-min.jpg',
-          color: 0
+          color: 0,
+          link: 'https://www.svb.nl/'
         },
         {
           title: 'J-Tax Automotive',
           description:
             'Ik heb voor J-Tax Automotive solutions maatwerk software gemaakt voor het maken van taxatie rapporten. De software van J-tax is gemaakt met behulp van Vue.js en ExpressJS',
           imageUrl: 'j-tax-min.webp',
-          color: 1
+          color: 1,
+          link: 'https://www.j-taxautomotive.nl//'
         },
         {
           title: 'Klets',
           description:
             'Klets is een social media app die ik gemaakt heb met behulp van Ionic. Deze app is gemaakt om op basis van een onderwerp en een aangegeven afstand mensen te zoeken en kleine groepschat (max 5) te vormen. Klets is gemaakt met behulp van Ioinic',
           imageUrl: 'klets-min.jpg',
-          color: 2
+          color: 2,
+          link: 'https://vonkprogramming.nl/'
         },
         {
           title: 'ING',
           description:
             'Bij de ING werk ik momenteel als full stack developer aan verschillende interfaces die gebruikt worden door de ING. Dit met het framework Lit element',
           imageUrl: 'ing-min.webp',
-          color: 0
+          color: 0,
+          link: 'https://www.ing.nl/'
         },
         {
           title: 'P.51 Design en MarkantIT',
           description:
             'Samen met P.51 design en MarkantIT werk ik aan een website voor OOMT m.b.t. de Arbo catalogus. Dit project wordt gebouwd met React',
           imageUrl: 'p51design-min.jpg',
-          color: 1
+          color: 1,
+          link: 'https://www.p51design.nl/'
         },
         {
           title: 'Automotive RS',
           description:
             "Voor Automotive RS heb ik een dashboard gemaakt waarin zij hun gekochte auto's kunnen invoeren en alles overzichtelijk kunnen bijhouden. Ook heeft dit dashboard een API om gegevens automatisch op te halen zover dit kan.",
           imageUrl: 'automotive-rs-min.jpg',
-          color: 1
+          color: 1,
+          link: 'https://automotive-rs.com/'
         },
         {
           title: 'Deet',
           description:
             'Ik heb met de "Deet" app het idee gehad om voor mijzelf een app te maken die het makkelijker maakt om doelen in te plannen. Dit kunnen doelen zijn als meer lezen, bepaalde oefeningen in de sportschool of een cursus volgen. Deze app maakt het makkelijker om dit bij te houden.',
           imageUrl: 'deet-min.webp',
-          color: 2
+          color: 2,
+          link: 'https://vonkprogramming.nl/'
         },
         {
           title: 'Fyndyr',
           description:
             'Ik ervaarde het probleem dat ik mijn vrienden wel eens kwijt raakte terwijl ik op een dance festival mij vermaakte. Daarom heb ik een app gemaakt die het makkelijker maakt om elkaar te vinden op een festival.',
           imageUrl: 'fyndyr-min.webp',
-          color: 2
+          color: 2,
+          link: 'https://vonkprogramming.nl/'
         }
       ]
         .reverse(),
+        selectedJobIndex: null,
       achievements: [
         {
           certificate: 'Certified Scrum Master (CSM)',
@@ -425,27 +360,110 @@ export default defineComponent({
       ]
     };
   },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   methods: {
+    onItemClick(index) {
+      if(this.selectedJobIndex === index) {
+        this.selectedJobIndex = null;
+        return;
+      }
+      this.selectedJobIndex = index;
+    },
     goToGithub() {
       window.open('https://github.com/thebetar', '_blank');
-    }
+    },
+    handleScroll() {
+      if (window.scrollY > SCROLL_OFFSET) {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled = false;
+      }
+    },
+    scrollDown() {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    },
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.timeline-container {
-  max-width: 48rem;
+.portfolio-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  @media only screen and (max-width <= 600px) {
-    max-width: 100vw;
+.portfolio-list-item-wrapper {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  padding-left: 100px;
+  padding-right: 100px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
-.portfolio-card {
-  @media only screen and (width <= 600px) {
-    margin: 0.2rem 0.7rem;
-    margin-top: 4rem;
+.portfolio-list-card {
+  position: relative;
+  max-width: 700px;
+
+  &-wrapper {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  &-arrow {
+    position: absolute;
+
+    top: calc(100vh - 50px);
+    left: calc(50% - 20px);
+
+    background-image: url('/assets/svg/arrow-down.svg');
+
+    animation: bobble 1.5s infinite;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes bobble {
+  10% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(0px);
   }
 }
 </style>

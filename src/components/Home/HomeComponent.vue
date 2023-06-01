@@ -97,7 +97,7 @@
         <div class="home-component-about-image">
           <v-img
             src="/assets/home/me.jpg"
-            :width="260"
+            width="260"
             class="rounded-xl"
           >
             <template #placeholder>
@@ -310,6 +310,12 @@ export default defineComponent({
       & > p {
         margin-bottom: 12px;
         font-size: 12px;
+      }
+    }
+
+    &-image {
+      @media screen and (max-width: 1200px) {
+        display: none;
       }
     }
   }

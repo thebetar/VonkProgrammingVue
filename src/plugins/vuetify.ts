@@ -29,4 +29,7 @@ export default createVuetify({
       mdi,
     },
   },
+  display: {
+    mobileBreakpoint: 960,
+  }
 });
