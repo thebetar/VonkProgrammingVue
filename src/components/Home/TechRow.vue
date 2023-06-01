@@ -139,7 +139,7 @@ export default defineComponent({
     font-weight: 700;
     text-align: center;
 
-    @media screen and (max-width <= 600px) {
+    @media screen and (width <= 600px) {
       font-size: 32px;
     }
   }
@@ -168,25 +168,25 @@ export default defineComponent({
       align-items: center;
       justify-content: center;  
       border: 1px #333 solid;
-      background: rgb(255 255 255 / 10%);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       cursor: pointer;
       transition: background 0.2s ease-in-out;
 
       &:hover {
-        background: rgb(255 255 255 / 20%)
+        background: rgb(255, 255, 255, 0.2)
       }
 
       &-text {
         margin-top: 10px;
       }
 
-      @media screen and (max-width <= 600px) {
+      @media screen and (width <= 600px) {
         margin: 0;
       }
     }
 
-    @media screen and (max-width <= 600px) {
+    @media screen and (width <= 600px) {
       gap: 18px;
     }
   }

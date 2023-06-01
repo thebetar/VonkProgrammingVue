@@ -21,11 +21,10 @@
 		"release:patch": "standard-version --release-as patch"
 	},
 	"dependencies": {
-		"@astrojs/vue": "^2.1.1",
-		"astro": "~2.4.5",
-		"validator": "^13.9.0",
-		"vue": "^3.3.1",
-		"vuetify": "^3.2.4"
+		"@astrojs/vue": "~2.0.1",
+		"astro": "~2.1.9",
+		"vue": "~3.3.4",
+		"vuetify": "~3.3.2"
 	},
 	"devDependencies": {
 		"@babel/eslint-parser": "^7.19.1",
@@ -53,10 +52,11 @@
 		"eslint-plugin-vue-scoped-css": "^2.4.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.2",
+		"node-sass": "^9.0.0",
 		"npm": "^9.6.4",
 		"purgecss": "^5.0.0",
-		"sass": "^1.58.3",
-		"sass-loader": "^10.4.1",
+		"sass": "^1.62.1",
+		"sass-loader": "^13.3.1",
 		"standard-version": "^9.5.0",
 		"style-loader": "^3.3.1",
 		"stylelint": "^15.4.0",
@@ -64,6 +64,7 @@
 		"stylelint-config-standard": "^32.0.0",
 		"stylelint-config-standard-scss": "^8.0.0",
 		"typescript": "~5.0.4",
+		"validator": "^13.9.0",
 		"vite-plugin-vuetify": "^1.0.2",
 		"vue-cli-plugin-vuetify": "~2.5.8",
 		"vue-eslint-parser": "^9.1.1",

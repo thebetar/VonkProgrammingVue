@@ -14,6 +14,7 @@
 import { defineComponent } from 'vue';
 
 import App from '../App.vue';
+
 import HomeComponent from '../components/Home/HomeComponent.vue';
 import FooterComponent from '../components/Footer/FooterComponent.vue';
 

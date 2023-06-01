@@ -185,7 +185,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // eslint-disable-next-line vue-scoped-css/no-unused-selector
 .home-component {
   &-start {
@@ -240,7 +240,7 @@ export default defineComponent({
       padding-right: 40px;
       border-radius: 20px 20px 0 0 ;
       z-index: 10;
-      box-shadow: 10px -10px 20px 0 rgb(0 0 0 / 30%);
+      box-shadow: 10px -10px 20px 0 rgba(0, 0, 0, 0.3);
       text-align: center;
       background: white;
       color: #333;
@@ -285,8 +285,8 @@ export default defineComponent({
       align-items: center;
       flex-wrap: wrap;
       gap: 1.5rem;
-      box-shadow: 10px -5px 20px 0 rgb(0 0 0 / 10%);
-      background: rgb(0 0 0 / 1%);
+      box-shadow: 10px -5px 20px 0 rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.01);
     }
 
     &-hint {
@@ -305,6 +305,7 @@ export default defineComponent({
     }
   }
 
+  // eslint-disable-next-line vue-scoped-css/no-unused-selector
   &-connect {
     &-container {
       padding-top: 80px;

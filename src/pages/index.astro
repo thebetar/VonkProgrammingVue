@@ -3,46 +3,25 @@ import HomePage from './HomePage.vue';
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1.0"
-    />
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-    <meta
-      name="keywords"
-      content="IT, Amsterdam, frontend, website, software, ZZP, web developer"
-    />
-    <meta
-      name="description"
-      content="VonkProgramming voor al uw IT maatwerk oplossingen!"
-    />
+		<meta name="keywords" content="IT, Amsterdam, frontend, website, software, ZZP, web developer" />
+		<meta name="description" content="VonkProgramming voor al uw IT maatwerk oplossingen!" />
 
-    <link
-      rel="icon"
-      href="/favicon.ico"
-    />
-    <link
-      rel="shortcut icon"
-      href="/favicon.ico"
-    />
-    <link
-      rel="canonical"
-      href="https://vonkprogramming.nl/"
-    />
-    <title>Vonkprogramming | Home</title>
-    <script>
-      if (window.location.pathname !== '/') {
-        window.location.pathname = '/';
-      }
-    </script>
-  </head>
-  <body>
-    <HomePage client:only="vue" />
-  </body>
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="canonical" href="https://vonkprogramming.nl/" />
+		<title>Vonkprogramming | Home</title>
+		<script>
+			if (window.location.pathname !== '/') {
+				window.location.pathname = '/';
+			}
+		</script
+	</head>
+	<body>
+		<HomePage client:only="vue" />
+	</body>
 </html>

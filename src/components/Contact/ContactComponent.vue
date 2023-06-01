@@ -230,11 +230,11 @@ export default defineComponent({
     width: 100%;
 		max-width: 960px;
 
-    @media only screen and (width <= 960px) {
+    @media only screen and (max-width: 960px) {
       max-width: 400px;
     }
 
-		@media only screen and (width <= 600px) {
+		@media only screen and (max-width: 600px) {
 			/* eslint-disable-next-line vue-scoped-css/no-unused-selector */
 			padding: 2rem 1rem;
 		}

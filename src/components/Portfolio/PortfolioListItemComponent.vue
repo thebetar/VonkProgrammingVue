@@ -121,7 +121,6 @@ export default defineComponent({
 
   &-pic {
     transition: all 0.3s ease-in-out;
-    border-radius: 10px;
   }
 
   &-bottom {
@@ -147,6 +146,8 @@ export default defineComponent({
       max-width: 120px;
       margin-left: 10px;
       margin-top: 10px;
+
+      border-radius: 10px;
     }
   }
 
