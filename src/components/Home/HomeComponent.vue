@@ -70,59 +70,57 @@
     <div
       class="home-component-about-container"
     >
-      <div class="home-component-about-card">
-        <div class="home-component-about-hint">
-          <p>
-            <b>Code kwaliteit</b><br>
-            Ik heb uitgebreide ervaring met eslint voor codeconsistentie en naleving van coderingsstandaarden. Als het gaat om testen, ben ik bedreven in het gebruik van cypress en jest voor unit testing en end-to-end testing, waardoor betrouwbare en performante code wordt gegarandeerd.
-          </p>
-          <p>
-            <b>Pipelines</b><br>
-            Op het gebied van CI/CD heb ik gewerkt met Azure DevOps-pipelines, Jenkins en GitHub Actions om build-, test- en implementatieprocessen te automatiseren. Deze platforms maken naadloze integratie van testen, codeanalyse en implementatie mogelijk, wat resulteert in hoogwaardige software.
-          </p>
-          <p>
-            <b>Conventional commits</b><br>
-            Ik pleit voor conventionele commitberichten en maak gebruik van commitlint voor een duidelijke en gestandaardiseerde commitgeschiedenis. Bovendien maak ik gebruik van Sonar voor codeanalyse, waarbij codegeuren en kwetsbaarheden worden geïdentificeerd om de codekwaliteit en onderhoudbaarheid voortdurend te verbeteren.
-          </p>
-          <p>
-            <b>Communicatie</b><br>
-            Samenwerking en effectieve communicatie zijn essentieel in mijn werkstijl. Ik neem actief deel aan code reviews en gezamenlijke programmeersessies om de codekwaliteit en kennisdeling te waarborgen.
-          </p>
-          <p>
-            <b>Contact</b><br>
-            Als je op zoek bent naar een gedreven Software Developer met uitgebreide ervaring in kwaliteitsborging en CI/CD, laten we dan verbinden! <br>
-            <a href="/contact">Klik hier</a> om naar de contact pagina te gaan.
-          </p>
-        </div>
-        <div class="home-component-about-image">
-          <v-img
-            src="/assets/home/me.jpg"
-            width="260"
-            class="rounded-xl"
-          >
-            <template #placeholder>
-              <v-sheet>
-                <v-row
-                  class="fill-height ma-0"
-                  align="center"
-                  justify="center"
-                >
-                  <v-progress-circular
-                    indeterminate
-                    color="grey-lighten-5"
-                  />
-                </v-row>
-              </v-sheet>
-            </template>
-          </v-img>
-        </div>
+      <div class="home-component-about-text">
+        <p>
+          <b>Code kwaliteit</b><br>
+          Ik heb uitgebreide ervaring met eslint voor codeconsistentie en naleving van coderingsstandaarden. Als het gaat om testen, ben ik bedreven in het gebruik van cypress en jest voor unit testing en end-to-end testing, waardoor betrouwbare en performante code wordt gegarandeerd.
+        </p>
+        <p>
+          <b>Pipelines</b><br>
+          Op het gebied van CI/CD heb ik gewerkt met Azure DevOps-pipelines, Jenkins en GitHub Actions om build-, test- en implementatieprocessen te automatiseren. Deze platforms maken naadloze integratie van testen, codeanalyse en implementatie mogelijk, wat resulteert in hoogwaardige software.
+        </p>
+        <p>
+          <b>Conventional commits</b><br>
+          Ik pleit voor conventionele commitberichten en maak gebruik van commitlint voor een duidelijke en gestandaardiseerde commitgeschiedenis. Bovendien maak ik gebruik van Sonar voor codeanalyse, waarbij codegeuren en kwetsbaarheden worden geïdentificeerd om de codekwaliteit en onderhoudbaarheid voortdurend te verbeteren.
+        </p>
+        <p>
+          <b>Communicatie</b><br>
+          Samenwerking en effectieve communicatie zijn essentieel in mijn werkstijl. Ik neem actief deel aan code reviews en gezamenlijke programmeersessies om de codekwaliteit en kennisdeling te waarborgen.
+        </p>
+        <p>
+          <b>Contact</b><br>
+          Als je op zoek bent naar een gedreven Software Developer met uitgebreide ervaring in kwaliteitsborging en CI/CD, laten we dan verbinden! <br>
+          <a href="/contact">Klik hier</a> om naar de contact pagina te gaan.
+        </p>
+      </div>
+      <div class="home-component-about-image">
+        <v-img
+          src="/assets/home/me.jpg"
+          width="260"
+          class="rounded-xl"
+        >
+          <template #placeholder>
+            <v-sheet>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular
+                  indeterminate
+                  color="grey-lighten-5"
+                />
+              </v-row>
+            </v-sheet>
+          </template>
+        </v-img>
       </div>
     </div>
     <div class="home-component-connect-container">
       <div class="home-component-connect-text">
         <v-img
           src="/assets/svg/connection.svg"
-          :height="70"
+          :height="100"
         />
         <h3 class="home-component-connect-header">
           Verbinden
@@ -188,6 +186,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 // eslint-disable-next-line vue-scoped-css/no-unused-selector
 .home-component {
+  // eslint-disable-next-line vue-scoped-css/no-unused-selector
   &-start {
     &-container {
       min-height: calc(100vh + 10px);
@@ -223,9 +222,9 @@ export default defineComponent({
         margin-top: 4px;
       }
     }
-
   }
 
+  // eslint-disable-next-line vue-scoped-css/no-unused-selector
   &-info {
     &-container {
       display: flex;
@@ -245,17 +244,18 @@ export default defineComponent({
       background: white;
       color: #333;
       
-      @media screen and (max-width <= 1200px) {
+      @media screen and (width <= 1200px) {
         max-width: 600px;
         padding-bottom: 20px;
       }
 
-      @media screen and (max-width <= 720px) {
+      @media screen and (width <= 720px) {
         max-width: 100%;
       }
     }
   }
 
+  // eslint-disable-next-line vue-scoped-css/no-unused-selector
   &-about {
     &-container {
       display: flex;
@@ -264,42 +264,29 @@ export default defineComponent({
       padding-top: 100px;
       padding-left: 100px;
       padding-right: 100px;
-      padding-bottom: 20px;
+      padding-bottom: 40px;
 
-      @media screen and (max-width <= 600px) {
+      gap: 60px;
+
+      @media screen and (width <= 600px) {
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 20px;
+        flex-wrap: wrap;
       }
     }
 
-    &-card {
-      width: fit-content;
-      padding-top: 32px;
-      padding-left: 40px;
-      padding-right: 27px;
-      padding-bottom: 32px;
-      border: 1px solid #333;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      box-shadow: 10px -5px 20px 0 rgba(0, 0, 0, 0.1);
-      background: rgba(0, 0, 0, 0.01);
-    }
-
-    &-hint {
-      max-width: 720px;
+    &-text {
+      max-width: 800px;
 
       & > p {
         margin-bottom: 12px;
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
     &-image {
-      @media screen and (max-width <= 1200px) {
+      @media screen and (width <= 1200px) {
         display: none;
       }
     }
@@ -308,8 +295,10 @@ export default defineComponent({
   // eslint-disable-next-line vue-scoped-css/no-unused-selector
   &-connect {
     &-container {
-      padding-top: 80px;
-      padding-bottom: 60px;
+      padding-top: 40px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -323,20 +312,9 @@ export default defineComponent({
 
     &-text {
       max-width: 480px;
+      margin-top: 10px;
+      font-size: 14px;
       text-align: center;
-    }
-  }
-
-  &-card-container {
-    margin-top: 20px;
-    gap: 4rem;
-  }
-
-  &-welcome-container {
-    min-height: 90vh;
-
-    @media only screen and (width <= 600px) {
-      min-height: 100vh;
     }
   }
 

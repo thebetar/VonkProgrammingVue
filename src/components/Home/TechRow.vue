@@ -127,10 +127,10 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 8px;
     padding-right: 8px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     min-height: 400px;
   }
 
