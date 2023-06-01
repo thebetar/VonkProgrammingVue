@@ -94,7 +94,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-// eslint-disable-next-line vue-scoped-css/no-unused-selector
 .misc-row {
   &-container {
     display: flex;
