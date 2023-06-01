@@ -1,96 +1,116 @@
 html {
-  scroll-behavior: smooth;
-  font-display: swap !important;
+	scroll-behavior: smooth;
+	font-display: swap !important;
 }
 
 body {
-  font-display: swap !important;
-  overflow-x: hidden !important;
+	font-display: swap !important;
+	overflow-x: hidden !important;
 }
 
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 
-  &-track {
-    opacity: 1;
-    overflow: hidden;
-  }
+	&-track {
+		opacity: 1;
+		overflow: hidden;
+	}
 
-  &-thumb {
-    background-color: lightgrey;
+	&-thumb {
+		background-color: lightgrey;
 
-    &:hover {
-      background-color: #bbb;
-    }
-  }
+		&:hover {
+			background-color: #bbb;
+		}
+	}
 }
 
 a {
-  text-decoration: none;
-  color: #333;
-  transition: all 0.2s ease-in-out;
+	color: #333;
+	transition: all 0.2s ease-in-out;
 
-  &:hover {
-    color: #f22;
-  }
+	&:hover {
+		color: #f22;
+	}
 }
 
 .v-container {
-  overflow: hidden;
+	overflow: hidden;
+
+	@media screen and (min-width: 1280px) {
+		max-width: 1100px;
+	}
+
+	@media screen and (min-width: 1920px) {
+		max-width: 1600px;
+	}
+
+	@media (min-width: 2560px) {
+		max-width: 2000px;
+	}
+}
+
+.v-container--fluid {
+	max-width: 100% !important;
 }
 
 .v-card {
-  border-radius: 0.75rem;
+	border-radius: 0.75rem;
 }
 
 .v-row + .v-row {
-  margin: 0;
+	margin: 0;
+}
+
+.home-component-advantage-card {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	max-width: 500px;
 }
 
 .vonk-programming {
-  &-background {
-    background-color: #333;
-    color: white;
-    overflow-x: hidden;
+	&-background {
+		background-color: #333;
+		color: white;
+		overflow-x: hidden;
 
-    &-gradient {
-      background: linear-gradient(0deg, #333, #444, #333);
-      margin-top: 0;
-    }
-  }
+		&-gradient {
+			background: linear-gradient(0deg, #333, #444, #333);
+			margin-top: 0;
+		}
+	}
 }
 
 @media only screen and (width <= 600px) {
-  ::-webkit-scrollbar {
-    width: 0;
-  }
+	::-webkit-scrollbar {
+		width: 0;
+	}
 
-  .v-footer .row {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+	.v-footer .row {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
 
-  .v-toolbar {
-    & > .v-toolbar__content {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-  }
+	.v-toolbar {
+		& > .v-toolbar__content {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
 }
 
 /* Fade effect transition */
 .fade-enter-active,
 .fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.2s;
+	transition-property: opacity;
+	transition-duration: 0.2s;
 }
 
 .fade-enter-active {
-  transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .fade-enter,
 .fade-leave-active {
-  opacity: 0;
+	opacity: 0;
 }

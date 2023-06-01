@@ -1,96 +1,56 @@
 <template>
-  <v-container
-    class="pb-16"
-    :class="$vuetify.display.mobile ? 'pt-16' : 'mb-8'"
-  >
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        sm="12"
-        md="6"
-        class="d-none d-sm-block"
-      >
-        <v-img
-          src="/assets/svg/portfolio.svg"
-          width="80"
-          height="80"
-          class="mx-auto"
-        />
-      </v-col>
-      <v-col
-        cols="0"
-        sm="0"
-        md="6"
-        class="d-none d-sm-block"
-      >
-        <v-img
-          src="/assets/svg/network.svg"
-          width="80"
-          height="80"
-          class="mx-auto"
-        />
-      </v-col>
-      <v-col
-        cols="12"
-        sm="12"
-        md="6"
-        class="d-flex flex-column justify-center items-center text-center px-8"
-      >
-        <v-img
-          src="/assets/svg/portfolio.svg"
-          width="80"
-          height="80"
-          class="mx-auto mb-8 d-block d-sm-none"
-        />
-        <h6 class="text-h4">
-          Portfolio
-        </h6>
-        <p class="text-body-2">
-          Naast een mooi verhaal over hoe alles te werk gaat heb ik ondertussen
-          ook al een portfolio opgebouwd met een aantal bekenden en wat minder
-          bekende bedrijven.
-        </p>
-        <v-row>
-          <v-col cols="6">
+  <div class="misc-row-container">
+    <div class="misc-row-card-row">
+      <div class="misc-row-card">
+        <div>
+          <v-img
+            src="/assets/svg/portfolio.svg"
+            width="80"
+            height="80"
+            class="mx-auto"
+          />
+        </div>
+        <div>
+          <h6 class="text-h4">
+            Portfolio
+          </h6>
+          <p class="text-body-2">
+            Naast een mooi verhaal over hoe alles te werk gaat heb ik ondertussen
+            ook al een portfolio opgebouwd met een aantal bekenden en wat minder
+            bekende bedrijven.
+          </p>
+          <div class="misc-row-card-actions">
             <v-btn
               href="/portfolio"
               color="secondary"
-              class="my-2"
               arial-label="Portfolio"
               variant="outlined"
-              :size="$vuetify.display.mobile ? 'default' : 'large'"
-              block
               :prepend-icon="mdiFolder"
             >
               Portfolio
             </v-btn>
-          </v-col>
-          <v-col cols="6">
             <v-btn
               href="https://github.com/thebetar"
               target="_blank"
               color="primary"
-              class="mt-2"
               aria-label="Github"
               variant="outlined"
-              :size="$vuetify.display.mobile ? 'default' : 'large'"
-              block
               :prepend-icon="mdiGithub"
             >
               Github
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-col>
-      <v-col
-        class="d-flex flex-column justify-center items-center text-center px-8"
-      >
-        <v-img
-          src="/assets/svg/network.svg"
-          width="80"
-          height="80"
-          class="mx-auto mb-8 d-block d-sm-none"
-        />
+          </div>
+        </div>
+      </div>
+      <div class="misc-row-card">
+        <div>
+          <v-img
+            src="/assets/svg/network.svg"
+            width="80"
+            height="80"
+            class="mx-auto"
+          />
+        </div>
         <h6 class="text-h4">
           Netwerk
         </h6>
@@ -109,9 +69,9 @@
           }"
           @click="goTo('https://lightspeed-it.nl/')"
         />
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -132,3 +92,40 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+.misc-row {
+  &-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 120px;
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    max-width: 400px;
+
+    &-row {
+      width: 100%;
+      max-width: 1000px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+  &-actions {
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+}
+</style>
