@@ -47,7 +47,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { mdiCursorDefault } from '@mdi/js'
+import { mdiCursorDefault } from '@mdi/js';
 
 export default defineComponent({
 	name: 'PortfolioPreview',
@@ -65,11 +65,12 @@ export default defineComponent({
 			required: true,
 		},
 	},
-    data() {
-        return {
-            mdiCursorDefault
-        }
-    },
+	emits: ['dismiss'],
+	data() {
+		return {
+			mdiCursorDefault,
+		};
+	},
 	methods: {
 		goTo() {
 			window.open(this.job.link, '_blank');
@@ -93,17 +94,17 @@ export default defineComponent({
 	}
 
 	&-card {
-        position: relative;
+		position: relative;
 		width: 560px;
 		min-height: 200px;
-        padding-bottom: 38px !important;
-		background-color: #eeeeee;
+		padding-bottom: 38px !important;
+		background-color: #eee;
 		border-radius: 20px;
-        animation: grow .3s forwards;
+		animation: grow 0.3s forwards;
 
 		&-bottom {
-            position: absolute;
-            bottom: 12px;
+			position: absolute;
+			bottom: 12px;
 			width: calc(100% - 32px);
 			margin-top: 8px;
 			display: flex;
@@ -126,14 +127,16 @@ export default defineComponent({
 }
 
 @keyframes grow {
-    0% {
-        transform: scale(0);
-    }
-    95% {
-        transform: scale(1.05)
-    }
-    100% {
-        transform: scale(1);
-    }
+	0% {
+		transform: scale(0);
+	}
+
+	95% {
+		transform: scale(1.05);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
 </style>

@@ -145,7 +145,6 @@ export default defineComponent({
       max-width: 120px;
       margin-left: 10px;
       margin-top: 10px;
-
       border-radius: 10px;
     }
   }

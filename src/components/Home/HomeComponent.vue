@@ -269,7 +269,6 @@ export default defineComponent({
 			padding-left: 100px;
 			padding-right: 100px;
 			padding-bottom: 40px;
-
 			gap: 60px;
 
 			@media screen and (width <= 600px) {
