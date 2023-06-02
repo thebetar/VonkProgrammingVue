@@ -152,6 +152,7 @@ export default defineComponent({
 		}
 
 		&-svg {
+			height: fit-content;
 			& > .monitor {
 				&-orange-line {
 					@extend %monitor-line;
@@ -186,6 +187,14 @@ export default defineComponent({
 
 					animation-delay: 0.3s !important;
 				}
+			}
+
+			@media screen and (width <= 960px) {
+				max-width: 240px;
+			}
+
+			@media screen and (width <= 600px) {
+				max-width: 180px;
 			}
 		}
     
