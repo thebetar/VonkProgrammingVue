@@ -11,9 +11,9 @@
           />
         </div>
         <div>
-          <h6 class="text-h4">
+          <h4 class="text-h4">
             Portfolio
-          </h6>
+          </h4>
           <p class="text-body-2">
             Naast een mooi verhaal over hoe alles te werk gaat heb ik ondertussen ook al een portfolio
             opgebouwd met een aantal bekenden en wat minder bekende bedrijven.
@@ -41,7 +41,10 @@
           </div>
         </div>
       </div>
-      <div class="misc-row-card">
+      <div
+        v-if="false"
+        class="misc-row-card"
+      >
         <div>
           <v-img
             src="/assets/svg/network.svg"
@@ -50,9 +53,9 @@
             class="mx-auto"
           />
         </div>
-        <h6 class="text-h4">
+        <h5 class="text-h4">
           Netwerk
-        </h6>
+        </h5>
         <p class="text-body-2">
           Binnen mijn netwerk heb ik meerdere connecties met mensen binnen design, marketing en development.
           Hierdoor kan ik een compleet pakket aanbieden voor een bedrijf. De huidige vaste partner waarmee ik
@@ -95,10 +98,11 @@ export default defineComponent({
 // eslint-disable-next-line vue-scoped-css/no-unused-selector
 .misc-row {
 	&-container {
-		padding-top: 40px;
-		padding-bottom: 120px;
+		padding-top: 200px;
+		padding-bottom: 400px;
 		display: flex;
 		justify-content: center;
+    align-items: center;
 	}
   
 	&-card {
@@ -111,8 +115,7 @@ export default defineComponent({
       width: 100%;
 			max-width: 1000px;
 			display: flex;
-      flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: center;
 			gap: 40px;
 
       @media screen and (width <= 600px) {

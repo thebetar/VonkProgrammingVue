@@ -13,6 +13,7 @@
       v-if="item.imageUrl"
       :src="`/assets/portfolio/${item.imageUrl}`"
       class="portfolio-list-item-pic"
+      :alt="item.title"
     />
     <v-card-text>
       <p>

@@ -1,52 +1,17 @@
 <template>
   <div class="portfolio-list-container">
-    <div class="portfolio-list-card-wrapper">
-      <v-card
-        class="pa-8 text-center portfolio-list-card"
-        outlined
-        elevation="12"
-      >
-        <v-img
-          src="/assets/svg/portfolio.svg"
-          width="100"
-          height="100"
-          class="mx-auto"
-        />
-        <v-card-title class="display-1 justify-center">
-          Portfolio
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Op deze pagina kun je mijn recente projecten vinden die ik heb
-            uitgevoerd voor zowel bedrijven als privéklanten. Elk project is
-            uniek en op maat gemaakt om aan de specifieke behoeften van de klant
-            te voldoen. <br>
-            <span v-if="!$vuetify.display.mobile">
-              Ik ben een full-stack ontwikkelaar met uitgebreide ervaring in
-              verschillende technologieën en platforms. Hierdoor kan ik jouw
-              project van begin tot eind beheren en implementeren. <br>
-            </span>
-            Bekijk gerust mijn portfolio en neem contact met mij op als je
-            vragen hebt of geïnteresseerd bent in een samenwerking.
-          </p>
-          <p>
-            Ook kunt u een kijkje nemen op mijn GitHub account
-            <br>
-            <v-img
-              src="/assets/svg/github.svg"
-              style="cursor: pointer"
-              width="40"
-              height="40"
-              class="mx-auto"
-              @click="goToGithub"
-            />
-          </p>
-        </v-card-text>
-      </v-card>
+    <div class="portfolio-list-header-wrapper">
+      <h1 class="portfolio-list-header">
+        Portfolio
+      </h1>
+      <div class="portfolio-list-header-hint">
+        Scroll naar beneden om mijn projecten te bekijken
+      </div>
+
       <transition name="fade">
         <div
           v-if="!isScrolled"
-          class="portfolio-list-card-arrow"
+          class="portfolio-list-header-arrow"
           @click="scrollDown"
         >
           <img
@@ -425,9 +390,12 @@ export default defineComponent({
   }
 }
 
-.portfolio-list-card {
+.portfolio-list-header {
   position: relative;
   max-width: 700px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
 
   &-wrapper {
     width: 100%;
@@ -436,7 +404,11 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
 
+  &-hint {
+    margin-top: 10px;
+    font-size: 11px;
   }
 
   &-arrow {

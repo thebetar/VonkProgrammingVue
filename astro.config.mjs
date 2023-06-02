@@ -8,6 +8,7 @@ import vue from '@astrojs/vue';
 
 import viteVue from '@vitejs/plugin-vue';
 import viteVuetify from 'vite-plugin-vuetify';
+import viteSvgLoader from 'vite-svg-loader';
 
 import compress from 'astro-compress';
 import compressor from 'astro-compressor';
@@ -71,6 +72,9 @@ export default defineConfig({
 		}),
 	],
 	vite: {
+		plugins: [viteSvgLoader({
+			defaultImport: 'component'
+		})],
 		build: {
 			minify: true,
 			plugins: [viteVue(), viteVuetify()],

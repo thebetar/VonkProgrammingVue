@@ -100,14 +100,39 @@ export default defineComponent({
           reference: 'https://www.typescriptlang.org/',
         },
         {
+          name: 'Sass',
+          url: 'sass',
+          reference: 'https://sass-lang.com/',
+        },
+        {
           name: 'Linux',
           url: 'linux',
           reference: 'https://www.linux.org/',
         },
         {
+          name: 'Git',
+          url: 'git',
+          reference: 'https://git-scm.com/',
+        },
+        {
+          name: 'ESLint',
+          url: 'eslint',
+          reference: 'https://eslint.org/',
+        },
+        {
+          name: 'Stylelint',
+          url: 'stylelint',
+          reference: 'https://stylelint.io/',
+        },
+        {
           name: 'Puppeteer',
           url: 'puppeteer',
           reference: 'https://pptr.dev/',
+        },
+        {
+          name: 'nginx',
+          url: 'nginx',
+          reference: 'https://www.nginx.com/',
         }
       ]
     }
@@ -146,12 +171,14 @@ export default defineComponent({
 
   &-svg-row {
     margin-top: 60px;
-    max-width: 1000px;
+    max-width: 1260px;
     width: 100%;
     display: flex;
+    padding-left: 60px;
+    padding-right: 60px;
     justify-content: center;
     flex-wrap: wrap;
-    gap:  30px;
+    gap:  60px;
     text-align: center;
     font-size: 18px;
     line-height: 24px;
@@ -161,8 +188,6 @@ export default defineComponent({
       width: 100%;
       max-width: 116px;
       padding: 8px;
-      margin-left: 30px;
-      margin-right: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
