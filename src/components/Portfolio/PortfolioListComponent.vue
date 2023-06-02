@@ -61,15 +61,23 @@
       class="portfolio-list-item-wrapper"
     >
       <portfolio-list-item
-        v-for="(item, index) in jobs"
+        v-for="(item) in jobs"
         :key="item.title"
         :label="labels[item.color]"
         :item="item"
         :color="colors[item.color]"
-        :large="$vuetify.display.mobile || index === selectedJobIndex"
-        @click="onItemClick(index)"
+        @click="onItemClick(item)"
       />
     </div>
+    <transition name="fade">
+      <portfolio-preview
+        v-if="selectedJob"
+        :label="labels[selectedJob.color]"
+        :job="selectedJob"
+        :color="colors[selectedJob.color]"
+        @dismiss="selectedJob = null"
+      />
+    </transition>
   </div>
 </template>
 
@@ -77,12 +85,14 @@
 import { defineComponent } from 'vue';
 
 import PortfolioListItem from './PortfolioListItemComponent.vue';
+import PortfolioPreview from './PortfolioPreviewComponent.vue'
 
 const SCROLL_OFFSET = 100;
 
 export default defineComponent({
   components: {
-    PortfolioListItem
+    PortfolioListItem,
+    PortfolioPreview
   },
   data() {
     return {
@@ -238,7 +248,7 @@ export default defineComponent({
         }
       ]
         .reverse(),
-        selectedJobIndex: null,
+        selectedJob: null,
       achievements: [
         {
           certificate: 'Certified Scrum Master (CSM)',
@@ -367,12 +377,8 @@ export default defineComponent({
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    onItemClick(index) {
-      if(this.selectedJobIndex === index) {
-        this.selectedJobIndex = null;
-        return;
-      }
-      this.selectedJobIndex = index;
+    onItemClick(job) {
+      this.selectedJob = job;
     },
     goToGithub() {
       window.open('https://github.com/thebetar', '_blank');

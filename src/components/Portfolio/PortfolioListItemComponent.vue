@@ -33,20 +33,16 @@
         >
           {{ label }}
         </v-chip>
-        <transition
-          name="fade-delay"
-          mode="out-in"
+        <v-btn
+          v-if="$vuetify.display.mobile"
+          variant="outlined"
+          class="rounded-pill"
+          size="small"
+          :prepend-icon="mdiCursorDefault"
+          @click.stop="goTo"
         >
-          <v-btn
-            v-if="large"
-            variant="outlined"
-            class="rounded-pill"
-            :size="$vuetify.display.mobile ? 'small' : 'default'"
-            @click.stop="goTo"
-          >
-            Ga naar website
-          </v-btn>
-        </transition>
+          Ga naar website
+        </v-btn>
       </div>
     </v-card-text>
   </v-card>
@@ -54,6 +50,8 @@
 
 <script>
 import { defineComponent } from 'vue';
+
+import { mdiCursorDefault } from '@mdi/js'
 
 export default defineComponent({
   props: {
@@ -82,6 +80,7 @@ export default defineComponent({
   data() {
     return {
       imageUrl: '',
+      mdiCursorDefault
     };
   },
   computed: {
@@ -89,29 +88,24 @@ export default defineComponent({
       if(this.large) {
         return this.item.description;
       }
-      return this.item.description.length > 70
+      return !this.$vuetify.display.mobile
         ? `${this.item.description.substring(0, 70)}...`
         : this.item.description;
     }
-  },
-  methods: {
-    goTo() {
-      window.open(this.item.link, '_blank')
-    },
   }
 });
 </script>
 
 <style lang="scss" scoped>
 .portfolio-list-item {
-  max-width: 260px;
+  max-width: 210px;
   height: fit-content;
   margin-top: 20px;
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 20px;
   margin: 20px 50px;;
-  opacity: 0.85;
+  opacity: 0.9;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
@@ -136,11 +130,15 @@ export default defineComponent({
     }
   }
 
-  &__large {
-    max-width: 350px;
+
+
+  &__mobile {
+    max-width: 90vw;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: default;
     opacity: 1;
-    margin-left: 5px;
-    margin-right: 5px;
 
     & > .portfolio-list-item-pic {
       max-width: 120px;
@@ -149,13 +147,6 @@ export default defineComponent({
 
       border-radius: 10px;
     }
-  }
-
-  &__mobile {
-    margin-bottom: 60px;
-    max-width: 90vw;
-    cursor: default;
-    opacity: 1;
   }
 }
 </style>
