@@ -156,7 +156,7 @@ export default defineComponent({
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			gap: 40px;
+			gap: 0px;
 		}
 
 		&-svg {
@@ -174,25 +174,25 @@ export default defineComponent({
 				&-green-line {
 					@extend %monitor-line;
 
-					animation-delay: 0.2s !important;
+					animation-delay: 0.15s !important;
 				}
 
 				&-blue-line {
 					@extend %monitor-line;
 
-					animation-delay: 0.3s !important;
+					animation-delay: 0.2s !important;
 				}
 
 				&-yellow-line {
 					@extend %monitor-line;
           
-					animation-delay: 0.4s !important;
+					animation-delay: 0.25s !important;
 				}
 
 				&-red-line {
 					@extend %monitor-line;
 
-					animation-delay: 0.5s !important;
+					animation-delay: 0.3s !important;
 				}
 			}
 		}
@@ -209,22 +209,34 @@ export default defineComponent({
 				font-size: 24px;
 				line-height: 30px;
 				font-weight: 700;
+        opacity: 0;
+        animation-name: fade-in-right;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0.4s;
 			}
 
 			&-content {
 				margin-top: 12px;
 				text-align: center;
+
+        animation-name: fade-in-right;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+        animation-delay: 0.4s;
 			}
 		}
 
 		&-button {
 			opacity: 0;
-			margin-top: 12px;
-			animation-name: fade-in;
+			margin-top: 18px;
+			animation-name: fade-in-left;
 			animation-duration: 0.4s;
 			animation-timing-function: ease-in-out;
 			animation-fill-mode: forwards;
-			animation-delay: 0.55s;
+			animation-delay: 0.8s;
 		}
 	}
 
@@ -355,7 +367,7 @@ export default defineComponent({
 	}
 }
 
-@keyframes fade-in {
+@keyframes fade-in-left {
 	0% {
 		opacity: 0;
 		transform: translateX(-20px);
@@ -369,5 +381,21 @@ export default defineComponent({
 		opacity: 1;
 		transform: translateX(0);
 	}
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  90% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 </style>
