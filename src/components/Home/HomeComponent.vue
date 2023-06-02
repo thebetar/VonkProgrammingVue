@@ -196,7 +196,7 @@ export default defineComponent({
 				}
 			}
 		}
-
+    
 		&-text {
 			display: flex;
 			flex-direction: column;
@@ -349,7 +349,7 @@ export default defineComponent({
 	0% {
 		opacity: 0;
 	}
-  
+
 	100% {
 		opacity: 1;
 	}
