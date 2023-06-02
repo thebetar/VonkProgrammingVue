@@ -167,26 +167,31 @@ export default defineComponent({
 
 				&-purple-line {
 					@extend %monitor-line;
+
 					animation-delay: 0.1s !important;
 				}
 
 				&-green-line {
 					@extend %monitor-line;
+
 					animation-delay: 0.2s !important;
 				}
 
 				&-blue-line {
 					@extend %monitor-line;
+
 					animation-delay: 0.3s !important;
 				}
 
 				&-yellow-line {
 					@extend %monitor-line;
+          
 					animation-delay: 0.4s !important;
 				}
 
 				&-red-line {
 					@extend %monitor-line;
+
 					animation-delay: 0.5s !important;
 				}
 			}
@@ -344,6 +349,7 @@ export default defineComponent({
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -354,9 +360,11 @@ export default defineComponent({
 		opacity: 0;
 		transform: translateX(-20px);
 	}
+
 	90% {
 		transform: translateX(2px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: translateX(0);
