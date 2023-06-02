@@ -374,7 +374,7 @@ export default defineComponent({
 
 .portfolio-list-item-wrapper {
   padding-top: 80px;
-  padding-bottom: 120px;
+  padding-bottom: 240px;
   padding-left: 100px;
   padding-right: 100px;
   position: relative;

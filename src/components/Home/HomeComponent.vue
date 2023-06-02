@@ -6,13 +6,13 @@
       </div>
       <div class="home-component-start-text">
         <h1 class="home-component-start-text-header">
-          Voor elk probleem een oplossing 💪
+          For every problem a solution 💪
         </h1>
         <div class="home-component-start-text-content">
-          Heeft u een probleem waar
-          <span class="font-weight-bold"> maatwerk software </span>
-          voor nodig is of heeft u behoefte aan een gespecialiseerde
-          <span class="font-weight-bold">web applicatie</span>?
+          Do you require a
+          <span class="font-weight-bold">passionate developer</span>
+          who 
+          <span class="font-weight-bold">loves</span> what he does?
         </div>
         <v-btn
           class="home-component-start-button"
@@ -20,26 +20,26 @@
           size="large"
           color="primary"
           href="/contact"
-          aria-label="Neem contact op"
+          aria-label="Contact me"
           :prepend-icon="mdiPhone"
         >
-          Neem contact op
+          Contact me
         </v-btn>
       </div>
     </div>
     <div class="home-component-info-container vonk-programming-background">
       <div class="home-component-info-card">
         <h2 class="text-h3">
-          Wie ben ik?
+          Who am I?
         </h2>
         <p class="mt-2">
-          Lars Vonk, Gedreven Software Developer | Voorvechter van Kwaliteitsborging met Uitgebreide Ervaring
-          in CI/CD en Testing
+          Lars Vonk, Driven Software Developer | Advocate of Quality Assurance with Extensive Experience
+          in CI/CD and Testing 
         </p>
         <p class="mt-2">
-          Ben je op zoek naar een gedreven Software Developer met een sterke focus op kwaliteitsborging en
-          CI/CD-praktijken? Zoek niet verder! Met vele jaren ervaring ben ik gepassioneerd over het leveren
-          van hoogwaardige code en het implementeren van robuuste teststrategieën.
+          Are you looking for a driven Software Developer with a strong focus on quality assurance and
+          CI/CD practices? Look no further! With many years of experience, I am passionate about delivering
+          high-quality code and implementing robust testing strategies.
         </p>
       </div>
     </div>
@@ -47,33 +47,24 @@
       <div class="home-component-about-text">
         <p>
           <b>Development</b><br>
-          Als een innovatieve developer ben ik bedreven in het gebruik van moderne technologieën om
-          baanbrekende applicaties te bouwen. Met mijn expertise in Vue.js, React.js, Nuxt.js, Electron en
-          Ionic kan ik diverse projecten aanpakken.
+          As a passionate and innovative programmer, I utilize the power of modern technologies and frameworks to build groundbreaking applications. With my expertise in Vue.js, React.js, Nuxt.js, Electron, and Ionic, I have the ability to tackle diverse projects and create innovative solutions.
         </p>
         <p>
-          <b>Code kwaliteit</b><br>
-          Als een toegewijde developer hecht ik grote waarde aan codekwaliteit en zorg ik ervoor dat mijn
-          projecten voldoen aan de hoogste normen. Ik maak gebruik van krachtige tools zoals Eslint,
-          Stylelint, Jest en Cypress om dit te bereiken.
+          <b>Code quality</b><br>
+          As a dedicated developer, I value code quality and ensure that my projects meet the highest standards. I utilize powerful tools such as Eslint, Stylelint, Jest, and Cypress to achieve this.
         </p>
         <p>
           <b>Pipelines</b><br>
-          Als een efficiënte developer begrijp ik het belang van gestroomlijnde deployment-processen om snelle
-          en betrouwbare levering van software te garanderen. Daarom maak ik gebruik van krachtige
-          pipeline-tools zoals GitHub Actions, Azure DevOps Pipelines en Jenkins om dit te realiseren.
+          As an efficient developer, I understand the importance of streamlined deployment processes to ensure fast and reliable software delivery. Therefore, I make use of powerful pipeline tools such as GitHub Actions, Azure DevOps Pipelines, and Jenkins to accomplish this.
         </p>
         <p>
           <b>Deployment</b><br>
-          Als een ervaren developer maak ik optimaal gebruik van Docker en Linux-gebaseerde systemen om mijn
-          eigen deployment-processen te stroomlijnen. Door Docker-containerisatie en Linux te combineren, zorg
-          ik voor een efficiënte en consistente implementatie van mijn applicaties.
+          As an experienced developer, I leverage Docker and Linux-based systems to streamline my own deployment processes. By combining Docker containerization and Linux, I ensure efficient and consistent deployment of my applications.
         </p>
         <p>
           <b>Contact</b><br>
-          Als je op zoek bent naar een gedreven Software Developer met uitgebreide ervaring in
-          kwaliteitsborging en CI/CD, laten we dan verbinden! <br>
-          <a href="/contact">Klik hier</a> om naar de contact pagina te gaan.
+          If you are looking for a driven Software Developer with extensive experience in quality assurance and CI/CD, let's connect! <br>
+          <a href="/contact">Click here</a> to go to the contact page.
         </p>
       </div>
       <div class="home-component-about-image">
@@ -81,6 +72,7 @@
           src="/assets/home/me.jpg"
           width="260"
           class="rounded-xl"
+          alt="Lars Vonk"
         >
           <template #placeholder>
             <v-sheet>
@@ -227,6 +219,11 @@ export default defineComponent({
         animation-fill-mode: backwards;
         animation-delay: 0.4s;
 			}
+
+      @media screen and (width <= 600px) {
+        margin-left: 14px;
+        margin-right: 14px;
+      }
 		}
 
 		&-button {
@@ -256,14 +253,16 @@ export default defineComponent({
 			padding-bottom: 20px;
 			border-radius: 30px 30px 0 0;
 			z-index: 10;
-			box-shadow: 10px -10px 20px 0 rgba(0, 0, 0, 0.3);
+			box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.3);
 			text-align: center;
 			background: white;
 			color: #333;
 
 			& > p {
-				font-size: 18px;
-				line-height: 24px;
+				font-size: 14px;
+        line-height: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
 			}
 
 			@media screen and (width <= 1200px) {
@@ -272,6 +271,14 @@ export default defineComponent({
 
 			@media screen and (width <= 720px) {
 				max-width: 100%;
+        padding-bottom: 40px;
+
+        & > p {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        border-bottom: 1px solid rgba(0,0,0,0.1);
 			}
 		}
 	}
@@ -288,10 +295,11 @@ export default defineComponent({
 			padding-bottom: 40px;
 			gap: 60px;
 
-			@media screen and (width <= 600px) {
+			@media screen and (width <= 960px) {
+        padding-top: 100px;
 				padding-left: 40px;
 				padding-right: 40px;
-				padding-bottom: 20px;
+				padding-bottom: 40px;
 				flex-wrap: wrap;
 			}
 		}

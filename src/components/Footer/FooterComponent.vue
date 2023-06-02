@@ -1,13 +1,14 @@
 <template>
-  <v-footer color="white">
+  <v-footer
+    color="white"
+    border
+  >
     <v-container>
-      <v-row justify="space-between">
-        <v-col
-          cols="12"
-          sm="4"
-          md="4"
-        >
-          <span class="text-h3 mb-6"> Contact </span>
+      <div class="footer-container">
+        <div>
+          <div class="footer-header">
+            Contact
+          </div>
           <v-list role="list">
             <v-list-item
               href="https://wa.me/0639119996"
@@ -57,14 +58,22 @@
             >
               Github
             </v-list-item>
+            <v-list-item
+              href="https://stackoverflow.com/users/10104786/lars-vonk"
+              target="_blank"
+              aria-label="StackOverflow"
+              density="compact"
+              role="listitem"
+              :prepend-icon="mdiStackOverflow"
+            >
+              StackOverflow
+            </v-list-item>
           </v-list>
-        </v-col>
-        <v-col
-          cols="12"
-          sm="3"
-          md="3"
-        >
-          <span class="text-h3 mb-6"> Pagina's </span>
+        </div>
+        <div>
+          <div class="footer-header">
+            Pagina's
+          </div>
           <v-list role="list">
             <v-list-item
               href="/"
@@ -91,8 +100,8 @@
               Contact
             </v-list-item>
           </v-list>
-        </v-col>
-      </v-row>
+        </div>
+      </div>
     </v-container>
   </v-footer>
 </template>
@@ -101,13 +110,14 @@
 import { defineComponent } from 'vue';
 
 import {
+  mdiHome,
+  mdiFolder,
   mdiWhatsapp,
   mdiPhone,
   mdiEmail,
   mdiLinkedin,
   mdiGithub,
-  mdiHome,
-  mdiFolder
+  mdiStackOverflow,
 } from '@mdi/js';
 
 export default defineComponent({
@@ -122,9 +132,25 @@ export default defineComponent({
       mdiEmail,
       mdiLinkedin,
       mdiGithub,
+      mdiStackOverflow,
       mdiHome,
       mdiFolder
     };
   }
 });
 </script>
+
+<style lang="scss">
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.footer-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+</style>

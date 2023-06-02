@@ -8,6 +8,7 @@
             width="80"
             height="80"
             class="mx-auto"
+            alt="Portfolio"
           />
         </div>
         <div>
@@ -15,8 +16,8 @@
             Portfolio
           </h4>
           <p class="text-body-2">
-            Naast een mooi verhaal over hoe alles te werk gaat heb ik ondertussen ook al een portfolio
-            opgebouwd met een aantal bekenden en wat minder bekende bedrijven.
+            Aside from a nice story about how everything works, I have also built up a portfolio with a number of
+            well-known and less well-known companies and projects.
           </p>
           <div class="misc-row-card-actions">
             <v-btn
@@ -40,36 +41,6 @@
             </v-btn>
           </div>
         </div>
-      </div>
-      <div
-        v-if="false"
-        class="misc-row-card"
-      >
-        <div>
-          <v-img
-            src="/assets/svg/network.svg"
-            width="80"
-            height="80"
-            class="mx-auto"
-          />
-        </div>
-        <h5 class="text-h4">
-          Netwerk
-        </h5>
-        <p class="text-body-2">
-          Binnen mijn netwerk heb ik meerdere connecties met mensen binnen design, marketing en development.
-          Hierdoor kan ik een compleet pakket aanbieden voor een bedrijf. De huidige vaste partner waarmee ik
-          samenwerk is:
-        </p>
-        <v-img
-          src="/assets/partners/lightspeed-it-min.webp"
-          width="240"
-          class="mx-auto mt-2 rounded-lg"
-          :style="{
-            cursor: 'pointer',
-          }"
-          @click="goTo('https://lightspeed-it.nl/')"
-        />
       </div>
     </div>
   </div>
@@ -98,7 +69,7 @@ export default defineComponent({
 // eslint-disable-next-line vue-scoped-css/no-unused-selector
 .misc-row {
 	&-container {
-		padding-top: 200px;
+		padding-top: 180px;
 		padding-bottom: 400px;
 		display: flex;
 		justify-content: center;
@@ -108,8 +79,24 @@ export default defineComponent({
 	&-card {
     display: flex;
 		flex-direction: column;
+    justify-content: center;
+    align-items: center;
 		text-align: center;
-		max-width: 400px;
+    width: 100%;
+		max-width: 600px;
+    height: 600px;
+
+    @media screen and (width >= 600px) {
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.3);
+      box-shadow: 0 0 100px rgba(0,0,0,0.1);
+  
+      transition: box-shadow .8s ease-in-out;
+  
+      &:hover {
+        box-shadow: 0 0 100px rgba(0,0,0,0.3);
+      }
+    }
     
 		&-row {
       width: 100%;
@@ -118,10 +105,14 @@ export default defineComponent({
 			justify-content: center;
 			gap: 40px;
 
-      @media screen and (width <= 600px) {
+      @media screen and (width <= 960px) {
         max-width: 90vw;
       }
 		}
+
+    & > div {
+      width: 300px;
+    }
 
 		&-actions {
 			margin-top: 10px;

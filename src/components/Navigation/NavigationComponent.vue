@@ -22,6 +22,7 @@
             max-height="36"
             max-width="90"
             contain
+            alt="Logo"
           />
         </a>
       </v-app-bar-title>
@@ -74,7 +75,8 @@ import {
   mdiPhone,
   mdiLinkedin,
   mdiWhatsapp,
-  mdiGithub
+  mdiGithub,
+  mdiStackOverflow
 } from '@mdi/js';
 
 export default defineComponent({
@@ -123,13 +125,18 @@ export default defineComponent({
           text: 'GitHub',
           link: 'https://github.com/thebetar',
           icon: mdiGithub
+        },
+        {
+          text: 'StackOverflow',
+          link: 'https://stackoverflow.com/users/10104786/lars-vonk',
+          icon: mdiStackOverflow
         }
       ]
     };
   },
   created() {
     // Check if not mobile
-    if (window.screen.width >= 600) {
+    if (window.screen.width >= 960) {
       window.addEventListener('scroll', () => {
         this.isScroll = this.handleScroll();
       });

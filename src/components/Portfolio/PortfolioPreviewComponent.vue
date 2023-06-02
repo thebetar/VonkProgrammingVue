@@ -11,6 +11,7 @@
         v-if="job.imageUrl"
         :src="`/assets/portfolio/${job.imageUrl}`"
         class="portfolio-preview-card-img"
+        :alt="job.title"
       />
       <v-card-text>
         <p>

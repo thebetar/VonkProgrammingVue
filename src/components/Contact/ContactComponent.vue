@@ -130,6 +130,7 @@
                   src="/assets/svg/mailsent.svg"
                   height="200"
                   width="200"
+                  alt="Mail sent"
                 />
               </div>
             </transition>
@@ -234,7 +235,7 @@ export default defineComponent({
       max-width: 400px;
     }
 
-		@media only screen and (width <= 600px) {
+		@media only screen and (width <= 960px) {
 			/* eslint-disable-next-line vue-scoped-css/no-unused-selector */
 			padding: 2rem 1rem;
 		}

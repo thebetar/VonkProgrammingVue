@@ -4,7 +4,7 @@
   >
     <div class="tech-row-container">
       <div class="tech-row-header">
-        Tech die ik gebruik
+        My arsenal
       </div>
       <div class="tech-row-svg-row">
         <div
@@ -15,7 +15,8 @@
         >
           <v-img
             :src="`/assets/svg/${skill.url}.svg`"
-            width="80"
+            :width="$vuetify.display.mobile ? 40 : 80"
+            :alt="skill.name"
           />
           <div class="tech-row-svg-row-svg-text">
             {{ skill.name }}
@@ -95,6 +96,11 @@ export default defineComponent({
           reference: 'https://tailwindcss.com/',
         },
         {
+          name: 'Material design',
+          url: 'material-design',
+          reference: 'https://material.io/',
+        },
+        {
           name: 'Typescript',
           url: 'typescript',
           reference: 'https://www.typescriptlang.org/',
@@ -133,6 +139,21 @@ export default defineComponent({
           name: 'nginx',
           url: 'nginx',
           reference: 'https://www.nginx.com/',
+        },
+        {
+          name: 'VSCode',
+          url: 'vscode',
+          reference: 'https://code.visualstudio.com/',
+        },
+        {
+          name: 'Github',
+          url: 'github',
+          reference: 'https://github.com/thebetar'
+        },
+        {
+          name: 'StackOverflow',
+          url: 'stackoverflow',
+          reference: 'https://stackoverflow.com/users/10104786/lars-vonk'
         }
       ]
     }
@@ -145,7 +166,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // eslint-disable-next-line vue-scoped-css/no-unused-selector
 .tech-row {
   &-container {
@@ -178,7 +199,7 @@ export default defineComponent({
     padding-right: 60px;
     justify-content: center;
     flex-wrap: wrap;
-    gap:  60px;
+    gap:  30px;
     text-align: center;
     font-size: 18px;
     line-height: 24px;
@@ -188,6 +209,8 @@ export default defineComponent({
       width: 100%;
       max-width: 116px;
       padding: 8px;
+      margin-left: 15px;
+      margin-right: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -206,13 +229,22 @@ export default defineComponent({
         margin-top: 10px;
       }
 
+      @media screen and (width <= 960px) {
+        margin-left: 7px;
+        margin-right: 7px;
+      }
+
       @media screen and (width <= 600px) {
-        margin: 0;
+        height: 100px;
+        max-width: 70px;
+        font-size: 12px;
       }
     }
 
     @media screen and (width <= 600px) {
-      gap: 18px;
+      gap: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
