@@ -7,7 +7,9 @@
 			"rules": {
 				"selector-class-pattern": "^[a-z0-9\\-]+_{0,2}[a-z0-9]+$",
 				"declaration-block-no-redundant-longhand-properties": null,
-				"declaration-block-no-shorthand-property-overrides": null
+				"declaration-block-no-shorthand-property-overrides": null,
+				"alpha-value-notation": null,
+				"color-function-notation": null
 			}
 		}
 	]
