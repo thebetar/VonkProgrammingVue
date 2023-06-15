@@ -224,6 +224,7 @@ export default defineComponent({
 
       &-text {
         margin-top: 10px;
+        max-width: 100%;
         overflow-x: hidden;
         text-overflow: ellipsis;
         text-align: center;
