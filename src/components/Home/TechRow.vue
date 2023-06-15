@@ -200,9 +200,6 @@ export default defineComponent({
     justify-content: center;
     flex-wrap: wrap;
     gap:  30px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 24px;
 
     &-svg {
       height: 142px;
@@ -227,6 +224,15 @@ export default defineComponent({
 
       &-text {
         margin-top: 10px;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+
+        @media screen and (width <= 600px) {
+          font-size: 12px;
+        }
       }
 
       @media screen and (width <= 960px) {
@@ -237,7 +243,6 @@ export default defineComponent({
       @media screen and (width <= 600px) {
         height: 100px;
         max-width: 70px;
-        font-size: 12px;
       }
     }
 
