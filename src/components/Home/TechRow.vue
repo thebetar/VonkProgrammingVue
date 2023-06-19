@@ -3,9 +3,9 @@
     class="vonk-programming-background vonk-programming-background-gradient"
   >
     <div class="tech-row-container">
-      <div class="tech-row-header">
+      <h3 class="tech-row-header">
         My arsenal
-      </div>
+      </h3>
       <div class="tech-row-svg-row">
         <div
           v-for="skill in skills"

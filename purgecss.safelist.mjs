@@ -69,6 +69,7 @@ export default [
   /v-field--variant-filled/,
   /v-field--dirty/,
   /v-field__overlay/,
+  /^v-field__outline/,
   /v-label/,
   /^v-form/
 ];

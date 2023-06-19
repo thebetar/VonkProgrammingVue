@@ -64,7 +64,7 @@
         <p>
           <b>Contact</b><br>
           If you are looking for a driven Software Developer with extensive experience in quality assurance and CI/CD, let's connect! <br>
-          <a href="/contact">Click here</a> to go to the contact page.
+          <a href="/contact">Click here to go to the contact page</a>.
         </p>
       </div>
       <div class="home-component-about-image">
