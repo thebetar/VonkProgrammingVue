@@ -15,6 +15,7 @@
       <v-app-bar-title>
         <a
           href="/"
+          class="navigation-component-navbar-logo"
           aria-label="Home"
         >
           <v-img
@@ -37,7 +38,7 @@
           :href="item.link"
           :class="{
             'navigation-component-navbar__scrolled-text': isScroll,
-            'navigation-component-navbar__noscroll-text': !isScroll
+            'navigation-component-navbar__noscroll-text': !isScroll,
           }"
           :aria-label="item.text"
           :prepend-icon="item.icon"
@@ -51,7 +52,7 @@
           :href="item.link"
           :class="{
             'navigation-component-navbar__scrolled-text': isScroll,
-            'navigation-component-navbar__noscroll-text': !isScroll
+            'navigation-component-navbar__noscroll-text': !isScroll,
           }"
           target="_blank"
           :aria-label="item.text"
@@ -68,125 +69,128 @@
 import { defineComponent } from 'vue';
 
 import {
-  mdiMenu,
-  mdiArrowLeft,
-  mdiHome,
-  mdiFolder,
-  mdiPhone,
-  mdiLinkedin,
-  mdiWhatsapp,
-  mdiGithub,
-  mdiStackOverflow
+	mdiMenu,
+	mdiArrowLeft,
+	mdiHome,
+	mdiFolder,
+	mdiPhone,
+	mdiLinkedin,
+	mdiWhatsapp,
+	mdiGithub,
+	mdiStackOverflow,
 } from '@mdi/js';
 
 export default defineComponent({
-  name: 'NavigationComponent',
-  props: {
-    drawerProp: {
-      type: Boolean,
-      default: false
-    }
-  },
-  emits: ['drawerClick'],
-  data() {
-    return {
-      isScroll: this.handleScroll(),
-      mdiMenu,
-      mdiArrowLeft,
-      pageLinks: [
-        {
-          link: '/',
-          icon: mdiHome,
-          text: 'Home'
-        },
-        {
-          link: '/portfolio',
-          icon: mdiFolder,
-          text: 'Portfolio'
-        },
-        {
-          link: '/contact',
-          icon: mdiPhone,
-          text: 'Contact'
-        }
-      ],
-      socialLinks: [
-        {
-          text: 'Linkedin',
-          link: 'https://www.linkedin.com/in/lars-v-82455612a/',
-          icon: mdiLinkedin
-        },
-        {
-          text: 'WhatsApp',
-          link: 'https://wa.me/0639119996',
-          icon: mdiWhatsapp
-        },
-        {
-          text: 'GitHub',
-          link: 'https://github.com/thebetar',
-          icon: mdiGithub
-        },
-        {
-          text: 'StackOverflow',
-          link: 'https://stackoverflow.com/users/10104786/lars-vonk',
-          icon: mdiStackOverflow
-        }
-      ]
-    };
-  },
-  created() {
-    // Check if not mobile
-    if (window.screen.width >= 960) {
-      window.addEventListener('scroll', () => {
-        this.isScroll = this.handleScroll();
-      });
-    }
-  },
-  methods: {
-    handleScroll() {
-      return window.scrollY > 50;
-    },
-    emitDrawer() {
-      this.$emit('drawerClick');
-    }
-  }
+	name: 'NavigationComponent',
+	props: {
+		drawerProp: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	emits: ['drawerClick'],
+	data() {
+		return {
+			isScroll: this.handleScroll(),
+			mdiMenu,
+			mdiArrowLeft,
+			pageLinks: [
+				{
+					link: '/',
+					icon: mdiHome,
+					text: 'Home',
+				},
+				{
+					link: '/portfolio',
+					icon: mdiFolder,
+					text: 'Portfolio',
+				},
+				{
+					link: '/contact',
+					icon: mdiPhone,
+					text: 'Contact',
+				},
+			],
+			socialLinks: [
+				{
+					text: 'Linkedin',
+					link: 'https://www.linkedin.com/in/lars-v-82455612a/',
+					icon: mdiLinkedin,
+				},
+				{
+					text: 'WhatsApp',
+					link: 'https://wa.me/0639119996',
+					icon: mdiWhatsapp,
+				},
+				{
+					text: 'GitHub',
+					link: 'https://github.com/thebetar',
+					icon: mdiGithub,
+				},
+				{
+					text: 'StackOverflow',
+					link: 'https://stackoverflow.com/users/10104786/lars-vonk',
+					icon: mdiStackOverflow,
+				},
+			],
+		};
+	},
+	created() {
+		// Check if not mobile
+		if (window.screen.width >= 960) {
+			window.addEventListener('scroll', () => {
+				this.isScroll = this.handleScroll();
+			});
+		}
+	},
+	methods: {
+		handleScroll() {
+			return window.scrollY > 50;
+		},
+		emitDrawer() {
+			this.$emit('drawerClick');
+		},
+	},
 });
 </script>
 
-<style  lang="scss">
-.navigation-component {
-  &-wrapper {
-    & > header.v-toolbar {
-      background: transparent;
-      transition: 0.2s ease-in-out;
+<style lang="scss">
+.navigation-component-wrapper {
+	& > header.v-toolbar {
+		background: transparent;
+		transition: 0.2s ease-in-out;
 
-      @media only screen and (width <= 600px) {
-        background: #fff;
-      }
-    }
-  }
+		@media only screen and (width <= 600px) {
+			background: #fff;
+		}
+	}
+}
 
-  &-navbar {
-    &__scrolled {
-      background-color: #fff !important;
-      box-shadow: 0 0 4px #aaa !important;
+.navigation-component-navbar {
+	&-logo {
+		display: inline-block;
+		width: fit-content;
+	}
 
-      &-text {
-        color: black !important;
+	&__scrolled {
+		background-color: #fff !important;
+		box-shadow: 0 0 4px #aaa !important;
 
-        & > .v-icon {
-          color: black !important;
-        }
-      }
-    }
+		&-text {
+			color: black !important;
 
-    &__noscroll-text {
-      color: white !important;
+			& > .v-icon {
+				color: black !important;
+			}
+		}
+	}
 
-      & > .v-icon {
-        color: white !important;
-      }
-    }
-  }
+	&__noscroll-text {
+		color: white !important;
+
+		& > .v-icon {
+			color: white !important;
+		}
+	}
 }
 </style>

@@ -145,7 +145,6 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 32px;
 }
 
 .footer-header {
