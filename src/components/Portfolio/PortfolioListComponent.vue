@@ -18,6 +18,7 @@
             height="40"
             width="40"
             src="/assets/svg/arrow-down.svg"
+            alt="Scroll down"
           >
         </div>
       </transition>
