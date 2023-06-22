@@ -397,6 +397,7 @@ export default defineComponent({
   font-size: 64px;
   font-weight: 700;
   line-height: 80px;
+  color: #fff;
 
   &-wrapper {
     width: 100%;
@@ -409,7 +410,8 @@ export default defineComponent({
 
   &-hint {
     margin-top: 10px;
-    font-size: 11px;
+    font-size: 12px;
+    color: #fff;
   }
 
   &-arrow {
