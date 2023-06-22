@@ -32,6 +32,7 @@ export default [
   /^v-text-field/,
   /^v-input/,
   /^v-progress-linear/,
-  /^v-field/
+  /^v-field/,
+  /^v-messages/,
 ];
 
