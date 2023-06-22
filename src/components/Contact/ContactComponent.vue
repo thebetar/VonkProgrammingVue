@@ -87,6 +87,7 @@
                   :prepend-inner-icon="mdiAccount"
                   :rules="[rules.required]"
                   variant="outlined"
+                  aria-label="Naam"
                 />
                 <v-text-field
                   v-model="email"
@@ -95,6 +96,7 @@
                   :prepend-inner-icon="mdiEmail"
                   :rules="[rules.required, rules.email]"
                   variant="outlined"
+                  aria-label="Email"
                 />
                 <v-textarea
                   v-model="description"
@@ -105,6 +107,7 @@
                   :rows="isMobile ? 2 : 5"
                   auto-grow
                   variant="outlined"
+                  aria-label="Beschrijving"
                 />
                 <v-btn
                   name="submit"
