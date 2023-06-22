@@ -69,7 +69,7 @@
       </div>
       <div class="home-component-about-image">
         <v-img
-          src="/assets/home/me.jpg"
+          src="/assets/home/me-min.jpg"
           width="260"
           class="rounded-xl"
           alt="Lars Vonk"
